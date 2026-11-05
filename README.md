@@ -11,6 +11,12 @@ Lecturer: Jonas Grossmann and José Luis Ruiz Rodriguez (Functional Genomics Cen
 > [data/README.md](data/README.md)). Your code and rendered reports are — you hand in
 > your work by pushing your clone of this repo to GitHub (see *Handing in*).
 
+## Selected group project
+
+Our chosen project is **mutant validation, possible polar effects, and genotype-dependent responses to supernatant**: does the `stp` mutant also have reduced Stk1, and does its response resemble the `stk` mutant? See the [fixed project plan](PROJECT_PLAN.md) and [rescue/suppression literature review](docs/stk_stp_rescue_evidence.md). These documents state hypotheses and interpretation limits, not analysis results.
+
+For continuing the same conversation and project on another computer, see [working on two PCs](docs/WORKING_ON_TWO_PCS.md). Chat access and Git file updates are separate.
+
 ## Biology in 10 lines or even more
 
 1. *S. aureus* and *Pseudomonas aeruginosa* often co-infect, e.g. in cystic fibrosis lungs. *P. aeruginosa* usually suppresses *S. aureus* with secreted molecules (HQNO, PQS, pyocyanin, siderophores, proteases …).
