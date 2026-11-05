@@ -15,9 +15,11 @@ Lecturer: Jonas Grossmann and José Luis Ruiz Rodriguez (Functional Genomics Cen
 
 ## Selected group project: Topic C
 
-Our chosen project is **Topic C: Are the Stk1/Stp1 mutants what their labels say?** We validate the mutant protein profiles, investigate possible polar effects, and compare genotype-dependent responses to supernatant: does the `stp` mutant also have reduced Stk1, and does its response resemble the `stk` mutant? See the [Project C plan, questions and hypotheses](PROJECT_PLAN.md) and [rescue/suppression literature review](docs/stk_stp_rescue_evidence.md). These documents state hypotheses and interpretation limits, not analysis results.
+Our focused subsection is **Revised topic C: Does the `stp` mutant behave like a kinase mutant during supernatant exposure?** We validate the mutant protein profiles, investigate possible polar effects, and compare genotype-dependent responses to supernatant: does the `stp` mutant also have reduced Stk1, and does its response resemble the `stk` mutant? See the [Project C plan, questions and hypotheses](PROJECT_PLAN.md) and [rescue/suppression literature review](docs/stk_stp_rescue_evidence.md). These documents state hypotheses and interpretation limits, not analysis results.
 
-**Revised main question:** Does disruption of `stp1` also reduce Stk1 protein abundance through a possible polar effect, and do the `stp` and `stk` mutants show similar protein-abundance and phosphorylation responses to *Pseudomonas aeruginosa* supernatant?
+**Revised main question:** Does disruption of `stp1` also reduce Stk1 protein abundance through a possible polar effect, and do the `stp` and `stk` mutants show similar protein-abundance responses to *Pseudomonas aeruginosa* supernatant?
+
+**Scope:** total-proteome protein abundance in TSB and SN only. Phosphorylation responses, phosphosite analysis, protein adjustment of phospho signals and SNpulse are outside this focused project.
 
 **Hypotheses to test:**
 
