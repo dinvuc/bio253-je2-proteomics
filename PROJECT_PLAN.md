@@ -2,6 +2,8 @@
 
 Status: chosen project, agreed 5 November 2026. This replaces the earlier provisional topic-H plan. Protein-abundance adjustment remains a supporting method for selected phosphosites.
 
+This is the current project reference for both PCs. Research questions and hypotheses were clarified on 5 November 2026. The hypotheses below are predictions to test, not results from our dataset.
+
 ## Working title
 
 Does the stp mutant behave like a kinase mutant during Pseudomonas-supernatant exposure?
@@ -12,11 +14,35 @@ Does the stp1 transposon mutant have reduced Stk1 as well as Stp1, and do its pr
 
 We will establish the measured mutant profiles, then use genotype-by-condition interactions to distinguish baseline differences from altered exposure responses. A polar effect is a proposed explanation for reduced Stk1, not a mechanism established by proteomics alone.
 
-## Predictions recorded before analysis
+## Research questions and hypotheses
 
-1. The stp mutant shows reduced Stp1 and accompanying reduction of Stk1 relative to the parental strain. The consistency and magnitude must be checked in individual samples.
-2. Some exposure responses in stp and stk are similar, consistent with shared consequences of reduced kinase function. Other responses may distinguish them.
-3. Similarity and differences may depend on treatment. A failure to reject a difference will not be called equivalence.
+### RQ1: What is actually disrupted in each mutant?
+
+Does the stp1 insertion affect Stk1 protein abundance as well as Stp1, and is that pattern consistent across samples and treatments?
+
+**H1 - combined protein reduction:** the stp mutant has reduced Stp1 and reduced Stk1 relative to the parental strain. The stk mutant is expected to show reduced Stk1; we will check Stp1 rather than assume it is unaffected.
+
+**How to answer:** inspect individual total-proteome measurements for both enzymes in all nine groups, beginning with TSB. Compare enzyme abundance and detection patterns with the parental strain. Interpret neighboring-gene measurements as supporting context. The pattern may be consistent with a polar effect, but does not prove transcriptional polarity.
+
+### RQ2: Do the mutations change the response to supernatant?
+
+Does changing from TSB to SN produce different protein-abundance or phosphorylation responses in a mutant compared with the parental strain?
+
+**H2 - genotype-dependent response:** a subset of reliable features has a different TSB-to-SN response in stk and/or stp relative to anc. This is an interaction hypothesis, rather than simply a prediction that mutants differ at baseline.
+
+**How to answer:** use the stk-versus-anc and stp-versus-anc TSB-versus-SN interaction contrasts, with effect sizes, uncertainty and multiple-testing adjustment. Inspect per-sample values for selected candidates.
+
+### RQ3: Does stp show kinase-mutant-like responses?
+
+Are some altered exposure responses shared by stp and stk, as expected if reduced Stk1 contributes to the stp phenotype? Which responses distinguish them?
+
+**H3 - shared response component:** some features show same-direction deviations from the parental response in both mutants, consistent with shared consequences of reduced kinase function. Other features may differ because the mutant protein profiles are not identical.
+
+**How to answer:** compare the interaction effect sizes and use the direct stp-versus-stk interaction to assess differences. A shared-reference correlation or a nonsignificant difference alone will not establish equivalence or a common mechanism.
+
+### Literature-guided interpretation: could kinase reduction mask phosphatase-loss effects?
+
+Published suppression experiments motivate the possibility that accompanying kinase reduction masks some effects expected from loss of Stp1 alone. We will discuss whether supported molecular patterns are consistent with that possibility. It is not a directly testable causal rescue hypothesis in this design: we lack a clean stp-only deletion retaining Stk1, a verified double deletion and complemented strains. Mutant similarity does not mean either mutant has returned to normal.
 
 Alternative explanations include altered protein stability or regulation, additional mutations, sample problems and changes driven by protein abundance rather than phosphorylation. We will retain contradictory observations.
 

@@ -50,3 +50,11 @@ Codex inspected repository documentation, archive contents, checksums and metada
 - Confirmed the current chat is local Codex, named Assess BIO253 datasets and projects. Only the current local host is exposed to the app tools.
 - Documented supported remote access, its host-online requirement, separate Git file updates, and the distinction from a static share link. Pairing and second-PC access remain unverified and require user setup in the app.
 - Published the selected project documents and connection guide on GitHub main so the second checkout can obtain the same saved decisions. Raw data remain excluded. This does not synchronize chat history; device pairing remains unverified.
+
+## Updated project questions and hypotheses
+- At the user's request, clarified PROJECT_PLAN.md as the current project reference for both PCs.
+- RQ1/H1: assess the actual Stp1/Stk1 protein profiles, including accompanying Stk1 reduction in stp.
+- RQ2/H2: test genotype-dependent TSB-to-SN responses through interaction contrasts.
+- RQ3/H3: evaluate shared kinase-mutant-like and distinct stp responses, including the direct stp-versus-stk interaction.
+- Kept the proposed rescue/suppression interpretation explicitly separate from what this three-genotype observational comparison can demonstrate.
+- Codex edited documentation and checked Git formatting and publication. No biological analysis or new results; course measurements remain excluded from GitHub.
