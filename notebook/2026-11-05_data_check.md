@@ -64,3 +64,8 @@ Codex inspected repository documentation, archive contents, checksums and metada
 - Made Topic C explicit in the plan heading, working title and repository README. Put mutant validation first, followed by the possible polar effect, interaction contrasts and suppression interpretation.
 - Retained RQ1-RQ3 and H1-H3. Protein-abundance adjustment is a supporting check rather than the main project aim.
 - Codex checked the documentation diff and published the update to main. No analysis code or course measurements changed.
+
+## Finding the revised question on the other PC
+- User reported being unable to find the revised question. Verified PROJECT_PLAN.md directly through GitHub at main commit b986f30; RQ1-RQ3 and H1-H3 are present.
+- Added an immediate start-here link and the revised main question plus three short hypotheses to README.md, so they also appear on the repository front page.
+- The other PC's repository path, remote, branch and chat context have not been checked; no diagnosis of that device is assumed. No course data or biological results changed.

@@ -1,5 +1,7 @@
 # Bio253 – *S. aureus* JE2 proteome & phosphoproteome: DIN Vuckics Repo Fork
 
+**Start here: [our revised Topic C question, hypotheses and project plan](PROJECT_PLAN.md).**
+
 Starter code for the Bio253 block course (UZH/ETHZ, HS2026). You work in small groups
 (2–3 people) on a **fresh, unpublished** proteomics data set of *Staphylococcus aureus*
 JE2. You'll formulate hypotheses, test them in R, and use an AI coding agent
@@ -14,6 +16,16 @@ Lecturer: Jonas Grossmann and José Luis Ruiz Rodriguez (Functional Genomics Cen
 ## Selected group project: Topic C
 
 Our chosen project is **Topic C: Are the Stk1/Stp1 mutants what their labels say?** We validate the mutant protein profiles, investigate possible polar effects, and compare genotype-dependent responses to supernatant: does the `stp` mutant also have reduced Stk1, and does its response resemble the `stk` mutant? See the [Project C plan, questions and hypotheses](PROJECT_PLAN.md) and [rescue/suppression literature review](docs/stk_stp_rescue_evidence.md). These documents state hypotheses and interpretation limits, not analysis results.
+
+**Revised main question:** Does disruption of `stp1` also reduce Stk1 protein abundance through a possible polar effect, and do the `stp` and `stk` mutants show similar protein-abundance and phosphorylation responses to *Pseudomonas aeruginosa* supernatant?
+
+**Hypotheses to test:**
+
+- **H1 - mutant validation:** `stp` has reduced Stp1 and accompanying reduction of Stk1, consistent with a possible polar effect.
+- **H2 - interaction response:** some TSB-to-SN responses differ between a mutant and the parental strain.
+- **H3 - shared mutant response:** some altered exposure responses are shared by `stp` and `stk`, consistent with a contribution from reduced kinase function.
+
+Interaction contrasts distinguish baseline mutant differences from differences in the response to exposure. Published rescue/suppression experiments guide interpretation, but our dataset cannot prove a polar mechanism or causal rescue. Full methods and limitations are in [PROJECT_PLAN.md](PROJECT_PLAN.md).
 
 For continuing the same conversation and project on another computer, see [working on two PCs](docs/WORKING_ON_TWO_PCS.md). Chat access and Git file updates are separate.
 
