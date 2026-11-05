@@ -49,4 +49,4 @@ Codex inspected repository documentation, archive contents, checksums and metada
 - User requested the same current chat on both PCs and reports a dataset copy on the other PC.
 - Confirmed the current chat is local Codex, named Assess BIO253 datasets and projects. Only the current local host is exposed to the app tools.
 - Documented supported remote access, its host-online requirement, separate Git file updates, and the distinction from a static share link. Pairing and second-PC access remain unverified and require user setup in the app.
-- Preparing the selected project documents for GitHub so the second checkout can obtain the same saved decisions. Raw data remain excluded.
+- Published the selected project documents and connection guide on GitHub main so the second checkout can obtain the same saved decisions. Raw data remain excluded. This does not synchronize chat history; device pairing remains unverified.
