@@ -58,3 +58,9 @@ Codex inspected repository documentation, archive contents, checksums and metada
 - RQ3/H3: evaluate shared kinase-mutant-like and distinct stp responses, including the direct stp-versus-stk interaction.
 - Kept the proposed rescue/suppression interpretation explicitly separate from what this three-genotype observational comparison can demonstrate.
 - Codex edited documentation and checked Git formatting and publication. No biological analysis or new results; course measurements remain excluded from GitHub.
+
+## Explicit Topic C scope
+- User reaffirmed that the project plan must be about course topic C and requested publication for pulling on the other PC.
+- Made Topic C explicit in the plan heading, working title and repository README. Put mutant validation first, followed by the possible polar effect, interaction contrasts and suppression interpretation.
+- Retained RQ1-RQ3 and H1-H3. Protein-abundance adjustment is a supporting check rather than the main project aim.
+- Codex checked the documentation diff and published the update to main. No analysis code or course measurements changed.

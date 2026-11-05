@@ -1,12 +1,21 @@
-# Selected BIO253 project: mutant validation, polar effects and exposure responses
+# BIO253 Project C: Are the Stk1/Stp1 mutants what their labels say?
 
-Status: chosen project, agreed 5 November 2026. This replaces the earlier provisional topic-H plan. Protein-abundance adjustment remains a supporting method for selected phosphosites.
+**Selected course topic: C - mutant validation.** Agreed 5 November 2026, extended to include possible polar effects, genotype-by-condition interaction contrasts, and literature-guided interpretation of suppression/rescue.
 
 This is the current project reference for both PCs. Research questions and hypotheses were clarified on 5 November 2026. The hypotheses below are predictions to test, not results from our dataset.
 
 ## Working title
 
-Does the stp mutant behave like a kinase mutant during Pseudomonas-supernatant exposure?
+Project C: Mutant validation and polar effects - does the stp mutant behave like a kinase mutant during Pseudomonas-supernatant exposure?
+
+## Project focus
+
+The project starts with **whether the mutant labels accurately describe the measured Stp1/Stk1 protein profiles**. We then investigate the consequences for responses to supernatant. Matching selected phosphosite changes to total-protein changes is a supporting check, not the main research question.
+
+1. **Validate the mutants:** establish Stp1 and Stk1 abundance and detection in anc, stk and stp.
+2. **Investigate the possible polar effect:** assess accompanying Stk1 reduction in stp, neighboring-gene context and alternative explanations.
+3. **Test the consequences:** use interaction contrasts to compare TSB-to-SN responses across genotypes.
+4. **Interpret shared responses:** assess whether stp resembles stk, and discuss possible masking/suppression using published evidence. This dataset cannot demonstrate causal rescue.
 
 ## Main question
 

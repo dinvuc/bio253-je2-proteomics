@@ -11,9 +11,9 @@ Lecturer: Jonas Grossmann and José Luis Ruiz Rodriguez (Functional Genomics Cen
 > [data/README.md](data/README.md)). Your code and rendered reports are — you hand in
 > your work by pushing your clone of this repo to GitHub (see *Handing in*).
 
-## Selected group project
+## Selected group project: Topic C
 
-Our chosen project is **mutant validation, possible polar effects, and genotype-dependent responses to supernatant**: does the `stp` mutant also have reduced Stk1, and does its response resemble the `stk` mutant? See the [fixed project plan](PROJECT_PLAN.md) and [rescue/suppression literature review](docs/stk_stp_rescue_evidence.md). These documents state hypotheses and interpretation limits, not analysis results.
+Our chosen project is **Topic C: Are the Stk1/Stp1 mutants what their labels say?** We validate the mutant protein profiles, investigate possible polar effects, and compare genotype-dependent responses to supernatant: does the `stp` mutant also have reduced Stk1, and does its response resemble the `stk` mutant? See the [Project C plan, questions and hypotheses](PROJECT_PLAN.md) and [rescue/suppression literature review](docs/stk_stp_rescue_evidence.md). These documents state hypotheses and interpretation limits, not analysis results.
 
 For continuing the same conversation and project on another computer, see [working on two PCs](docs/WORKING_ON_TWO_PCS.md). Chat access and Git file updates are separate.
 
