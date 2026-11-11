@@ -2,6 +2,8 @@
 
 **Start here: [our revised Topic C question, hypotheses and project plan](PROJECT_PLAN.md).**
 
+For the practical sequence, required inputs and purpose of each analysis, follow the [step-by-step project workflow](PROJECT_WORKFLOW.md).
+
 Starter code for the Bio253 block course (UZH/ETHZ, HS2026). You work in small groups
 (2–3 people) on a **fresh, unpublished** proteomics data set of *Staphylococcus aureus*
 JE2. You'll formulate hypotheses, test them in R, and use an AI coding agent
