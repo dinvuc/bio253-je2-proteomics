@@ -4,6 +4,7 @@
 cran <- c(
   "tidyverse",   # dplyr, tidyr, readr, stringr, ggplot2, purrr, tibble
   "readxl",      # read the prolfquapp Excel files (only needed by 00_fetch_data.R)
+  "data.table",  # fast read of the big msstats.csv (only needed by 00_fetch_data.R)
   "ggrepel",     # non-overlapping labels in volcano plots (optional)
   "patchwork",   # combine plots (optional)
   "testthat",    # tests/

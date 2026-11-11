@@ -89,6 +89,52 @@ read_sites <- function(search = "STYH", drop_contaminants = TRUE) {
   add_annotation(as_design_factors(x))
 }
 
+#' Peptide-level evidence for the total proteome (one row per peptide x sample).
+#'
+#' This is the table the DEA was built from, BEFORE peptides were rolled up
+#' into protein values. Use it when you need to know WHICH PART of a protein
+#' was actually seen -- for example on either side of a transposon insertion
+#' (notebook 07).
+#'
+#' Columns: peptide, protein_start / protein_end (position of the peptide in
+#' the protein), intensity (NA = not detected in that sample), plus the usual
+#' sample / genotype / medium / replicate columns.
+#' Note that `peptide` still carries modification tags like "M[15.9949]"; the
+#' column `peptide_plain` has them stripped.
+read_peptides <- function(drop_contaminants = TRUE) {
+  x <- read_tsv(check_derived("peptides_total.tsv.gz"), show_col_types = FALSE)
+  if (drop_contaminants) x <- filter(x, !is_contaminant)
+  add_annotation(as_design_factors(x))
+}
+
+#' Metadata for every entry of the search database (4,155 rows x 80 columns).
+#'
+#' Unlike the other read_* functions this one does NOT need the course data:
+#' it ships with the repository in reference/, because it is built entirely
+#' from public sources (the NCBI genome annotation, UniProt UP000008816 and
+#' STRING v12) plus the FASTA description lines.
+#'
+#' Useful columns: `uniprot_acc` + `blastortho_evalue` + `ortholog_quality`
+#' (for mapping to UniProt-based tools), `gene_symbol_best`, `up_protein_name`,
+#' `up_ec`, `start`/`end`/`strand`, and the collapsed GO / KEGG / STRING
+#' annotation. See reference/README_protein_metadata.md for all 80.
+#'
+#' @param cds_only keep only real coding sequences (drops the 6-frame
+#'   pseudogene translations and the contaminant entries).
+read_protein_metadata <- function(cds_only = FALSE) {
+  x <- read_tsv(file.path(REPO_ROOT, "reference", "JE2_protein_metadata.tsv.gz"),
+                show_col_types = FALSE)
+  if (cds_only) x <- filter(x, entry_class == "cds")
+  x
+}
+
+#' The STRING / GO / KEGG annotation in long format: one row per protein x term.
+#' Easier to filter than the collapsed columns of read_protein_metadata().
+read_protein_terms <- function() {
+  read_tsv(file.path(REPO_ROOT, "reference", "JE2_protein_terms.tsv.gz"),
+           show_col_types = FALSE)
+}
+
 #' Sample sheet: one row per sample with genotype, medium, replicate.
 read_samples <- function() {
   as_design_factors(read_tsv(check_derived("samples.tsv"), show_col_types = FALSE))

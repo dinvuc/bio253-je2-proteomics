@@ -58,6 +58,8 @@ data/derived/                        tidy long tables (tab-separated, gzipped)
   dea_<dataset>.tsv.gz               DEA results, one row per protein/site x contrast
   abundances_<dataset>.tsv.gz        normalised abundances, one row per protein/site x sample
   sites_STY.tsv.gz, sites_STYH.tsv.gz  FragPipe sites, one row per site x sample (0 -> NA)
+  peptides_total.tsv.gz              peptide-level evidence, one row per peptide x sample,
+                                     with the peptide's position in the protein (notebook 07)
 data/reference/                      lecturer reference tables, if available (e.g. pHis tiers)
 ```
 

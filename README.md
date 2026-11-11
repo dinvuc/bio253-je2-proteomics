@@ -105,6 +105,7 @@ sites <- read_sites("STYH")                 # FragPipe phospho-sites, long forma
 | `scripts/00_fetch_data.R` | lecturer only: rebuilds `data/` from the original course folder |
 | `data/checksums.md5`, `data/check_data.sh/.R` | MD5 check of everything extracted from the course data zip |
 | `analyses/` | exercise notebooks (Quarto, R) |
+| `reference/` | **protein metadata for all 4,155 database entries** (UniProt accession + e-value, gene symbol, EC, GO/KEGG/STRING) + the ErmB proposal |
 | `notebook/` | **your** lab notebook: one dated entry per session |
 | `tests/` | `testthat` checks of the helpers and of the sign convention |
 | `data/` | local data only (git-ignored), see `data/README.md` |
@@ -120,6 +121,7 @@ sites <- read_sites("STYH")                 # FragPipe phospho-sites, long forma
 | `04_phospho_two_roadmaps.qmd` | Sparse phospho data: reproducible vs exploratory analysis |
 | `05_histidine_phospho.qmd` | Is there phospho-histidine, and how sure can we be? |
 | `06_template_your_question.qmd` | Template for your own question |
+| `07_transposon_mutants.qmd` | Follow-up for the mutant group: what the transposon broke, down to the residue, checked at peptide level |
 
 Each notebook renders on its own in under a minute. Start with 01 and 02. Then pick
 a topic as a group and copy 06.

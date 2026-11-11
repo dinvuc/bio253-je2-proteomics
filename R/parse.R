@@ -134,6 +134,44 @@ parse_abundance_excel <- function(xlsx) {
   out
 }
 
+# ---- Peptide-level table (MSstats export) -----------------------------------
+
+#' Turn the MSstats export (msstats.csv, ~2 million rows) into a peptide-level
+#' table: one row per peptide x sample.
+#'
+#' Why we need it: the DEA works on PROTEIN values, which are a summary over
+#' all peptides of a protein. To ask "which PART of the protein did we see?"
+#' -- the question a transposon insertion raises -- we need the individual
+#' peptides and their positions in the protein (Protein.Start / Protein.End).
+#'
+#' One peptide can be measured as several precursors (charge states); we sum
+#' their intensities. Intensity NA means "not detected in that sample".
+parse_msstats_peptides <- function(csv) {
+  x <- data.table::fread(
+    csv,
+    select = c("ProteinName", "PeptideSequence", "Protein.Start", "Protein.End",
+               "Run", "Intensity"),
+    showProgress = FALSE)
+  x <- x[!is.na(Intensity), .(intensity = sum(Intensity)),
+         by = .(ProteinName, PeptideSequence, Protein.Start, Protein.End, Run)]
+  samples <- distinct(parse_sample_name(unique(x$Run)))
+  tibble::as_tibble(x) |>
+    transmute(protein_key = protein_key(ProteinName),
+              peptide = PeptideSequence,
+              # strip modification tags: "M[15.9949]LEAQ..." -> "MLEAQ..."
+              peptide_plain = str_remove_all(PeptideSequence, "\\[[^]]*\\]|^n"),
+              protein_start = Protein.Start,
+              protein_end = Protein.End,
+              # the FGCZ database marks contaminants two ways: "contam_sp|..."
+              # entries and "tr|zz_...|" entries. protein_key() has already
+              # stripped the leading "tr|", so test the key, not the raw name.
+              is_contaminant = str_detect(protein_key, "^contam_|^zz_"),
+              input = Run,
+              intensity) |>
+    left_join(samples, by = "input") |>
+    select(-input)
+}
+
 # ---- FragPipe combined_site table -------------------------------------------
 
 #' Turn a FragPipe combined_site_*.tsv (one row per site, three columns per

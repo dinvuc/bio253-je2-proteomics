@@ -4,6 +4,7 @@ c7d8cd3ccd6f24b8571b85ef7b814ed9  derived/abundances_total.tsv.gz
 cb22d816bde4f6b599e7e1d644c51f57  derived/dea_phospho_STY.tsv.gz
 e1fc14822eebe883eb2ce64709e77197  derived/dea_phospho_STYH.tsv.gz
 1cf599e0f0f8a7025395d0b40c4d4af9  derived/dea_total.tsv.gz
+c68ce9ab3f5002baa17a586d8bbbffa7  derived/peptides_total.tsv.gz
 bc3b578a4156f76663ef0296d432ea1e  derived/protein_annotation.tsv.gz
 cd2b923813f90162f8e8b1df4bbc0490  derived/samples.tsv
 ad5f276ed54abd95f12dde80d91d668f  derived/sites_STY.tsv.gz

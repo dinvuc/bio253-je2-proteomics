@@ -51,6 +51,41 @@ medium_x_axis <- function() {
                      limits = c(0.6, length(MEDIA) + 0.4))
 }
 
+#' Peptide map of one protein: where along the sequence was it actually seen,
+#' and in how many samples of each genotype?
+#'
+#' Each horizontal segment is one peptide, drawn at its position in the
+#' protein. Darker = detected in more of the 9 samples of that genotype.
+#' This is the plot that makes a transposon insertion visible: peptides
+#' downstream of the insertion disappear in the mutant.
+#'
+#' @param locus the locus tag, e.g. "B7H15_06350"
+#' @param peptides table from read_peptides()
+#' @param insertion_codon optional: draw a dashed line at this residue
+plot_peptide_coverage <- function(locus, peptides = read_peptides(),
+                                  insertion_codon = NULL) {
+  x <- filter(peptides, locus_tag == locus)
+  if (nrow(x) == 0) stop("No peptides found for ", locus)
+  cov <- x |>
+    group_by(genotype, peptide_plain, protein_start, protein_end) |>
+    summarise(n_samples = sum(!is.na(intensity)), .groups = "drop") |>
+    filter(n_samples > 0)
+  p <- ggplot(cov, aes(y = reorder(peptide_plain, protein_start))) +
+    geom_segment(aes(x = protein_start, xend = protein_end,
+                     yend = after_stat(y), colour = n_samples), linewidth = 2.5) +
+    facet_wrap(~genotype, nrow = 1) +
+    scale_colour_viridis_c(limits = c(0, 9), direction = -1, option = "mako",
+                           name = "samples\nwith a value\n(of 9)") +
+    labs(x = "residue in the protein", y = NULL,
+         title = paste("Peptide coverage of", locus)) +
+    theme(axis.text.y = element_text(size = 6))
+  if (!is.null(insertion_codon)) {
+    p <- p + geom_vline(xintercept = insertion_codon, linetype = 2, colour = "#c0392b") +
+      labs(subtitle = paste("dashed line = transposon insertion at codon", insertion_codon))
+  }
+  p
+}
+
 #' Per-sample log2 intensities of phospho sites (from read_sites()).
 plot_sites <- function(site_ids, sites) {
   x <- filter(sites, site_id %in% site_ids) |>

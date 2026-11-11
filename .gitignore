@@ -18,8 +18,16 @@ data/*
 combined_site*.tsv
 *.fasta
 *.gff
+# ...but reference/ holds PUBLIC reference data (ErmB, the protein metadata
+# built from NCBI/UniProt/STRING), not unpublished course data:
+!reference/*.fasta
+!reference/*.tsv.gz
 
-# ---- Quarto caches (rendered reports themselves ARE committed) -----------
+# ---- Rendered exercise notebooks and Quarto caches ------------------------
+# analyses/_output/ holds the WORKED exercise notebooks -- never commit those,
+# they give the answers away. Your own final report goes in reports/ and IS
+# committed (see "Handing in" in README.md).
+analyses/_output/
 analyses/*_files/
 analyses/.quarto/
 .quarto/

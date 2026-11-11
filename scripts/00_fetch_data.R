@@ -55,6 +55,12 @@ files <- c(
     "more_resources/stringDBresources/STRG0A35SHG.protein.physical.links.v12.0.txt"
 )
 
+# Peptide-level evidence behind the total-proteome DEA (needed by notebook 07).
+# This one is NOT copied into data/raw/: msstats.csv is ~430 MB, and we only
+# need the ~10 MB tidy summary of it. It is read straight from the course folder.
+MSSTATS_SOURCE <- file.path(
+  "DEAs/DEA_20261029_WUtotal_JE2_Oct26_vsn/Inputs_WU_total_JE2_Oct26/msstats.csv")
+
 raw_dir <- file.path(REPO_ROOT, "data", "raw")
 derived_dir <- file.path(REPO_ROOT, "data", "derived")
 dir.create(raw_dir, showWarnings = FALSE, recursive = TRUE)
@@ -112,6 +118,13 @@ for (ds in names(excel)) {
   abund <- parse_abundance_excel(raw(excel[[ds]]))
   if (anyNA(abund$sample)) stop("Some sample names could not be parsed in ", excel[[ds]])
   write_derived(abund, paste0("abundances_", ds, ".tsv.gz"))
+}
+
+msstats <- file.path(source_dir, MSSTATS_SOURCE)
+if (file.exists(msstats)) {
+  write_derived(parse_msstats_peptides(msstats), "peptides_total.tsv.gz")
+} else {
+  message("  (msstats.csv not found -- skipping peptides_total; notebook 07 needs it)")
 }
 
 for (s in c("STY", "STYH")) {

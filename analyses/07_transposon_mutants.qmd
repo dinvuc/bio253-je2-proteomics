@@ -1,0 +1,315 @@
+---
+title: "07 – What exactly did the transposon break?"
+subtitle: "Bio253 HS2026 · follow-up for the mutant group"
+---
+
+::: {.callout-note}
+## How to use this notebook
+This continues where notebook 03 stopped. There we found two things we could
+not explain. Here we get to the bottom of both, using information about the
+mutants that is **not** in the proteomics data, plus a layer of the data you
+have not touched yet: the **individual peptides**.
+
+Work top to bottom. The grey boxes marked *Your answer* are yours to fill in.
+Several sections have a collapsed "check yourself" box – open it only after
+you wrote your own answer.
+:::
+
+```{r setup}
+source("../R/setup.R")
+abundances <- read_abundances("total")
+```
+
+## 1. The two open questions from notebook 03
+
+Remember what we saw:
+
+1. The `stp` strain is supposed to lack only the phosphatase Stp1 – but **Stk1
+   is missing there too**.
+2. Stp1 itself behaved strangely in `stp`: not cleanly absent, but **erratic**,
+   with a few samples showing almost wild-type values.
+
+```{r recap, fig.width = 9, fig.height = 3.6}
+plot_protein(c("B7H15_06350", "B7H15_06355"), abundances)
+```
+
+> *Your answer:* write down, in one sentence each, the two things in this plot
+> that a "clean single knock-out" would NOT look like.
+
+## 2. What the Nebraska library actually puts into the genome
+
+Our strains come from the **Nebraska Transposon Mutant Library (NTML)**
+[(Fey et al. 2013, mBio)](https://doi.org/10.1128/mBio.00537-12). Knowing what
+is inserted explains a lot.
+
+The transposon is **bursa aurealis**, a *mariner*-family element:
+
+| property | value |
+|---|---|
+| length | **3,237 bp** including the terminal inverted repeats |
+| carries | **`ermB`** (erythromycin resistance – how the mutants are selected) and **`gfp`** |
+| delivered by | plasmid **pBursa** (7,383 bp, temperature-sensitive) |
+| transposase | from a second plasmid, **pFA545** (also temperature-sensitive) |
+| after mutagenesis | both plasmids are removed by growth at 45 °C; only the transposon stays |
+
+Our two strains have catalogue numbers **NE217** (*stk1*) and **NE1919**
+(*stp1*) – the same two that Prust et al. 2021 used, which is handy, because we
+can compare results directly.
+
+The insertion coordinates come from the
+[NTML insertion map](https://ntml.unmc.edu/tninsertionmap):
+
+```{r insertions}
+TRANSPOSON_INSERTIONS
+```
+
+::: {.callout-important}
+## The one thing to take from this table
+3,237 bp is **long**. Our two genes are only 744 bp (*stp1*) and 1,995 bp
+(*stk1*). The insert is bigger than the gene it lands in.
+:::
+
+## 3. Exercise: where exactly does the insertion land?
+
+The table gives a position in the genome. Turn it into something biological:
+*which amino acid of the protein does the transposon interrupt?*
+
+Fill in the three missing lines. You need: the position inside the coding
+sequence, the codon number, and the length of the protein in amino acids.
+(Remember a codon is 3 nucleotides, and the last codon is the stop codon.)
+
+```{r where, eval = FALSE}
+insertions <- TRANSPOSON_INSERTIONS |>
+  mutate(
+    cds_length  = cds_end - cds_start + 1,
+    protein_aa  = ___,                       # amino acids (mind the stop codon)
+    nt_into_cds = ___,                       # how far into the gene, in nucleotides
+    codon       = ___,                       # which codon is hit
+    percent     = round(100 * nt_into_cds / cds_length)
+  )
+insertions |> select(short_name, ntml_id, protein_aa, nt_into_cds, codon, percent)
+```
+
+> *Your answer:* for each mutant – which residue is hit, and how far into the
+> protein is that, as a percentage?
+
+::: {.callout-tip collapse="true"}
+## Check your numbers (open after you computed yours)
+
+```{r where-solution}
+insertions <- TRANSPOSON_INSERTIONS |>
+  mutate(
+    cds_length  = cds_end - cds_start + 1,
+    protein_aa  = cds_length %/% 3 - 1,
+    nt_into_cds = insertion_pos - cds_start + 1,
+    codon       = (nt_into_cds + 2) %/% 3,
+    percent     = round(100 * nt_into_cds / cds_length)
+  )
+insertions |> select(short_name, ntml_id, protein_aa, nt_into_cds, codon, percent)
+```
+
+So: *stk1* is hit at **codon 46 of 664** (7 % into the gene), but *stp1* at
+**codon 189 of 247** – **76 %** of the way through.
+
+That asymmetry matters. The NTML only kept mutants where the transposon landed
+"close to the 5′ end" of a gene, and NE1919 is a clear exception.
+:::
+
+## 4. A prediction you can actually test
+
+Here is the point of this notebook. A transposon at codon 189 of 247 splits
+Stp1 into two parts:
+
+* residues **1–188** are still in frame behind the native promoter,
+* residues **189–247** are separated from their start codon by 3.2 kb of
+  foreign DNA and **cannot be made**.
+
+The DEA works on **protein-level** numbers – one value per protein per sample,
+summarised over all its peptides. That summary cannot see this. But the
+**peptides** can.
+
+> *Your answer:* before you look – if a truncated Stp1 (residues 1–188) were
+> produced in the `stp` mutant, which peptides would you still expect to find,
+> and which not? And what would you expect if NO protein at all is made?
+
+## 5. The peptide layer
+
+`read_peptides()` gives you the table the DEA was built from, *before* peptides
+were rolled up into proteins. Each row is one peptide in one sample, with its
+position in the protein.
+
+```{r peptides}
+pep <- read_peptides()
+pep |> filter(locus_tag == "B7H15_06350") |> select(peptide_plain, protein_start, protein_end, sample, intensity) |> head(4)
+```
+
+Now draw the map. Each bar is a peptide, placed where it sits in the protein;
+darker means detected in more of the 9 samples of that genotype.
+
+```{r coverage-stp, fig.width = 10, fig.height = 5}
+plot_peptide_coverage("B7H15_06350", pep, insertion_codon = insertions$codon[insertions$short_name == "Stp1"])
+```
+
+```{r coverage-stk, fig.width = 10, fig.height = 7}
+plot_peptide_coverage("B7H15_06355", pep, insertion_codon = insertions$codon[insertions$short_name == "Stk1"])
+```
+
+And the same thing as a table – peptides detected before vs. after the
+insertion point, per genotype:
+
+```{r sides}
+sides <- insertions |>
+  select(short_name, locus_tag, codon) |>
+  left_join(pep, by = "locus_tag", relationship = "many-to-many") |>
+  mutate(side = case_when(protein_end   < codon ~ "before insertion",
+                          protein_start > codon ~ "after insertion",
+                          TRUE                  ~ "spans it")) |>
+  group_by(short_name, genotype, side) |>
+  summarise(distinct_peptides = n_distinct(peptide_plain[!is.na(intensity)]),
+            total_detections  = sum(!is.na(intensity)), .groups = "drop")
+sides |> tidyr::pivot_wider(names_from = genotype,
+                            values_from = c(distinct_peptides, total_detections))
+```
+
+> *Your answer:* does the `stp` column fit "truncated protein", "no protein at
+> all", or neither? Name the single strongest piece of evidence, and then name
+> the weakest point of your own argument.
+
+::: {.callout-tip collapse="true"}
+## What we see (open after you wrote your answer)
+
+For **Stp1**, the peptides that lie *after* codon 189 are found in essentially
+every `anc` and `stk` sample (24 and 23 detections) and almost never in `stp`
+(**1** detection, in a single run). The two that sit furthest downstream –
+`EGTIEDHGDQLMQLALDNHSK` (residues 212–232) and `DNVTFILAAIEGDKV` (233–247) –
+are absent from all nine `stp` samples. A handful of peptides from the front of
+the protein still turn up in `stp`, but only in one to three samples each.
+
+That is the signature you predicted for a truncation – and it explains the
+**erratic protein values**: the protein-level number was mixing N-terminal
+peptides that sometimes appear with C-terminal peptides that never do.
+
+Be honest about the limits, though: the few remaining N-terminal detections are
+sporadic, which is not what a stable, well-expressed truncated protein would
+look like. "Truncated and then degraded" and "spill-over between runs in DIA"
+both remain on the table. A good next step is to check *which* runs those
+detections come from.
+
+For **Stk1**, `stk` and `stp` are simply empty. Note that the absence of an
+N-terminal fragment proves little here: residues 1–45 produce almost no
+detectable tryptic peptides even in the wild type (look at the `anc` panel).
+:::
+
+## 6. Why the `stp` mutant also loses Stk1
+
+Now the first mystery. Look at where the two genes sit:
+
+```{r operon}
+find_protein(c("B7H15_06350", "B7H15_06355")) |> select(locus_tag, product, location)
+
+TRANSPOSON_INSERTIONS |>
+  summarise(stp1_ends = max(cds_end[short_name == "Stp1"]),
+            stk1_starts = min(cds_start[short_name == "Stk1"]),
+            gap_bp = stk1_starts - stp1_ends - 1)
+```
+
+> *Your answer:* what is the gap between the end of *stp1* and the start of
+> *stk1*? What does a negative number mean? And what does it tell you about how
+> the two genes are transcribed?
+
+::: {.callout-tip collapse="true"}
+## Check yourself
+The genes **overlap by 4 bp** – *stp1* ends at 1,233,038 and *stk1* starts at
+1,233,035. Overlapping stop/start codons are a hallmark of genes in one
+**operon**, transcribed as a single mRNA and translationally coupled.
+
+Drop 3.2 kb of foreign DNA into *stp1*, only 174 bp upstream of the *stk1*
+start, and transcription will very likely not read through into *stk1*. This is
+a **polar effect**, and it is exactly what the proteome shows.
+
+Fey et al. state plainly that they *"did not perform studies to assess the
+possibility of polar effects"* and that every phenotype must be confirmed by
+independent genetic means. Our `stp` strain is a concrete example of why.
+:::
+
+::: {.callout-warning}
+## Consequence for the whole course
+Every contrast involving `stp` – `stp_vs_anc`, `stp_vs_stk`, and every
+`interaction_stp_*` – compares the wild type against a strain that has lost
+**both** the phosphatase **and** (most of) the kinase. It is not a clean
+"phosphatase-only" mutant. Say this in your report, and say it whenever you
+interpret an `stp` result.
+:::
+
+## 7. Something that is missing from our search
+
+A thought that follows from section 2: if the transposon carries `ermB` and
+`gfp`, and those genes are expressed, then **ErmB protein should be in the
+mutant samples** – and in the wild type it cannot be.
+
+That would be a beautiful positive control: a protein that is present *because*
+of the transposon rather than absent because of it.
+
+Is it in our data?
+
+```{r ermb}
+#| message: true
+# Is there anything resembling ErmB in the search database?
+find_protein(c("erythromycin", "rRNA adenine N-6", "macrolide"))
+nrow(read_annotation())   # how many entries the database has in total
+```
+
+GFP is a different story – it *is* in the FASTA, but only because the FGCZ
+contaminant list happens to contain it (entry `zz_Y-FGCZCont00258_`, the
+*Aequorea victoria* protein). So it was searchable. Was it found?
+
+```{r gfp}
+pep_all <- read_peptides(drop_contaminants = FALSE)
+pep_all |>
+  filter(protein_key == "zz_Y-FGCZCont00258_", !is.na(intensity)) |>
+  nrow()
+```
+
+> *Your answer:* can a search engine ever report a protein that is not in the
+> FASTA file it searched against? What does that mean for the question "is ErmB
+> there?"
+
+::: {.callout-tip collapse="true"}
+## The answer, and what we are doing about it
+No. A database search can only assign spectra to sequences that are **in the
+FASTA**. `ermB` is not in ours, so its spectra – if any were recorded – were
+either left unassigned or forced onto some other sequence. "Not found" here
+means "never looked for".
+
+GFP *is* in the FASTA, as a contaminant entry, and was **not** detected. That
+is weak evidence against GFP expression (the transposon carries a yeast
+codon-optimised *gfp* whose protein sequence may differ from the entry we have).
+
+So the honest answer is: **we cannot say yet.** The data would have to be
+re-searched against an extended FASTA. The repository contains a proposal for
+that in [`reference/`](../reference/) – see the README there. This is a real
+experiment, not a classroom exercise, and the lecturer has the raw files.
+:::
+
+## 8. Your conclusion
+
+> *Your answer:* three to five sentences. What is actually broken in each
+> mutant? Which of the two is a clean knock-out? What must a reader of your
+> report be told before they believe an `stp` result?
+
+### Discussion prompts
+
+* NE1919 sits at 76 % of *stp1*, against the library's own selection rule. Does
+  that make it a worse mutant – or could a truncated phosphatase be *worse than
+  useless*, for example still binding its substrate without dephosphorylating it?
+* The pre-experiment growth curves said the `stp` strain copes slightly
+  **better** with PASN than the wild type. Does that still make sense if `stp`
+  is really a double mutant, given that `stk` copes clearly **worse**?
+* Prust et al. derived Stk1 substrates by looking for sites that go **up** in
+  the *stp1* mutant, assuming Stk1 is still active there. What does our result
+  do to that assumption – for their paper, and for the group working on topic g?
+* How would you prove the polar effect properly, with a wet-lab experiment?
+
+```{r session}
+sessionInfo()
+```

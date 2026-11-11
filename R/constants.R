@@ -36,3 +36,25 @@ KEY_PROTEINS <- tibble::tribble(
 # Default thresholds used by the prolfquapp report (FDR < 0.1 and |log2FC| > 1).
 FDR_CUTOFF <- 0.1
 LFC_CUTOFF <- 1
+
+# ---- The two transposon mutants --------------------------------------------
+# Both strains come from the Nebraska Transposon Mutant Library (NTML), which
+# is built in JE2 with the mariner-based transposon "bursa aurealis":
+#   3,237 bp, carries ermB (erythromycin resistance) and gfp, delivered from the
+#   temperature-sensitive plasmid pBursa, transposase supplied from pFA545.
+# Insertion coordinates are from the NTML Tn insertion map (JE2 numbering),
+# https://ntml.unmc.edu/tninsertionmap ; the same two mutants were used by
+# Prust et al. 2021 (Mol Cell Proteomics), who call them NE217 and NE1919.
+#
+# `insertion_pos` is the position in the JE2 genome (CP020619.1); cds_start /
+# cds_end come from the JE2 annotation. Notebook 07 recomputes `codon` from
+# these numbers rather than trusting the table, which is the point of the
+# exercise.
+TRANSPOSON_INSERTIONS <- tibble::tribble(
+  ~short_name, ~ntml_id,  ~locus_tag,    ~cds_start, ~cds_end,  ~insertion_pos, ~orientation,
+  "Stp1",      "NE1919",  "B7H15_06350",    1232295,  1233038,         1232861, "F",
+  "Stk1",      "NE217",   "B7H15_06355",    1233035,  1235029,         1233171, "F"
+)
+
+# Size of the inserted element, for the polar-effect discussion in notebook 07.
+TRANSPOSON_LENGTH_BP <- 3237

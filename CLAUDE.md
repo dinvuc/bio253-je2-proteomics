@@ -49,8 +49,16 @@ use small steps and short code, and explain *why*.
   like `2anc_pulseSN_1` are already repaired to `JE2anc_pulseSN_1` in `data/derived/`.
 - Phospho samples `stk_pulseSN_1/2` were re-injected on a different day (possible batch effect;
   column `reinjected`).
-- The `stp` strain also has strongly reduced Stk1 (likely a polar effect). Remind
-  students of this when they interpret `stp_vs_anc`.
+- The `stp` strain also has strongly reduced Stk1 (a polar effect). Remind
+  students of this when they interpret `stp_vs_anc`, `stp_vs_stk` or any
+  `interaction_stp_*`: that strain lacks the phosphatase AND most of the kinase.
+- Both mutants are NTML strains carrying the 3,237 bp `bursa aurealis`
+  transposon (markers `ermB` + `gfp`). NE217 hits *stk1* at codon 46 of 664;
+  NE1919 hits *stp1* at codon 189 of 247 (76 % into the gene). *stp1* and *stk1*
+  overlap by 4 bp, i.e. one operon. See `TRANSPOSON_INSERTIONS` in
+  `R/constants.R` and notebook 07.
+- `ermB` is NOT in the search FASTA, so "ErmB not found" means "never looked
+  for", not "not there". See `reference/README.md`.
 
 ## Data layout (local only, git-ignored)
 
@@ -68,12 +76,17 @@ and the NCTC8325 UniProt ortholog `staa8_uniprot`):
 | `read_dea("total" / "phospho_STYH" / "phospho_STY")` | prolfquapp DEA, one row per protein/site × contrast (33 contrasts) |
 | `read_abundances(...)` | normalised log2 abundances per sample (`normalized_abundance`, NA = not detected) |
 | `read_sites("STYH" / "STY")` | FragPipe combined_site table, long; `intensity` NA = not detected; `best_loc_prob`, `residue`, `position`, `peptide` |
+| `read_peptides()` | peptide-level evidence behind the total proteome: one row per peptide x sample, with `protein_start` / `protein_end`. Use it to ask WHICH PART of a protein was seen (notebook 07) |
+| `read_protein_metadata(cds_only=)` | the big annotation table in `reference/` (ships with the repo, no course data needed): `uniprot_acc` + `blastortho_evalue` + `ortholog_quality`, `gene_symbol_best`, `up_protein_name`, `up_ec`, coordinates, GO/KEGG/STRING |
+| `read_protein_terms()` | the same annotation long: protein x term |
 | `read_samples()`, `read_annotation()` | sample sheet; protein annotation from the FASTA |
 | `find_protein(query)` | search locus tag / product / protein_id / UniProt |
-| `plot_protein()`, `plot_sites()`, `volcano()`, `count_hits()`, `explain_contrast()` | plotting and summaries |
+| `plot_protein()`, `plot_sites()`, `plot_peptide_coverage()`, `volcano()`, `count_hits()`, `explain_contrast()` | plotting and summaries |
 
 Proteins are identified by **locus tag** (`B7H15_xxxxx`, JE2 genome CP020619.1);
-`gene_name` is empty. Key proteins are listed in `KEY_PROTEINS` (`R/constants.R`).
+`gene_name` is empty in the DEA tables. For a UniProt accession, a gene symbol
+or GO/KEGG terms use `read_protein_metadata()`; filter weak ortholog calls with
+`ortholog_quality == "good"`. Key proteins are listed in `KEY_PROTEINS` (`R/constants.R`).
 The STY phospho DEA is an older run (moderated linear model, no imputation). The
 STYH DEA uses `lm_impute`, like the total proteome.
 
