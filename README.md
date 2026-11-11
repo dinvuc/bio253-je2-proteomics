@@ -1,8 +1,8 @@
 # Bio253 – *S. aureus* JE2 proteome & phosphoproteome: DIN Vuckics Repo Fork
 
-**Start here: [our revised Topic C question, hypotheses and project plan](mval_medi/project_outlines/PROJECT_PLAN.md).**
+**Start here: [our revised Topic C question, hypotheses and project plan](mval_medi/project_outlines/PROJECT_PLAN_mval.md).**
 
-For the practical sequence, required inputs and purpose of each analysis, follow the [step-by-step project workflow](mval_medi/project_outlines/PROJECT_WORKFLOW.md).
+For the practical sequence, required inputs and purpose of each analysis, follow the [step-by-step project workflow](mval_medi/project_outlines/PROJECT_WORKFLOW_mval.md).
 
 Starter code for the Bio253 block course (UZH/ETHZ, HS2026). You work in small groups
 (2–3 people) on a **fresh, unpublished** proteomics data set of *Staphylococcus aureus*
@@ -17,7 +17,7 @@ Lecturer: Jonas Grossmann and José Luis Ruiz Rodriguez (Functional Genomics Cen
 
 ## Selected group project: Topic C
 
-Our focused subsection is **Revised topic C: Does the `stp` mutant behave like a kinase mutant during supernatant exposure?** We validate the mutant protein profiles, investigate possible polar effects, and compare genotype-dependent responses to supernatant: does the `stp` mutant also have reduced Stk1, and does its response resemble the `stk` mutant? See the [Project C plan, questions and hypotheses](mval_medi/project_outlines/PROJECT_PLAN.md) and [rescue/suppression literature review](docs/stk_stp_rescue_evidence.md). These documents state hypotheses and interpretation limits, not analysis results.
+Our focused subsection is **Revised topic C: Does the `stp` mutant behave like a kinase mutant during supernatant exposure?** We validate the mutant protein profiles, investigate possible polar effects, and compare genotype-dependent responses to supernatant: does the `stp` mutant also have reduced Stk1, and does its response resemble the `stk` mutant? See the [Project C plan, questions and hypotheses](mval_medi/project_outlines/PROJECT_PLAN_mval.md) and [rescue/suppression literature review](docs/stk_stp_rescue_evidence.md). These documents state hypotheses and interpretation limits, not analysis results.
 
 **Revised main question:** Does disruption of `stp1` also reduce Stk1 protein abundance through a possible polar effect, and do the `stp` and `stk` mutants show similar protein-abundance responses to *Pseudomonas aeruginosa* supernatant?
 
@@ -29,7 +29,7 @@ Our focused subsection is **Revised topic C: Does the `stp` mutant behave like a
 - **H2 - interaction response:** some TSB-to-SN responses differ between a mutant and the parental strain.
 - **H3 - shared mutant response:** some altered exposure responses are shared by `stp` and `stk`, consistent with a contribution from reduced kinase function.
 
-Interaction contrasts distinguish baseline mutant differences from differences in the response to exposure. Published rescue/suppression experiments guide interpretation, but our dataset cannot prove a polar mechanism or causal rescue. Full methods and limitations are in [PROJECT_PLAN.md](mval_medi/project_outlines/PROJECT_PLAN.md).
+Interaction contrasts distinguish baseline mutant differences from differences in the response to exposure. Published rescue/suppression experiments guide interpretation, but our dataset cannot prove a polar mechanism or causal rescue. Full methods and limitations are in [PROJECT_PLAN_mval.md](mval_medi/project_outlines/PROJECT_PLAN_mval.md).
 
 For continuing the same conversation and project on another computer, see [working on two PCs](docs/WORKING_ON_TWO_PCS.md). Chat access and Git file updates are separate.
 

@@ -31,9 +31,9 @@ files.
 Before working on a task, read our project documents so the work fits our
 question and the agreed order of steps:
 
-- [Project plan](project_outlines/PROJECT_PLAN.md) — Topic C question,
+- [Project plan](project_outlines/PROJECT_PLAN_mval.md) — Topic C question,
   hypotheses, methods and limitations
-- [Project workflow](project_outlines/PROJECT_WORKFLOW.md) — step-by-step
+- [Project workflow](project_outlines/PROJECT_WORKFLOW_mval.md) — step-by-step
   analysis sequence, inputs and purpose of each step
 
 ## 3. Where our files live

@@ -1,6 +1,6 @@
 # Project C workflow: from mutant validation to a defensible conclusion
 
-Created 10 November 2026. This is the practical companion to [PROJECT_PLAN.md](PROJECT_PLAN.md), which defines our agreed research questions and hypotheses. Check off a step only after its output has been inspected and recorded.
+Created 10 November 2026. This is the practical companion to [PROJECT_PLAN_mval.md](PROJECT_PLAN_mval.md), which defines our agreed research questions and hypotheses. Check off a step only after its output has been inspected and recorded.
 
 ## What we want to produce
 
@@ -25,7 +25,7 @@ The wanted result is a reliable answer to each question, including uncertainty o
 
 | Requirement | Existing source or location | Purpose |
 |---|---|---|
-| Agreed hypotheses and design | `PROJECT_PLAN.md` | Keep the analysis focused on Topic C and distinguish predictions from findings. |
+| Agreed hypotheses and design | `PROJECT_PLAN_mval.md` | Keep the analysis focused on Topic C and distinguish predictions from findings. |
 | R, packages and Quarto | `install_packages.R`, `R/setup.R`, `tests/` | Run reproducible analysis and render readable reports. Record versions with `sessionInfo()`. |
 | Authentic course bundle | `data/checksums.md5`, `data/check_data.R` | Verify inputs before interpreting unexpected measurements. A previous check passed all 22 expected files on 5 November; recheck this working copy. |
 | Sample identities and exposure metadata | `read_samples()`, `data/derived/samples.tsv` | Assign genotype, medium, replicate and reinjection information correctly; prevent sample-join errors. |
