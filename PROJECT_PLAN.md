@@ -1,119 +1,75 @@
-# BIO253 Project C: Are the Stk1/Stp1 mutants what their labels say?
+# Revised topic C: Does the stp mutant behave like a kinase mutant during supernatant exposure?
 
-**Selected course topic: C - mutant validation.** Agreed 5 November 2026, extended to include possible polar effects, genotype-by-condition interaction contrasts, and literature-guided interpretation of suppression/rescue.
+**Current research goal, updated 5 November 2026.** This focused subsection of course topic C uses total-proteome protein abundance in TSB and SN. Phosphorylation responses, phosphosite analysis and protein adjustment of phospho signals are outside the agreed scope. The hypotheses below are predictions to test, not results from our dataset.
 
-This is the current project reference for both PCs. Research questions and hypotheses were clarified on 5 November 2026. The hypotheses below are predictions to test, not results from our dataset.
+## Research question
 
-## Working title
+Does disruption of `stp1` also reduce Stk1 protein abundance, consistent with a possible polar effect, and do the `stp` and `stk` mutants show similar protein-abundance responses to *Pseudomonas aeruginosa* supernatant?
 
-Project C: Mutant validation and polar effects - does the stp mutant behave like a kinase mutant during Pseudomonas-supernatant exposure?
+## Background
 
-## Project focus
+Stp1 removes phosphate groups from proteins, whereas Stk1 adds them. The neighboring `stp1` and `stk1` genes are described as an operon in the course material and literature reviewed in [the Stk1/Stp1 evidence review](docs/stk_stp_rescue_evidence.md). Disrupting `stp1` may also reduce expression of the neighboring `stk1` gene: a possible polar effect.
 
-The project starts with **whether the mutant labels accurately describe the measured Stp1/Stk1 protein profiles**. We then investigate the consequences for responses to supernatant. Matching selected phosphosite changes to total-protein changes is a supporting check, not the main research question.
+The `stp` mutant may therefore involve reduced function of both enzymes. Its behavior cannot automatically be explained by loss of the phosphatase alone. Total-proteome measurements can establish protein-abundance patterns consistent with this explanation; they cannot prove transcriptional polarity or enzyme activity.
 
-1. **Validate the mutants:** establish Stp1 and Stk1 abundance and detection in anc, stk and stp.
-2. **Investigate the possible polar effect:** assess accompanying Stk1 reduction in stp, neighboring-gene context and alternative explanations.
-3. **Test the consequences:** use interaction contrasts to compare TSB-to-SN responses across genotypes.
-4. **Interpret shared responses:** assess whether stp resembles stk, and discuss possible masking/suppression using published evidence. This dataset cannot demonstrate causal rescue.
+## Hypothesis
 
-## Main question
+The `stp` mutant has reduced amounts of both Stp1 and Stk1. Some of its protein-abundance responses to supernatant therefore resemble those of the `stk` mutant.
 
-Does the stp1 transposon mutant have reduced Stk1 as well as Stp1, and do its protein-abundance and phosphorylation responses to supernatant resemble those of the stk1 mutant?
+- **H1 - mutant profiles:** `stp` has reduced Stp1 and Stk1 relative to the parental strain. `stk` is expected to have reduced Stk1; Stp1 is checked rather than assumed unchanged.
+- **H2 - altered exposure response:** some protein-abundance changes from TSB to SN differ between a mutant and the parental strain.
+- **H3 - shared response component:** some proteins show same-direction deviations from the parental response in both mutants, consistent with a contribution from reduced Stk1 in `stp`. Other responses may distinguish the mutants.
 
-We will establish the measured mutant profiles, then use genotype-by-condition interactions to distinguish baseline differences from altered exposure responses. A polar effect is a proposed explanation for reduced Stk1, not a mechanism established by proteomics alone.
+## Part 1: Establish what is disrupted
 
-## Research questions and hypotheses
+Use the total-proteome dataset to examine Stp1 (`B7H15_06350`) and Stk1 (`B7H15_06355`) abundance in `anc`, `stk` and `stp`. Plot individual replicates and assess consistency across TSB and SN conditions. Inspect missingness and outliers; examine neighboring-gene products only as supporting context.
 
-### RQ1: What is actually disrupted in each mutant?
+Not detected is not proof of absence. Flag `estimate_type == "lod_imputed"`: such estimates support detection-pattern descriptions rather than precise fold-change magnitudes. Keep missing values as NA and investigate unexpected mutant signals rather than silently excluding samples.
 
-Does the stp1 insertion affect Stk1 protein abundance as well as Stp1, and is that pattern consistent across samples and treatments?
+## Part 2: Test whether the mutants respond similarly
 
-**H1 - combined protein reduction:** the stp mutant has reduced Stp1 and reduced Stk1 relative to the parental strain. The stk mutant is expected to show reduced Stk1; we will check Stp1 rather than assume it is unaffected.
+Use genotype-by-condition interaction contrasts to compare the change from TSB to SN:
 
-**How to answer:** inspect individual total-proteome measurements for both enzymes in all nine groups, beginning with TSB. Compare enzyme abundance and detection patterns with the parental strain. Interpret neighboring-gene measurements as supporting context. The pattern may be consistent with a polar effect, but does not prove transcriptional polarity.
+- Does the `stk` response differ from the parental response? `interaction_stk_vs_anc_at_TSB_vs_SN`
+- Does the `stp` response differ from the parental response? `interaction_stp_vs_anc_at_TSB_vs_SN`
+- Do the mutant responses differ from each other? `interaction_stp_vs_stk_at_TSB_vs_SN`
 
-### RQ2: Do the mutations change the response to supernatant?
+First examine baseline differences with `stk_vs_anc_at_TSB` and `stp_vs_anc_at_TSB`. These distinguish existing mutant differences from altered exposure responses.
 
-Does changing from TSB to SN produce different protein-abundance or phosphorylation responses in a mutant compared with the parental strain?
+Compare interaction effect sizes and uncertainty rather than only lists of significant results. Plot individual protein measurements for selected shared or distinct responses. Prioritize reliably observed measurements and report missing replicates and imputed estimates. Any formal screen must account for multiple testing; the course default is FDR < 0.1 and absolute log2 effect > 1, reported alongside estimates and uncertainty.
 
-**H2 - genotype-dependent response:** a subset of reliable features has a different TSB-to-SN response in stk and/or stp relative to anc. This is an interaction hypothesis, rather than simply a prediction that mutants differ at baseline.
+The first two interactions share the parental reference, so their correlation is descriptive and cannot independently establish a shared mechanism. Use the direct `stp`-versus-`stk` interaction to investigate differences. A nonsignificant difference does not establish equivalence, especially with three replicates per group.
 
-**How to answer:** use the stk-versus-anc and stp-versus-anc TSB-versus-SN interaction contrasts, with effect sizes, uncertainty and multiple-testing adjustment. Inspect per-sample values for selected candidates.
+### Contrast direction
 
-### RQ3: Does stp show kinase-mutant-like responses?
+The supplied contrasts use `A_vs_B = log2(A) - log2(B)`. For example:
 
-Are some altered exposure responses shared by stp and stk, as expected if reduced Stk1 contributes to the stp phenotype? Which responses distinguish them?
+`interaction_stp_vs_anc_at_TSB_vs_SN = (stp_TSB - stp_SN) - (anc_TSB - anc_SN)`
 
-**H3 - shared response component:** some features show same-direction deviations from the parental response in both mutants, consistent with shared consequences of reduced kinase function. Other features may differ because the mutant protein profiles are not identical.
-
-**How to answer:** compare the interaction effect sizes and use the direct stp-versus-stk interaction to assess differences. A shared-reference correlation or a nonsignificant difference alone will not establish equivalence or a common mechanism.
-
-### Literature-guided interpretation: could kinase reduction mask phosphatase-loss effects?
-
-Published suppression experiments motivate the possibility that accompanying kinase reduction masks some effects expected from loss of Stp1 alone. We will discuss whether supported molecular patterns are consistent with that possibility. It is not a directly testable causal rescue hypothesis in this design: we lack a clean stp-only deletion retaining Stk1, a verified double deletion and complemented strains. Mutant similarity does not mean either mutant has returned to normal.
-
-Alternative explanations include altered protein stability or regulation, additional mutations, sample problems and changes driven by protein abundance rather than phosphorylation. We will retain contradictory observations.
+A positive value means the TSB-minus-SN difference is more positive in `stp`. Equivalently, its SN-minus-TSB response is less positive or more negative than the parental response. Use `explain_contrast()` and state which group is higher when reporting abundance differences.
 
 ## Scope and design
 
-- Organism: S. aureus JE2; reference anc, stk1::Tn and stp1::Tn.
-- Primary comparison: TSB versus SN, with three samples per genotype-condition combination.
-- SN: approximately 15 h growth with 30% cell-free, sterile-filtered P. aeruginosa PAO1 spent medium. This is exposure to spent medium, not co-culture; secreted products and nutrient depletion are not separated by the design.
-- Optional extension: SNpulse, TSB-grown cells followed by 15 min exposure. This is a different growth history, not a longitudinal recovery experiment. Two stk pulse phospho measurements were re-injected; investigate batch effects before interpreting them.
-- Layers: total proteome and phosphoproteome. STY and STYH are alternative searches, not biological replicates. Record the search and statistical model used.
-
-## Analysis sequence
-
-### 1. Validate the mutant profiles
-
-Use the repository's R helpers and the existing mutant-validation notebook as the starting point. Plot Stp1 (B7H15_06350) and Stk1 (B7H15_06355) in every sample. Check missingness, outliers and consistency across treatments. Examine nearby genes as supporting context, without assuming every neighboring gene is cotranscribed.
-
-Not detected is not proof of absence. Estimates marked lod_imputed support detection-pattern descriptions rather than precise loss magnitudes. Investigate unexpected high mutant signals with the lecturer; do not silently exclude replicates.
-
-### 2. Separate baseline differences from exposure-response differences
-
-First examine stk_vs_anc_at_TSB and stp_vs_anc_at_TSB. Then evaluate:
-
-- interaction_stk_vs_anc_at_TSB_vs_SN
-- interaction_stp_vs_anc_at_TSB_vs_SN
-- interaction_stp_vs_stk_at_TSB_vs_SN
-
-The first two assess each mutant's response relative to the parental response; the third directly compares the two mutant responses. Compare effect sizes and uncertainty, not just overlaps between significant-hit lists. Because the first two comparisons share the parental reference, their scatterplot correlation is descriptive and not independent proof of a shared mechanism.
-
-For any feature, the stp-versus-anc interaction is:
-
-`(stp_TSB - stp_SN) - (anc_TSB - anc_SN)` on the log2 scale.
-
-Positive means the TSB-minus-SN difference is more positive in stp. Equivalently, its SN-minus-TSB response is less positive or more negative than the parental response. Use explain_contrast() and translate selected results into plain words.
-
-### 3. Examine supported phosphorylation candidates
-
-Start with reproducibly measured features, initially requiring detection in at least two of three samples in each group needed for a quantitative comparison. Inspect localization confidence and individual values. Keep consistently one-sided detections in a separate exploratory analysis rather than treating missing values as zeros.
-
-For selected sites, inspect the corresponding total protein under the same contrast. Adjust only supported observed measurements; do not subtract imputed effects. Propagate uncertainty with stated assumptions if formal adjusted tests are used. Adjustment does not measure absolute phosphorylation occupancy.
-
-### 4. Interpret shared and distinct responses
-
-Group supported candidates by function and interpret against literature and measured-protein coverage. Use direct stp-versus-stk contrasts to investigate differences. Do not label stp-specific effects as direct phosphatase substrates. If enrichment is performed, use the eligible measured background and control multiple testing.
-
-Course default screens use FDR < 0.1 and absolute log2 effect > 1; report estimates and uncertainty alongside the screen. With three replicates per group, absence of significance is weak evidence of no effect.
-
-## Rescue and suppression: literature-guided interpretation
-
-See [the rescue evidence review](docs/stk_stp_rescue_evidence.md). Published double-mutant studies make suppression of some phosphatase-loss effects by kinase loss plausible. Our stp transposon strain is not a verified clean double deletion, and the dataset lacks a clean stp-only deletion and complemented rescue strains.
-
-Therefore, this project can identify molecular patterns consistent with combined disruption and possible suppression. It cannot demonstrate genetic rescue, prove a transcriptional polar effect, or establish restored growth, survival or antibiotic tolerance. Confirmation would require additional strains and measurements.
+- Organism: *S. aureus* JE2; parental `anc`, `stk1::Tn` and `stp1::Tn`.
+- Conditions: TSB versus SN, three replicates in each of six genotype-condition groups (18 samples).
+- SN: approximately 15 h growth in 70% TSB plus 30% cell-free, sterile-filtered *P. aeruginosa* PAO1 spent medium. Secreted products and nutrient depletion are not separated by this design.
+- Dataset: total-proteome abundance and its differential-analysis tables, accessed with the repository's R helpers.
+- SNpulse and the phosphoproteome remain available in the course dataset but are outside this focused project.
 
 ## Anticipated figures
 
-1. Gene arrangement and per-sample Stp1/Stk1 protein abundances.
-2. Comparison of mutant interaction effects, including uncertainty and observed/imputed status.
-3. Heatmap and per-sample plots of selected shared and distinct responses.
-4. Matched protein/phosphosite plots for a small, supported biological module, if coverage permits.
+1. Stp1 and Stk1 protein abundance across individual TSB and SN samples, grouped by genotype.
+2. Comparison of the two mutants' protein-abundance interaction effects, with uncertainty and observed/imputed status made clear.
+3. Response plots for selected proteins showing shared or distinct TSB-to-SN responses.
 
-## Outputs and first next step
+## Significance and interpretation limits
 
-Write R analysis and a rendered report, keep dated notebook entries, and publish only code and reports. Raw and derived course measurements stay in ignored data/.
+The project tests how specifically these mutants represent kinase or phosphatase disruption and how that affects interpretation of their protein-abundance responses to supernatant. Similar mutant responses would support a contribution from reduced Stk1 in `stp`, but would not prove that a polar effect causes those responses.
 
-First establish a working R environment, then validate Stp1/Stk1 measurements before evaluating downstream hypotheses. No biological results have yet been generated for this project.
+Published suppression studies provide context in [the evidence review](docs/stk_stp_rescue_evidence.md). This dataset lacks a clean Stp1-only deletion retaining Stk1, a verified double deletion and complemented strains. It cannot demonstrate causal genetic rescue, restored growth, survival or antibiotic tolerance. Alternative explanations include altered protein stability or regulation, additional mutations and sample problems; contradictory observations must be retained.
+
+## Outputs and next step
+
+Write R analysis and a rendered report; keep dated entries in `notebook/`. Publish code, documentation and reports only. Raw and derived course measurements stay in ignored `data/`.
+
+Begin with the per-sample Stp1/Stk1 total-proteome plots in TSB and SN, then evaluate interaction effects. This scope update does not add biological results.

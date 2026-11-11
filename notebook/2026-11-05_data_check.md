@@ -69,3 +69,10 @@ Codex inspected repository documentation, archive contents, checksums and metada
 - User reported being unable to find the revised question. Verified PROJECT_PLAN.md directly through GitHub at main commit b986f30; RQ1-RQ3 and H1-H3 are present.
 - Added an immediate start-here link and the revised main question plus three short hypotheses to README.md, so they also appear on the repository front page.
 - The other PC's repository path, remote, branch and chat context have not been checked; no diagnosis of that device is assumed. No course data or biological results changed.
+
+## Focused Topic C research goal (5 November 2026)
+- Question: does the stp mutant behave like a kinase mutant during supernatant exposure?
+- At the user's request, narrowed PROJECT_PLAN.md and the README to total-proteome protein abundance in TSB and SN: establish Stp1/Stk1 profiles, then compare the three genotype-by-condition interaction contrasts.
+- The user's scope correction excludes phosphorylation analysis and phosphosite/protein adjustment; removed these from the goals, methods and anticipated figures. SNpulse is also outside the focused comparison.
+- Retained the possible polar-effect hypothesis and limits on causal interpretation, effect-size and uncertainty comparisons, replicate checks and imputation caveats.
+- Codex updated documentation and reviewed the Git diff. No biological analyses were run and no new biological results were generated. Course data remain excluded from publication.
