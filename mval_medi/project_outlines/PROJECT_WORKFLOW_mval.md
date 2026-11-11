@@ -19,7 +19,7 @@ The wanted result is a reliable answer to each question, including uncertainty o
 - Use R and the existing helpers, starting with `source("R/setup.R")` at the repository root or `source("../R/setup.R")` inside `analyses/`.
 - Normalized abundance is already on the log2 scale. Do not normalize or log-transform it again. Missing values stay `NA`, never zero.
 - Keep course inputs and full machine-readable measurement extracts local and ignored. Share analysis code, selected figures, reports and concise notebook findings; never stage course measurements under `data/`.
-- Record decisions and AI assistance in a dated `notebook/` entry after each session. Save methods even when a result is negative.
+- Record decisions and AI assistance in a dated `mval_medi/notebook/` entry after each session. Save methods even when a result is negative.
 
 ## What we need, and what each item is for
 
@@ -35,7 +35,7 @@ The wanted result is a reliable answer to each question, including uncertainty o
 | Matching phospho abundances and statistics | `read_abundances("phospho_STYH")`, `read_dea("phospho_STYH")`, and corresponding STY calls | Compare supported phosphorylation responses using the search/model actually used for inference. |
 | JE2 protein and genome annotation | `read_annotation()`, `data/raw/resources/JE2_proteins.fasta`, `JE2_genome.gff` | Resolve proteins, site coordinates, neighboring genes and gene orientation. |
 | Bacterial functional mappings | Local `string_aliases.txt` and `string_enrichment_terms.txt` in `data/raw/resources/` | Interpret candidates and, if coverage permits, test functional enrichment with a measured background. |
-| Verified biological evidence | `docs/stk_stp_rescue_evidence.md`, course papers; checked UniProt/primary papers as needed | Support protein-function and suppression claims, while checking species, strain and experimental context. |
+| Verified biological evidence | `docs/stk_stp_rescue_evidence_mval.md`, course papers; checked UniProt/primary papers as needed | Support protein-function and suppression claims, while checking species, strain and experimental context. |
 | Lecturer clarification where necessary | Sample/batch records, insertion details, peptide evidence and original QC reports if available | Resolve anomalies that processed protein tables alone cannot explain. These are conditional requests, not reasons to postpone all work. |
 
 The bundle contains processed course results, not instrument-level spectra. Spectrum reprocessing is outside the main workflow. The previously recorded environment lacked R; Rscript and Quarto are now discoverable on this PC, but package loading and rendering still need verification.
@@ -88,7 +88,7 @@ The bundle contains processed course results, not instrument-level spectra. Spec
 
 - [ ] Inspect JE2 genome coordinates, strand/orientation and neighboring genes around `stp1` and `stk1`; draw a small annotated gene diagram.
 - [ ] Plot measured neighboring proteins and assess whether any accompanying changes are consistent across samples and conditions.
-- [ ] Compare the pattern with the verified insertion/polar-effect evidence in `docs/stk_stp_rescue_evidence.md`. Check the original source before using a specific biological claim.
+- [ ] Compare the pattern with the verified insertion/polar-effect evidence in `docs/stk_stp_rescue_evidence_mval.md`. Check the original source before using a specific biological claim.
 - [ ] List alternatives: protein stability/regulation, secondary mutations, peptide assignment and sample problems. Retain observations that contradict polarity.
 
 **Why:** Gene proximity and reduced Stk1 can support a possible polar explanation, but do not demonstrate shared transcription or the causal mechanism.
@@ -180,7 +180,7 @@ For example, the stp-versus-parent interaction is `(stp_TSB - stp_SN) - (anc_TSB
 **Do**
 
 - [ ] Annotate reliable shared and distinct candidates using JE2 annotations, bacterial STRING mappings and verified protein/literature evidence. Record mapping ambiguity and accession provenance.
-- [ ] Use `docs/stk_stp_rescue_evidence.md` to distinguish complementation, genetic suppression and compensation. Verify cited claims in the source and note differences from our strain, exposure and measurements.
+- [ ] Use `docs/stk_stp_rescue_evidence_mval.md` to distinguish complementation, genetic suppression and compensation. Verify cited claims in the source and note differences from our strain, exposure and measurements.
 - [ ] If candidate numbers and mapping coverage permit enrichment, define the foreground and the **eligible measured/tested background under the same filters**. Analyze directions separately where meaningful; deduplicate proteins and term memberships.
 - [ ] Use a separate phosphoproteome background for phospho candidates and count a protein only once despite multiple sites. Record mapping losses, tested terms, term-size filters and multiple-testing correction.
 - [ ] If coverage is poor, provide an annotated candidate summary instead of an uninformative enrichment test.

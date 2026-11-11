@@ -40,7 +40,7 @@ Codex inspected repository documentation, archive contents, checksums and metada
 
 ## Project decision and rescue literature review
 - The user selected revised topic C: validate Stp1/Stk1 protein profiles, investigate a possible polar effect, and compare genotype-by-condition responses. This supersedes the earlier provisional topic-H project; protein correction is a supporting analysis.
-- Saved PROJECT_PLAN.md and linked it from README.md. Saved primary-source evidence and strain/assay limitations in docs/stk_stp_rescue_evidence.md.
+- Saved PROJECT_PLAN_mval.md and linked it from README.md. Saved primary-source evidence and strain/assay limitations in docs/stk_stp_rescue_evidence_mval.md.
 - Huemer et al. 2023 provides double-deletion evidence relevant to suppression under acid stress. Sun et al. 2012 reports a polar stp1 insertion affecting both genes. Burnside et al. 2010 documents gene-add-back complementation; Beltramini et al. 2009 shows double loss is not universally restorative. See the evidence review for full citations.
 - Explicitly distinguished complementation, genetic suppression and compensation. Our course dataset lacks clean stp-only and complemented rescue comparisons, so it cannot demonstrate causal genetic rescue.
 - Codex searched primary literature and checked the course Huemer PDF. No hypothesis tests or new biological results were generated. No raw data were staged or uploaded.
@@ -52,7 +52,7 @@ Codex inspected repository documentation, archive contents, checksums and metada
 - Published the selected project documents and connection guide on GitHub main so the second checkout can obtain the same saved decisions. Raw data remain excluded. This does not synchronize chat history; device pairing remains unverified.
 
 ## Updated project questions and hypotheses
-- At the user's request, clarified PROJECT_PLAN.md as the current project reference for both PCs.
+- At the user's request, clarified PROJECT_PLAN_mval.md as the current project reference for both PCs.
 - RQ1/H1: assess the actual Stp1/Stk1 protein profiles, including accompanying Stk1 reduction in stp.
 - RQ2/H2: test genotype-dependent TSB-to-SN responses through interaction contrasts.
 - RQ3/H3: evaluate shared kinase-mutant-like and distinct stp responses, including the direct stp-versus-stk interaction.
@@ -66,13 +66,13 @@ Codex inspected repository documentation, archive contents, checksums and metada
 - Codex checked the documentation diff and published the update to main. No analysis code or course measurements changed.
 
 ## Finding the revised question on the other PC
-- User reported being unable to find the revised question. Verified PROJECT_PLAN.md directly through GitHub at main commit b986f30; RQ1-RQ3 and H1-H3 are present.
+- User reported being unable to find the revised question. Verified PROJECT_PLAN_mval.md directly through GitHub at main commit b986f30; RQ1-RQ3 and H1-H3 are present.
 - Added an immediate start-here link and the revised main question plus three short hypotheses to README.md, so they also appear on the repository front page.
 - The other PC's repository path, remote, branch and chat context have not been checked; no diagnosis of that device is assumed. No course data or biological results changed.
 
 ## Focused Topic C research goal (5 November 2026)
 - Question: does the stp mutant behave like a kinase mutant during supernatant exposure?
-- At the user's request, narrowed PROJECT_PLAN.md and the README to total-proteome protein abundance in TSB and SN: establish Stp1/Stk1 profiles, then compare the three genotype-by-condition interaction contrasts.
+- At the user's request, narrowed PROJECT_PLAN_mval.md and the README to total-proteome protein abundance in TSB and SN: establish Stp1/Stk1 profiles, then compare the three genotype-by-condition interaction contrasts.
 - The user's scope correction excludes phosphorylation analysis and phosphosite/protein adjustment; removed these from the goals, methods and anticipated figures. SNpulse is also outside the focused comparison.
 - Retained the possible polar-effect hypothesis and limits on causal interpretation, effect-size and uncertainty comparisons, replicate checks and imputation caveats.
 - Codex updated documentation and reviewed the Git diff. No biological analyses were run and no new biological results were generated. Course data remain excluded from publication.

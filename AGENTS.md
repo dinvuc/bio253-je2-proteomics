@@ -15,4 +15,4 @@ The most important points:
 - Use **R** / tidyverse and the helpers in `R/` (`source("R/setup.R")`).
 - `A_vs_B` means `diff = log2(A) - log2(B)`. Always say which group is higher.
 - Plot raw per-sample values before trusting a fold change; flag `lod_imputed` estimates.
-- Cite checkable sources; keep a lab notebook in `notebook/`.
+- Cite checkable sources; keep a lab notebook in `mval_medi/notebook/`.

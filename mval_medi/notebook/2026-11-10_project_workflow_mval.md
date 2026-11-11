@@ -5,8 +5,8 @@ What must we do, in what order, to answer our mutant-validation and supernatant-
 
 ## What we did
 - Created and switched to branch `docs/project-workflow` from the current `main` revision, preserving existing untracked work.
-- Reviewed project instructions, PROJECT_PLAN.md, earlier notebook records, data documentation and the existing R/notebook structure.
-- Created PROJECT_WORKFLOW.md with 12 ordered steps, required inputs and their purposes, outputs, decision points and completion checks.
+- Reviewed project instructions, PROJECT_PLAN_mval.md, earlier notebook records, data documentation and the existing R/notebook structure.
+- Created PROJECT_WORKFLOW_mval.md with 12 ordered steps, required inputs and their purposes, outputs, decision points and completion checks.
 - Included observed/imputed separation, interaction direction, phosphosite coverage/localization, protein adjustment, functional background, literature interpretation and final reporting.
 
 ## Results (key numbers)
@@ -23,4 +23,4 @@ What must we do, in what order, to answer our mutant-validation and supernatant-
 Codex drafted the workflow from local project records and adapted analysis guidance, checked comparison names against the agreed plan, and reviewed the documentation changes. No new literature search or biological result was generated.
 
 ## Next steps
-Follow Step 1 of PROJECT_WORKFLOW.md, then audit samples/QC and plot Stp1/Stk1 measurements before downstream interpretation.
+Follow Step 1 of PROJECT_WORKFLOW_mval.md, then audit samples/QC and plot Stp1/Stk1 measurements before downstream interpretation.

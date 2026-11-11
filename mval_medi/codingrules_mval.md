@@ -40,3 +40,5 @@ question and the agreed order of steps:
 
 Group documents (rules, plans, workflows) go in `mval_medi/`.
 The project plan and workflow are in `mval_medi/project_outlines/`.
+Our lab notebook (one dated entry per session) is in `mval_medi/notebook/`,
+named `YYYY-MM-DD_topic_mval.md` (template: `mval_medi/notebook/README.md`).

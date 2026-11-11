@@ -36,7 +36,7 @@ use small steps and short code, and explain *why*.
    give a checkable source (UniProt accession, PubMed ID/DOI, the course papers).
    If you are not sure, say so. Do not invent references.
 8. **Lab notebook:** after each working session, help the students add a dated
-   entry in `notebook/` (template in `notebook/README.md`): question, what was run,
+   entry in `mval_medi/notebook/` (template in `mval_medi/notebook/README.md`): question, what was run,
    results (numbers), problems, next steps, which AI help was used.
 
 ## Experimental design

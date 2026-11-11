@@ -179,7 +179,7 @@ volcano(dea, "TSB_vs_SN_at_anc", highlight = KEY_PROTEINS$locus_tag)
 
 * What surprised you?
 * Which contrast would you like to look at in more detail – and why?
-* Write it down in `notebook/` (see `notebook/README.md`).
+* Write it down in `mval_medi/notebook/` (see `mval_medi/notebook/README.md`).
 
 ```{r session}
 sessionInfo()

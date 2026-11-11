@@ -4,7 +4,7 @@
 Keep the project plan and practical workflow together in a dedicated folder.
 
 ## Work performed
-- Used Codex to move PROJECT_PLAN.md and PROJECT_WORKFLOW.md into project_outlines/.
+- Used Codex to move PROJECT_PLAN_mval.md and PROJECT_WORKFLOW_mval.md into project_outlines/.
 - Updated all four README links and the current cross-PC reference to the new paths.
 - Adjusted both evidence-review links inside the moved plan; the workflow-to-plan link stays valid within the shared folder.
 
