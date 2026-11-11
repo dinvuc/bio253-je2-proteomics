@@ -1,0 +1,7 @@
+table,n_contrasts,modelName,estimate_type,n_rows
+total,33,lm_impute,lod_imputed,9042
+total,33,lm_impute,observed,67650
+phospho_STYH,33,lm_impute,lod_imputed,134145
+phospho_STYH,33,lm_impute,observed,5610
+phospho_STY,33,Imputed_Mean_moderated,observed,115523
+phospho_STY,33,Linear_Model_moderated,observed,11956

@@ -1,0 +1,5 @@
+type,flagged_is_contaminant,n_protein_keys
+JE2 protein,FALSE,2232
+contaminant,FALSE,68
+contaminant,TRUE,24
+decoy (rev_),FALSE,24

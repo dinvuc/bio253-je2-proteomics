@@ -1,0 +1,39 @@
+# Step 2 QC checks (group mval)
+Run at: 2026-11-11 10:48
+
+[PASS] 27 unique sample names (n = 27)
+[PASS] 3 replicates in each of the 9 genotype x medium groups 
+[PASS] primary subset (TSB + SN) has 18 samples 
+[PASS] replicates numbered 1-3 within each group 
+[PASS] no truncated sample names left in the 'sample' column 
+[PASS] each repaired name matches its raw file (genotype, medium, replicate) (9 names repaired)
+[PASS] raw file name agrees with the sample sheet for every sample 
+[PASS] total         has exactly the 27 sample-sheet names 
+[PASS] total         genotype/medium/replicate agree with sample sheet 
+[PASS] phospho_STYH  has exactly the 27 sample-sheet names 
+[PASS] phospho_STYH  genotype/medium/replicate agree with sample sheet 
+[PASS] phospho_STY   has exactly the 27 sample-sheet names 
+[PASS] phospho_STY   genotype/medium/replicate agree with sample sheet 
+[PASS] sites_STYH    has exactly the 27 sample-sheet names 
+[PASS] sites_STYH    genotype/medium/replicate agree with sample sheet 
+[PASS] sites_STY     has exactly the 27 sample-sheet names 
+[PASS] sites_STY     genotype/medium/replicate agree with sample sheet 
+[PASS] reinjected phospho samples are exactly stk pulseSN replicates 1 and 2 (JE2stk_pulseSN_1, JE2stk_pulseSN_2)
+[PASS] total: one row per protein_key x sample 
+[FLAG] all contaminants/decoys flagged by is_contaminant (92 non-JE2 keys pass the default filter -> we filter them ourselves)
+[PASS] total: locus_tag unique per protein_key 
+[PASS] no sample with unusually low correlation to its own replicates 
+[PASS] no sample with |detection z| > 2.5 
+[PASS] DEA tables carry uncertainty columns (std.error, conf.low/high, df, FDR) 
+
+JE2 proteins (total): 2232; complete in all 27: 1742; complete in primary 18: 1758
+PCA 27: PC1 62.0 %, PC2 10.7 %; PCA 18: PC1 66.4 %, PC2 10.1 %
+
+PC drivers (R^2 of PC score ~ factor):
+  pc   factor r2_27 r2_18
+ PC1 genotype  0.01  0.01
+ PC1   medium  0.98  0.99
+ PC2 genotype  0.88  0.90
+ PC2   medium  0.03  0.01
+ PC3 genotype  0.97  0.97
+ PC3   medium  0.00  0.00
