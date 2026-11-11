@@ -20,6 +20,7 @@ The wanted result is a reliable answer to each question, including uncertainty o
 - Normalized abundance is already on the log2 scale. Do not normalize or log-transform it again. Missing values stay `NA`, never zero.
 - Keep course inputs and full machine-readable measurement extracts local and ignored. Share analysis code, selected figures, reports and concise notebook findings; never stage course measurements under `data/`.
 - Record decisions and AI assistance in a dated `mval_medi/notebook/` entry after each session. Save methods even when a result is negative.
+- **Real JE2 proteins only:** pipe every abundance or DEA table through `keep_je2()` (`R/helpers_mval.R`). It keeps rows with a locus tag and drops reversed decoys. The default `drop_contaminants = TRUE` misses 68 contaminants and 24 `rev_` decoys (Step 2 finding, 11 Nov). Do **not** build hit lists with the lecture's `grep 'ARG'` shortcut: it silently drops 15 real JE2 proteins whose key has no "ARG".
 
 ## What we need, and what each item is for
 
@@ -34,7 +35,8 @@ The wanted result is a reliable answer to each question, including uncertainty o
 | Individual phosphosite measurements and localization | `read_sites("STYH")` / `read_sites("STY")` | Decide which sites have enough replicate support and credible residue assignment. |
 | Matching phospho abundances and statistics | `read_abundances("phospho_STYH")`, `read_dea("phospho_STYH")`, and corresponding STY calls | Compare supported phosphorylation responses using the search/model actually used for inference. |
 | JE2 protein and genome annotation | `read_annotation()`, `data/raw/resources/JE2_proteins.fasta`, `JE2_genome.gff` | Resolve proteins, site coordinates, neighboring genes and gene orientation. |
-| Bacterial functional mappings | Local `string_aliases.txt` and `string_enrichment_terms.txt` in `data/raw/resources/` | Interpret candidates and, if coverage permits, test functional enrichment with a measured background. |
+| Bacterial functional mappings | `read_protein_terms()` (GO, KEGG, UniProt keywords, STRING clusters; 2,144 of 2,232 measured JE2 proteins have ≥ 1 term); raw `string_aliases.txt` / `string_enrichment_terms.txt` in `data/raw/resources/`; STRING website with the course organism **`STRG0B09NBK` (JE2_Bio253_HS26)**, which accepts `B7H15_…` locus tags | Interpret candidates and test enrichment locally against a measured background (`scripts/10_enrichment_mval.R`); use the STRING website for network pictures and as a cross-check. The local raw files carry a different STRING organism id (`STRG0A35SHG`), so match on locus tags, not on STRING ids. |
+| Gene context and mutant sources | AureoWiki (aureowiki.med.uni-greifswald.de, searchable by NCTC 8325 locus tags / gene names), NTML methods (ntml.unmc.edu/methods), NCBI genome GCF_002085525.1, BLAST for doubtful orthologs | Citable sources for the *stp1*–*stk1* operon structure, the NE217/NE1919 insertions and ortholog checks (Step 4). Lecture `06_web_resources_2026.pdf`. Do not copy the shared BioCyc login into the repo. |
 | Verified biological evidence | `mval_medi/docs/stk_stp_rescue_evidence_mval.md`, course papers; checked UniProt/primary papers as needed | Support protein-function and suppression claims, while checking species, strain and experimental context. |
 | Lecturer clarification where necessary | Sample/batch records, insertion details, peptide evidence and original QC reports if available | Resolve anomalies that processed protein tables alone cannot explain. These are conditional requests, not reasons to postpone all work. |
 
@@ -44,10 +46,10 @@ The bundle contains processed course results, not instrument-level spectra. Spec
 
 **Do**
 
-- [ ] Confirm the working branch and record the starting revision and input provenance.
-- [ ] Run `Rscript data/check_data.R`; resolve missing or mismatched inputs before analysis.
-- [ ] Check R/package availability; use `Rscript install_packages.R` if needed. Verify `source("R/setup.R")`, run `Rscript tests/run_tests.R`, and render a starter notebook.
-- [ ] Record R, package and Quarto versions. Confirm the local data/output locations and Git exclusions.
+- [x] Confirm the working branch and record the starting revision and input provenance.
+- [x] Run `Rscript data/check_data.R`; resolve missing or mismatched inputs before analysis.
+- [x] Check R/package availability; use `Rscript install_packages.R` if needed. Verify `source("R/setup.R")`, run `Rscript tests/run_tests.R`, and render a starter notebook.
+- [x] Record R, package and Quarto versions. Confirm the local data/output locations and Git exclusions.
 
 **Why:** Later results must be traceable to intact inputs and a working analysis environment.
 
@@ -57,12 +59,12 @@ The bundle contains processed course results, not instrument-level spectra. Spec
 
 **Do**
 
-- [ ] Load the sample sheet, annotation, abundance and DEA tables with the helpers. Inspect actual columns and identifier uniqueness before joining.
-- [ ] Verify 27 unique samples and three samples in each genotype-by-medium group; flag any discrepancy. Confirm the primary subset contains 18 samples.
-- [ ] Verify repaired `pulseSN`/`SNpulse` names and consistent sample mapping across layers. A repeated replicate number alone does not establish cross-layer pairing.
-- [ ] Summarize detected proteins/sites and missingness per sample and group. Inspect abundance distributions, sample correlations and PCA using `01_explore_data.qmd` as a starting point; document how missing values are handled for exploratory plots.
-- [ ] Identify outliers, potential batch structure and reinjected pulse phospho samples. Retain samples by default; document any proposed exclusion, its independent evidence and a sensitivity comparison.
-- [ ] Record the search, `modelName`, `estimate_type` and available uncertainty fields for each statistical table.
+- [x] Load the sample sheet, annotation, abundance and DEA tables with the helpers. Inspect actual columns and identifier uniqueness before joining.
+- [x] Verify 27 unique samples and three samples in each genotype-by-medium group; flag any discrepancy. Confirm the primary subset contains 18 samples.
+- [x] Verify repaired `pulseSN`/`SNpulse` names and consistent sample mapping across layers. A repeated replicate number alone does not establish cross-layer pairing.
+- [x] Summarize detected proteins/sites and missingness per sample and group. Inspect abundance distributions, sample correlations and PCA using `01_explore_data.qmd` as a starting point; document how missing values are handled for exploratory plots.
+- [x] Identify outliers, potential batch structure and reinjected pulse phospho samples. Retain samples by default; document any proposed exclusion, its independent evidence and a sensitivity comparison.
+- [x] Record the search, `modelName`, `estimate_type` and available uncertainty fields for each statistical table.
 
 **Why:** Poor sample quality, mislabeled samples and unequal detection can mimic a genotype effect.
 
@@ -87,6 +89,8 @@ The bundle contains processed course results, not instrument-level spectra. Spec
 **Do**
 
 - [ ] Inspect JE2 genome coordinates, strand/orientation and neighboring genes around `stp1` and `stk1`; draw a small annotated gene diagram.
+- [ ] Cite the operon/transcription-unit evidence for *stp1*–*stk1* from AureoWiki (look up the NCTC 8325 orthologs via `staa8_uniprot` / `read_protein_metadata()`), and the NE217/NE1919 insertion positions from NTML (ntml.unmc.edu) and `TRANSPOSON_INSERTIONS` in `R/constants.R`. Record which strain the AureoWiki evidence refers to (NCTC 8325, not JE2).
+- [ ] When the peptide table (`peptides_total.tsv.gz`, needs `msstats.csv`) arrives, use `plot_peptide_coverage()` / notebook 07 to see which part of Stp1/Stk1 is still detected.
 - [ ] Plot measured neighboring proteins and assess whether any accompanying changes are consistent across samples and conditions.
 - [ ] Compare the pattern with the verified insertion/polar-effect evidence in `mval_medi/docs/stk_stp_rescue_evidence_mval.md`. Check the original source before using a specific biological claim.
 - [ ] List alternatives: protein stability/regulation, secondary mutations, peptide assignment and sample problems. Retain observations that contradict polarity.
@@ -184,6 +188,12 @@ For example, the stp-versus-parent interaction is `(stp_TSB - stp_SN) - (anc_TSB
 - [ ] If candidate numbers and mapping coverage permit enrichment, define the foreground and the **eligible measured/tested background under the same filters**. Analyze directions separately where meaningful; deduplicate proteins and term memberships.
 - [ ] Use a separate phosphoproteome background for phospho candidates and count a protein only once despite multiple sites. Record mapping losses, tested terms, term-size filters and multiple-testing correction.
 - [ ] If coverage is poor, provide an annotated candidate summary instead of an uninformative enrichment test.
+- [ ] Run enrichment with `Rscript scripts/10_enrichment_mval.R <contrast> ...` (helpers in `R/helpers_mval.R`, tested in `tests/testthat/test-helpers_mval.R`). It does both methods from lecture 06 (slide 25):
+  - **ORA:** hits FDR < 0.1 and |log2FC| > 1, up and down separately, one-sided Fisher test. The background is the JE2 proteins tested in that contrast that carry ≥ 1 term of the category. BH-FDR per category, term size 5–500. `lod_imputed` hits are included and counted (`hits_imputed`).
+  - **Rank-based (GSEA-like):** observed estimates only, ranked by the moderated t `statistic`, Wilcoxon test per term. `auc` > 0.5 = shifted towards higher in the first group of the contrast.
+  - For the real Step 10 run, restrict hits *and* background to the Step 5 eligible proteins, and use the Step 6–7 candidate sets as foreground.
+- [ ] Paste the written `string_upload_*_mval.txt` lists into STRING ("Multiple proteins", organism `STRG0B09NBK`) for network pictures. Note that the website's default background is the whole genome; set a custom background where possible, or report the difference.
+- [ ] Plausibility check, done 11 Nov on `stk_vs_anc`: our local method reproduces the lecture's example (slides 36–38). Cytolysis / killing of cells and copper ion transport come out lower in `stk`; vancomycin resistance comes out higher in `stk`. The "Virulence" keyword (KW-0843) did not reproduce with our measured background. Treat it as background-dependent.
 
 **Why:** Functional themes can help explain results, but annotation coverage and the background determine what an enrichment analysis can support.
 
@@ -231,6 +241,6 @@ If time is short, finish Steps 1-7 and the relevant interpretation/reporting in 
 
 ## Current status and next action
 
-This file is a plan; no new biological analysis was performed while writing it. Prior records document a complete input bundle and the agreed hypotheses. On 10 November, Rscript and Quarto were found on this PC; package loading, data integrity and rendering have not been revalidated in this planning session.
+**11 November 2026:** Steps 1–2 are done (`scripts/01_setup_check_mval.R`, `scripts/02_sample_qc_mval.R`; notebook `2026-11-11_steps1-2_setup_qc_mval.md`). All 27 samples are kept. The peptide table is still missing (needed for Step 4). The enrichment tooling for Step 10 (`scripts/10_enrichment_mval.R`) is built, and it was checked against the lecture's `stk_vs_anc` example. This is a method check only; the Step 10 interpretation still comes after Steps 5–7.
 
-**Next action: Step 1, then inspect Stp1/Stk1 individual measurements after the sample/QC audit.**
+**Next action: Step 3, inspect Stp1/Stk1 individual measurements (`plot_protein()`, `03_mutant_validation.qmd`).**

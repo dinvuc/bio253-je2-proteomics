@@ -1,0 +1,45 @@
+# Step 1 setup record (group mval)
+Run at: 2026-11-11 10:38
+
+## Git
+branch:   steps1-2-setup-qc-mval
+revision: 93f72a0
+upstream: https://github.com/jjGG/bio253-je2-proteomics.git
+
+## Data checksums (data/check_data.R)
+22 OK, 1 missing, 0 corrupt
+   MISSING  derived/peptides_total.tsv.gz
+
+## Software versions
+R version 4.5.0 (2025-04-11 ucrt)
+Quarto CLI: 1.6.42
+  tidyverse: 2.0.0
+  dplyr: 1.1.4
+  ggplot2: 3.5.2
+  limma: 3.66.0
+  readxl: 1.4.5
+  testthat: 3.3.2
+  quarto: 1.5.1
+
+## Git exclusions
+  data/derived/abundances_total.tsv.gz: ignored (good)
+  data/raw/total/DE_total.xlsx: ignored (good)
+  data/raw/resources/JE2_proteins.fasta: ignored (good)
+  analyses/_output/01_explore_data.html: ignored (good)
+Untracked files > 5 MB that `git add .` would pick up:
+   reference/JE2_protein_metadata_unzipped.tsv
+   reference/JE2_protein_metadata_unzipped_unzipped.tsv_gz
+   reference/JE2_protein_metadata_unzipped_unzipped_unzipped.tsv_gz_gz
+
+## Helper tests (tests/run_tests.R)
+exit status OK: TRUE
+   parsing: ..............................
+   
+   ══ Skipped ═════════════════════════════════════════════════════════════════════
+   1. peptide table resolves the transposon truncation of Stp1 ('test-data.R:72:3') - Reason: peptides not fetched
+   
+   ══ DONE ════════════════════════════════════════════════════════════════════════
+
+## Render check (analyses/01_explore_data.qmd)
+rendered OK: TRUE (11 s); output in analyses/_output/ (git-ignored)
+
