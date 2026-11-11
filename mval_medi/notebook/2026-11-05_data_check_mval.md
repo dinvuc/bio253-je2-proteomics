@@ -40,7 +40,7 @@ Codex inspected repository documentation, archive contents, checksums and metada
 
 ## Project decision and rescue literature review
 - The user selected revised topic C: validate Stp1/Stk1 protein profiles, investigate a possible polar effect, and compare genotype-by-condition responses. This supersedes the earlier provisional topic-H project; protein correction is a supporting analysis.
-- Saved PROJECT_PLAN_mval.md and linked it from README.md. Saved primary-source evidence and strain/assay limitations in docs/stk_stp_rescue_evidence_mval.md.
+- Saved PROJECT_PLAN_mval.md and linked it from README.md. Saved primary-source evidence and strain/assay limitations in mval_medi/docs/stk_stp_rescue_evidence_mval.md.
 - Huemer et al. 2023 provides double-deletion evidence relevant to suppression under acid stress. Sun et al. 2012 reports a polar stp1 insertion affecting both genes. Burnside et al. 2010 documents gene-add-back complementation; Beltramini et al. 2009 shows double loss is not universally restorative. See the evidence review for full citations.
 - Explicitly distinguished complementation, genetic suppression and compensation. Our course dataset lacks clean stp-only and complemented rescue comparisons, so it cannot demonstrate causal genetic rescue.
 - Codex searched primary literature and checked the course Huemer PDF. No hypothesis tests or new biological results were generated. No raw data were staged or uploaded.

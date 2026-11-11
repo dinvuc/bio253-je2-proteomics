@@ -38,7 +38,8 @@ question and the agreed order of steps:
 
 ## 3. Where our files live
 
-Group documents (rules, plans, workflows) go in `mval_medi/`.
+Group documents (rules, plans, workflows, docs) go in `mval_medi/`; background
+documents such as our literature review are in `mval_medi/docs/`.
 The project plan and workflow are in `mval_medi/project_outlines/`.
 Our lab notebook (one dated entry per session) is in `mval_medi/notebook/`,
-named `YYYY-MM-DD_topic_mval.md` (template: `mval_medi/notebook/README.md`).
+named `YYYY-MM-DD_topic_mval.md` (template: `mval_medi/notebook/notebook_template_mval.md`).

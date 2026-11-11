@@ -12,7 +12,7 @@ easy to tell apart from the starter pack.
   group rules before each task.
 - Moved `project_outlines/` and `notebook/` into `mval_medi/`.
 - Renamed our own files to end in `_mval`: project plan, project workflow,
-  `docs/WORKING_ON_TWO_PCS_mval.md`, `docs/stk_stp_rescue_evidence_mval.md`
+  `mval_medi/docs/WORKING_ON_TWO_PCS_mval.md`, `mval_medi/docs/stk_stp_rescue_evidence_mval.md`
   and the four earlier notebook entries. Updated every link and path reference.
 
 ## Results and checks
@@ -28,3 +28,9 @@ analysis code or course data changed, so R tests were not needed.
 ## AI help
 Claude Code (Opus 5.5) created the rules file, moved/renamed files, updated
 links and wrote this entry.
+
+## Later correction (same day)
+- Moved the lecturer's `notebook/README.md` back to `notebook/` unchanged, and
+  restored `analyses/01_explore_data.qmd` to the lecturer's version.
+- Created our own template: `mval_medi/notebook/notebook_template_mval.md`.
+- Moved our two background documents from `docs/` into `mval_medi/docs/`.
