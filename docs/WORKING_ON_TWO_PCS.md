@@ -25,7 +25,7 @@ Code, plans and reports belong in https://github.com/dinvuc/bio253-je2-proteomic
 
 Each PC keeps its own course measurements in the ignored data folder. Do not push raw or derived course measurements. Verify the local dataset using data/check_data.R or the supplied checksums.
 
-Current decisions and evidence are in project_outlines/PROJECT_PLAN.md, docs/stk_stp_rescue_evidence.md, and the dated notebook entries. These provide context if a separate local chat is ever required; they are not a substitute for synchronized conversation history.
+Current decisions and evidence are in mval_medi/project_outlines/PROJECT_PLAN.md, docs/stk_stp_rescue_evidence.md, and the dated notebook entries. These provide context if a separate local chat is ever required; they are not a substitute for synchronized conversation history.
 
 ## Alternative for a future conversation
 

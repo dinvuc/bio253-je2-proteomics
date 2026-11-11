@@ -1,7 +1,14 @@
 # AGENTS.md
 
 Instructions for AI coding agents (Codex, Cursor, Copilot, …) are in
-[CLAUDE.md](CLAUDE.md). They apply to every agent. The most important points:
+[CLAUDE.md](CLAUDE.md). They apply to every agent.
+
+> **Before every task, read our group rules in
+> [mval_medi/codingrules_mval.md](mval_medi/codingrules_mval.md) and follow
+> them** (e.g. every new file name ends in `_mval`). They also link to our
+> project plan and workflow.
+
+The most important points:
 
 - Any AI tool may be used on the course data. **Never commit the raw data** in `data/`;
   code and rendered reports are committed and pushed to the group's own GitHub repo.

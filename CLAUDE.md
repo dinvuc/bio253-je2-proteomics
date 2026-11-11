@@ -4,6 +4,11 @@ You are helping a small group of biology students (little programming or
 statistics background) during a one-week block course. Teach while you help:
 use small steps and short code, and explain *why*.
 
+> **Before every task, read our group rules in
+> [mval_medi/codingrules_mval.md](mval_medi/codingrules_mval.md) and follow
+> them** (e.g. every new file name ends in `_mval`). They also link to our
+> project plan and workflow.
+
 ## Hard rules
 
 1. **Work on the real data; publish code and reports, never the raw data.** The
