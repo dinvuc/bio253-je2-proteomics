@@ -8,7 +8,7 @@ Does disruption of `stp1` also reduce Stk1 protein abundance, consistent with a 
 
 ## Background
 
-Stp1 removes phosphate groups from proteins, whereas Stk1 adds them. The neighboring `stp1` and `stk1` genes are described as an operon in the course material and literature reviewed in [the Stk1/Stp1 evidence review](docs/stk_stp_rescue_evidence.md). Disrupting `stp1` may also reduce expression of the neighboring `stk1` gene: a possible polar effect.
+Stp1 removes phosphate groups from proteins, whereas Stk1 adds them. The neighboring `stp1` and `stk1` genes are described as an operon in the course material and literature reviewed in [the Stk1/Stp1 evidence review](../docs/stk_stp_rescue_evidence.md). Disrupting `stp1` may also reduce expression of the neighboring `stk1` gene: a possible polar effect.
 
 The `stp` mutant may therefore involve reduced function of both enzymes. Its behavior cannot automatically be explained by loss of the phosphatase alone. Total-proteome measurements can establish protein-abundance patterns consistent with this explanation; they cannot prove transcriptional polarity or enzyme activity.
 
@@ -66,7 +66,7 @@ A positive value means the TSB-minus-SN difference is more positive in `stp`. Eq
 
 The project tests how specifically these mutants represent kinase or phosphatase disruption and how that affects interpretation of their protein-abundance responses to supernatant. Similar mutant responses would support a contribution from reduced Stk1 in `stp`, but would not prove that a polar effect causes those responses.
 
-Published suppression studies provide context in [the evidence review](docs/stk_stp_rescue_evidence.md). This dataset lacks a clean Stp1-only deletion retaining Stk1, a verified double deletion and complemented strains. It cannot demonstrate causal genetic rescue, restored growth, survival or antibiotic tolerance. Alternative explanations include altered protein stability or regulation, additional mutations and sample problems; contradictory observations must be retained.
+Published suppression studies provide context in [the evidence review](../docs/stk_stp_rescue_evidence.md). This dataset lacks a clean Stp1-only deletion retaining Stk1, a verified double deletion and complemented strains. It cannot demonstrate causal genetic rescue, restored growth, survival or antibiotic tolerance. Alternative explanations include altered protein stability or regulation, additional mutations and sample problems; contradictory observations must be retained.
 
 ## Outputs and next step
 
