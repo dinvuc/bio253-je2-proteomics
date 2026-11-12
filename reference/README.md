@@ -10,9 +10,60 @@ Two independent things live here:
    [README_protein_metadata.md](README_protein_metadata.md); the script that
    builds it is `make_protein_metadata.R` (it runs in the lecturer's resource
    folder, where the FASTA, GFF and STRING exports live).
-2. **A proposal to extend the search FASTA** with ErmB — the rest of this file.
+2. **The proteins carried by the transposon** (`transposon_proteins.fasta`) —
+   the rest of this file.
 
-## Extending the search database
+## The proteins on the transposon
+
+`transposon_proteins.fasta` — 11 sequences, pulled straight from the GenBank
+records of the two delivery plasmids by
+[`make_transposon_fasta.R`](make_transposon_fasta.R):
+
+* **pBursa — GenBank [AY672109](https://www.ncbi.nlm.nih.gov/nuccore/AY672109)**,
+  7,383 bp. GenBank annotates the transposon as `mobile_element 4147..7383`
+  (3,237 bp), and exactly **two** coding sequences lie inside it:
+
+  | protein | gene | aa | tryptic peptides (6–30 aa) |
+  |---|---|---|---|
+  | rRNA methylase (erythromycin resistance) | `ermB` | 245 | 16 |
+  | green-fluorescent protein | `gfp` | 238 | 12 |
+
+* Everything else is **plasmid backbone** (pBursa `cop-6`, `repC`, `cat`) or
+  **helper plasmid** pFA545 ([AY672108](https://www.ncbi.nlm.nih.gov/nuccore/AY672108):
+  `repC`, `bla`, `xylR`, `tnp` mariner transposase, `tetD`, `tetB`). Both
+  plasmids are cured at 45 °C, so these proteins should be **absent** — they are
+  included as a control: if any of them turns up, a plasmid was not lost.
+
+### Why this is worth re-searching
+
+A search engine can only report sequences that are in its FASTA. `ermB` is not
+in the JE2 database, so "ErmB not found" so far only means "never looked for".
+Finding ErmB in the 18 mutant samples and not in the 9 wild-type ones would be
+a **positive** control for the transposon — better evidence than the absence of
+Stk1 and Stp1.
+
+Two honest expectations:
+
+* **ErmB is the real test.** It has 16 tryptic peptides and has never been
+  searchable. Note that `ermB` is induced by erythromycin, so if these cultures
+  grew without it the protein may sit below the detection limit; a negative
+  result would then be uninformative. Check the growth protocol first.
+* **GFP will probably stay negative.** The pBursa GFP differs from the
+  *A. victoria* GFP already in the database (contaminant `zz_Y-FGCZCont00258_`)
+  at only three residues (S65G, S72A, D155G), so **10 of its 12** tryptic
+  peptides were already searchable — and none were detected.
+
+### How to use it
+
+```bash
+cat p41881_db1_SA_JE2_modNmoreTranslations_20260630.fasta \
+    transposon_proteins.fasta > JE2_db1_plus_transposon.fasta
+```
+
+4,155 + 11 = 4,166 entries, so the effect on the FDR estimate is negligible.
+
+## Appendix: the original ErmB-only proposal
+
 
 Small, public reference sequences. Unlike `data/`, this folder **is** committed:
 nothing here is unpublished course data.
@@ -40,13 +91,13 @@ walks through this.
 
 | file | what |
 |---|---|
-| `ermB_P20173.fasta` | ErmB, 245 aa. UniProt P20173 (*E. faecalis*) and Q799N2 (*S. aureus*) have **identical** sequences, so the exact source of the pBursa copy barely matters. |
+| `transposon_proteins.fasta` | the 11 plasmid-encoded proteins (see above). The ErmB in pBursa is byte-identical to UniProt P20173, which this file supersedes. |
 
 ## How to use it
 
 ```bash
 cat p41881_db1_SA_JE2_modNmoreTranslations_20260630.fasta \
-    reference/ermB_P20173.fasta > JE2_plus_ermB.fasta
+    reference/transposon_proteins.fasta > JE2_plus_transposon.fasta
 ```
 
 then re-run the search (FragPipe/MSFragger) against `JE2_plus_ermB.fasta` and

@@ -286,9 +286,13 @@ is weak evidence against GFP expression (the transposon carries a yeast
 codon-optimised *gfp* whose protein sequence may differ from the entry we have).
 
 So the honest answer is: **we cannot say yet.** The data would have to be
-re-searched against an extended FASTA. The repository contains a proposal for
-that in [`reference/`](../reference/) – see the README there. This is a real
-experiment, not a classroom exercise, and the lecturer has the raw files.
+re-searched against an extended FASTA — and the sequences for that are now in
+[`reference/transposon_proteins.fasta`](../reference/transposon_proteins.fasta),
+taken from the GenBank record of pBursa. The transposon carries exactly two
+proteins, ErmB and GFP; the other nine sequences in that file are plasmid
+backbone, included as a control for whether the delivery plasmids were really
+cured. This is a real experiment, not a classroom exercise, and the lecturer
+has the raw files.
 :::
 
 ## 8. Your conclusion
