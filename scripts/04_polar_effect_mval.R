@@ -17,6 +17,7 @@
 #           Neighbour changes are read from the supplied DEA and our treat test
 #           (no new test, so no new multiple-testing correction is needed).
 # Output:   mval_medi/results/step04_polar_effect/
+#             figure_guide_mval.md          what every figure/table compares
 #             fig_gene_context_mval.png       Fig 1d: gene map with insertions
 #             fig_neighbours_mval.png         per-sample values of the neighbours
 #             fig_stk1_peptides_by_strain_mval.png  Stk1 peptides anc vs stk vs stp

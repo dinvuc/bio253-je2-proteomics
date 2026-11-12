@@ -17,6 +17,7 @@
 # Analysis: counting detections and peptides per sample (no new test); the
 #           supplied and our formal contrasts are only looked up, not refitted.
 # Output:   mval_medi/results/step03_validation/ (small summaries, no raw data)
+#           figure_guide_mval.md explains what every figure/table compares
 #             fig_enzyme_abundance_mval.png    Fig 1a: per-sample log2 abundance, label = n peptides
 #             fig_enzyme_peptides_mval.png     Fig 1b: peptides quantified per sample
 #             fig_stk1_phosphosite_map_mval.png Fig 1c: Stk1 sites, position x sample
