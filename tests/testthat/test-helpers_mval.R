@@ -43,3 +43,29 @@ test_that("run_rank_enrichment detects a term shifted to the top", {
   expect_equal(res$direction, "top (high statistic)")
   expect_lt(res$p_value, 0.01)
 })
+
+test_that("mval_contrasts writes A_vs_B as A - B", {
+  ct <- mval_contrasts()
+  expect_length(ct, 33)
+  expect_equal(unname(ct["TSB_vs_SN_at_anc"]), "anc_TSB - anc_SN")
+  expect_equal(unname(ct["interaction_stp_vs_anc_at_TSB_vs_SN"]),
+               "(stp_TSB - stp_SN) - (anc_TSB - anc_SN)")
+})
+
+test_that("fit_limma_treat: sign, treat threshold and min_obs on toy data", {
+  set.seed(1)
+  samples <- tidyr::expand_grid(genotype = c("anc", "stk", "stp"),
+                                medium = c("TSB", "SN", "SNpulse"), replicate = 1:3) |>
+    mutate(group = paste0(genotype, "_", medium), sample = paste0(group, "_", replicate))
+  m <- matrix(rnorm(200 * 27, 20, 0.1), 200, 27, dimnames = list(paste0("p", 1:200), samples$sample))
+  m["p1", samples$group == "anc_TSB"] <- m["p1", samples$group == "anc_TSB"] + 3    # big effect
+  m["p2", samples$group == "anc_TSB"] <- m["p2", samples$group == "anc_TSB"] + 0.5  # below lfc 1
+  m["p3", samples$group == "anc_SN"][1:2] <- NA                                     # only 1 obs
+  res <- fit_limma_treat(m, samples) |> filter(contrast == "TSB_vs_SN_at_anc")
+  p1 <- filter(res, protein_key == "p1"); p2 <- filter(res, protein_key == "p2")
+  expect_gt(p1$diff, 2.5)              # TSB higher -> positive
+  expect_lt(p1$FDR, 0.05)
+  expect_gt(p2$FDR, 0.05)              # real but < 1 log2: not a hit under treat
+  expect_false(filter(res, protein_key == "p3")$tested)
+  expect_true(is.na(filter(res, protein_key == "p3")$FDR))
+})

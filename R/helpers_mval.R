@@ -97,3 +97,100 @@ write_string_upload <- function(locus_tags, path) {
   writeLines(sort(unique(na.omit(locus_tags))), path)
   invisible(path)
 }
+
+# ==============================================================================
+# 6. Formal differential-abundance test (step 5, decided 2026-11-12)
+# ==============================================================================
+# Group decision (rules section 5): a protein is a HIT when limma::treat() with
+# lfc = 1 gives BH-FDR < 0.05. treat() tests H0: |log2FC| <= 1, so the
+# fold-change threshold is PART OF THE TEST. We do not filter |log2FC| afterwards.
+# The supplied prolfquapp screen (FDR < 0.1, then |diff| > 1) stays as a
+# labelled comparison only.
+MVAL_FDR <- 0.05   # BH alpha
+MVAL_LFC <- 1      # treat() threshold on |log2 fold change|
+MVAL_MIN_OBS <- 2  # observed values needed in EACH group of a contrast to test it
+
+#' Wide matrix (proteins x samples) of normalised log2 abundances.
+#' Columns are joined BY SAMPLE NAME and ordered like `samples` (pitfall 2).
+#' NA stays NA (CLAUDE.md rule 6).
+abundance_matrix <- function(abund, samples) {
+  stopifnot(setequal(unique(abund$sample), samples$sample),
+            !anyDuplicated(abund[c("protein_key", "sample")]))
+  wide <- abund |>
+    select(protein_key, sample, normalized_abundance) |>
+    pivot_wider(names_from = sample, values_from = normalized_abundance)
+  m <- as.matrix(wide[, samples$sample])
+  rownames(m) <- wide$protein_key
+  stopifnot(identical(colnames(m), samples$sample))
+  m
+}
+
+#' All course contrasts as limma expressions over cell means "<genotype>_<medium>".
+#' Naming rule: A_vs_B = A - B; a contrast without "_at_" averages over the
+#' other factor; interaction_X_vs_Y_at_A_vs_B = (X_A - X_B) - (Y_A - Y_B).
+mval_contrasts <- function(genotypes = c("anc", "stk", "stp"),
+                           media = c("TSB", "SN", "SNpulse")) {
+  g <- \(geno, med) paste0(geno, "_", med)
+  avg <- \(x) paste0("(", paste(x, collapse = " + "), ")/", length(x))
+  # pair orders exactly as in the course tables (first - second)
+  geno_pairs <- list(c("stk", "anc"), c("stp", "anc"), c("stp", "stk"))
+  med_pairs  <- list(c("TSB", "SN"), c("TSB", "SNpulse"), c("SNpulse", "SN"))
+  out <- c()
+  for (p in med_pairs) {
+    out[paste0(p[1], "_vs_", p[2])] <- paste(avg(g(genotypes, p[1])), "-", avg(g(genotypes, p[2])))
+    for (ge in genotypes)
+      out[paste0(p[1], "_vs_", p[2], "_at_", ge)] <- paste(g(ge, p[1]), "-", g(ge, p[2]))
+  }
+  for (p in geno_pairs) {
+    out[paste0(p[1], "_vs_", p[2])] <- paste(avg(g(p[1], media)), "-", avg(g(p[2], media)))
+    for (me in media)
+      out[paste0(p[1], "_vs_", p[2], "_at_", me)] <- paste(g(p[1], me), "-", g(p[2], me))
+    for (q in med_pairs)
+      out[paste0("interaction_", p[1], "_vs_", p[2], "_at_", q[1], "_vs_", q[2])] <-
+        sprintf("(%s - %s) - (%s - %s)", g(p[1], q[1]), g(p[1], q[2]), g(p[2], q[1]), g(p[2], q[2]))
+  }
+  out
+}
+
+#' Groups (cell means) that a contrast expression uses.
+contrast_groups <- function(expr) unique(str_extract_all(expr, "[a-z]+_[A-Za-z]+")[[1]])
+
+#' limma fit with model ~ 0 + group (one mean per genotype x medium cell, no
+#' intercept, so no reference level can flip a sign: every contrast is written
+#' out as A - B by mval_contrasts()). Returns one row per protein x contrast with
+#'   diff        log2 fold change A - B
+#'   statistic   ordinary moderated t (eBayes, H0: diff = 0) -> for ranking
+#'   treat_t, p.value, FDR   treat() test of H0: |diff| <= lfc, BH within contrast
+#'   tested      FALSE if a group of the contrast has < min_obs observed values
+#'               (then p.value / FDR are NA and the protein is NOT in the BH family)
+fit_limma_treat <- function(m, samples, lfc = MVAL_LFC, min_obs = MVAL_MIN_OBS) {
+  stopifnot(identical(colnames(m), samples$sample))
+  group  <- factor(samples$group)
+  design <- model.matrix(~ 0 + group)
+  colnames(design) <- levels(group)
+  contr  <- mval_contrasts()
+  cm     <- limma::makeContrasts(contrasts = contr, levels = design)
+  colnames(cm) <- names(contr)
+
+  fit  <- limma::lmFit(m, design)
+  fit2 <- limma::contrasts.fit(fit, cm)
+  eb   <- limma::eBayes(fit2)
+  tr   <- limma::treat(fit2, lfc = lfc)
+
+  # observed values per protein x group
+  n_obs <- sapply(levels(group), \(gr) rowSums(!is.na(m[, group == gr, drop = FALSE])))
+
+  purrr::imap(contr, \(expr, ct) {
+    ok <- apply(n_obs[, contrast_groups(expr), drop = FALSE] >= min_obs, 1, all)
+    p  <- ifelse(ok, tr$p.value[, ct], NA_real_)
+    tibble(protein_key = rownames(m), contrast = ct,
+           diff = eb$coefficients[, ct], std.error = eb$stdev.unscaled[, ct] * sqrt(eb$s2.post),
+           statistic = eb$t[, ct], treat_t = tr$t[, ct],
+           p.value = p, FDR = p.adjust(p, "BH"),   # BH over tested proteins only
+           min_obs_in_groups = apply(n_obs[, contrast_groups(expr), drop = FALSE], 1, min),
+           tested = ok)
+  }) |>
+    bind_rows() |>
+    mutate(modelName = paste0("limma ~0+group, treat(lfc=", lfc, ")"),
+           estimate_type = "observed")   # no imputation in this model
+}

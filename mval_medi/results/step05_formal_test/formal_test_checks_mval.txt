@@ -1,0 +1,9 @@
+Step 5 formal test, run 2026-11-12
+Model ~ 0 + group; limma treat(lfc = 1); BH-FDR < 0.05; min 2 obs per group
+[PASS] 27 samples, 3 per group
+[PASS] total proteome: no reinjected samples (no batch covariate needed)
+[PASS] same 33 contrast names as the supplied DEA
+[PASS] sign convention: cor(our diff, supplied diff) > 0.95 in all contrasts (min 0.971)
+[PASS] every formal hit has |diff| > 1 (treat property)
+[PASS] known answer: Stp1 lower in stp (TSB) or not measurable there
+[PASS] known answer: Stk1 lower in stk (TSB) or not measurable there
