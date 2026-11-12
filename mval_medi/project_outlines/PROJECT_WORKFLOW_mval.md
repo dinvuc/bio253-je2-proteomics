@@ -94,15 +94,15 @@ The bundle contains processed course results, not instrument-level spectra. Spec
 
 **Do**
 
-- [ ] Use `03_mutant_validation.qmd` as the starting point. Write the predicted enzyme profiles before examining results.
-- [ ] Plot individual normalized protein abundances for Stp1 (`B7H15_06350`) and Stk1 (`B7H15_06355`) across all nine groups. Start interpretation with TSB, then check consistency in SN and SNpulse.
-- [ ] Count detections out of three samples per group and examine unexpected high mutant signals. Record missingness and outliers explicitly.
-- [ ] Inspect corresponding mutant-versus-parental contrasts within each medium. Keep `lod_imputed` estimates separate: they describe detection patterns, not precise loss magnitudes.
-- [ ] If unexpected signal persists, ask about insertion position, peptide uniqueness/coverage, possible protein fragments, carry-over or sample identity. Protein summaries alone cannot prove full-length functional protein.
-- [ ] **Peptide values for H1 (presentation feedback), from existing files only:**
+- [x] Use `03_mutant_validation.qmd` as the starting point. Write the predicted enzyme profiles before examining results.
+- [x] Plot individual normalized protein abundances for Stp1 (`B7H15_06350`) and Stk1 (`B7H15_06355`) across all nine groups. Start interpretation with TSB, then check consistency in SN and SNpulse.
+- [x] Count detections out of three samples per group and examine unexpected high mutant signals. Record missingness and outliers explicitly.
+- [x] Inspect corresponding mutant-versus-parental contrasts within each medium. Keep `lod_imputed` estimates separate: they describe detection patterns, not precise loss magnitudes.
+- [x] If unexpected signal persists, ask about insertion position, peptide uniqueness/coverage, possible protein fragments, carry-over or sample identity. Protein summaries alone cannot prove full-length functional protein.
+- [x] **Peptide values for H1 (presentation feedback), from existing files only:**
   - *Peptides per sample:* read `nr_children_protein_Id` and `nrPeptides` for Stp1/Stk1 from sheet `normalized_abundances` of `DE_total.xlsx`. Join to the sample sheet by sample name; repair the truncated `2anc_pulseSN_…` names as in `R/parse.R`. Identify each protein by its `protein_id` (ARG45702.1 / ARG45703.1) in code, never by its peptide count. Plot the number of peptides quantified per sample across the 9 groups (NA = 0 peptides quantified, shown as "not detected", not entered as 0 in any log-scale calculation).
   - *Stk1 phosphopeptide map:* from `read_sites("STYH")` (and STY as a cross-check), plot each Stk1 site by protein `position` × sample, with the `stk` insertion codon (46) and the `stp` insertion codon (Stp1 189) from `TRANSPOSON_INSERTIONS` as reference lines. Stp1 has no phosphosites in our tables, so this map exists for Stk1 only.
-  - *Check before interpreting:* first look (12 Nov) showed Stk1 phosphopeptide `HIQDSVPNVTtDVR…` (positions ~231–242, downstream of codon 46) detected in 3/3 `stk` samples per medium, while the other Stk1 sites are absent from `stk`. Check whether this peptide is unique to Stk1 in `JE2_proteins.fasta`, its localization probability and intensity, before any claim about a truncated product.
+  - *Check before interpreting (done 12 Nov):* `HIQDSVPNVTtDVR…` (T231/S240/S242) is unique to Stk1 in `JE2_proteins.fasta`, but sporadic in every strain (STYH: anc 3/9, stk 3/9, stp 4/9; in `stk` one sample per medium and none in TSB), low intensity, median loc_prob 0 in anc. The first look ("3/3 `stk` per medium") was wrong. No claim of a truncated product.
   - Limits: no sequence or position for total-proteome peptides, so we cannot say *which part* of Stp1 is still seen; we can only say *how many* peptides.
 
 **Why:** Downstream `stp_vs_anc` effects cannot be interpreted as phosphatase-only effects if Stk1 is also reduced. Peptide counts per sample show directly whether a "detected" protein rests on many peptides or on one stray peptide.
@@ -113,13 +113,13 @@ The bundle contains processed course results, not instrument-level spectra. Spec
 
 **Do**
 
-- [ ] Inspect JE2 genome coordinates, strand/orientation and neighboring genes around `stp1` and `stk1`; draw a small annotated gene diagram.
-- [ ] Cite the operon/transcription-unit evidence for *stp1*–*stk1* from AureoWiki (look up the NCTC 8325 orthologs via `staa8_uniprot` / `read_protein_metadata()`), and the NE217/NE1919 insertion positions from NTML (ntml.unmc.edu) and `TRANSPOSON_INSERTIONS` in `R/constants.R`. Record which strain the AureoWiki evidence refers to (NCTC 8325, not JE2).
-- [ ] ~~Peptide coverage via `plot_peptide_coverage()`~~: not possible, the peptide table will not be provided (12 Nov). Use the Step 3 substitutes (peptide counts per sample, Stk1 phosphopeptide map) and the non-peptide parts of notebook 07 (insertion codons, operon reasoning).
-- [ ] Polar effect at peptide level: compare the number of Stk1 peptides quantified in `stp` with `anc` and `stk`. A drop of Stk1 in `stp` close to that in `stk` is what a polar insertion predicts ("same effect as the mutation"). It is consistent with polarity but does not prove the mechanism.
-- [ ] Plot measured neighboring proteins and assess whether any accompanying changes are consistent across samples and conditions.
-- [ ] Compare the pattern with the verified insertion/polar-effect evidence in `mval_medi/docs/stk_stp_rescue_evidence_mval.md`. Check the original source before using a specific biological claim.
-- [ ] List alternatives: protein stability/regulation, secondary mutations, peptide assignment and sample problems. Retain observations that contradict polarity.
+- [x] Inspect JE2 genome coordinates, strand/orientation and neighboring genes around `stp1` and `stk1`; draw a small annotated gene diagram.
+- [x] Cite the operon/transcription-unit evidence for *stp1*–*stk1* from AureoWiki (look up the NCTC 8325 orthologs via `staa8_uniprot` / `read_protein_metadata()`), and the NE217/NE1919 insertion positions from NTML (ntml.unmc.edu) and `TRANSPOSON_INSERTIONS` in `R/constants.R`. Record which strain the AureoWiki evidence refers to (NCTC 8325, not JE2). *Done for AureoWiki/UniProt (SAOUHSC_01182 > … > 01186 > 01187, stk1 last). NTML entries for NE217/NE1919 are still to be checked by hand: the site loads its content by JavaScript.*
+- [x] ~~Peptide coverage via `plot_peptide_coverage()`~~: not possible, the peptide table will not be provided (12 Nov). Use the Step 3 substitutes (peptide counts per sample, Stk1 phosphopeptide map) and the non-peptide parts of notebook 07 (insertion codons, operon reasoning).
+- [x] Polar effect at peptide level: compare the number of Stk1 peptides quantified in `stp` with `anc` and `stk`. A drop of Stk1 in `stp` close to that in `stk` is what a polar insertion predicts ("same effect as the mutation"). It is consistent with polarity but does not prove the mechanism.
+- [x] Plot measured neighboring proteins and assess whether any accompanying changes are consistent across samples and conditions.
+- [x] Compare the pattern with the verified insertion/polar-effect evidence in `mval_medi/docs/stk_stp_rescue_evidence_mval.md`. Check the original source before using a specific biological claim.
+- [x] List alternatives: protein stability/regulation, secondary mutations, peptide assignment and sample problems. Retain observations that contradict polarity.
 
 **Why:** Gene proximity and reduced Stk1 can support a possible polar explanation, but do not demonstrate shared transcription or the causal mechanism.
 
@@ -283,8 +283,10 @@ If time is short, finish Steps 1-7 and the relevant interpretation/reporting in 
 
 **12 November 2026:** Step 5 done (formal limma treat test, `scripts/05_formal_test_mval.R`). Presentation feedback added (section above): the peptide table will not come, so peptide evidence for H1 comes from `nr_children_protein_Id` and the Stk1 phosphopeptides; ErmB/GFP are not in the search FASTA (Step 4b). Final deliverable is an A0 poster + abstract.
 
+**12 November 2026 (later):** Steps 3–4 done (`scripts/03_mutant_validation_mval.R`, `scripts/04_polar_effect_mval.R`; notebook `2026-11-12_steps3-4_mutant_validation_mval.md`). Stk1 is lost in `stk` (1/9 samples, 1 peptide) and nearly lost in `stp` (median 0–1 peptides vs 28–32 in anc). Stp1 in `stp` rests on 1–2 peptides, which explains the erratic wild-type-like values. Neighbours are unchanged (0 formal hits, |diff| ≤ 0.74). This is consistent with a polar insertion (stk1 is the last gene of the AureoWiki transcription unit) but does not prove it. The `HIQDSVPNVTtDVR` peptide is sporadic in all strains and gives no evidence for a truncated product.
+
 **Next actions, in order (for Friday 13 Nov):**
-1. Step 3: `scripts/03_mutant_validation_mval.R`: Stp1/Stk1 abundances + peptide counts per sample + Stk1 phosphopeptide map (check the `HIQDSVPNVTtDVR` peptide in `stk`).
+1. ~~Step 3~~ done; check NE217/NE1919 on ntml.unmc.edu by hand.
 2. Steps 6–7: interactions relative to `anc`; `stp` vs `stk` effect scatter (polar effect / H3).
 3. Step 10: enrichment for the `stk` contrasts ("Stk1 broadly involved").
 4. Ask Jonas: meaning of "stk1 broadly involved", whether transposon-search values will come, poster format/deadline.

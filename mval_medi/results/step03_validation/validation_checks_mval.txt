@@ -1,0 +1,12 @@
+[PASS] insertion codons are Stk1 46/664 and Stp1 189/247 
+[PASS] per-sample table: 2 proteins x 27 samples, no duplicates 
+[PASS] every sample name in the Excel matches the sample sheet 
+[PASS] 3 samples in every group for each protein 
+[PASS] Excel abundance equals the derived abundance (same values, same samples) 
+[PASS] NA abundance <=> NA peptide count 
+[PASS] PREDICTION Stk1 reduced in stk: <= 1 detection per medium, none with >= 2 peptides (detections TSB/SNpulse/SN: 0/1/0)
+[PASS] contrast table: 2 proteins x 9 contrasts 
+[PASS] no phosphosites on Stp1 in either search 
+[PASS] peptide HIQDSVPNVTTDVR occurs in exactly one FASTA entry (Stk1) 
+[INFO] T231 (HIQ peptide, STYH) in stk: 3 of 9 samples (JE2stk_SN_2, JE2stk_pulseSN_1, JE2stk_pulseSN_3)
+[PASS] reference: anc has both enzymes in 3/3 samples with >= 2 peptides in every medium 
