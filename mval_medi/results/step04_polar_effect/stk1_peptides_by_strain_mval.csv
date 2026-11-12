@@ -1,0 +1,10 @@
+genotype,medium,samples_detected,peptides_per_sample,median_peptides_NA_as_0
+anc,TSB,3,32/32/29,32
+anc,SNpulse,3,32/28/32,32
+anc,SN,3,31/27/28,28
+stk,TSB,0,-/-/-,0
+stk,SNpulse,1,1/-/-,0
+stk,SN,0,-/-/-,0
+stp,TSB,3,1/1/2,1
+stp,SNpulse,2,2/1/-,1
+stp,SN,0,-/-/-,0

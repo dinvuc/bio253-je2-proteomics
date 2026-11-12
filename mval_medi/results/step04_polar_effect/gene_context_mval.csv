@@ -1,0 +1,13 @@
+locus_tag,start,end,strand,gap_to_next_bp,in_aureowiki_unit,product,uniprot_acc,ortholog_quality,gene_symbol_best,up_protein_name,n_samples_detected,label
+B7H15_06320,1226853,1227806,+,162,FALSE,hypothetical protein,Q2G264,good,NA,Lipoprotein,27,06320
+B7H15_06325,1227969,1228247,-,223,FALSE,hypothetical protein,Q2G267,good,NA,TM2 domain-containing protein,0,06325
+B7H15_06330,1228471,1228959,+,-8,TRUE,peptide deformylase,Q2G265,good,NA,Peptide deformylase-like (Polypeptide deformylase-like),27,06330
+B7H15_06335,1228952,1229887,+,-4,TRUE,methionyl-tRNA formyltransferase,Q2FZ68,good,fmt,Methionyl-tRNA formyltransferase (EC 2.1.2.9),27,fmt
+B7H15_06340,1229884,1231191,+,2,TRUE,16S rRNA (cytosine(967)-C(5))-methyltransferase,Q2FZ67,good,NA,16S rRNA (cytosine(967)-C(5))-methyltransferase (EC 2.1.1.176) (16S rRNA m5C967 methyltransferase) (rRNA (cytosine-C(5)-)-methyltransferase RsmB),27,06340
+B7H15_06345,1231194,1232288,+,6,TRUE,23S rRNA (adenine(2503)-C(2))-methyltransferase RlmN,Q2FZ66,good,rlmN,Probable dual-specificity RNA methyltransferase RlmN (EC 2.1.1.192) (23S rRNA (adenine(2503)-C(2))-methyltransferase) (23S rRNA m2A2503 methyltransferase) (Ribosomal RNA large subunit methyltransferase N) (tRNA (adenine(37)-C(2))-methyltransferase) (tRNA m2A37 methyltransferase),27,rlmN
+B7H15_06350,1232295,1233038,+,-4,TRUE,protein phosphatase,Q2FZ65,good,NA,protein-serine/threonine phosphatase (EC 3.1.3.16),25,stp1
+B7H15_06355,1233035,1235029,+,227,TRUE,serine/threonine protein kinase,Q2FZ64,good,NA,Serine/threonine-protein kinase PrkC (EC 2.7.11.1),15,stk1
+B7H15_06360,1235257,1236132,+,0,FALSE,ribosome small subunit-dependent GTPase A,Q2FZ63,good,rsgA,Small ribosomal subunit biogenesis GTPase RsgA (EC 3.6.1.-),27,rsgA
+B7H15_06365,1236133,1236777,+,6,FALSE,ribulose-phosphate 3-epimerase,Q2FZ62,good,rpe,Ribulose-phosphate 3-epimerase (EC 5.1.3.1),27,rpe
+B7H15_06370,1236784,1237425,+,380,FALSE,thiamine pyrophosphokinase,Q2FZ61,good,NA,Thiamine diphosphokinase (EC 2.7.6.2),27,06370
+B7H15_06375,1237806,1237994,-,NA,FALSE,50S ribosomal protein L28,Q2FZ60,good,rpmB,Large ribosomal subunit protein bL28 (50S ribosomal protein L28),27,rpmB
