@@ -10,9 +10,12 @@
 #     pictures: this script writes ready-to-paste locus-tag lists.
 #
 # Two methods (lecture 06, slide 25):
-#   ORA  = cut-off hits (FDR < 0.1, |log2FC| > 1), split up/down, Fisher test.
-#          lod_imputed hits are INCLUDED (presence/absence evidence) and counted.
-#   rank = GSEA-like: all proteins ranked by the moderated t statistic,
+#   ORA  = formal hits from step 5 (limma treat, H0 |log2FC| <= 1, BH-FDR < 0.05),
+#          split up/down, Fisher test. No post-hoc |log2FC| filter: the threshold
+#          is part of the test. The formal test uses observed values only, so
+#          presence/absence (lod_imputed) proteins are not hits here; they are
+#          counted separately in step 5 (hit_counts_mval.csv).
+#   rank = GSEA-like: all TESTED proteins ranked by the ordinary moderated t (eBayes),
 #          Wilcoxon test per term. Only OBSERVED estimates are ranked, because an
 #          imputed fold change is not a precise number (CLAUDE.md rule 5).
 #
@@ -31,9 +34,14 @@ suppressMessages(source("R/setup.R"))
 
 contrasts <- commandArgs(trailingOnly = TRUE)
 if (length(contrasts) == 0) contrasts <- "stk_vs_anc"
-FDR_CUT <- 0.1; LFC_CUT <- 1
+FDR_CUT <- MVAL_FDR  # 0.05, group decision 2026-11-12 (rules section 5)
+LFC_CUT <- 0         # only splits up/down: |log2FC| > 1 is already tested by treat()
 
-dea   <- read_dea("total") |> keep_je2()
+# Needs step 5 first: Rscript scripts/05_formal_test_mval.R
+formal_file <- "data/derived/limma_treat_total_mval.tsv.gz"
+if (!file.exists(formal_file)) stop("Run scripts/05_formal_test_mval.R first.")
+# background = proteins actually TESTED in the contrast (enough observed values)
+dea   <- read_tsv(formal_file, show_col_types = FALSE) |> filter(tested) |> keep_je2()
 terms <- read_protein_terms()
 stopifnot(all(contrasts %in% dea$contrast))
 

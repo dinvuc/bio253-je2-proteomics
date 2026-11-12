@@ -36,7 +36,7 @@ Use genotype-by-condition interaction contrasts to compare the change from TSB t
 
 First examine baseline differences with `stk_vs_anc_at_TSB` and `stp_vs_anc_at_TSB`. These distinguish existing mutant differences from altered exposure responses.
 
-Compare interaction effect sizes and uncertainty rather than only lists of significant results. Plot individual protein measurements for selected shared or distinct responses. Prioritize reliably observed measurements and report missing replicates and imputed estimates. Any formal screen must account for multiple testing; the course default is FDR < 0.1 and absolute log2 effect > 1, reported alongside estimates and uncertainty.
+Compare interaction effect sizes and uncertainty rather than only lists of significant results. Plot individual protein measurements for selected shared or distinct responses. Prioritize reliably observed measurements and report missing replicates and imputed estimates. Any formal screen must account for multiple testing. Our hit rule (group decision, 12 Nov 2026) is a limma `treat()` test of |log2 effect| > 1 with Benjamini-Hochberg FDR < 0.05, reported alongside estimates and uncertainty; the course default screen (FDR < 0.1 and absolute log2 effect > 1, applied after the test) is kept as a comparison.
 
 The first two interactions share the parental reference, so their correlation is descriptive and cannot independently establish a shared mechanism. Use the direct `stp`-versus-`stk` interaction to investigate differences. A nonsignificant difference does not establish equivalence, especially with three replicates per group.
 

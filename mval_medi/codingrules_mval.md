@@ -64,10 +64,23 @@ something the plan did not say, explain why.
 
 ## 5. Statistics
 
-- **Use adjusted p-values, never raw p-values**, to decide what is a hit. Our
-  screen is the course default: **FDR < 0.1 and |log2 effect| > 1**, always
-  reported together with the estimate and its standard error. Check which
-  column a filter actually uses.
+- **Use adjusted p-values, never raw p-values**, to decide what is a hit.
+  **Our hit rule (group decision, 12 Nov 2026):** `limma::treat()` with
+  `lfc = 1` (null hypothesis: |log2 effect| ≤ 1), Benjamini-Hochberg,
+  **alpha = 0.05**, i.e. treat BH-FDR < 0.05. The fold-change threshold is
+  *tested*, not applied as a filter afterwards: never select "FDR < x, then
+  |log2FC| > 1", and never say "find the top genes". Always report the
+  estimate and its standard error. Check which column a filter actually uses.
+  Code: `scripts/05_formal_test_mval.R`, constants `MVAL_FDR` / `MVAL_LFC`.
+- **Supplied screen = comparison only.** The prolfquapp screen
+  (FDR < 0.1 and |diff| > 1, `lm_impute`) is kept as a labelled comparison
+  and as the only source of presence/absence (`lod_imputed`) evidence; it no
+  longer defines our hits.
+- **Write the model down.** State the exact formula and how the sign is fixed.
+  Ours is `~ 0 + group` (one mean per genotype × medium) with every contrast
+  written out as `A - B`, so no reference level can flip a sign. Total
+  proteome has no batch term: all 27 runs are from one day and run order is
+  blocked by group (confounded, cannot be modelled).
 - **Fix thresholds before looking at results.** Write them in the plan or
   notebook first; do not change them afterwards to get a nicer list.
 - **Name the test.** For every result say which model it came from
@@ -108,7 +121,7 @@ something the plan did not say, explain why.
   make something pass, and do not hide errors (e.g. an empty `tryCatch`). If a
   step fails and the reason is unclear, stop and report it.
 - Figures must use the same thresholds as the analysis they show (e.g.
-  volcano lines at FDR 0.1 and |log2| 1).
+  volcano lines at FDR 0.05 and |log2| 1 for our treat test).
 
 ## 8. Reports
 
@@ -152,8 +165,8 @@ and they produce wrong results without any error message.
 
 **Risk:** filtering by raw `p.value < 0.05` across all tested proteins or
 phosphosites gives many false positives.
-**Guard:** decide hits on the adjusted value (FDR) only, using our screen
-FDR < 0.1 and |log2 effect| > 1 (section 5). In every filter, check which
+**Guard:** decide hits on the adjusted value (FDR) only, using our rule
+treat(lfc = 1) BH-FDR < 0.05 (section 5). In every filter, check which
 column is used: it must be the FDR column, not the raw p-value.
 
 ### Pitfall 2: silent sample-order mismatch
