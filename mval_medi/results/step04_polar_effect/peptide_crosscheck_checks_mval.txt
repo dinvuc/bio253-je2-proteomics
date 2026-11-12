@@ -1,0 +1,4 @@
+[PASS] all 54 rows (anc too): peptide-layer counts equal Step 3 n_peptides
+[PASS] mutant samples: peptide-layer counts equal Step 3 n_peptides (36 rows)
+[INFO] Stp1 in stp: 7 of 9 samples detected; samples with a peptide after codon 189: JE2stp_SN_2
+[INFO] Stk1 in stk: detections JE2stk_pulseSN_1
