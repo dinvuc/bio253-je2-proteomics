@@ -6,4 +6,4 @@
 [PASS] every measured neighbour is detected in all 27 samples 
 [PASS] neighbours: largest |supplied diff| mutant vs anc = 0.74 (rpmB, stp_vs_anc_at_TSB)
 [PASS] neighbours: formal hits (treat lfc = 1, BH-FDR < 0.05) = 0 of 54 protein x contrast rows
-[PASS] activation-loop sites (161-172, >= 2 obs per group): median stp - anc (log2) = -4.4 (6 site x medium rows; negative = lower in stp)
+[PASS] site cluster T161-T172 (>= 2 obs per group): median stp - anc (log2) = -4.4 (6 site x medium rows; negative = lower in stp)

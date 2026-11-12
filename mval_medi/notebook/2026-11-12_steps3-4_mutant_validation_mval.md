@@ -37,12 +37,15 @@ be provided, so peptide evidence comes from `nr_children_protein_Id`
 
 **Stk1 phosphosites**
 - Stp1 has no phosphosites in either search.
-- Activation-loop sites (159–175): 8–9/9 in anc, **0/9 in stk**, 1–6/9 in stp.
-  Where seen in both anc and stp, stp is lower by a median of **−4.4 log2** (6 site × medium rows).
+- Site cluster S159–Y175 (STYH): T161–T172 in 8–9/9 anc samples (S159 7/9, Y175 1/9),
+  **0/9 in stk** for every site, 0–6/9 in stp (T164 6, T166 5, H168 5, T172 3, S159 1, Y175 1, T161/S162 0).
+  For T161–T172, where both anc and stp have ≥ 2 values in a medium, stp is lower by a median
+  of **−4.4 log2** (6 site × medium rows). (Whether this cluster is the kinase activation loop is
+  not checked against a source yet.)
 - `HIQDSVPNVTtDVR…` (T231/S240/S242): the peptide is unique to Stk1 in `JE2_proteins.fasta`, but it is
   **sporadic in all strains**: anc 3/9, stk 3/9, stp 4/9 (STYH). In stk it appears in `SN_2`,
   `pulseSN_1` (reinjected) and `pulseSN_3`, and **not in TSB**. Median loc_prob is 0 in anc and
-  0.64 in stk. Intensities of 16–18 log2 are at the low end.
+  0.64 in stk. Intensities of 15.7–18.6 log2 are at the low end (for comparison, T164 in anc: median 20.2).
   **Correction of the 12 Nov first look:** it is 1 sample per medium, not "3/3 per medium".
   It is not good evidence for a truncated Stk1 product. Unresolved why it appears in stk at all (carry-over? noise?).
 

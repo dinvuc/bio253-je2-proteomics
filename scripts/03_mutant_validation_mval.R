@@ -251,7 +251,7 @@ hiq <- sites |>
   arrange(search, position, sample)
 write_csv(hiq, file.path(out_dir, "hiq_peptide_check_mval.csv"))
 
-# Compare: the activation-loop site T164 (clear wild-type signal) vs T231
+# Compare: cluster site T164 (clear wild-type signal) vs T231
 cmp <- sites |> filter(search == "STYH", position %in% c(164, 231), !is.na(intensity)) |>
   group_by(site = paste0(residue, position), genotype) |>
   summarise(n_detected_of9 = n(), median_log2 = round(median(log2_intensity), 1),

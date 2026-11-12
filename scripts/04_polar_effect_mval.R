@@ -211,7 +211,7 @@ site_drop <- read_sites("STYH") |>
 write_csv(site_drop, file.path(out_dir, "stk1_site_drop_stp_mval.csv"))
 print(site_drop, n = 40)
 loop <- site_drop |> filter(position %in% 161:172, n_anc >= 2, n_stp >= 2)
-check("activation-loop sites (161-172, >= 2 obs per group): median stp - anc (log2)", TRUE,
+check("site cluster T161-T172 (>= 2 obs per group): median stp - anc (log2)", TRUE,
       paste0("= ", round(median(loop$diff_stp_minus_anc), 2), " (", nrow(loop),
              " site x medium rows; negative = lower in stp)"))
 
