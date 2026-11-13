@@ -26,6 +26,8 @@
 #             one_sided_responses_mval.csv    on/off patterns in the interactions (exploratory)
 #             fig_effect_distributions_mval.png
 #             fig_response_vs_anc_mval.png    Fig 2: mutant response vs anc response
+#                                             (pink = exploratory 0.05 <= FDR < 0.1, not a hit)
+#             fig_response_stk_vs_stp_mval.png  stp response vs stk response (direct interaction)
 #             fig_candidates_raw_mval.png     per-sample values of every candidate
 #             figure_guide_mval.md, responses_checks_mval.txt
 # Check:    interaction == response_anc - response_mutant for every eligible protein;
@@ -83,7 +85,10 @@ resp <- wide |>
             int_stk = `interaction_stk_vs_anc_at_TSB_vs_SN__diff`, int_stp = `interaction_stp_vs_anc_at_TSB_vs_SN__diff`,
             int_stk_tested = `interaction_stk_vs_anc_at_TSB_vs_SN__tested`,
             int_stp_tested = `interaction_stp_vs_anc_at_TSB_vs_SN__tested`,
-            int_stk_FDR = `interaction_stk_vs_anc_at_TSB_vs_SN__FDR`, int_stp_FDR = `interaction_stp_vs_anc_at_TSB_vs_SN__FDR`)
+            int_stk_FDR = `interaction_stk_vs_anc_at_TSB_vs_SN__FDR`, int_stp_FDR = `interaction_stp_vs_anc_at_TSB_vs_SN__FDR`,
+            int_direct = `interaction_stp_vs_stk_at_TSB_vs_SN__diff`,
+            int_direct_tested = `interaction_stp_vs_stk_at_TSB_vs_SN__tested`,
+            int_direct_FDR = `interaction_stp_vs_stk_at_TSB_vs_SN__FDR`)
 dev <- with(resp, c(abs(int_stk - (resp_anc - resp_stk))[int_stk_tested],
                     abs(int_stp - (resp_anc - resp_stp))[int_stp_tested]))
 check(sprintf("interaction == response_anc - response_mutant for all %d eligible rows (max |dev| %.1e)",
@@ -200,35 +205,84 @@ p_dist <- ggplot(dist_df, aes(diff)) +
   theme(plot.subtitle = element_text(size = 8))
 ggsave(file.path(out, "fig_effect_distributions_mval.png"), p_dist, width = 8, height = 7, dpi = 300)
 
+# Hit classes for the figures. The hit rule stays BH-FDR < MVAL_FDR (0.05, fixed
+# 12 Nov before results). On request (13 Nov) proteins with 0.05 <= FDR < 0.1 are
+# SHOWN as a separate, labelled exploratory layer. They are not hits, are not
+# counted as hits anywhere, and the threshold was chosen after seeing results.
+FDR_EXPLORATORY <- 0.1
+hit_class <- function(tested, fdr) {
+  factor(case_when(tested & fdr < MVAL_FDR ~ "formal hit (FDR < 0.05)",
+                   tested & fdr < FDR_EXPLORATORY ~ "exploratory (0.05 <= FDR < 0.1)",
+                   TRUE ~ "no evidence"),
+         c("no evidence", "exploratory (0.05 <= FDR < 0.1)", "formal hit (FDR < 0.05)"))
+}
+CLASS_COLOURS <- c("formal hit (FDR < 0.05)" = "#D55E00", "exploratory (0.05 <= FDR < 0.1)" = "#CC79A7",
+                   "no evidence" = "grey45")
+draw_response_scatter <- function(d, cors, x_lab, y_lab, title, subtitle) {
+  ggplot(d, aes(x, y)) +
+    geom_abline(slope = 1, intercept = 0, colour = "grey40") +
+    geom_abline(slope = 1, intercept = c(-MVAL_LFC, MVAL_LFC), colour = "grey60", linetype = 2) +
+    geom_point(data = filter(d, class == "no evidence"), alpha = 0.25, size = 0.7, colour = "grey45") +
+    geom_point(data = filter(d, class != "no evidence"), aes(colour = class), size = 2) +
+    geom_text(data = filter(d, class != "no evidence"), aes(label = label, colour = class),
+              size = 3, vjust = -0.8, show.legend = FALSE) +
+    # geom_label with hjust = 0 keeps all lines left-aligned; padding keeps it off the border
+    geom_label(data = cors, aes(x = -Inf, y = Inf, label = text), hjust = 0, vjust = 1, size = 3,
+               label.size = 0, fill = NA, label.padding = unit(0.6, "lines")) +
+    scale_colour_manual(values = CLASS_COLOURS, drop = TRUE) +
+    coord_equal() +
+    labs(x = x_lab, y = y_lab, colour = NULL, title = title, subtitle = subtitle) +
+    theme(plot.subtitle = element_text(size = 8), strip.text = element_text(size = 8), legend.position = "bottom")
+}
+count_text <- function(d, x, y) {
+  d |> summarise(r = cor({{ x }}, {{ y }}), n = n(),
+                 hits = sum(class == "formal hit (FDR < 0.05)"),
+                 expl = sum(class == "exploratory (0.05 <= FDR < 0.1)"), .groups = "drop") |>
+    mutate(text = sprintf("n = %d eligible\nPearson r = %.2f\nformal hits (FDR < 0.05) = %d\nexploratory (FDR < 0.1) = +%d",
+                          n, r, hits, expl))
+}
+
 # 5b Fig 2: response in the mutant against the response in anc
 sc <- bind_rows(
-  resp |> filter(int_stk_tested) |> transmute(locus_tag, mutant = "stk", resp_anc, resp_mut = resp_stk,
-                                              hit = int_stk_FDR < MVAL_FDR),
-  resp |> filter(int_stp_tested) |> transmute(locus_tag, mutant = "stp", resp_anc, resp_mut = resp_stp,
-                                              hit = int_stp_FDR < MVAL_FDR)) |>
+  resp |> filter(int_stk_tested) |> transmute(locus_tag, mutant = "stk", x = resp_anc, y = resp_stk,
+                                              class = hit_class(int_stk_tested, int_stk_FDR)),
+  resp |> filter(int_stp_tested) |> transmute(locus_tag, mutant = "stp", x = resp_anc, y = resp_stp,
+                                              class = hit_class(int_stp_tested, int_stp_FDR))) |>
   left_join(meta, by = "locus_tag") |>
   mutate(label = coalesce(gene, locus_tag),
          mutant = factor(mutant, c("stk", "stp"),
                          c("stk vs anc  (interaction_stk_vs_anc_at_TSB_vs_SN)",
                            "stp vs anc  (interaction_stp_vs_anc_at_TSB_vs_SN)\nstp also lacks most Stk1")))
-cors <- sc |> group_by(mutant) |>
-  summarise(r = cor(resp_anc, resp_mut), n = n(), hits = sum(hit), .groups = "drop") |>
-  mutate(text = sprintf("n = %d eligible\nPearson r = %.2f\nformal hits = %d", n, r, hits))
-p_sc <- ggplot(sc, aes(resp_anc, resp_mut)) +
-  geom_abline(slope = 1, intercept = 0, colour = "grey40") +
-  geom_abline(slope = 1, intercept = c(-MVAL_LFC, MVAL_LFC), colour = "grey60", linetype = 2) +
-  geom_point(data = filter(sc, !hit), alpha = 0.25, size = 0.7, colour = "grey45") +
-  geom_point(data = filter(sc, hit), colour = "#D55E00", size = 2) +
-  geom_text(data = filter(sc, hit), aes(label = label), colour = "#D55E00", size = 3, vjust = -0.8) +
-  geom_text(data = cors, aes(x = -Inf, y = Inf, label = text), hjust = -0.1, vjust = 1.2, size = 3) +
-  facet_wrap(~mutant) +
-  coord_equal() +
-  labs(x = "SN response in anc: log2(SN) - log2(TSB)", y = "SN response in the mutant: log2(SN) - log2(TSB)",
-       title = "Is the response to PASN different in the mutants? (relative to the ancestor)",
-       subtitle = paste0("On the diagonal = same response as anc. Below = response lower in the mutant (interaction > 0).\n",
-                         "Orange = formal interaction hit (treat lfc = 1, BH-FDR < 0.05). Dashed = diagonal +/- 1.")) +
-  theme(plot.subtitle = element_text(size = 8), strip.text = element_text(size = 8))
-ggsave(file.path(out, "fig_response_vs_anc_mval.png"), p_sc, width = 10, height = 5.8, dpi = 300)
+p_sc <- draw_response_scatter(
+  sc, sc |> group_by(mutant) |> count_text(x, y),
+  "SN response in anc: log2(SN) - log2(TSB)", "SN response in the mutant: log2(SN) - log2(TSB)",
+  "Is the response to PASN different in the mutants? (relative to the ancestor)",
+  paste0("On the diagonal = same response as anc. Below = response lower in the mutant (interaction > 0). Dashed = diagonal +/- 1.\n",
+         "Hit rule: treat lfc = 1, BH-FDR < 0.05 (fixed before results). Pink = exploratory only (0.05 <= FDR < 0.1, chosen after results; not a hit).")) +
+  facet_wrap(~mutant)
+ggsave(file.path(out, "fig_response_vs_anc_mval.png"), p_sc, width = 10, height = 6.2, dpi = 300)
+
+# 5b' separate figure: stp response against stk response (direct comparison).
+# interaction_stp_vs_stk_at_TSB_vs_SN = (stp_TSB - stp_SN) - (stk_TSB - stk_SN)
+#                                     = response_stk - response_stp
+# -> positive = below the diagonal = SN response lower in stp than in stk.
+# No anc term here, so the correlation has no shared-anc-reference problem.
+dev_direct <- with(filter(resp, int_direct_tested), abs(int_direct - (resp_stk - resp_stp)))
+check(sprintf("interaction_stp_vs_stk == response_stk - response_stp for all %d eligible rows (max |dev| %.1e)",
+              length(dev_direct), max(dev_direct)), max(dev_direct) < 1e-8)
+sc_direct <- resp |> filter(int_direct_tested) |>
+  transmute(locus_tag, x = resp_stk, y = resp_stp, class = hit_class(int_direct_tested, int_direct_FDR)) |>
+  left_join(meta, by = "locus_tag") |>
+  mutate(label = coalesce(gene, locus_tag))
+p_direct <- draw_response_scatter(
+  sc_direct, count_text(sc_direct, x, y),
+  "SN response in stk: log2(SN) - log2(TSB)", "SN response in stp: log2(SN) - log2(TSB)",
+  "Do the two mutants respond to PASN in the same way?\nstp vs stk (interaction_stp_vs_stk_at_TSB_vs_SN)",
+  paste0("On the diagonal = same response in stp and stk. Below = response lower in stp than in stk\n",
+         "(interaction > 0). Dashed = diagonal +/- 1. Hit rule: treat lfc = 1, BH-FDR < 0.05.\n",
+         "Pink = exploratory only (0.05 <= FDR < 0.1, chosen after results; not a hit). stp also lacks most Stk1."))
+ggsave(file.path(out, "fig_response_stk_vs_stp_mval.png"), p_direct, width = 7.5, height = 8, dpi = 300)
+print(sc_direct |> filter(class != "no evidence") |> select(locus_tag, gene, x, y, class))
 
 # 5c raw per-sample values of every candidate (CLAUDE.md rule 4)
 cand_tags <- unique(cand$locus_tag)
