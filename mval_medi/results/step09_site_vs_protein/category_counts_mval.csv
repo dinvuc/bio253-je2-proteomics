@@ -1,0 +1,14 @@
+search,contrast,consistent with protein amount,residual adjusted change,unresolved (adjusted effect uncertain)
+STY,stk_vs_anc_at_TSB,0,1,0
+STY,stp_vs_anc_at_TSB,0,1,2
+STY,stp_vs_stk_at_TSB,0,2,0
+STY,TSB_vs_SN_at_anc,4,6,0
+STY,TSB_vs_SN_at_stk,10,16,0
+STY,TSB_vs_SN_at_stp,3,13,3
+STY,interaction_stp_vs_stk_at_TSB_vs_SN,0,1,0
+STYH,stk_vs_anc_at_TSB,0,1,0
+STYH,stp_vs_anc_at_TSB,0,3,1
+STYH,TSB_vs_SN_at_anc,3,7,0
+STYH,TSB_vs_SN_at_stk,6,14,0
+STYH,TSB_vs_SN_at_stp,5,13,2
+STYH,interaction_stp_vs_stk_at_TSB_vs_SN,0,1,0
