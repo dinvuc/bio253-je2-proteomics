@@ -177,12 +177,13 @@ For example, the stp-versus-parent interaction is `(stp_TSB - stp_SN) - (anc_TSB
 
 **Do**
 
-- [ ] Compare the two mutant-versus-parent interaction estimates for the same eligible proteins, with direction and uncertainty visible. Record proteins eligible in one comparison but not the other.
-- [ ] **Polar-effect test of H3 (presentation feedback):** scatter `stp_vs_anc_at_TSB` against `stk_vs_anc_at_TSB` (baseline), and the two interactions against each other (response). If the `stp` insertion has "the same effect as the `stk` mutation", points lie near the diagonal. Report the slope/correlation with its uncertainty, and the proteins far off the diagonal (candidate phosphatase-specific effects). Remember the shared `anc` reference inflates the correlation.
-- [ ] Describe same-direction changes and opposite-direction changes. Label significance in both comparisons as a descriptive classification with its testing limits.
-- [ ] Inspect the direct `stp_vs_stk` interaction for candidates and report its uncertainty. A hit in one mutant but not the other is not by itself evidence of a difference between mutants.
-- [ ] Use a heatmap and individual-value plots to show representative shared and distinct patterns. State any centering/scaling used only for display.
-- [ ] Explain that correlations share the parental reference, and that a nonsignificant direct contrast does not establish equivalence.
+- [x] Compare the two mutant-versus-parent interaction estimates for the same eligible proteins, with direction and uncertainty visible. Record proteins eligible in one comparison but not the other.
+- [x] **Polar-effect test of H3 (presentation feedback):** scatter `stp_vs_anc_at_TSB` against `stk_vs_anc_at_TSB` (baseline), and the two interactions against each other (response). If the `stp` insertion has "the same effect as the `stk` mutation", points lie near the diagonal. Report the slope/correlation with its uncertainty, and the proteins far off the diagonal (candidate phosphatase-specific effects). Remember the shared `anc` reference inflates the correlation.
+- [x] Describe same-direction changes and opposite-direction changes. Label significance in both comparisons as a descriptive classification with its testing limits.
+- [x] Inspect the direct `stp_vs_stk` interaction for candidates and report its uncertainty. A hit in one mutant but not the other is not by itself evidence of a difference between mutants.
+- [x] Use a heatmap and individual-value plots to show representative shared and distinct patterns. State any centering/scaling used only for display.
+- [x] Explain that correlations share the parental reference, and that a nonsignificant direct contrast does not establish equivalence.
+  *Done 13 Nov:* `scripts/07_shared_distinct_mval.R`, results + figure guide in `mval_medi/results/step07_shared_distinct/`. **Beyond Stk1 itself, `stp` resembles `stk` only weakly.** Baseline r = 0.41 (95% CI 0.37–0.44), response r = 0.43 (0.39–0.46). Both are below the ≈ 0.5 that the shared `anc` noise alone gives. Split-reference r (independent `anc` replicates): 0.11–0.33 (baseline), 0.03–0.15 (response). Only 3 proteins are hits in both mutants (same direction, all lower than `anc` in TSB). 20 (TSB) + 4 (response) proteins differ directly between `stp` and `stk`. Conclusion limited to the ~1,850–1,990 proteins eligible in both. With n = 3, weak similarity is not proof of no shared component.
 
 **Why:** Similar response components could be consistent with reduced kinase function, while direct comparisons reveal supported differences.
 
@@ -288,9 +289,11 @@ If time is short, finish Steps 1-7 and the relevant interpretation/reporting in 
 
 **12 November 2026 (later):** Steps 3–4 done (`scripts/03_mutant_validation_mval.R`, `scripts/04_polar_effect_mval.R`; notebook `2026-11-12_steps3-4_mutant_validation_mval.md`). Stk1 is lost in `stk` (1/9 samples, 1 peptide) and nearly lost in `stp` (median 0–1 peptides vs 28–32 in anc). Stp1 in `stp` rests on 1–2 peptides, which explains the erratic wild-type-like values. Neighbours are unchanged (0 formal hits, |diff| ≤ 0.74). This is consistent with a polar insertion (stk1 is the last gene of the AureoWiki transcription unit) but does not prove it. The `HIQDSVPNVTtDVR` peptide is sporadic in all strains and gives no evidence for a truncated product.
 
+**13 November 2026:** Steps 4b, 5 (rest), 6 and 7 done (branch `steps6-7-responses-mval`; notebook `2026-11-13_steps4b-7_responses_mval.md`). ErmB positive control met (0/9 `anc`, 18/18 mutants). H2: 5 `stk` and 1 `stp` interaction hits; most of the PASN response is shared with `anc`. H3: `stp` resembles `stk` only weakly beyond Stk1; 24 direct `stp_vs_stk` differences.
+
 **Next actions, in order (for Friday 13 Nov):**
 1. ~~Step 3~~ done; check NE217/NE1919 on ntml.unmc.edu by hand.
-2. Steps 6–7: interactions relative to `anc`; `stp` vs `stk` effect scatter (polar effect / H3).
+2. ~~Steps 6–7~~ done 13 Nov.
 3. Step 10: enrichment for the `stk` contrasts ("Stk1 broadly involved").
 4. Ask Jonas: meaning of "stk1 broadly involved", whether transposon-search values will come, poster format/deadline.
 5. Step 12: poster figures + abstract.

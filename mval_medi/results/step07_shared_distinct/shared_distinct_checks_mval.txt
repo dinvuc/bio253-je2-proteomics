@@ -1,0 +1,4 @@
+Step 7 shared/distinct, run 2026-11-13
+[PASS] same model: direct stp_vs_stk diff == stp_vs_anc - stk_vs_anc (all rows with both)
+[PASS] class counts add up to the eligible-in-both totals
+[PASS] 27 samples, 3 per group after the join (split-reference check)

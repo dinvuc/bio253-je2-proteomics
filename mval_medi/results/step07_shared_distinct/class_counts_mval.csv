@@ -1,0 +1,15 @@
+layer,class,n
+baseline (TSB),"hit in both, same direction",3
+baseline (TSB),hit in stk only,17
+baseline (TSB),hit in stp only,9
+baseline (TSB),no hit,1959
+baseline (TSB),eligible in neither,153
+baseline (TSB),eligible in stk only,14
+baseline (TSB),eligible in stp only,77
+baseline (TSB),direct stp_vs_stk hit,20
+response (TSB vs SN interaction),hit in stk only,4
+response (TSB vs SN interaction),no hit,1849
+response (TSB vs SN interaction),eligible in neither,272
+response (TSB vs SN interaction),eligible in stk only,29
+response (TSB vs SN interaction),eligible in stp only,78
+response (TSB vs SN interaction),direct stp_vs_stk hit,4
