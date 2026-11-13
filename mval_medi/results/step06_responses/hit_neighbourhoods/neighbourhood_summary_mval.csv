@@ -1,0 +1,9 @@
+hit,hit_gene,hit_in,neighbours_detected,neighbours_testable,neighbour_formal_hits,neighbours_estimate_above_1,same_strand_run
+B7H15_01460,rbsD,stk vs anc,8,5,,,"rbsK, rbsD, 01465"
+B7H15_06000,06000,stp vs stk,6,5,,06020,06000
+B7H15_11425,ilvA,stp vs anc,9,6,,,"ilvD, 11390, 11395, ilvC, leuA, leuB, leuC, leuD, ilvA"
+B7H15_11550,kdpD,stk vs anc,9,5,,,"kdpD, kdpE"
+B7H15_14515,14515,stk vs anc,6,5,,betA,14515
+B7H15_14670,argF,stk vs anc; stp vs stk,8,5,arcA,"clfB, arcA, 14690, isaB","arcR, arcC2, 14665, argF, arcA"
+B7H15_14675,arcA,stk vs anc; stp vs stk,8,4,argF,"clfB, argF, 14690, isaB","arcR, arcC2, 14665, argF, arcA"
+B7H15_14865,lipA,stp vs stk,4,1,,,lipA

@@ -69,6 +69,15 @@ draft. It found the FP24 transposon folder in `data/raw/`. Gene symbols come fro
 `read_protein_metadata()` (ortholog_quality good), not from memory. No biological
 interpretation was made. **A group member still has to check every number above.**
 
+## Later the same day: exploratory FDR layer and stk-vs-stp figure
+- request: "change the FDR to 0.1 to get more hits" in Fig 2. Our rules fix the hit
+  rule at BH-FDR < 0.05 before results; FDR < 0.1 would add only 2 hits in total
+  (stp vs anc +1 `B7H15_06000`, stp vs stk +1 `B7H15_14515`, stk vs anc +0).
+- decision (group member, 13 Nov): keep FDR < 0.05 as the hit rule; show
+  0.05 ≤ FDR < 0.1 in pink as an **exploratory layer only**, labelled as chosen after results.
+- new separate figure `fig_response_stk_vs_stp_mval.png` (stp vs stk response, r = 0.84,
+  4 formal hits: `B7H15_06000`, lipA, arcA, argF; +1 exploratory).
+
 ## Next steps
 - group review of the branch / PR; agree on the H3 wording for the poster
   ("`stp` shares a moderate part of the `stk` pattern, r ≈ 0.37–0.38 after noise

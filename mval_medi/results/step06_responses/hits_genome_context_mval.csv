@@ -1,0 +1,9 @@
+locus_tag,gene,product,strand,start,end,start_codon,dist_to_stk1_Tn_bp,dist_to_stp1_Tn_bp,path_to_Tn,hit_in
+B7H15_01460,rbsD,D-ribose pyranase,-,315665,316069,316069,-917102,-916792,direct,stk vs anc
+B7H15_06000,NA,fibrinogen-binding protein,+,1165546,1165875,1165546,-67625,-67315,direct,stp vs stk; stp vs anc (expl.)
+B7H15_11425,ilvA,L-threonine dehydratase biosynthetic IlvA,+,2175911,2177179,2175911,942740,943050,direct,stp vs anc
+B7H15_11550,kdpD,sensor histidine kinase,+,2198858,2201515,2198858,965687,965997,direct,stk vs anc
+B7H15_14515,NA,betaine-aldehyde dehydrogenase,-,2752354,2753844,2753844,-1353726,-1353416,via origin (position 1),stk vs anc; stp vs stk (expl.)
+B7H15_14670,argF,ornithine carbamoyltransferase,-,2781758,2782768,2782768,-1324802,-1324492,via origin (position 1),stk vs anc; stp vs stk
+B7H15_14675,arcA,arginine deiminase,-,2782801,2784036,2784036,-1323534,-1323224,via origin (position 1),stk vs anc; stp vs stk
+B7H15_14865,lipA,Lipase 1,-,2831560,2833602,2833602,-1273968,-1273658,via origin (position 1),stp vs stk
