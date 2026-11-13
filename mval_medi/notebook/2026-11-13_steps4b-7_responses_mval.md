@@ -43,6 +43,10 @@
 - all estimates in 6–7 are observed values (our limma refit), not `lod_imputed`.
   On/off proteins are listed separately as presence/absence only.
 
+- **NTML check (open since 12 Nov), done by hand by the group:** NE217 = `stk`
+  (stk1::Tn), NE1919 = `stp` (stp1::Tn). Matches `R/constants.R`, CLAUDE.md and
+  notebook 07. The insertion codons (46 / 189) were not re-read by hand.
+
 ## Problems / surprises
 - **Corrected the same day:** the first Step 7 version compared the observed r with a
   fixed 0.5 ("noise alone") and called the similarity "weak". The simulated noise-only

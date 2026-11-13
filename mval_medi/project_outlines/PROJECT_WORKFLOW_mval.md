@@ -114,7 +114,7 @@ The bundle contains processed course results, not instrument-level spectra. Spec
 **Do**
 
 - [x] Inspect JE2 genome coordinates, strand/orientation and neighboring genes around `stp1` and `stk1`; draw a small annotated gene diagram.
-- [x] Cite the operon/transcription-unit evidence for *stp1*–*stk1* from AureoWiki (look up the NCTC 8325 orthologs via `staa8_uniprot` / `read_protein_metadata()`), and the NE217/NE1919 insertion positions from NTML (ntml.unmc.edu) and `TRANSPOSON_INSERTIONS` in `R/constants.R`. Record which strain the AureoWiki evidence refers to (NCTC 8325, not JE2). *Done for AureoWiki/UniProt (SAOUHSC_01182 > … > 01186 > 01187, stk1 last). NTML entries for NE217/NE1919 are still to be checked by hand: the site loads its content by JavaScript.*
+- [x] Cite the operon/transcription-unit evidence for *stp1*–*stk1* from AureoWiki (look up the NCTC 8325 orthologs via `staa8_uniprot` / `read_protein_metadata()`), and the NE217/NE1919 insertion positions from NTML (ntml.unmc.edu) and `TRANSPOSON_INSERTIONS` in `R/constants.R`. Record which strain the AureoWiki evidence refers to (NCTC 8325, not JE2). *Done for AureoWiki/UniProt (SAOUHSC_01182 > … > 01186 > 01187, stk1 last). NTML strain mapping checked by hand by the group on 13 Nov: **NE217 = `stk` (stk1::Tn), NE1919 = `stp` (stp1::Tn)**, as in `R/constants.R`. The insertion coordinates (codon 46 / codon 189) still come from the NTML map table in `R/constants.R`; they were not re-read by hand.*
 - [x] ~~Peptide coverage via `plot_peptide_coverage()`~~: not possible, the peptide table will not be provided (12 Nov). Use the Step 3 substitutes (peptide counts per sample, Stk1 phosphopeptide map) and the non-peptide parts of notebook 07 (insertion codons, operon reasoning).
 - [x] Polar effect at peptide level: compare the number of Stk1 peptides quantified in `stp` with `anc` and `stk`. A drop of Stk1 in `stp` close to that in `stk` is what a polar insertion predicts ("same effect as the mutation"). It is consistent with polarity but does not prove the mechanism.
 - [x] Plot measured neighboring proteins and assess whether any accompanying changes are consistent across samples and conditions.
@@ -292,7 +292,7 @@ If time is short, finish Steps 1-7 and the relevant interpretation/reporting in 
 **13 November 2026:** Steps 4b, 5 (rest), 6 and 7 done (branch `steps6-7-responses-mval`; notebook `2026-11-13_steps4b-7_responses_mval.md`). ErmB positive control met (0/9 `anc`, 18/18 mutants). H2: 5 `stk` and 1 `stp` interaction hits; most of the PASN response is shared with `anc`. H3: `stp` shares a moderate part of the `stk` pattern (noise-corrected r ≈ 0.37–0.38); 24 direct `stp_vs_stk` differences.
 
 **Next actions, in order (for Friday 13 Nov):**
-1. ~~Step 3~~ done; check NE217/NE1919 on ntml.unmc.edu by hand.
+1. ~~Step 3~~ done; ~~check NE217/NE1919 on ntml.unmc.edu~~ mapping confirmed by the group 13 Nov (NE217 = stk, NE1919 = stp).
 2. ~~Steps 6–7~~ done 13 Nov.
 3. Step 10: enrichment for the `stk` contrasts ("Stk1 broadly involved").
 4. Ask Jonas: meaning of "stk1 broadly involved"; whether `FP24_transposonDB` is the final transposon search and may be cited on the poster; poster format/deadline.
