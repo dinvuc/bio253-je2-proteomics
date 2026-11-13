@@ -194,12 +194,13 @@ For example, the stp-versus-parent interaction is `(stp_TSB - stp_SN) - (anc_TSB
 
 **Do**
 
-- [ ] Use `04_phospho_two_roadmaps.qmd` as the starting point. Keep STY and STYH separate: they are alternative searches with different supplied models, not extra biological replicates.
-- [ ] Audit site identifiers, JE2 protein mapping, residue, position and peptide. Verify join cardinality; retain ambiguous mappings instead of silently duplicating rows.
-- [ ] Count detections per group and apply the two-of-three rule in every group required for the chosen comparison. Inspect `plot_sites()` values and the matching normalized phospho abundances used for DEA.
-- [ ] Choose and record a localization rule before site selection. Assess per-sample `loc_prob` where available; `best_loc_prob` alone is only the best score across samples. A conventional STY cutoff such as 0.75 is not a measured false-localization rate or a validated histidine cutoff.
-- [ ] Choose the primary search for follow-up based on usable coverage and localization, with the reason documented. Treat the other search as a sensitivity check and record model differences.
-- [ ] Keep histidine phosphorylation optional and exploratory, with chemical/localization limitations. Do not expand this into a separate main project.
+- [x] Use `04_phospho_two_roadmaps.qmd` as the starting point. Keep STY and STYH separate: they are alternative searches with different supplied models, not extra biological replicates.
+- [x] Audit site identifiers, JE2 protein mapping, residue, position and peptide. Verify join cardinality; retain ambiguous mappings instead of silently duplicating rows.
+- [x] Count detections per group and apply the two-of-three rule in every group required for the chosen comparison. Inspect `plot_sites()` values and the matching normalized phospho abundances used for DEA.
+- [x] Choose and record a localization rule before site selection. Assess per-sample `loc_prob` where available; `best_loc_prob` alone is only the best score across samples. A conventional STY cutoff such as 0.75 is not a measured false-localization rate or a validated histidine cutoff.
+- [x] Choose the primary search for follow-up based on usable coverage and localization, with the reason documented. Treat the other search as a sensitivity check and record model differences.
+- [x] Keep histidine phosphorylation optional and exploratory, with chemical/localization limitations. Do not expand this into a separate main project.
+  *Done 13 Nov:* `scripts/08_phospho_coverage_mval.R`, results + figure guide in `mval_medi/results/step08_phospho_coverage/`. Rules were fixed before selection (AI proposal, **group to confirm**): JE2 only, 2 of 3 in every group of the contrast, localised = **median per-sample `loc_prob` ≥ 0.75** over the primary samples where the site was detected (`best_loc_prob` alone would roughly double the "localised" sites), pH exploratory only. **STY is primary by 1,159 vs 1,150 supported pairs (a near tie)**; STYH agrees (r = 0.96, 51 shared hits). Coverage is thin: of 3,774 JE2 sites only 91–184 per primary contrast are supported (236 sites on 133 proteins in all). Our site refit (Step 5 model, treat lfc = 1, BH over supported sites = **new test family**): 62 hits (37 sites, 25 proteins), almost all within-genotype TSB vs SN; **0 site hits in the two H2 interactions**. Findings: the STY abundance table stores observed values only (filled to NA before counting); the supplied STY DEA labels every row `observed` although most come from `Imputed_Mean_moderated`; SN phospho samples detect ~2× more sites than TSB. Removing the reinjected `stk_pulseSN` samples gives 62 → 78 hits (none lost).
 
 **Why:** An apparent phosphosite effect is useful only if the site assignment and measurements support the comparison.
 
@@ -209,11 +210,12 @@ For example, the stp-versus-parent interaction is `(stp_TSB - stp_SN) - (anc_TSB
 
 **Do**
 
-- [ ] Match each supported site to its total protein using the JE2 identifiers and **exactly the same contrast**. Check sample pairing before any sample-level adjustment; retain unmatched/ambiguous sites separately.
-- [ ] Plot both measurement layers. Ask whether the phosphosite change could track a change in protein amount.
-- [ ] For supported observed effects only, calculate the descriptive adjusted effect `diff_site - diff_protein`. Do not subtract an imputed protein or site estimate.
-- [ ] Label adjustment as relative protein-adjusted phosphorylation signal, not absolute occupancy. Do not reuse the original site p-value/FDR for the new adjusted effect.
-- [ ] If a formal adjusted test is justified, account for covariance: `Var(site - protein) = Var(site) + Var(protein) - 2*Cov(site, protein)`. Document any independence assumption; otherwise keep the adjustment descriptive.
+- [x] Match each supported site to its total protein using the JE2 identifiers and **exactly the same contrast**. Check sample pairing before any sample-level adjustment; retain unmatched/ambiguous sites separately.
+- [x] Plot both measurement layers. Ask whether the phosphosite change could track a change in protein amount.
+- [x] For supported observed effects only, calculate the descriptive adjusted effect `diff_site - diff_protein`. Do not subtract an imputed protein or site estimate.
+- [x] Label adjustment as relative protein-adjusted phosphorylation signal, not absolute occupancy. Do not reuse the original site p-value/FDR for the new adjusted effect.
+- [x] If a formal adjusted test is justified, account for covariance: `Var(site - protein) = Var(site) + Var(protein) - 2*Cov(site, protein)`. Document any independence assumption; otherwise keep the adjustment descriptive.
+  *Done 13 Nov:* `scripts/09_site_vs_protein_mval.R`, results + figure guide in `mval_medi/results/step09_site_vs_protein/`. Matched by exact `protein_key` and the same contrast (all 236 sites matched; `B7H15_13880` also has a 6-frame entry, so locus-tag matching would be ambiguous). Kept **descriptive**: `se_adj` assumes Cov = 0 (cross-layer sample pairing not established), no p-value/FDR. Categories fixed before the matched values were seen (AI proposal, **group to confirm**): of 62 site hits, **17 consistent with protein amount, 40 residual adjusted change, 5 unresolved**. Genotype hits: deoB T85 (with T87 on the same peptide) lower in `stk` than `anc`/`stp` in TSB with unchanged protein; pyk T537 higher in `stp` than `anc` (protein unchanged); **Stk1 T164/T166 lower in `stp`, mostly following the Stk1 protein loss** (adj +1.2 ± 0.6, unresolved). Site effects lean towards "higher in SN" relative to protein (median offset −0.65/−0.43/−0.17 in `anc`/`stk`/`stp`), probably partly technical; removing it swaps 5 residual calls in and 5 out. QC flag added after the first run (range > 3 log2: 3 hits, e.g. `B7H15_04940` T269 at +10.8 on two near-floor values). Categories do not identify substrates.
 
 **Why:** More phosphosite signal can reflect more protein rather than altered phosphorylation regulation.
 
@@ -292,9 +294,11 @@ If time is short, finish Steps 1-7 and the relevant interpretation/reporting in 
 
 **13 November 2026:** Steps 4b, 5 (rest), 6 and 7 done (branch `steps6-7-responses-mval`; notebook `2026-11-13_steps4b-7_responses_mval.md`). ErmB positive control met (0/9 `anc`, 18/18 mutants). H2: 5 `stk` and 1 `stp` interaction hits; most of the PASN response is shared with `anc`. H3: `stp` shares a moderate part of the `stk` pattern (noise-corrected r ≈ 0.37–0.38); 24 direct `stp_vs_stk` differences.
 
+**13 November 2026 (later):** Steps 8–9 done (branch `steps8-9-phospho-mval`; notebook `2026-11-13_steps8-9_phospho_mval.md`). The phospho layer supports only a small descriptive follow-up: 236 supported sites (133 proteins), 62 site hits, none in the H2 interactions. Of the hits, 17 follow the protein change, 40 show a residual change; Stk1 T164/T166 drops in `stp` together with the Stk1 protein. **Group to confirm** the Step 8 localisation rule and the Step 9 categories (proposed by the AI before results).
+
 **Next actions, in order (for Friday 13 Nov):**
 1. ~~Step 3~~ done; ~~check NE217/NE1919 on ntml.unmc.edu~~ mapping confirmed by the group 13 Nov (NE217 = stk, NE1919 = stp).
-2. ~~Steps 6–7~~ done 13 Nov.
+2. ~~Steps 6–7~~ done 13 Nov. ~~Steps 8–9~~ done 13 Nov (confirm rules).
 3. Step 10: enrichment for the `stk` contrasts ("Stk1 broadly involved").
 4. Ask Jonas: meaning of "stk1 broadly involved"; whether `FP24_transposonDB` is the final transposon search and may be cited on the poster; poster format/deadline.
 5. Step 12: poster figures + abstract.
