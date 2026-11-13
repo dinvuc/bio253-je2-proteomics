@@ -1,0 +1,7 @@
+Step 4b transposon products, run 2026-11-13
+Source: data/raw/FP24_transposonDB (FragPipe 24.0, db p41881_db2_SA_JE2_wTransposon_20261111)
+[PASS] all 10 transposon/plasmid proteins were in the searched database
+[PASS] GFP was searched (in the prot.xml), so 'not found' means searched and not detected
+[PASS] 27 samples joined by name, 3 per group, every sample found in the search
+[PASS] prediction: ErmB 0 spectra in all 9 anc samples
+[PASS] prediction: ErmB > 0 spectra in all 18 stk and stp samples
