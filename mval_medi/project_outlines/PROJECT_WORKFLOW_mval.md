@@ -23,7 +23,7 @@ Notes taken by the group at the presentation (Jonas). Readings marked "?" are ou
 | Agentic coding allowed, not mandatory | No change | — |
 | Data: JE2 proteome + phosphoproteome; contrasts supernatant, mutants, "tsp" (?= TSB), ancestor | Confirms our scope | Scope |
 | "07 emre (?= ermB) transposon effect" | Use notebook 07 (transposon insertion, ErmB marker) | Steps 3, 4, 4b |
-| Peptides on transposon sequences (from Jonas, not yet received) | A search including the transposon proteins (ErmB, GFP) | Step 4b (conditional) |
+| Peptides on transposon sequences (from Jonas, received 12 Nov: `FP24_transposonDB`) | A search including the transposon proteins (ErmB, GFP) | Step 4b (conditional) |
 | Friday: peptide values for H1 | Show Stp1/Stk1 at peptide level, not only as protein totals | Step 3 |
 | Friday: H2 & H3 responses compared to the ancestor | Report every mutant response relative to `anc` (interaction contrasts) | Steps 6, 7 |
 | Friday: stk1 broadly involved in many different effects (?) | Expect broad Stk1 effects; show them at pathway level rather than as single proteins. Meaning to be confirmed with Jonas | Step 10 |
@@ -128,8 +128,9 @@ The bundle contains processed course results, not instrument-level spectra. Spec
 ## Step 4b — Transposon products (optional, depends on Jonas)
 
 - [x] Checked 12 Nov: the search FASTA (`JE2_proteins.fasta`, 4,155 entries) contains only the genome's own IS-element transposases, **no ErmB and no GFP**. The transposon proteins were never searched for, so they cannot be pulled from any file we have. "Not found" means "never looked for" (`reference/README.md`).
-- [ ] If Jonas sends peptide/protein values from a search including the transposon sequences: plot ErmB (and GFP if present) across the 27 samples. Prediction: detected in `stk` and `stp`, absent in `anc`, a positive control for the insertion.
-- [ ] If nothing arrives, state this as a limitation on the poster; do not wait for it.
+- [x] If Jonas sends peptide/protein values from a search including the transposon sequences: plot ErmB (and GFP if present) across the 27 samples. Prediction: detected in `stk` and `stp`, absent in `anc`, a positive control for the insertion.
+  *Done 13 Nov:* Jonas's FragPipe 24 search incl. the pBursa/pFA545 proteins is in `data/raw/FP24_transposonDB/` (local, not in the checksummed bundle). `scripts/04b_transposon_products_mval.R`: **ErmB 0 spectra in all 9 `anc` samples, 11–30 spectra (7–10 peptides) in all 18 `stk`/`stp` samples. Prediction met.** GFP was searched but not detected (ProteinProphet probability 0). Results and figure guide: `mval_medi/results/step04b_transposon/`.
+- [x] ~~If nothing arrives, state this as a limitation on the poster~~: not needed, the values arrived.
 
 ## Step 5 — Fix comparison definitions and analysis rules
 
