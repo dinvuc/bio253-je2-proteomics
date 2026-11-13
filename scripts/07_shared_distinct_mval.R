@@ -16,10 +16,13 @@
 #           * Pearson r with 95% CI (cor.test) and total-least-squares slope
 #             (errors in both axes) with a bootstrap 95% CI over proteins.
 #           * Shared-reference problem: both axes subtract the SAME anc mean, so
-#             pure noise already gives r ~ 0.5 (equal variances). Sensitivity:
-#             split-reference r, where stk is compared with one anc replicate and
-#             stp with the other two (independent noise, null r = 0, but noisier
-#             -> lower). Done for all 3 ways to pick the single replicate.
+#             pure noise already gives a positive r. From per-protein variances
+#             (s2/n per group mean) we compute the noise-only r (checked by
+#             simulation) and the NOISE-CORRECTED r of the true effects (method of
+#             moments, bootstrap CI) -- section 2b. Sensitivity: split-reference r,
+#             where stk is compared with one anc replicate and stp with the other
+#             two (independent noise, null r = 0, but noisier -> pulled to 0).
+#             Done for all 3 ways to pick the single replicate.
 #           * Classes from the Step 5 formal hits (treat lfc = 1, BH-FDR < 0.05):
 #             hit in both same sign / both opposite / stk only / stp only / none.
 #             "Different between mutants" ONLY from the direct stp_vs_stk contrasts.
@@ -113,13 +116,6 @@ sim_full <- pairs |> filter(eligible_both) |> group_by(layer) |>
          slope_high = purrr::map_dbl(slope_boot, quantile, 0.975), .keep = "unused") |>
   select(-any_of("slope_boot"))
 
-# Null r from the shared anc reference, using the actual per-protein variances:
-# with equal residual variance s2 in all groups and n = 3 per group,
-#   baseline:    cov = s2/3 (anc_TSB),            var = 2 s2/3  -> r0 = 0.5
-#   interaction: cov = 2 s2/3 (anc_TSB, anc_SN),  var = 4 s2/3  -> r0 = 0.5
-# Missing values change this slightly; 0.5 is the reference value.
-sim_full$r_expected_from_shared_reference_only <- 0.5
-
 # Split-reference sensitivity: independent anc replicates for the two mutants.
 samples <- read_samples()
 abund <- read_abundances("total") |> keep_je2() |>
@@ -154,7 +150,73 @@ split_r <- purrr::map(1:3, \(single) {
       summarise(layer = LAYERS$layer[2], r = cor(int_stk, int_stp, use = "complete.obs"))) |>
     mutate(single_anc_replicate = single)
 }) |> bind_rows()
+
+# ---- 2b. data-based noise reference and noise-corrected correlation ------------
+# Each estimate is a difference of group means of observed values. With residual
+# variance s2 (per protein, pooled over all 9 groups = the variance the ~0+group
+# model uses) a group mean of n observed values has noise variance s2/n. So, per
+# protein, the noise in x = stk effect and y = stp effect has
+#   baseline:    var_x = s2(1/n_stkT + 1/n_ancT),  cov_xy = s2/n_ancT  (shared anc_TSB)
+#   interaction: var_x = s2(1/n_stkT + 1/n_stkS + 1/n_ancT + 1/n_ancS),
+#                cov_xy = s2(1/n_ancT + 1/n_ancS)                  (shared anc means)
+# (a) r expected from noise alone = mean(cov_xy) / sqrt(mean(var_x) mean(var_y));
+#     checked by simulating Gaussian noise group means with the same s2 and n.
+# (b) noise-corrected r of the TRUE effects (method of moments):
+#     (cov(x, y) - mean(cov_xy)) / sqrt((var(x) - mean(var_x)) (var(y) - mean(var_y)))
+#     with a bootstrap 95% CI over proteins. Assumes equal variance across groups
+#     within a protein (as limma does) and noise independent of the true effects.
+pg <- abund |> group_by(protein_key, group) |>
+  summarise(n = sum(!is.na(normalized_abundance)),
+            ss = if (n > 1) sum((normalized_abundance - mean(normalized_abundance, na.rm = TRUE))^2, na.rm = TRUE) else 0,
+            .groups = "drop")
+s2_tbl <- pg |> group_by(protein_key) |>
+  summarise(s2 = sum(ss) / (sum(n) - sum(n > 0)), .groups = "drop")   # df = observations - groups with data
+n_tbl <- pg |> select(protein_key, group, n) |> mutate(group = paste0("n_", group)) |>
+  pivot_wider(names_from = group, values_from = n)
+noise <- pairs |> filter(eligible_both) |>
+  select(layer, protein_key, x = stk_diff, y = stp_diff) |>
+  left_join(s2_tbl, by = "protein_key") |> left_join(n_tbl, by = "protein_key") |>
+  mutate(base = layer == LAYERS$layer[1],
+         vx  = if_else(base, s2 * (1 / n_stk_TSB + 1 / n_anc_TSB),
+                       s2 * (1 / n_stk_TSB + 1 / n_stk_SN + 1 / n_anc_TSB + 1 / n_anc_SN)),
+         vy  = if_else(base, s2 * (1 / n_stp_TSB + 1 / n_anc_TSB),
+                       s2 * (1 / n_stp_TSB + 1 / n_stp_SN + 1 / n_anc_TSB + 1 / n_anc_SN)),
+         cxy = if_else(base, s2 / n_anc_TSB, s2 * (1 / n_anc_TSB + 1 / n_anc_SN)))
+stopifnot(!anyNA(noise$vx), !anyNA(noise$vy), !anyNA(noise$cxy))
+
+r_true_fun <- function(x, y, vx, vy, cxy)
+  (cov(x, y) - mean(cxy)) / sqrt((var(x) - mean(vx)) * (var(y) - mean(vy)))
+sim_noise_r <- function(d, reps = 500) {   # Gaussian noise group means, same s2 and n
+  g <- \(v) rnorm(nrow(d), 0, sqrt(v))
+  replicate(reps, {
+    if (d$base[1]) {
+      a <- g(d$s2 / d$n_anc_TSB)
+      cor(g(d$s2 / d$n_stk_TSB) - a, g(d$s2 / d$n_stp_TSB) - a)
+    } else {
+      a <- g(d$s2 / d$n_anc_TSB) - g(d$s2 / d$n_anc_SN)
+      cor(g(d$s2 / d$n_stk_TSB) - g(d$s2 / d$n_stk_SN) - a, g(d$s2 / d$n_stp_TSB) - g(d$s2 / d$n_stp_SN) - a)
+    }
+  })
+}
+corrected <- noise |> group_by(layer) |> group_modify(\(d, key) {
+  sims <- sim_noise_r(d)
+  boot <- replicate(1000, { i <- sample(nrow(d), replace = TRUE)
+                            r_true_fun(d$x[i], d$y[i], d$vx[i], d$vy[i], d$cxy[i]) })
+  tibble(noise_share_var_x = mean(d$vx) / var(d$x), noise_share_var_y = mean(d$vy) / var(d$y),
+         r_noise_only = mean(d$cxy) / sqrt(mean(d$vx) * mean(d$vy)),
+         r_noise_only_sim = mean(sims), r_noise_only_sim_low = quantile(sims, 0.025),
+         r_noise_only_sim_high = quantile(sims, 0.975),
+         r_true_corrected = r_true_fun(d$x, d$y, d$vx, d$vy, d$cxy),
+         r_true_low = quantile(boot, 0.025, na.rm = TRUE), r_true_high = quantile(boot, 0.975, na.rm = TRUE))
+}) |> ungroup()
+check("noise variance is smaller than the observed variance on both axes (correction defined)",
+      all(corrected$noise_share_var_x < 1 & corrected$noise_share_var_y < 1))
+check(sprintf("simulated noise-only r matches the formula (max |diff| %.3f)",
+              max(abs(corrected$r_noise_only_sim - corrected$r_noise_only))),
+      all(abs(corrected$r_noise_only_sim - corrected$r_noise_only) < 0.02))
+
 sim <- sim_full |>
+  left_join(corrected, by = "layer") |>
   left_join(split_r |> group_by(layer) |>
               summarise(r_split_reference_min = min(r), r_split_reference_max = max(r)), by = "layer")
 write_csv(sim, file.path(out, "similarity_stats_mval.csv"))
@@ -184,8 +246,14 @@ sc <- pairs |> filter(eligible_both) |>
                                "hit in both, opposite direction", "differs between mutants (direct stp_vs_stk hit)")),
          label = if_else(direct_hit | class == "hit in both, same direction", coalesce(gene, locus_tag), NA_character_))
 txt <- sim |> mutate(text = sprintf(
-  "n = %d eligible in both\nr = %.2f (95%% CI %.2f-%.2f)\nnoise alone gives r ~ 0.5 (shared anc)\nsplit-reference r = %.2f-%.2f\nTLS slope = %.2f (%.2f-%.2f)",
-  n, r, r_low, r_high, r_split_reference_min, r_split_reference_max, tls_slope, slope_low, slope_high))
+  "n = %d eligible in both\nobserved r = %.2f (95%% CI %.2f-%.2f)\nnoise alone (shared anc): r = %.2f (sim. %.2f-%.2f)\nnoise-corrected r of true effects = %.2f (%.2f-%.2f)\nsplit-reference r (lower bound) = %.2f-%.2f",
+  n, r, r_low, r_high, r_noise_only, r_noise_only_sim_low, r_noise_only_sim_high,
+  r_true_corrected, r_true_low, r_true_high, r_split_reference_min, r_split_reference_max)) |>
+  # left-aligned box in the top-left corner of each panel
+  left_join(pairs |> filter(eligible_both) |> group_by(layer) |>
+              # box ABOVE all points: start at max + 45 % of the y range (axis is extended)
+              summarise(x0 = min(stk_diff), y0 = max(stp_diff) + 0.45 * diff(range(stp_diff)), .groups = "drop"),
+            by = "layer")
 p_sc <- ggplot(sc, aes(stk_diff, stp_diff)) +
   geom_hline(yintercept = 0, colour = "grey85") + geom_vline(xintercept = 0, colour = "grey85") +
   geom_abline(slope = 1, intercept = 0, colour = "grey40") +
@@ -193,7 +261,8 @@ p_sc <- ggplot(sc, aes(stk_diff, stp_diff)) +
   geom_point(data = filter(sc, show != "no formal hit"), aes(colour = show), size = 1.8) +
   geom_text(data = filter(sc, !is.na(label)), aes(label = label, colour = show), size = 2.4, vjust = -0.7,
             show.legend = FALSE, check_overlap = TRUE) +
-  geom_text(data = txt, aes(x = -Inf, y = Inf, label = text), hjust = -0.05, vjust = 1.1, size = 2.6) +
+  geom_label(data = txt, aes(x = x0, y = y0, label = text), hjust = 0, vjust = 1, size = 2.5,
+             label.size = 0, fill = "white", alpha = 0.85) +
   scale_colour_manual(values = c("hit in one mutant only" = "#56B4E9", "hit in both, same direction" = "#009E73",
                                  "hit in both, opposite direction" = "#CC79A7",
                                  "differs between mutants (direct stp_vs_stk hit)" = "#D55E00")) +

@@ -10,12 +10,20 @@ No new test is run here. All hits are the Step 5 formal hits (treat lfc = 1, BH-
 ## Two traps when reading a stp-vs-stk comparison
 
 1. **Shared reference.** `stk_vs_anc` and `stp_vs_anc` subtract the *same* `anc`
-   mean. Its noise moves both estimates the same way, so pure noise with equal
-   variances already gives **r ≈ 0.5**, not 0. A correlation must be read against
-   that. As a sensitivity check, the *split-reference r* compares `stk` with one `anc`
-   replicate and `stp` with the other two. Their noise is independent (null r = 0),
-   but the estimates are noisier, so this r is pulled down. The true similarity lies
-   roughly between the split-reference r and the full r.
+   mean. Its noise moves both estimates the same way, so pure noise already gives a
+   positive r. We compute this **noise-only r from the data**: each group mean of n
+   observed values has noise variance s²/n, with s² the protein's pooled within-group
+   variance (the variance the `~ 0 + group` model uses). A simulation with the same
+   s² and n reproduces it (difference ≤ 0.004). It is 0.50 in both layers, but the
+   simulated 95% range is wide (0.39–0.61 baseline, 0.37–0.63 response), because a few
+   high-variance proteins dominate Pearson r. **So the observed r alone cannot be
+   compared with "noise".** We use instead the **noise-corrected r of the true
+   effects**: observed covariance minus the mean noise covariance, divided by the
+   noise-free variances (method of moments; bootstrap 95% CI over proteins). It assumes
+   equal variance across groups within a protein, as limma does.
+   Sensitivity check: the *split-reference r* compares `stk` with one `anc` replicate
+   and `stp` with the other two (independent noise, null r = 0). It is much noisier, so
+   it is pulled towards 0: a lower bound, not an estimate.
 2. **"Hit in one, not the other" is not a difference.** Only the direct contrasts
    `stp_vs_stk_at_TSB` / `interaction_stp_vs_stk_at_TSB_vs_SN` test whether the two
    mutants differ. A non-significant direct contrast does not show that they are equal (n = 3).
@@ -29,20 +37,27 @@ No new test is run here. All hits are the Step 5 formal hits (treat lfc = 1, BH-
   PASN response (the two interactions, > 0 = SN response lower in the mutant than in `anc`).
 - **How to read:** diagonal = same effect in both mutants. Colours = Step 5 hit
   classes; orange = direct `stp_vs_stk` hit (the mutants differ). The box gives n,
-  Pearson r with 95% CI, the noise-only reference (≈ 0.5), the split-reference r
-  range (3 ways to pick the single `anc` replicate) and the total-least-squares slope
-  (bootstrap 95% CI over proteins).
+  observed Pearson r with its 95% CI, the noise-only r, the noise-corrected r of the
+  true effects with its bootstrap 95% CI, and the split-reference r range (3 ways to
+  pick the single `anc` replicate). The total-least-squares slope is in
+  `similarity_stats_mval.csv` only (see caveat).
 - **Result:**
-  - Baseline: r = 0.41 (0.37–0.44), split-reference r = 0.11–0.33.
-  - Response: r = 0.43 (0.39–0.46), split-reference r = 0.03–0.15.
-  - Both full r values are *below* the 0.5 that shared noise alone would give. The
-    split-reference r is small and positive for the baseline and close to 0 for the
-    response. Only 3 proteins are hits in both mutants (same direction, all baseline).
-    20 proteins differ directly between `stp` and `stk` in TSB, and 4 in the response.
-- **Caveat:** with r this low, the TLS slope mostly reflects the relative spread of
-  the two axes. Do not read it as "stp has x % of the stk effect". The split-reference
-  r depends on which `anc` replicate is used alone (wide range). The 0.5 reference
-  assumes equal variance in all groups.
+
+  | layer | observed r | noise-only r (sim. 95% range) | **noise-corrected r (95% CI)** | split-reference r |
+  |---|---|---|---|---|
+  | baseline (TSB) | 0.41 | 0.50 (0.39–0.61) | **0.37 (0.29–0.45)** | 0.11–0.33 |
+  | response (interaction) | 0.43 | 0.50 (0.37–0.63) | **0.38 (0.24–0.52)** | 0.03–0.15 |
+
+  The true `stk` and `stp` effects are **moderately correlated**: clearly above 0 and
+  far below 1. Part of the `stp` pattern is shared with `stk`, but much of it is not.
+  Only 3 proteins are formal hits in both mutants (same direction, all baseline).
+  20 proteins differ directly between `stp` and `stk` in TSB, and 4 in the response.
+  The low count of shared hits also reflects the strict test (treat lfc = 1, n = 3).
+- **Caveat:** the TLS slope (baseline 1.18, response 0.72) mostly reflects the relative
+  spread of the two axes when r is moderate. Do not read it as "stp has x % of the stk
+  effect". The correction assumes noise independent of the true effects and equal
+  variance across groups within a protein. It is dominated by high-variance proteins,
+  hence the wide CI.
 
 ### `fig_heatmap_mval.png`: Fig 3b, all 46 genotype-hit proteins
 - **Compares:** observed group means of the 6 TSB/SN groups for every protein that is
@@ -69,6 +84,6 @@ No new test is run here. All hits are the Step 5 formal hits (treat lfc = 1, BH-
 |---|---|
 | `data/derived/effect_pairs_step07_mval.tsv.gz` (local only, git-ignored) | per protein × layer (baseline / response): `stk`, `stp` and direct `stp_vs_stk` estimate, SE, treat FDR, eligibility, hit class |
 | `class_counts_mval.csv` | counts per class: hit in both same/opposite direction, one mutant only, no hit; eligible in one mutant only; direct hits |
-| `similarity_stats_mval.csv` | r, 95% CI, TLS slope + bootstrap CI, noise-only reference r, split-reference r range |
+| `similarity_stats_mval.csv` | observed r + CI, TLS slope + bootstrap CI, noise share of the variance on each axis, noise-only r (formula and simulation with 95% range), noise-corrected r + bootstrap CI, split-reference r range |
 | `direct_contrast_candidates_mval.csv` | every direct `stp_vs_stk` hit with both mutant effects and direction in words |
 | `shared_distinct_checks_mval.txt` | PASS/FAIL checks |

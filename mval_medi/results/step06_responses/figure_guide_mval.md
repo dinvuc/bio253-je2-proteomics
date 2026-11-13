@@ -43,13 +43,19 @@ Every `stp` result: that strain also lacks most of Stk1 (Step 3).
 - **How to read:** one point = one sample; `n/3` above = detected replicates;
   missing samples are not drawn.
 - **What the raw values show (checked by eye, 13 Nov):**
-  - argF (`B7H15_14670`), arcA (`B7H15_14675`), `B7H15_14515`: `stk` is already
-    clearly different from `anc` **in TSB**; much of the interaction is a baseline difference.
-  - kdpD (`B7H15_11550`): `stk_SN` lower than `anc_SN` (2/3 vs 2/3 detected); `stp_SN` 1/3.
+  - argF (`B7H15_14670`), `B7H15_14515`: `stk` differs from `anc` **in TSB only**
+    (stk − anc = −1.63 and +1.79; in SN 0.74 and −0.28). The interaction is mainly a
+    baseline difference that disappears in SN.
+  - arcA (`B7H15_14675`), kdpD (`B7H15_11550`): `stk` differs from `anc` in **both** media,
+    with opposite sign (arcA: −3.74 in TSB, +1.23 in SN; kdpD: +1.35 in TSB, −3.78 in SN).
+  - kdpD: `stk_SN` lower than `anc_SN` (2/3 vs 2/3 detected); `stp_SN` 1/3, so not testable
+    in `stp` (supplied estimate 0.60, FDR 0.60: no evidence there).
   - rbsD (`B7H15_01460`): high in `stk_SN` (2/3); `stp_SN` replicates spread from about 12.5 to 16.
-  - ilvA (`B7H15_11425`, the only `stp` hit): `stk_SN` drops too, but only 1/3
-    detected, so the `stk` interaction was not testable. This may be a shared
-    mutant pattern, not a `stp`-specific one.
+  - ilvA (`B7H15_11425`, the only `stp` hit): `stk_SN` drops too, but only 1/3 detected,
+    so our test could not score `stk`. The supplied model (which uses that one value)
+    gives `interaction_stk_vs_anc` = 3.01, FDR 0.001, the same direction as `stp` (2.36).
+    The lower SN response is therefore probably **shared by both mutants**; in `stk` it
+    rests on one replicate.
   - arcA in `stk_SNpulse`: one replicate far above the other two.
 
 ## Tables
@@ -57,7 +63,7 @@ Every `stp` result: that strain also lacks most of Stk1 (Step 3).
 | file | content |
 |---|---|
 | `response_summary_mval.csv` | per primary contrast (baseline / exposure / interaction): eligible, hits up/down, median and 95th percentile \|diff\|, median SE, number of estimates with \|diff\| > 1 (descriptive, NOT a hit rule) |
-| `interaction_candidates_mval.csv` | each formal interaction hit: diff, SE, treat FDR, model, `estimate_type` (always observed), responses in anc/stk/stp, strain difference in TSB and in SN, `where_difference` (descriptive, on estimates: mainly TSB baseline / mainly SN response / both), direction in words |
+| `interaction_candidates_mval.csv` | each formal interaction hit: diff, SE, treat FDR, model, `estimate_type` (always observed), responses in anc/stk/stp, strain difference in TSB and in SN, `where_difference` (descriptive, on estimates: mainly TSB baseline / mainly SN response / both), direction in words, `detected_TSB_SN` (replicates per group), `other_mutant` (is the same interaction a hit / testable in the other mutant; if not testable, the supplied `lm_impute` estimate as presence/absence evidence) |
 | `one_sided_responses_mval.csv` | on/off proteins of the three interactions (exploratory), with `pattern_class`: *on/off in one strain only* (a possible altered response), *shared* (both strains empty in the same medium), *absent from a strain in both media* (not a response), *mixed* |
 | `responses_checks_mval.txt` | PASS/FAIL checks |
 

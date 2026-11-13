@@ -123,6 +123,39 @@ cand <- res |>
     interaction_diff > 0 ~ "SN response LOWER in stp than in stk",
     TRUE ~ "SN response HIGHER in stp than in stk")) |>
   arrange(contrast, interaction_FDR)
+# A hit in one mutant says nothing about the other mutant unless that one was
+# testable too. Add, per candidate, the detections in all 6 TSB/SN groups and
+# the OTHER mutant's interaction: our estimate if eligible, else the supplied
+# lm_impute estimate (presence/absence evidence only, labelled).
+samples <- read_samples()
+obs <- read_abundances("total") |> keep_je2() |>
+  filter(protein_key %in% cand$protein_key) |>
+  select(protein_key, sample, normalized_abundance) |>
+  inner_join(select(samples, sample, genotype, medium), by = "sample") |>   # by NAME
+  filter(medium %in% c("TSB", "SN")) |>
+  group_by(protein_key, genotype, medium) |>
+  summarise(n = sum(!is.na(normalized_abundance)), .groups = "drop") |>
+  arrange(protein_key, genotype, desc(medium == "TSB")) |>
+  group_by(protein_key) |>
+  summarise(detected_TSB_SN = paste(sprintf("%s %s %d/3", genotype, medium, n), collapse = ", "), .groups = "drop")
+supplied_int <- read_dea("total") |> keep_je2() |>
+  filter(contrast %in% INTER) |>
+  select(protein_key, contrast, other_supplied_diff = diff, other_supplied_FDR = FDR, other_supplied_type = estimate_type)
+other_of <- c(interaction_stk_vs_anc_at_TSB_vs_SN = "interaction_stp_vs_anc_at_TSB_vs_SN",
+              interaction_stp_vs_anc_at_TSB_vs_SN = "interaction_stk_vs_anc_at_TSB_vs_SN")
+cand <- cand |>
+  left_join(obs, by = "protein_key") |>
+  mutate(other_contrast = unname(other_of[contrast])) |>
+  left_join(res |> select(protein_key, other_contrast = contrast, other_tested = tested,
+                          other_diff = diff, other_FDR = FDR),
+            by = c("protein_key", "other_contrast")) |>
+  left_join(rename(supplied_int, other_contrast = contrast), by = c("protein_key", "other_contrast")) |>
+  mutate(other_mutant = case_when(
+    is.na(other_contrast) ~ "not applicable (direct stp_vs_stk contrast)",
+    other_tested & other_FDR < MVAL_FDR ~ "also a formal hit in the other mutant",
+    other_tested ~ sprintf("testable in the other mutant, not a hit (diff %.2f, FDR %.2f)", other_diff, other_FDR),
+    TRUE ~ sprintf("NOT testable in the other mutant (< 2/3 in a group); supplied %s estimate %.2f, FDR %.3f",
+                   other_supplied_type, other_supplied_diff, other_supplied_FDR)))
 step5_counts <- read_csv("mval_medi/results/step05_formal_test/hit_counts_mval.csv", show_col_types = FALSE) |>
   filter(contrast %in% INTER_ALL)
 check("candidate count equals the Step 5 formal hit counts", nrow(cand) == sum(step5_counts$formal_hits))
