@@ -1,0 +1,23 @@
+Step 8 checks, 2026-11-13
+[PASS] reinjected flag: one value per sample, known for all 27
+[PASS] 27 samples, 3 per group
+[PASS] 18 primary samples (anc/stk/stp x TSB/SN)
+[PASS] 9 primary contrasts in the Step 5 sheet
+[PASS] STYH : one row per site x sample after completing, 27 samples, 3 per group
+[PASS] STYH : one feature per site_id (no duplicated peptide features)
+[NOTE] STYH: detection agrees between site table and abundance table in 100.00% of 110808 site x sample cells (value only in abundance: 0, only in site table: 0)
+[PASS] STY : one row per site x sample after completing, 27 samples, 3 per group
+[PASS] STY : one feature per site_id (no duplicated peptide features)
+[NOTE] STY: detection agrees between site table and abundance table in 100.00% of 101898 site x sample cells (value only in abundance: 0, only in site table: 0)
+[NOTE] primary search by rule 6: STY (supported S/T/Y site x contrast pairs: STYH 1150, STY 1159)
+[PASS] STYH : tested == eligible (fit_limma_treat uses the same 2-of-3 rule)
+[PASS] STYH : every hit has |diff| > 1 (treat lfc = 1)
+[PASS] STY : tested == eligible (fit_limma_treat uses the same 2-of-3 rule)
+[PASS] STY : every hit has |diff| > 1 (treat lfc = 1)
+[PASS] STYH: our site diff vs supplied diff on supported sites, r = 0.967 (> 0.9, same sign convention)
+[PASS] STY: our site diff vs supplied diff on supported sites, r = 1.000 (> 0.9, same sign convention)
+[NOTE] STY supplied DEA: modelName Linear_Model_moderated / Imputed_Mean_moderated but estimate_type is always observed -> in STY the label cannot separate imputed from observed estimates.
+[PASS] 2 reinjected phospho samples (stk_pulseSN_1/2)
+[NOTE] reinjected samples removed (STY): hits 62 -> 78, kept 62, lost 0, new 16
+[NOTE] STY vs STYH: 1068 supported site x contrast pairs in both; r = 0.958; hits STYH 53, STY 60, both 51
+[NOTE] shortlist (STY): 236 supported S/T/Y sites on 133 proteins; 37 sites are a hit in >= 1 primary contrast
