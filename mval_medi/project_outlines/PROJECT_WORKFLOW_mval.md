@@ -136,13 +136,14 @@ The bundle contains processed course results, not instrument-level spectra. Spec
 
 **Do**
 
-- [ ] Separate baseline contrasts (`stk_vs_anc_at_TSB`, `stp_vs_anc_at_TSB`) from within-genotype exposure contrasts and the three interaction contrasts below.
-- [ ] Use `explain_contrast()` and check one example against group means to verify the direction. Say which group is higher whenever reporting a simple fold change.
-- [ ] Begin with supplied DEA results. Document the tested feature universe, filtering, missingness and original FDR adjustment scope. Do not renormalize; refit only as declared below.
+- [x] Separate baseline contrasts (`stk_vs_anc_at_TSB`, `stp_vs_anc_at_TSB`) from within-genotype exposure contrasts and the three interaction contrasts below.
+- [x] Use `explain_contrast()` and check one example against group means to verify the direction. Say which group is higher whenever reporting a simple fold change.
+- [x] Begin with supplied DEA results. Document the tested feature universe, filtering, missingness and original FDR adjustment scope. Do not renormalize; refit only as declared below.
 - [x] **Formal test (group decision 12 Nov 2026, fixed before results were seen):** our own refit `scripts/05_formal_test_mval.R`. limma, model `~ 0 + group` (9 genotype × medium means, all 27 samples, n = 3), all 33 course contrasts written out as `A - B`; `treat(lfc = 1)` tests H0 |log2FC| ≤ 1; hit = **BH-FDR < 0.05**, BH within each contrast over the tested proteins. The threshold is part of the test: no post-hoc |log2FC| filter. No batch term (one acquisition day; run order blocked by group, so not separable). Full table: `data/derived/limma_treat_total_mval.tsv.gz` (local); summaries in `mval_medi/results/step05_formal_test/`.
-- [ ] The supplied course screen (**FDR < 0.1 and |diff| > 1**, `lm_impute`) is kept as a labelled comparison only, and remains the source for presence/absence (`lod_imputed`) evidence, which our observed-only test cannot score.
-- [ ] Define comparison-specific quantitative eligibility before selecting hits: initially require detection in at least two of three samples in every group needed for that comparison, and observed rather than `lod_imputed` estimates. Report eligible and excluded counts; retain sparse/one-sided signals separately.
-- [ ] Keep supplied FDR values labeled as supplied. Declare any additional testing families if new tests are performed; do not imply the original FDR controls every later selection or combined claim.
+- [x] The supplied course screen (**FDR < 0.1 and |diff| > 1**, `lm_impute`) is kept as a labelled comparison only, and remains the source for presence/absence (`lod_imputed`) evidence, which our observed-only test cannot score.
+- [x] Define comparison-specific quantitative eligibility before selecting hits: initially require detection in at least two of three samples in every group needed for that comparison, and observed rather than `lod_imputed` estimates. Report eligible and excluded counts; retain sparse/one-sided signals separately.
+- [x] Keep supplied FDR values labeled as supplied. Declare any additional testing families if new tests are performed; do not imply the original FDR controls every later selection or combined claim.
+  *Done 13 Nov:* `scripts/05b_contrast_sheet_mval.R`, written up in `mval_medi/results/step05_formal_test/methods_sheet_mval.md`. Contrast families in `contrast_sheet_mval.csv`; direction verified for all 64,876 tested rows against group means; eligible counts 1,876–2,065 per primary contrast, on/off and sparse proteins kept in `one_sided_signals_mval.csv`. Supplied FDR = BH per contrast over all 2,324 rows. **Finding:** supplied `lod_imputed` is a per-protein label (any of the 9 groups 0/3 → all 33 contrasts labelled), so for eligible rows our observed-only estimate is used.
 
 | Contrast | What it answers |
 |---|---|
