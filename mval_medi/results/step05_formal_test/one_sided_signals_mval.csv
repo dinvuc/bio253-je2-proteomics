@@ -1,0 +1,784 @@
+contrast,locus_tag,product,obs_pattern,diff_supplied,FDR_supplied,estimate_type,supplied_screen,higher_in
+TSB_vs_SN_at_anc,B7H15_13390,hypothetical protein,anc_TSB=0/3 anc_SN=3/3,-3.163110263432086,1.105114356344228e-6,lod_imputed,TRUE,SN
+TSB_vs_SN_at_anc,B7H15_13800,hypothetical protein,anc_TSB=0/3 anc_SN=3/3,-2.782399307443227,4.451914905396258e-6,lod_imputed,TRUE,SN
+TSB_vs_SN_at_anc,B7H15_08800,allophanate hydrolase,anc_TSB=3/3 anc_SN=0/3,2.423001183927505,7.508739805570031e-6,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_anc,B7H15_01255,long-chain fatty acid--CoA ligase,anc_TSB=3/3 anc_SN=0/3,2.159051765627301,2.27811320094465e-5,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_anc,B7H15_01280,hypothetical protein,anc_TSB=0/3 anc_SN=3/3,-2.86280982073712,1.567000522638899e-4,lod_imputed,TRUE,SN
+TSB_vs_SN_at_anc,B7H15_14385,type VII secretion effector,anc_TSB=3/3 anc_SN=0/3,1.813995640504744,4.974672702914167e-4,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_anc,B7H15_02425,ABC transporter permease,anc_TSB=3/3 anc_SN=0/3,1.800405233762364,7.913076495697228e-4,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_anc,B7H15_02280,hypothetical protein,anc_TSB=3/3 anc_SN=0/3,1.6419721775105,9.53983126161694e-4,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_anc,B7H15_01260,acyl CoA:acetate/3-ketoacid CoA transferase,anc_TSB=3/3 anc_SN=0/3,1.438615988541478,0.00116208371910357,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_anc,B7H15_07940,hypothetical protein,anc_TSB=0/3 anc_SN=2/3,-2.247300488497841,0.00175404765706101,lod_imputed,TRUE,SN
+TSB_vs_SN_at_anc,B7H15_02345,hypothetical protein,anc_TSB=3/3 anc_SN=0/3,1.484320852974204,0.00186511836217671,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_anc,B7H15_04760,anion permease,anc_TSB=0/3 anc_SN=3/3,-2.764312179707395,0.00276536499695096,lod_imputed,TRUE,SN
+TSB_vs_SN_at_anc,B7H15_07575,quinolone resistance protein NorB,anc_TSB=0/3 anc_SN=3/3,-1.479171570344358,0.00686306362483461,lod_imputed,TRUE,SN
+TSB_vs_SN_at_anc,B7H15_00040,histidine ammonia-lyase,anc_TSB=3/3 anc_SN=0/3,0.9620565941764057,0.01529550693498605,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_00860,capsular biosynthesis protein,anc_TSB=3/3 anc_SN=0/3,0.7785956973684219,0.05478150946502249,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_01575,virulence factor EsxB,anc_TSB=3/3 anc_SN=0/3,0.7830511610691785,0.0601606181695816,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_09925,lantibiotic ABC transporter permease,anc_TSB=3/3 anc_SN=0/3,0.8277864548428776,0.07081948299156733,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_01635,DUF5079 domain-containing protein,anc_TSB=3/3 anc_SN=0/3,0.9343279228918094,0.08117419379527915,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_13715,peptide ABC transporter permease,anc_TSB=0/3 anc_SN=2/3,-0.944635012786206,0.110746033732962,lod_imputed,FALSE,SN
+TSB_vs_SN_at_anc,B7H15_08205,hypothetical protein,anc_TSB=3/3 anc_SN=0/3,0.6119645556237826,0.1319741704683076,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_13770,hypothetical protein,anc_TSB=0/3 anc_SN=2/3,-0.7739100695234412,0.1533741538654263,lod_imputed,FALSE,SN
+TSB_vs_SN_at_anc,B7H15_13740,hypothetical protein,anc_TSB=2/3 anc_SN=0/3,0.7391686197824682,0.1708054396215267,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_11420,3-isopropylmalate dehydratase small subunit,anc_TSB=3/3 anc_SN=0/3,0.648827329046628,0.1896365396534215,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_03160,protein VraX,anc_TSB=3/3 anc_SN=0/3,0.5099157275712202,0.2610516994531493,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_14905,histidinol dehydrogenase,anc_TSB=3/3 anc_SN=0/3,0.532122831963879,0.2654783458615745,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_14270,"glycosyl-4,4'-diaponeurosporenoate acyltransferase",anc_TSB=3/3 anc_SN=0/3,0.5003721441115426,0.2693838033396159,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_02370,NADH-quinone oxidoreductase subunit L,anc_TSB=3/3 anc_SN=0/3,0.5281724031397451,0.2707788584623286,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_02210,hypothetical protein,anc_TSB=0/3 anc_SN=3/3,-0.4857963332964287,0.2978525050985664,lod_imputed,FALSE,SN
+TSB_vs_SN_at_anc,B7H15_01970,cystathionine gamma-synthase,anc_TSB=2/3 anc_SN=0/3,0.4750504550930856,0.3982424447225918,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_05415,staphostatin B,anc_TSB=3/3 anc_SN=0/3,0.4376659366776973,0.4018929330720812,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_12710,urease accessory protein UreF,anc_TSB=3/3 anc_SN=0/3,0.3472635336763441,0.4118527560158766,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_02340,hypothetical protein,anc_TSB=3/3 anc_SN=0/3,0.3211204633870436,0.4359828741420747,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_03285,hypothetical protein,anc_TSB=2/3 anc_SN=0/3,0.3834564476701522,0.4370319171287168,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_01555,type VII secretion protein EsaB,anc_TSB=3/3 anc_SN=0/3,0.2945627559781507,0.5691522824633977,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_12645,molybdenum ABC transporter permease subunit,anc_TSB=0/3 anc_SN=2/3,-0.2928867386780194,0.5880678384276757,lod_imputed,FALSE,SN
+TSB_vs_SN_at_anc,B7H15_03140,long-chain fatty acid--CoA ligase,anc_TSB=3/3 anc_SN=0/3,0.2288374502005777,0.6582982899069456,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_01510,ABC transporter,anc_TSB=2/3 anc_SN=0/3,0.2453234579025019,0.6608272981574024,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_04665,pathogenicity island protein,anc_TSB=2/3 anc_SN=0/3,0.2450974068747455,0.6609635421947098,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_09905,serine protease SplA,anc_TSB=2/3 anc_SN=0/3,0.2032090334614008,0.708627885043663,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_06860,hypothetical protein,anc_TSB=2/3 anc_SN=0/3,0.1804391854379505,0.7573751717820584,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_12570,MFS transporter,anc_TSB=2/3 anc_SN=0/3,0.1324880036521792,0.8475339715571377,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_01025,N-acetyl-gamma-glutamyl-phosphate reductase,anc_TSB=3/3 anc_SN=0/3,0.08389052513549637,0.8912284575083268,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_11065,DNA replication protein DnaD,anc_TSB=2/3 anc_SN=0/3,0.05668630299071422,0.9519946447646352,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_09655,riboflavin biosynthesis protein RibD,anc_TSB=3/3 anc_SN=0/3,0.03189462551562264,0.980059028332637,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_00270,hypothetical protein,anc_TSB=2/3 anc_SN=0/3,6.906271813870877e-15,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_00700,hypothetical protein,anc_TSB=2/3 anc_SN=0/3,1.8792957897585882e-14,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_01465,ribose transporter RbsU,anc_TSB=0/3 anc_SN=2/3,1.648449762403403e-14,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_01650,hypothetical protein,anc_TSB=2/3 anc_SN=0/3,-1.018255473938332e-14,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_anc,B7H15_01895,deferrochelatase/peroxidase EfeB,anc_TSB=2/3 anc_SN=0/3,-1.2457507071565852e-14,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_anc,B7H15_02190,hypothetical protein,anc_TSB=0/3 anc_SN=2/3,7.632471092607673e-15,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_03150,protein VraC,anc_TSB=2/3 anc_SN=0/3,2.27227202523524e-16,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_04600,toxin,anc_TSB=2/3 anc_SN=0/3,-5.337091116943791e-15,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_anc,B7H15_05875,heme ABC transporter permease,anc_TSB=2/3 anc_SN=0/3,-1.014242243915351e-14,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_anc,B7H15_06945,two-component sensor histidine kinase,anc_TSB=3/3 anc_SN=0/3,-5.165084164478594e-15,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_anc,B7H15_07220,indole-3-glycerol-phosphate synthase,anc_TSB=2/3 anc_SN=0/3,-8.841922952452386e-15,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_anc,B7H15_12090,hypothetical protein,anc_TSB=2/3 anc_SN=0/3,1.447618881431537e-15,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_anc,B7H15_13305,cobalamin biosynthesis protein CbiX,anc_TSB=0/3 anc_SN=2/3,-9.18616436130928e-15,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_anc,B7H15_14805,methionine sulfoxide reductase A,anc_TSB=3/3 anc_SN=0/3,0.01066478732054001,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_07580,amino acid permease,stk_TSB=0/3 stk_SN=3/3,-4.453497740589077,4.808816011534068e-7,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stk,B7H15_00985,hypothetical protein,stk_TSB=3/3 stk_SN=0/3,2.722759362457873,6.752549229067941e-7,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_01240,acetyl-CoA acetyltransferase,stk_TSB=3/3 stk_SN=0/3,2.743998308297803,1.822946583673755e-6,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_13390,hypothetical protein,stk_TSB=0/3 stk_SN=3/3,-2.474944070711611,1.277848851005356e-5,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stk,B7H15_11395,acetolactate synthase 1 regulatory subunit,stk_TSB=3/3 stk_SN=0/3,2.641128206557769,1.512155974164553e-5,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_08800,allophanate hydrolase,stk_TSB=3/3 stk_SN=0/3,2.160164800747689,2.794152375821276e-5,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_03880,multidrug efflux MFS transporter NorA,stk_TSB=3/3 stk_SN=0/3,3.001238259430194,4.196206198414436e-5,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_02280,hypothetical protein,stk_TSB=3/3 stk_SN=0/3,2.140340854950041,9.134913099332672e-5,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_01280,hypothetical protein,stk_TSB=0/3 stk_SN=3/3,-2.863760565488266,1.430316935107415e-4,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stk,B7H15_05290,competence protein ComK,stk_TSB=3/3 stk_SN=0/3,1.774068213923447,2.23531916214019e-4,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_01255,long-chain fatty acid--CoA ligase,stk_TSB=3/3 stk_SN=0/3,1.642163343779874,3.056247741950123e-4,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_08780,iron transporter,stk_TSB=3/3 stk_SN=0/3,1.834413248811858,4.17896840865535e-4,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_00860,capsular biosynthesis protein,stk_TSB=3/3 stk_SN=0/3,1.589713870574021,6.511063813046502e-4,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_06285,hypothetical protein,stk_TSB=3/3 stk_SN=0/3,1.909256913448825,0.00104572522765932,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_14560,citrate transporter,stk_TSB=3/3 stk_SN=0/3,1.899384156664496,0.00125259187273521,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_00040,histidine ammonia-lyase,stk_TSB=3/3 stk_SN=0/3,1.36971299745746,0.00139791949291667,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_06075,hypothetical protein,stk_TSB=0/3 stk_SN=3/3,-1.239669816543163,0.00243438181020826,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stk,B7H15_13050,Bcr/CflA family drug resistance efflux transporter,stk_TSB=0/3 stk_SN=3/3,-1.574481127400136,0.0042316114640582,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stk,B7H15_10995,transcriptional regulator,stk_TSB=0/3 stk_SN=3/3,-1.549842694699832,0.00671487205636781,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stk,B7H15_07575,quinolone resistance protein NorB,stk_TSB=0/3 stk_SN=3/3,-1.427547573971409,0.00834797351730232,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stk,B7H15_10960,hypothetical protein,stk_TSB=0/3 stk_SN=3/3,-1.323787525251715,0.01261400602184828,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stk,B7H15_09925,lantibiotic ABC transporter permease,stk_TSB=3/3 stk_SN=0/3,1.149542969377801,0.01799950529884614,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_00950,cation transporter,stk_TSB=0/3 stk_SN=2/3,-1.192021535563456,0.02359737181333239,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stk,B7H15_13770,hypothetical protein,stk_TSB=0/3 stk_SN=3/3,-1.494961667750185,0.02702128600669054,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stk,B7H15_01910,twin-arginine translocase TatA/TatE family subunit,stk_TSB=0/3 stk_SN=3/3,-1.139799052653536,0.03657104051433527,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stk,B7H15_01970,cystathionine gamma-synthase,stk_TSB=2/3 stk_SN=0/3,1.192615050947869,0.0462564053193888,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stk,B7H15_13970,MFS transporter,stk_TSB=0/3 stk_SN=2/3,-1.109401137109669,0.07015349307809643,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stk,B7H15_01275,hypothetical protein,stk_TSB=0/3 stk_SN=3/3,-0.9763823846138148,0.02223797271842842,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_11415,3-isopropylmalate dehydratase large subunit,stk_TSB=3/3 stk_SN=0/3,0.8754758620401114,0.02720870618618878,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_02225,hypothetical protein,stk_TSB=0/3 stk_SN=3/3,-0.8831817092371024,0.03541666498640497,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_02345,hypothetical protein,stk_TSB=2/3 stk_SN=0/3,0.9621216991495036,0.06621240335701092,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_04685,hypothetical protein,stk_TSB=2/3 stk_SN=0/3,0.843248614049787,0.0822852764068542,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_10930,hypothetical protein,stk_TSB=0/3 stk_SN=3/3,-0.9771727658402374,0.08362045017568405,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_09975,gamma-hemolysin subunit A,stk_TSB=2/3 stk_SN=0/3,0.9086765064855152,0.08414982469898555,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_14270,"glycosyl-4,4'-diaponeurosporenoate acyltransferase",stk_TSB=3/3 stk_SN=0/3,0.7555944028441978,0.1224733171177884,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_04885,Na+/H+ antiporter subunit F,stk_TSB=0/3 stk_SN=3/3,-0.8021198012362759,0.1266140273462743,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_12645,molybdenum ABC transporter permease subunit,stk_TSB=0/3 stk_SN=3/3,-0.6842085904901993,0.1669777377976201,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_01260,acyl CoA:acetate/3-ketoacid CoA transferase,stk_TSB=3/3 stk_SN=0/3,0.5552242789449461,0.173630670008089,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_11710,ATP synthase subunit C,stk_TSB=0/3 stk_SN=2/3,-0.6315192053521278,0.2309468827917742,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_13695,MFS transporter,stk_TSB=0/3 stk_SN=3/3,-0.5500112721524987,0.2622853067399472,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_02425,ABC transporter permease,stk_TSB=2/3 stk_SN=0/3,0.587299965053212,0.2663276956500996,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_12720,urease accessory protein,stk_TSB=3/3 stk_SN=0/3,0.4817544310098296,0.3341974868771311,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_05045,hypothetical protein,stk_TSB=3/3 stk_SN=0/3,0.4518887693778411,0.4046912258081805,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_06010,FPRL1 inhibitory protein,stk_TSB=0/3 stk_SN=3/3,-0.3911118211798996,0.4198913341555964,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_14770,accessory Sec system protein translocase subunit SecY2,stk_TSB=3/3 stk_SN=0/3,0.3467024149657866,0.4550214216041654,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_14470,aspartate aminotransferase family protein,stk_TSB=2/3 stk_SN=0/3,0.3380615415189411,0.4583822714824475,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_00530,hypothetical protein,stk_TSB=2/3 stk_SN=0/3,0.3811040222752007,0.4591173712320578,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_11050,hypothetical protein,stk_TSB=0/3 stk_SN=3/3,-0.3050728141956208,0.52522870861997,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_09920,BsaG protein,stk_TSB=2/3 stk_SN=0/3,0.3589381393171706,0.5271995880628088,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_07340,aspartate kinase,stk_TSB=2/3 stk_SN=0/3,0.3199490989524921,0.5470828163711577,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_06945,two-component sensor histidine kinase,stk_TSB=2/3 stk_SN=0/3,0.3280029823192907,0.5655496235992071,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_02405,sodium-dependent transporter,stk_TSB=0/3 stk_SN=2/3,-0.2972109460898668,0.6097504450193395,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_05220,sodium:alanine symporter,stk_TSB=3/3 stk_SN=0/3,0.1713133063483442,0.7247138229190337,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_01090,hypothetical protein,stk_TSB=3/3 stk_SN=0/3,0.1870605929664531,0.7352432115824974,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_14535,choline transporter,stk_TSB=2/3 stk_SN=0/3,0.1817471655549574,0.7779060252177855,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_03285,hypothetical protein,stk_TSB=2/3 stk_SN=0/3,0.1470925197019813,0.8058982536405674,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_13710,nickel ABC transporter permease,stk_TSB=0/3 stk_SN=3/3,-0.1264827696016185,0.8258758181297626,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_06860,hypothetical protein,stk_TSB=2/3 stk_SN=0/3,0.1307278351506737,0.8599609269792551,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_13430,gamma-hemolysin component C,stk_TSB=0/3 stk_SN=2/3,-0.1096507645603436,0.8954725222211469,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_13700,ABC transporter ATP-binding protein,stk_TSB=0/3 stk_SN=3/3,-0.05941786113203679,0.9536214584674876,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_14655,transcriptional regulator,stk_TSB=0/3 stk_SN=2/3,-0.06668231640284127,0.9572224096863778,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_00765,tetracycline efflux MFS transporter Tet(38),stk_TSB=0/3 stk_SN=2/3,-0.03689852108481754,0.9969032220072088,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_00225,hypothetical protein,stk_TSB=3/3 stk_SN=0/3,0.01041307674439552,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_00385,methyltransferase,stk_TSB=0/3 stk_SN=3/3,-0.01307931075860991,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_01115,peptide ABC transporter permease,stk_TSB=2/3 stk_SN=0/3,0.00766332386403808,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_01530,DUF5080 domain-containing protein,stk_TSB=2/3 stk_SN=0/3,0.00851482037312696,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_02190,hypothetical protein,stk_TSB=0/3 stk_SN=3/3,-4.679517004246065e-16,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_03160,protein VraX,stk_TSB=2/3 stk_SN=0/3,-3.277774995530126e-16,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_03865,hypothetical protein,stk_TSB=2/3 stk_SN=0/3,0.01194052668762662,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_05790,protoheme IX farnesyltransferase,stk_TSB=0/3 stk_SN=3/3,-2.220446049250313e-16,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_07220,indole-3-glycerol-phosphate synthase,stk_TSB=2/3 stk_SN=0/3,8.519472662077439e-16,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_10695,sodium-dependent dicarboxylate transporter SdcS,stk_TSB=0/3 stk_SN=3/3,-7.472687031099356e-16,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_13290,uroporphyrinogen-III C-methyltransferase,stk_TSB=0/3 stk_SN=3/3,-6.192962809237201e-16,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stk,B7H15_14890,imidazole glycerol phosphate synthase subunit HisH,stk_TSB=2/3 stk_SN=0/3,1.4749203738510858e-17,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stk,B7H15_09855,hypothetical protein,stk_TSB=0/3 stk_SN=2/3,-7.246172208238715e-17,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_01240,acetyl-CoA acetyltransferase,stp_TSB=3/3 stp_SN=0/3,3.302147672982622,2.317816775550134e-7,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stp,B7H15_05290,competence protein ComK,stp_TSB=3/3 stp_SN=0/3,2.746274654373781,2.094268701598626e-6,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stp,B7H15_13800,hypothetical protein,stp_TSB=0/3 stp_SN=3/3,-2.843442131596673,3.428860411899018e-6,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stp,B7H15_01060,outer surface protein,stp_TSB=3/3 stp_SN=0/3,1.87290798956518,4.709009466642939e-5,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stp,B7H15_01585,hypothetical protein,stp_TSB=3/3 stp_SN=0/3,1.638357389143121,8.377973283979064e-4,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stp,B7H15_03880,multidrug efflux MFS transporter NorA,stp_TSB=2/3 stp_SN=0/3,1.925721351181901,0.00102750583901537,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stp,B7H15_02365,phenol-soluble modulin alpha 3 peptide,stp_TSB=3/3 stp_SN=0/3,1.587782849765797,0.00136948529351221,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stp,B7H15_14585,glutathione peroxidase,stp_TSB=3/3 stp_SN=0/3,2.2086429925692,0.00191306002771737,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stp,B7H15_08780,iron transporter,stp_TSB=3/3 stp_SN=0/3,1.444162926878411,0.00254954973757599,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stp,B7H15_02425,ABC transporter permease,stp_TSB=3/3 stp_SN=0/3,1.530560485376722,0.00301722297406729,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stp,B7H15_14530,MBL fold hydrolase,stp_TSB=3/3 stp_SN=0/3,1.193510607555023,0.00651772409429766,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stp,B7H15_07575,quinolone resistance protein NorB,stp_TSB=0/3 stp_SN=3/3,-1.426148716866155,0.00723286670117402,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stp,B7H15_06285,hypothetical protein,stp_TSB=3/3 stp_SN=0/3,1.231523445765151,0.0212109736637716,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stp,B7H15_13970,MFS transporter,stp_TSB=0/3 stp_SN=2/3,-1.217759098469848,0.05418863648633423,lod_imputed,TRUE,SN
+TSB_vs_SN_at_stp,B7H15_08540,metal ABC transporter permease,stp_TSB=2/3 stp_SN=0/3,1.098786441908703,0.07356434615030902,lod_imputed,TRUE,TSB
+TSB_vs_SN_at_stp,B7H15_07340,aspartate kinase,stp_TSB=3/3 stp_SN=0/3,0.7637634222463123,0.09571385270862416,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_06010,FPRL1 inhibitory protein,stp_TSB=0/3 stp_SN=3/3,-0.8213540810108068,0.097820906781598,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_07940,hypothetical protein,stp_TSB=0/3 stp_SN=2/3,-0.8517575012099095,0.1263836727685378,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_10995,transcriptional regulator,stp_TSB=0/3 stp_SN=2/3,-0.7407808567806693,0.1518199169053019,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_14385,type VII secretion effector,stp_TSB=3/3 stp_SN=0/3,0.589671074625076,0.1685028888224945,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_14805,methionine sulfoxide reductase A,stp_TSB=0/3 stp_SN=2/3,-0.723425522217634,0.1760581806539102,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_11540,potassium-transporting ATPase A chain,stp_TSB=0/3 stp_SN=2/3,-0.6575861030537331,0.2230849338226943,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_00860,capsular biosynthesis protein,stp_TSB=3/3 stp_SN=0/3,0.4826374522304716,0.2340391444316451,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_01970,cystathionine gamma-synthase,stp_TSB=2/3 stp_SN=0/3,0.556791833040231,0.2545784672988181,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_01510,ABC transporter,stp_TSB=2/3 stp_SN=0/3,0.4969884898729038,0.334216127337126,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_12710,urease accessory protein UreF,stp_TSB=3/3 stp_SN=0/3,0.4003238471859162,0.3875072728582311,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_09210,hypothetical protein,stp_TSB=0/3 stp_SN=2/3,-0.4123114062560668,0.4381016942571346,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_02280,hypothetical protein,stp_TSB=3/3 stp_SN=0/3,0.3284770559083533,0.5163284217062954,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_14890,imidazole glycerol phosphate synthase subunit HisH,stp_TSB=3/3 stp_SN=0/3,0.3255708362648999,0.5456275193540684,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_10820,hypothetical protein,stp_TSB=2/3 stp_SN=0/3,0.3099749372335506,0.5972180193617472,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_03285,hypothetical protein,stp_TSB=2/3 stp_SN=0/3,0.2637840913023046,0.6378329347351998,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_05415,staphostatin B,stp_TSB=3/3 stp_SN=0/3,0.2594473474625729,0.6448665767905499,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_12570,MFS transporter,stp_TSB=3/3 stp_SN=0/3,0.2407333993249508,0.6555262688895375,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_09455,acetoin utilization protein AcuC,stp_TSB=3/3 stp_SN=0/3,0.2075325428366048,0.6589650731164381,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_00530,hypothetical protein,stp_TSB=3/3 stp_SN=0/3,0.263326468736325,0.6641482709649289,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_12105,iron-dicitrate transporter subunit FecD,stp_TSB=3/3 stp_SN=0/3,0.2165052375831804,0.6838699557575214,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_00885,UDP-N-acetylglucosamine 2-epimerase (non-hydrolyzing),stp_TSB=3/3 stp_SN=0/3,0.1474077440330503,0.7611227780510088,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_09915,DUF4888 domain-containing protein,stp_TSB=3/3 stp_SN=0/3,0.1247931240558151,0.8593612329564633,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_09925,lantibiotic ABC transporter permease,stp_TSB=3/3 stp_SN=0/3,0.08533494254130763,0.9102904610082664,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_09755,IS200/IS605 family transposase,stp_TSB=0/3 stp_SN=2/3,-0.0807386156304683,0.9274375797352484,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_02210,hypothetical protein,stp_TSB=0/3 stp_SN=3/3,-0.065786473940200485,0.95173493267341025,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_11650,single-stranded DNA-binding protein,stp_TSB=3/3 stp_SN=0/3,0.05240456208948152,0.9653225591675234,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_00225,hypothetical protein,stp_TSB=3/3 stp_SN=0/3,-2.974638971716899e-16,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_00880,capsular biosynthesis protein,stp_TSB=3/3 stp_SN=0/3,3.906208917743061e-16,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_01115,peptide ABC transporter permease,stp_TSB=3/3 stp_SN=0/3,5.257122052885199e-16,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_01530,DUF5080 domain-containing protein,stp_TSB=2/3 stp_SN=0/3,-1.648653411257794e-16,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_01650,hypothetical protein,stp_TSB=2/3 stp_SN=0/3,0.00552702678671759,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_01895,deferrochelatase/peroxidase EfeB,stp_TSB=2/3 stp_SN=0/3,-1.821522909093364e-18,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_02140,xanthine permease,stp_TSB=2/3 stp_SN=0/3,-2.507792912334628e-16,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_03160,protein VraX,stp_TSB=3/3 stp_SN=0/3,-6.472816709813965e-16,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_03550,manganese ABC transporter permease,stp_TSB=2/3 stp_SN=0/3,6.785889449882158e-5,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_04275,acetyltransferase,stp_TSB=2/3 stp_SN=0/3,3.148154209759965e-16,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_04565,thiol reductase thioredoxin,stp_TSB=0/3 stp_SN=3/3,2.110769200959284e-17,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_06355,serine/threonine protein kinase,stp_TSB=3/3 stp_SN=0/3,8.881784197001252e-16,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_06860,hypothetical protein,stp_TSB=3/3 stp_SN=0/3,0.02137283547359014,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_06890,hypothetical protein,stp_TSB=0/3 stp_SN=3/3,3.0756757485231086e-17,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_06945,two-component sensor histidine kinase,stp_TSB=3/3 stp_SN=0/3,2.704612009087506e-16,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_07235,tryptophan synthase subunit alpha,stp_TSB=2/3 stp_SN=0/3,8.715120940693065e-16,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_07275,peptide ABC transporter permease,stp_TSB=2/3 stp_SN=0/3,-1.3514107940025938e-18,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_07850,hypothetical protein,stp_TSB=2/3 stp_SN=0/3,-2.677650040948728e-17,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_09815,hypothetical protein,stp_TSB=2/3 stp_SN=0/3,-4.799669792962368e-16,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_09880,serine protease SplF,stp_TSB=3/3 stp_SN=0/3,0.01172653734473174,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_09895,serine protease SplC,stp_TSB=3/3 stp_SN=0/3,9.034744449277846e-16,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_09940,enterotoxin,stp_TSB=2/3 stp_SN=0/3,-1.881501719278109e-30,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_10975,phage portal protein,stp_TSB=0/3 stp_SN=2/3,-4.440892098500626e-16,1,lod_imputed,FALSE,SN
+TSB_vs_SN_at_stp,B7H15_11090,hypothetical protein,stp_TSB=0/3 stp_SN=3/3,4.440892098500626e-16,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_13735,diaminopimelate epimerase,stp_TSB=2/3 stp_SN=0/3,7.157353314987075e-16,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_14895,imidazoleglycerol-phosphate dehydratase,stp_TSB=2/3 stp_SN=0/3,3.4694469519536138e-18,1,lod_imputed,FALSE,TSB
+TSB_vs_SN_at_stp,B7H15_15000,nickel transporter NixA,stp_TSB=3/3 stp_SN=0/3,-3.33066907387547e-16,1,lod_imputed,FALSE,SN
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_08205,hypothetical protein,stk_TSB=3/3 stk_SN=3/3 anc_TSB=3/3 anc_SN=0/3,-2.541970513289296,7.369116180727274e-4,lod_imputed,TRUE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01090,hypothetical protein,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=2/3,2.923475680957757,0.00143503997818268,lod_imputed,TRUE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13050,Bcr/CflA family drug resistance efflux transporter,stk_TSB=0/3 stk_SN=3/3 anc_TSB=3/3 anc_SN=3/3,-2.406536473605192,0.00916634586325792,lod_imputed,TRUE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_08015,DEAD/DEAH box helicase,stk_TSB=0/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=2/3,2.240782982647676,0.02726659504284084,lod_imputed,TRUE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_04760,anion permease,stk_TSB=0/3 stk_SN=0/3 anc_TSB=0/3 anc_SN=3/3,2.764312179707396,0.04679291260318327,lod_imputed,TRUE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_06075,hypothetical protein,stk_TSB=0/3 stk_SN=3/3 anc_TSB=3/3 anc_SN=3/3,0.8899453482789146,0.1337152977805342,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01575,virulence factor EsxB,stk_TSB=3/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=0/3,1.043522150979948,0.1797311260788765,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_02425,ABC transporter permease,stk_TSB=2/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-1.213105268709152,0.2009836570425893,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_06035,hypothetical protein,stk_TSB=1/3 stk_SN=3/3 anc_TSB=0/3 anc_SN=1/3,-1.266000781336349,0.2289713923276391,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_07940,hypothetical protein,stk_TSB=0/3 stk_SN=1/3 anc_TSB=0/3 anc_SN=2/3,1.260311837266832,0.2340960598422229,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00385,methyltransferase,stk_TSB=0/3 stk_SN=3/3 anc_TSB=3/3 anc_SN=3/3,0.8771030676529605,0.2554602106451985,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01260,acyl CoA:acetate/3-ketoacid CoA transferase,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.8833917095965321,0.2582138987443334,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_04610,transcriptional regulator,stk_TSB=0/3 stk_SN=1/3 anc_TSB=2/3 anc_SN=1/3,-1.290318401934911,0.2608147670107833,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_03880,multidrug efflux MFS transporter NorA,stk_TSB=3/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=1/3,1.123327673305527,0.2809821770071878,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00860,capsular biosynthesis protein,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,0.8111181732055995,0.3027712906334464,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01140,peptidase M23,stk_TSB=0/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=2/3,1.172469814686406,0.30338867874924,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00950,cation transporter,stk_TSB=0/3 stk_SN=2/3 anc_TSB=2/3 anc_SN=3/3,0.984367358082456,0.3183498394574729,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01605,DUF5080 domain-containing protein,stk_TSB=0/3 stk_SN=1/3 anc_TSB=2/3 anc_SN=2/3,1.032697230210789,0.3375442349008256,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01550,protein EssA,stk_TSB=1/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=2/3,0.9851937342624032,0.3577881832772512,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_11415,3-isopropylmalate dehydratase large subunit,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=1/3,0.7320174482662868,0.3588768448386974,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_04885,Na+/H+ antiporter subunit F,stk_TSB=0/3 stk_SN=3/3 anc_TSB=1/3 anc_SN=3/3,0.9547654018378936,0.364783465410397,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_14470,aspartate aminotransferase family protein,stk_TSB=2/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=2/3,0.7711956144005091,0.3661435055475613,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_14385,type VII secretion effector,stk_TSB=3/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=0/3,-0.7659868672450614,0.3735675313987861,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_10930,hypothetical protein,stk_TSB=0/3 stk_SN=3/3 anc_TSB=1/3 anc_SN=2/3,-0.9249258059695672,0.3849368176435335,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_02405,sodium-dependent transporter,stk_TSB=0/3 stk_SN=2/3 anc_TSB=2/3 anc_SN=1/3,-0.909447902743154,0.4025376771877738,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13715,peptide ABC transporter permease,stk_TSB=0/3 stk_SN=1/3 anc_TSB=0/3 anc_SN=2/3,0.9332315351331342,0.412078356776599,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_11035,hypothetical protein,stk_TSB=2/3 stk_SN=1/3 anc_TSB=0/3 anc_SN=1/3,0.8942019695234602,0.418439981583484,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13390,hypothetical protein,stk_TSB=0/3 stk_SN=3/3 anc_TSB=0/3 anc_SN=3/3,0.6881661927204754,0.4196320602462619,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_10995,transcriptional regulator,stk_TSB=0/3 stk_SN=3/3 anc_TSB=2/3 anc_SN=1/3,-0.7957086058306982,0.4211687409232312,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_05045,hypothetical protein,stk_TSB=3/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=2/3,0.7995268253932284,0.4232855161448469,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13800,hypothetical protein,stk_TSB=1/3 stk_SN=3/3 anc_TSB=0/3 anc_SN=3/3,-0.6619789537251326,0.4429615330742362,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00045,hypothetical protein,stk_TSB=0/3 stk_SN=0/3 anc_TSB=1/3 anc_SN=2/3,0.8393742526123735,0.4448946943024835,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_07850,hypothetical protein,stk_TSB=3/3 stk_SN=1/3 anc_TSB=0/3 anc_SN=1/3,-0.7777018933176256,0.4627419573154498,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00525,LysR family transcriptional regulator,stk_TSB=0/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=2/3,-0.7216870801180854,0.4649700286773141,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_04875,pyridine nucleotide-disulfide oxidoreductase,stk_TSB=1/3 stk_SN=2/3 anc_TSB=0/3 anc_SN=0/3,-0.7932749129757373,0.4922341616550263,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01635,DUF5079 domain-containing protein,stk_TSB=1/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=0/3,-0.7385848046795824,0.4927485186304444,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01275,hypothetical protein,stk_TSB=0/3 stk_SN=3/3 anc_TSB=3/3 anc_SN=3/3,0.5756303290096647,0.4959990843267331,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13740,hypothetical protein,stk_TSB=0/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=0/3,-0.7391686197824683,0.5109669435463311,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13970,MFS transporter,stk_TSB=0/3 stk_SN=2/3 anc_TSB=0/3 anc_SN=1/3,-0.7453067014578155,0.5209286874429623,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13770,hypothetical protein,stk_TSB=0/3 stk_SN=3/3 anc_TSB=0/3 anc_SN=2/3,-0.7210515982267439,0.5211596415202184,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01970,cystathionine gamma-synthase,stk_TSB=2/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=0/3,0.7175645958547838,0.5220324126577182,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01255,long-chain fatty acid--CoA ligase,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.5168884218474261,0.5234759497288615,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_06355,serine/threonine protein kinase,stk_TSB=0/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=3/3,0.4883345392074148,0.5525700592783974,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_09975,gamma-hemolysin subunit A,stk_TSB=2/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=2/3,0.5823933344229346,0.5525700592783974,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_02230,NA,stk_TSB=0/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=2/3,-0.6549227063129718,0.576540230637655,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13695,MFS transporter,stk_TSB=0/3 stk_SN=3/3 anc_TSB=3/3 anc_SN=3/3,-0.5500112721525077,0.5795388940073739,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_02370,NADH-quinone oxidoreductase subunit L,stk_TSB=1/3 stk_SN=2/3 anc_TSB=3/3 anc_SN=0/3,-0.5845781276844787,0.5819582097329112,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_02280,hypothetical protein,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,0.4983686774395415,0.5856444588074178,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_10960,hypothetical protein,stk_TSB=0/3 stk_SN=3/3 anc_TSB=1/3 anc_SN=2/3,-0.5959393532127913,0.6017255112952056,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_08070,dUTPase,stk_TSB=0/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=2/3,-0.6052583311003172,0.6022049081609548,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_06010,FPRL1 inhibitory protein,stk_TSB=0/3 stk_SN=3/3 anc_TSB=1/3 anc_SN=3/3,0.488266737593809,0.6176402119191083,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_14770,accessory Sec system protein translocase subunit SecY2,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-0.4501100394996615,0.6183383421935162,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_02345,hypothetical protein,stk_TSB=2/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.5221991538246998,0.6254094183997441,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_03160,protein VraX,stk_TSB=2/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.5099157275712205,0.6259016823110315,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00040,histidine ammonia-lyase,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,0.4076564032810541,0.6345913689367847,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01465,ribose transporter RbsU,stk_TSB=1/3 stk_SN=0/3 anc_TSB=0/3 anc_SN=2/3,0.5573455994308845,0.6431114939151349,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_07340,aspartate kinase,stk_TSB=2/3 stk_SN=0/3 anc_TSB=1/3 anc_SN=1/3,0.5288301957322552,0.649142050189179,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_04615,pathogenicity island protein,stk_TSB=0/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=3/3,-0.5097848878538372,0.652971151416922,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_14905,histidinol dehydrogenase,stk_TSB=2/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=0/3,-0.4874032133452947,0.6579295433708665,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13710,nickel ABC transporter permease,stk_TSB=0/3 stk_SN=3/3 anc_TSB=1/3 anc_SN=3/3,0.4377909716151279,0.661191590533516,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_02210,hypothetical protein,stk_TSB=0/3 stk_SN=1/3 anc_TSB=0/3 anc_SN=3/3,0.485796333296429,0.6651849109780434,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01240,acetyl-CoA acetyltransferase,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-0.373426533222224,0.6707499497984267,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_11395,acetolactate synthase 1 regulatory subunit,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=2/3,0.4816651997981447,0.6839326634954376,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_02225,hypothetical protein,stk_TSB=0/3 stk_SN=3/3 anc_TSB=1/3 anc_SN=3/3,0.3718394981552586,0.6852834477820745,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_10820,hypothetical protein,stk_TSB=0/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=1/3,-0.4993909619962831,0.6874289896362329,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_02305,tandem-type lipoprotein,stk_TSB=1/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-0.4308997403172871,0.6980066367996804,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_14560,citrate transporter,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=1/3,0.4516934592437174,0.6988529227975079,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_05415,staphostatin B,stk_TSB=1/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.4376659366776973,0.7164859334217749,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_08240,hypothetical protein,stk_TSB=1/3 stk_SN=3/3 anc_TSB=1/3 anc_SN=0/3,-0.4201315788217244,0.7164859334217749,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00500,transcriptional regulator,stk_TSB=1/3 stk_SN=2/3 anc_TSB=1/3 anc_SN=0/3,-0.4437091322435944,0.7216501502041499,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_08540,metal ABC transporter permease,stk_TSB=0/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=1/3,-0.4450612312365436,0.7216501502041499,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_12645,molybdenum ABC transporter permease subunit,stk_TSB=0/3 stk_SN=3/3 anc_TSB=0/3 anc_SN=2/3,-0.39132185181218,0.7420203310011312,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_03390,endonuclease III,stk_TSB=2/3 stk_SN=1/3 anc_TSB=1/3 anc_SN=0/3,-0.3960222061763627,0.752652866444721,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_14875,bifunctional phosphoribosyl-AMP cyclohydrolase/phosphoribosyl-ATP diphosphatase,stk_TSB=1/3 stk_SN=2/3 anc_TSB=1/3 anc_SN=0/3,-0.3645477303467544,0.7685319406879682,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13460,adenosylmethionine--8-amino-7-oxononanoate transaminase,stk_TSB=0/3 stk_SN=1/3 anc_TSB=1/3 anc_SN=2/3,0.3622782928876779,0.7782896949972634,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_08780,iron transporter,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-0.309882375932268,0.7783716506129797,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_12720,urease accessory protein,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=1/3,0.3248506962228642,0.7809560417399969,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_04685,hypothetical protein,stk_TSB=2/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=2/3,0.2925303573636431,0.7814542349191438,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_04665,pathogenicity island protein,stk_TSB=0/3 stk_SN=1/3 anc_TSB=2/3 anc_SN=0/3,-0.3561065114203602,0.7818438701291792,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_09925,lantibiotic ABC transporter permease,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,0.3217565145349236,0.7836416188765842,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_09920,BsaG protein,stk_TSB=2/3 stk_SN=0/3 anc_TSB=1/3 anc_SN=0/3,0.3589381393171555,0.7921720237188496,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_08800,allophanate hydrolase,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.2628363831798159,0.794583238933742,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_12710,urease accessory protein UreF,stk_TSB=3/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=0/3,0.2750495657725286,0.8009908792988939,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_06945,two-component sensor histidine kinase,stk_TSB=2/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,0.3280029823192959,0.8061044437668996,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_10950,phage head-tail adapter protein,stk_TSB=1/3 stk_SN=2/3 anc_TSB=1/3 anc_SN=0/3,-0.3303613576567129,0.8205077773739072,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_11050,hypothetical protein,stk_TSB=0/3 stk_SN=3/3 anc_TSB=0/3 anc_SN=0/3,-0.3050728141956349,0.8207971651369846,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01555,type VII secretion protein EsaB,stk_TSB=1/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.2945627559781508,0.8342611130412414,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_12245,MerR family transcriptional regulator,stk_TSB=2/3 stk_SN=2/3 anc_TSB=0/3 anc_SN=1/3,-0.2853303297821022,0.8532424938393677,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_14270,"glycosyl-4,4'-diaponeurosporenoate acyltransferase",stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,0.2552222587326551,0.8532424938393677,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_03140,long-chain fatty acid--CoA ligase,stk_TSB=1/3 stk_SN=2/3 anc_TSB=3/3 anc_SN=0/3,-0.2288374502005777,0.8557850303324568,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_07580,amino acid permease,stk_TSB=0/3 stk_SN=3/3 anc_TSB=1/3 anc_SN=3/3,-0.2037182491898957,0.8557850303324568,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_11075,MBL fold metallo-hydrolase,stk_TSB=0/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-0.2620963019364731,0.8597418729824408,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_09655,riboflavin biosynthesis protein RibD,stk_TSB=3/3 stk_SN=3/3 anc_TSB=3/3 anc_SN=0/3,-0.2266873949791454,0.8597418729824408,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_05790,protoheme IX farnesyltransferase,stk_TSB=0/3 stk_SN=3/3 anc_TSB=1/3 anc_SN=3/3,0.2308952707864544,0.8632722325331267,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_03285,hypothetical protein,stk_TSB=2/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=0/3,-0.2363639279681709,0.8644331049448608,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_05810,regulator,stk_TSB=0/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=3/3,-0.237219013579116,0.8657418628669233,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_11420,3-isopropylmalate dehydratase small subunit,stk_TSB=3/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=0/3,0.2250170314547297,0.8670825924017659,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_05290,competence protein ComK,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-0.1812578178776161,0.876826999659085,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_04650,hypothetical protein,stk_TSB=0/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=2/3,-0.2369309206057419,0.8806666024599774,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01225,complement inhibitor,stk_TSB=1/3 stk_SN=0/3 anc_TSB=1/3 anc_SN=2/3,0.2352360406252951,0.8816353297017652,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_11710,ATP synthase subunit C,stk_TSB=0/3 stk_SN=2/3 anc_TSB=2/3 anc_SN=3/3,-0.2237036075882055,0.8844788699768644,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00700,hypothetical protein,stk_TSB=1/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=0/3,0.2270015020870715,0.8873504457519666,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01510,ABC transporter,stk_TSB=1/3 stk_SN=2/3 anc_TSB=2/3 anc_SN=0/3,-0.2171136216444357,0.8904952876778849,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_09905,serine protease SplA,stk_TSB=0/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=0/3,-0.2032090334614009,0.8974928406206643,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_11460,SprT family protein,stk_TSB=2/3 stk_SN=1/3 anc_TSB=1/3 anc_SN=0/3,0.1931326032764943,0.8981946478109812,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00985,hypothetical protein,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=3/3,0.1251697811022763,0.9138071534889184,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_14535,choline transporter,stk_TSB=2/3 stk_SN=0/3 anc_TSB=0/3 anc_SN=0/3,0.1817471655549422,0.9191080286222784,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01895,deferrochelatase/peroxidase EfeB,stk_TSB=1/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=0/3,0.1685658350439029,0.922879572766886,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_03150,protein VraC,stk_TSB=1/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=0/3,0.1673350066237267,0.9273789034023692,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_02340,hypothetical protein,stk_TSB=3/3 stk_SN=3/3 anc_TSB=3/3 anc_SN=0/3,0.1067803419081403,0.9291292177316502,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_05220,sodium:alanine symporter,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=3/3,0.09805608643138897,0.955110259799916,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_07275,peptide ABC transporter permease,stk_TSB=0/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=2/3,-0.1316644732319206,0.955110259799916,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_12570,MFS transporter,stk_TSB=2/3 stk_SN=1/3 anc_TSB=2/3 anc_SN=0/3,-0.1253010635791927,0.955110259799916,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_09070,aminopeptidase,stk_TSB=0/3 stk_SN=0/3 anc_TSB=1/3 anc_SN=2/3,-0.1243049740215297,0.9570168143298754,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01530,DUF5080 domain-containing protein,stk_TSB=2/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-0.083774352337755,0.9763875462125984,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_14655,transcriptional regulator,stk_TSB=0/3 stk_SN=2/3 anc_TSB=0/3 anc_SN=0/3,-0.06668231640285811,0.989566107399541,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_07575,quinolone resistance protein NorB,stk_TSB=0/3 stk_SN=3/3 anc_TSB=0/3 anc_SN=3/3,0.05162399637294945,0.9921347690143016,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_11100,hypothetical protein,stk_TSB=0/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=1/3,0.05944165457074499,0.9929133801225962,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00530,hypothetical protein,stk_TSB=2/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=1/3,0.04843816836194925,0.9974966188870592,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01110,hypothetical protein,stk_TSB=2/3 stk_SN=1/3 anc_TSB=1/3 anc_SN=0/3,-0.04871171330866791,0.9974966188870592,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_06860,hypothetical protein,stk_TSB=2/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=0/3,-0.04971135028727672,0.9974966188870592,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00225,hypothetical protein,stk_TSB=3/3 stk_SN=0/3 anc_TSB=1/3 anc_SN=1/3,0.01041307674440285,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00270,hypothetical protein,stk_TSB=0/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=0/3,-6.906271813870877e-15,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00610,hypothetical protein,stk_TSB=0/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=1/3,-1.5442936573227522e-14,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00680,siderophore biosynthesis protein SbnG,stk_TSB=1/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=3/3,0.00680938273603206,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_00765,tetracycline efflux MFS transporter Tet(38),stk_TSB=0/3 stk_SN=2/3 anc_TSB=0/3 anc_SN=1/3,-0.03689852108483281,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01025,N-acetyl-gamma-glutamyl-phosphate reductase,stk_TSB=2/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=0/3,-0.03027694378337446,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01115,peptide ABC transporter permease,stk_TSB=2/3 stk_SN=0/3 anc_TSB=1/3 anc_SN=0/3,0.00766332386403501,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01280,hypothetical protein,stk_TSB=0/3 stk_SN=3/3 anc_TSB=0/3 anc_SN=3/3,-9.507447511465372e-4,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01650,hypothetical protein,stk_TSB=2/3 stk_SN=1/3 anc_TSB=2/3 anc_SN=0/3,1.0298350702134971e-14,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_01910,twin-arginine translocase TatA/TatE family subunit,stk_TSB=0/3 stk_SN=3/3 anc_TSB=1/3 anc_SN=3/3,0.01725729923119923,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_02190,hypothetical protein,stk_TSB=0/3 stk_SN=3/3 anc_TSB=0/3 anc_SN=2/3,-8.100422793032278e-15,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_03865,hypothetical protein,stk_TSB=2/3 stk_SN=0/3 anc_TSB=1/3 anc_SN=1/3,0.01194052668761085,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_04600,toxin,stk_TSB=2/3 stk_SN=2/3 anc_TSB=2/3 anc_SN=0/3,0.01142342630133327,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_05875,heme ABC transporter permease,stk_TSB=0/3 stk_SN=1/3 anc_TSB=2/3 anc_SN=0/3,1.014242243915351e-14,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_06285,hypothetical protein,stk_TSB=3/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=2/3,0.03806408541237083,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_07220,indole-3-glycerol-phosphate synthase,stk_TSB=2/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=0/3,9.69387021866013e-15,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_09870,type I restriction-modification system subunit M,stk_TSB=0/3 stk_SN=0/3 anc_TSB=1/3 anc_SN=2/3,0.00907872727017977,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_10695,sodium-dependent dicarboxylate transporter SdcS,stk_TSB=0/3 stk_SN=3/3 anc_TSB=1/3 anc_SN=2/3,-1.600658400436339e-14,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_11065,DNA replication protein DnaD,stk_TSB=1/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=0/3,0.03050814709684562,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_11070,single-stranded DNA-binding protein,stk_TSB=0/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=1/3,-1.8054293844967592e-14,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_11125,hypothetical protein,stk_TSB=0/3 stk_SN=1/3 anc_TSB=3/3 anc_SN=2/3,8.335009910753113e-4,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_12090,hypothetical protein,stk_TSB=0/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=0/3,-1.448585391785659e-15,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13115,hypothetical protein,stk_TSB=0/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=1/3,5.028933903876779e-16,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13290,uroporphyrinogen-III C-methyltransferase,stk_TSB=0/3 stk_SN=3/3 anc_TSB=3/3 anc_SN=3/3,0.01346804628427142,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13305,cobalamin biosynthesis protein CbiX,stk_TSB=1/3 stk_SN=2/3 anc_TSB=0/3 anc_SN=2/3,9.168892840803187e-15,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13430,gamma-hemolysin component C,stk_TSB=0/3 stk_SN=2/3 anc_TSB=3/3 anc_SN=3/3,-0.0283511715328415,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_13700,ABC transporter ATP-binding protein,stk_TSB=0/3 stk_SN=3/3 anc_TSB=1/3 anc_SN=3/3,-0.00143372092801835,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_14805,methionine sulfoxide reductase A,stk_TSB=0/3 stk_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.01066478732053999,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_14890,imidazole glycerol phosphate synthase subunit HisH,stk_TSB=2/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=1/3,5.398799938770924e-15,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_14895,imidazoleglycerol-phosphate dehydratase,stk_TSB=0/3 stk_SN=0/3 anc_TSB=2/3 anc_SN=1/3,-0.02408512349780213,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_14930,cobalt ABC transporter permease,stk_TSB=2/3 stk_SN=1/3 anc_TSB=1/3 anc_SN=0/3,0.03793555553974101,1,lod_imputed,FALSE,NA
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_09855,hypothetical protein,stk_TSB=0/3 stk_SN=2/3 anc_TSB=1/3 anc_SN=2/3,-2.342666013271625e-14,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_09880,serine protease SplF,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-1.744634707925464,0.02995111101355978,lod_imputed,TRUE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_04760,anion permease,stp_TSB=0/3 stp_SN=0/3 anc_TSB=0/3 anc_SN=3/3,2.764312179707395,0.04982406202577484,lod_imputed,TRUE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_08205,hypothetical protein,stp_TSB=3/3 stp_SN=2/3 anc_TSB=3/3 anc_SN=0/3,-1.425700035398896,0.04982406202577484,lod_imputed,TRUE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_02345,hypothetical protein,stp_TSB=3/3 stp_SN=2/3 anc_TSB=3/3 anc_SN=0/3,-1.519456520425262,0.0652143677624244,lod_imputed,TRUE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_02280,hypothetical protein,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-1.313495121602146,0.1199444522220426,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_14385,type VII secretion effector,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-1.224324565879668,0.1340630738653585,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_11050,hypothetical protein,stp_TSB=1/3 stp_SN=2/3 anc_TSB=0/3 anc_SN=0/3,1.673571019100199,0.142703035855106,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_07940,hypothetical protein,stp_TSB=0/3 stp_SN=2/3 anc_TSB=0/3 anc_SN=2/3,1.395542987287932,0.1787495318307006,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_11540,potassium-transporting ATPase A chain,stp_TSB=0/3 stp_SN=2/3 anc_TSB=2/3 anc_SN=2/3,1.328285821381061,0.1844030428243403,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_13770,hypothetical protein,stp_TSB=1/3 stp_SN=0/3 anc_TSB=0/3 anc_SN=2/3,1.351087813170109,0.219104197425005,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00040,histidine ammonia-lyase,stp_TSB=3/3 stp_SN=1/3 anc_TSB=3/3 anc_SN=0/3,-0.8589055389086715,0.2379946408465297,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_09895,serine protease SplC,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=2/3,-0.8939774251520666,0.2538715749086014,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_05290,competence protein ComK,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=1/3,0.7909486225727183,0.2794085656207943,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01575,virulence factor EsxB,stp_TSB=3/3 stp_SN=2/3 anc_TSB=3/3 anc_SN=0/3,-0.8769196007164284,0.29838001804161,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_07340,aspartate kinase,stp_TSB=3/3 stp_SN=0/3 anc_TSB=1/3 anc_SN=1/3,0.9726445190260754,0.3076258198564849,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_13305,cobalamin biosynthesis protein CbiX,stp_TSB=2/3 stp_SN=1/3 anc_TSB=0/3 anc_SN=2/3,1.043106632610155,0.3132769170936313,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_15000,nickel transporter NixA,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=3/3,0.7981559451078934,0.3581802475096901,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_14270,"glycosyl-4,4'-diaponeurosporenoate acyltransferase",stp_TSB=3/3 stp_SN=1/3 anc_TSB=3/3 anc_SN=0/3,-0.7873456190882584,0.3614809044223176,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_11090,hypothetical protein,stp_TSB=0/3 stp_SN=3/3 anc_TSB=3/3 anc_SN=3/3,-0.6343150944318017,0.3962297550775059,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00940,hypothetical protein,stp_TSB=3/3 stp_SN=1/3 anc_TSB=0/3 anc_SN=0/3,0.9198447246647669,0.3965485514937461,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_09925,lantibiotic ABC transporter permease,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.74245151230157,0.403773637670068,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_08780,iron transporter,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-0.7001326978657145,0.4057530743492077,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_11650,single-stranded DNA-binding protein,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-0.672733703608162,0.4126524677041235,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_13715,peptide ABC transporter permease,stp_TSB=1/3 stp_SN=2/3 anc_TSB=0/3 anc_SN=2/3,0.8878946525293765,0.4126524677041235,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_14585,glutathione peroxidase,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=1/3,0.7978612175424111,0.4212580923835541,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_13970,MFS transporter,stp_TSB=0/3 stp_SN=2/3 anc_TSB=0/3 anc_SN=1/3,-0.8536646628179951,0.4332521529782539,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00500,transcriptional regulator,stp_TSB=1/3 stp_SN=2/3 anc_TSB=1/3 anc_SN=0/3,-0.7977751404524009,0.4527401403362592,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_07235,tryptophan synthase subunit alpha,stp_TSB=2/3 stp_SN=0/3 anc_TSB=1/3 anc_SN=1/3,-0.7549321209930832,0.4693835909473228,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_14805,methionine sulfoxide reductase A,stp_TSB=0/3 stp_SN=2/3 anc_TSB=3/3 anc_SN=0/3,-0.734090309538174,0.4772555740947922,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01060,outer surface protein,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=3/3,0.4583648480571516,0.4859932142722531,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_13740,hypothetical protein,stp_TSB=0/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=0/3,-0.7391686197824682,0.486722462513088,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_06355,serine/threonine protein kinase,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=3/3,0.4883345392074134,0.4965552198350202,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_02365,phenol-soluble modulin alpha 3 peptide,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=2/3,-0.5932845842672976,0.5121361132533379,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_14905,histidinol dehydrogenase,stp_TSB=3/3 stp_SN=2/3 anc_TSB=3/3 anc_SN=0/3,-0.6214563054392062,0.5392859895882381,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_08800,allophanate hydrolase,stp_TSB=3/3 stp_SN=1/3 anc_TSB=3/3 anc_SN=0/3,-0.4695571643071088,0.5468992585400727,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_06285,hypothetical protein,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=2/3,-0.6396693822713031,0.5469225889231414,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_08540,metal ABC transporter permease,stp_TSB=2/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=1/3,0.6537252106721594,0.551298474104083,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_12645,molybdenum ABC transporter permease subunit,stp_TSB=3/3 stp_SN=3/3 anc_TSB=0/3 anc_SN=2/3,-0.6147339241100618,0.5561415254730603,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_04625,pathogenicity island protein,stp_TSB=0/3 stp_SN=1/3 anc_TSB=3/3 anc_SN=2/3,0.5905531541101833,0.5826217137162711,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_03160,protein VraX,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.5099157275712207,0.5903160767962033,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_06035,hypothetical protein,stp_TSB=3/3 stp_SN=3/3 anc_TSB=0/3 anc_SN=1/3,-0.5687176350602516,0.603306761272695,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_13250,MerR family transcriptional regulator,stp_TSB=3/3 stp_SN=2/3 anc_TSB=1/3 anc_SN=0/3,0.4171319230298135,0.6430036510126929,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_04615,pathogenicity island protein,stp_TSB=0/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=3/3,-0.5097848878538364,0.6435347733747038,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_02210,hypothetical protein,stp_TSB=0/3 stp_SN=3/3 anc_TSB=0/3 anc_SN=3/3,0.4200098593562281,0.6836394236966754,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00885,UDP-N-acetylglucosamine 2-epimerase (non-hydrolyzing),stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=1/3,0.3489558029486183,0.6848536035436846,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_11460,SprT family protein,stp_TSB=2/3 stp_SN=1/3 anc_TSB=1/3 anc_SN=0/3,0.4433599316950395,0.707377039324115,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_11420,3-isopropylmalate dehydratase small subunit,stp_TSB=3/3 stp_SN=1/3 anc_TSB=3/3 anc_SN=0/3,-0.3811061639127088,0.7172147512524282,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01110,hypothetical protein,stp_TSB=3/3 stp_SN=1/3 anc_TSB=1/3 anc_SN=0/3,0.3818756851526087,0.72137954485681,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_09210,hypothetical protein,stp_TSB=0/3 stp_SN=2/3 anc_TSB=0/3 anc_SN=0/3,-0.4123114062560633,0.72137954485681,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_13390,hypothetical protein,stp_TSB=2/3 stp_SN=3/3 anc_TSB=0/3 anc_SN=3/3,0.319679241900384,0.7215778636901883,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_09455,acetoin utilization protein AcuC,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=2/3,0.3254319436724051,0.7296172902593392,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01280,hypothetical protein,stp_TSB=2/3 stp_SN=3/3 anc_TSB=0/3 anc_SN=3/3,0.3917876051969347,0.7505814900058984,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00860,capsular biosynthesis protein,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.2959582451379504,0.7517911611404193,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_04650,hypothetical protein,stp_TSB=1/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=2/3,0.3888542823851477,0.7517911611404193,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01260,acyl CoA:acetate/3-ketoacid CoA transferase,stp_TSB=3/3 stp_SN=1/3 anc_TSB=3/3 anc_SN=0/3,-0.2802286056603114,0.7623124530529996,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_08170,toxin,stp_TSB=1/3 stp_SN=2/3 anc_TSB=1/3 anc_SN=0/3,0.3530574500946537,0.7731565823173714,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_02140,xanthine permease,stp_TSB=2/3 stp_SN=0/3 anc_TSB=1/3 anc_SN=0/3,-0.3474181951354139,0.78226306514248245,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_14890,imidazole glycerol phosphate synthase subunit HisH,stp_TSB=3/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=1/3,0.3255708362649053,0.78226306514248245,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01635,DUF5079 domain-containing protein,stp_TSB=2/3 stp_SN=2/3 anc_TSB=3/3 anc_SN=0/3,-0.339247079584033,0.7871452455111404,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01850,multidrug transporter,stp_TSB=3/3 stp_SN=1/3 anc_TSB=0/3 anc_SN=0/3,-0.3225694115117234,0.7923910057821314,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_14190,ferrous iron transporter B,stp_TSB=2/3 stp_SN=1/3 anc_TSB=1/3 anc_SN=0/3,0.3296668653322698,0.79616939654733,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_13645,MFS transporter,stp_TSB=3/3 stp_SN=3/3 anc_TSB=0/3 anc_SN=0/3,0.3195313756795974,0.8031913900101193,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_02425,ABC transporter permease,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.2698447483856419,0.8053937371545032,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01555,type VII secretion protein EsaB,stp_TSB=0/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.2945627559781508,0.8089660106435377,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_02340,hypothetical protein,stp_TSB=3/3 stp_SN=1/3 anc_TSB=3/3 anc_SN=0/3,-0.2272948952556877,0.8161140438523455,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_10975,phage portal protein,stp_TSB=0/3 stp_SN=2/3 anc_TSB=2/3 anc_SN=3/3,0.2947632355315155,0.8234502880028524,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_14530,MBL fold hydrolase,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=3/3,-0.2082661925551721,0.8426249752075179,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_11075,MBL fold metallo-hydrolase,stp_TSB=0/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-0.262096301936473,0.8468098225253234,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01510,ABC transporter,stp_TSB=2/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=0/3,0.251665031970402,0.8491019243962762,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_02190,hypothetical protein,stp_TSB=2/3 stp_SN=3/3 anc_TSB=0/3 anc_SN=2/3,-0.2397119408916539,0.8499712128621845,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_12105,iron-dicitrate transporter subunit FecD,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=2/3,-0.2378399564007278,0.8517716822915272,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01240,acetyl-CoA acetyltransferase,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=1/3,0.184722831462595,0.8593479791672208,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_04665,pathogenicity island protein,stp_TSB=0/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=0/3,-0.2450974068747455,0.8593479791672208,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01490,MFS transporter,stp_TSB=2/3 stp_SN=1/3 anc_TSB=0/3 anc_SN=1/3,0.2413215392809276,0.8641988797003406,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00045,hypothetical protein,stp_TSB=0/3 stp_SN=1/3 anc_TSB=1/3 anc_SN=2/3,-0.2246482848519387,0.8700274449069756,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_09905,serine protease SplA,stp_TSB=1/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=0/3,-0.2032090334614007,0.880832759262481,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_08195,site-specific integrase,stp_TSB=2/3 stp_SN=1/3 anc_TSB=1/3 anc_SN=0/3,-0.1935878039920653,0.8916772133508679,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_05415,staphostatin B,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=0/3,-0.1782185892151243,0.9000672810027466,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_10820,hypothetical protein,stp_TSB=2/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=1/3,-0.1894160247627325,0.900478955108326,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_09655,riboflavin biosynthesis protein RibD,stp_TSB=3/3 stp_SN=3/3 anc_TSB=3/3 anc_SN=0/3,0.1433560348014071,0.9022007964761528,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_09915,DUF4888 domain-containing protein,stp_TSB=3/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=1/3,-0.1816092332324579,0.903846156272908,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_02370,NADH-quinone oxidoreductase subunit L,stp_TSB=3/3 stp_SN=3/3 anc_TSB=3/3 anc_SN=0/3,-0.1529817192321125,0.9084478227653398,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_08240,hypothetical protein,stp_TSB=2/3 stp_SN=3/3 anc_TSB=1/3 anc_SN=0/3,0.1617470089918515,0.9148364219647662,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_06860,hypothetical protein,stp_TSB=3/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=0/3,-0.1590663499643603,0.9207359243453735,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01465,ribose transporter RbsU,stp_TSB=0/3 stp_SN=1/3 anc_TSB=0/3 anc_SN=2/3,-0.1602447463269503,0.9229593910120278,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_14875,bifunctional phosphoribosyl-AMP cyclohydrolase/phosphoribosyl-ATP diphosphatase,stp_TSB=2/3 stp_SN=1/3 anc_TSB=1/3 anc_SN=0/3,-0.1365842382755583,0.9374252746236836,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01550,protein EssA,stp_TSB=0/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=2/3,0.1286499430543699,0.9514980323198956,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_07275,peptide ABC transporter permease,stp_TSB=2/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=2/3,-0.1316644732319206,0.9524132814232728,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_03285,hypothetical protein,stp_TSB=2/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=0/3,-0.1196723563678476,0.9531478938948844,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01585,hypothetical protein,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=1/3,0.09984961797853896,0.9573054653411712,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_09070,aminopeptidase,stp_TSB=0/3 stp_SN=1/3 anc_TSB=1/3 anc_SN=2/3,-0.1243049740215295,0.9573054653411712,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_03140,long-chain fatty acid--CoA ligase,stp_TSB=3/3 stp_SN=3/3 anc_TSB=3/3 anc_SN=0/3,-0.09582306615168612,0.9601357578005948,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_12570,MFS transporter,stp_TSB=3/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=0/3,0.1082453956727716,0.9634289084955447,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01255,long-chain fatty acid--CoA ligase,stp_TSB=3/3 stp_SN=1/3 anc_TSB=3/3 anc_SN=0/3,-0.07770395886849979,0.9669446986548028,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00880,capsular biosynthesis protein,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-0.08321347074822254,0.9675391283080008,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01530,DUF5080 domain-containing protein,stp_TSB=2/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-0.09228917271088212,0.9730630475821342,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01970,cystathionine gamma-synthase,stp_TSB=2/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=0/3,0.08174137794714548,0.9782265666480126,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_09755,IS200/IS605 family transposase,stp_TSB=0/3 stp_SN=2/3 anc_TSB=0/3 anc_SN=0/3,-0.08073861563046769,0.9787706407138792,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_04565,thiol reductase thioredoxin,stp_TSB=0/3 stp_SN=3/3 anc_TSB=3/3 anc_SN=3/3,-0.07984449035933014,0.9787706407138792,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_13800,hypothetical protein,stp_TSB=0/3 stp_SN=3/3 anc_TSB=0/3 anc_SN=3/3,-0.06104282415344597,0.98586618144084,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_06010,FPRL1 inhibitory protein,stp_TSB=0/3 stp_SN=3/3 anc_TSB=1/3 anc_SN=3/3,0.05802447776290198,0.9871544937933628,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00530,hypothetical protein,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-0.06933938517692645,0.990882365465025,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_07575,quinolone resistance protein NorB,stp_TSB=0/3 stp_SN=3/3 anc_TSB=0/3 anc_SN=3/3,0.05302285347820357,0.992152305155586,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_12710,urease accessory protein UreF,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=0/3,0.05306031350957213,0.9926368252923674,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_11100,hypothetical protein,stp_TSB=1/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=1/3,0.05944165457074496,0.9962442486035684,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_11065,DNA replication protein DnaD,stp_TSB=1/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=0/3,-0.05668630299071421,0.996578207452639,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_03880,multidrug efflux MFS transporter NorA,stp_TSB=2/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=1/3,0.04781076505723364,0.9997776388041096,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00225,hypothetical protein,stp_TSB=3/3 stp_SN=0/3 anc_TSB=1/3 anc_SN=1/3,7.029648464913956e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00270,hypothetical protein,stp_TSB=2/3 stp_SN=2/3 anc_TSB=2/3 anc_SN=0/3,-6.476830614971648e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00355,ArgR family transcriptional regulator,stp_TSB=3/3 stp_SN=3/3 anc_TSB=0/3 anc_SN=1/3,0.00143911232151515,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00610,hypothetical protein,stp_TSB=0/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=1/3,-1.544888979455218e-14,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00690,siderophore biosynthesis protein SbnI,stp_TSB=3/3 stp_SN=2/3 anc_TSB=0/3 anc_SN=1/3,-4.350451171763641e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_00700,hypothetical protein,stp_TSB=1/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=0/3,-1.87947735611733e-14,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01025,N-acetyl-gamma-glutamyl-phosphate reductase,stp_TSB=3/3 stp_SN=1/3 anc_TSB=3/3 anc_SN=0/3,0.02386087979677515,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01115,peptide ABC transporter permease,stp_TSB=3/3 stp_SN=0/3 anc_TSB=1/3 anc_SN=0/3,-2.545671156528696e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01650,hypothetical protein,stp_TSB=2/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=0/3,0.00552702678672777,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_01895,deferrochelatase/peroxidase EfeB,stp_TSB=2/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=0/3,1.2455685548656752e-14,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_03150,protein VraC,stp_TSB=1/3 stp_SN=1/3 anc_TSB=2/3 anc_SN=0/3,-0.03784713446825591,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_03390,endonuclease III,stp_TSB=2/3 stp_SN=1/3 anc_TSB=1/3 anc_SN=0/3,0.01520043937741289,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_03550,manganese ABC transporter permease,stp_TSB=2/3 stp_SN=0/3 anc_TSB=1/3 anc_SN=0/3,6.785889448035114e-5,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_04275,acetyltransferase,stp_TSB=2/3 stp_SN=0/3 anc_TSB=1/3 anc_SN=1/3,-1.436124526091242e-14,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_04600,toxin,stp_TSB=0/3 stp_SN=1/3 anc_TSB=2/3 anc_SN=0/3,5.326200267525934e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_05875,heme ABC transporter permease,stp_TSB=1/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=0/3,1.0142422439153501e-14,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_06890,hypothetical protein,stp_TSB=0/3 stp_SN=3/3 anc_TSB=3/3 anc_SN=3/3,1.429604361745471e-14,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_06945,two-component sensor histidine kinase,stp_TSB=3/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=0/3,5.435545365387345e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_07220,indole-3-glycerol-phosphate synthase,stp_TSB=1/3 stp_SN=1/3 anc_TSB=2/3 anc_SN=0/3,7.989975686244646e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_07850,hypothetical protein,stp_TSB=2/3 stp_SN=0/3 anc_TSB=0/3 anc_SN=1/3,-6.282364495467863e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_07955,phage tail protein,stp_TSB=1/3 stp_SN=2/3 anc_TSB=0/3 anc_SN=0/3,-4.427037346728234e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_08050,hypothetical protein,stp_TSB=2/3 stp_SN=1/3 anc_TSB=0/3 anc_SN=0/3,-1.8054293844967592e-14,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_09815,hypothetical protein,stp_TSB=2/3 stp_SN=0/3 anc_TSB=1/3 anc_SN=0/3,1.4054674252351381e-14,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_09940,enterotoxin,stp_TSB=2/3 stp_SN=0/3 anc_TSB=1/3 anc_SN=0/3,7.648246606995367e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_10695,sodium-dependent dicarboxylate transporter SdcS,stp_TSB=1/3 stp_SN=0/3 anc_TSB=1/3 anc_SN=2/3,-1.4547641069567662e-14,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_10995,transcriptional regulator,stp_TSB=0/3 stp_SN=2/3 anc_TSB=2/3 anc_SN=1/3,0.0133532320884644,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_11070,single-stranded DNA-binding protein,stp_TSB=0/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=1/3,-1.8054293844967592e-14,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_11095,hypothetical protein,stp_TSB=1/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=3/3,-0.03806490138031159,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_12090,hypothetical protein,stp_TSB=1/3 stp_SN=3/3 anc_TSB=2/3 anc_SN=0/3,-1.446087220970098e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_12260,peptidase M23,stp_TSB=3/3 stp_SN=2/3 anc_TSB=1/3 anc_SN=0/3,-0.02538040528594887,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_13115,hypothetical protein,stp_TSB=0/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=1/3,5.02893390387678e-16,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_13735,diaminopimelate epimerase,stp_TSB=2/3 stp_SN=0/3 anc_TSB=0/3 anc_SN=0/3,-7.746434033620368e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_14885,1-(5-phosphoribosyl)-5-((5-phosphoribosylamino)methylideneamino)imidazole-4-carboxamide isomerase,stp_TSB=1/3 stp_SN=0/3 anc_TSB=3/3 anc_SN=2/3,6.990726319346006e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_14895,imidazoleglycerol-phosphate dehydratase,stp_TSB=2/3 stp_SN=0/3 anc_TSB=2/3 anc_SN=1/3,-0.02408512349780215,1,lod_imputed,FALSE,NA
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_14930,cobalt ABC transporter permease,stp_TSB=3/3 stp_SN=1/3 anc_TSB=1/3 anc_SN=0/3,-3.8881425174971885e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_12720,urease accessory protein,stp_TSB=3/3 stp_SN=2/3 stk_TSB=3/3 stk_SN=0/3,-1.895022963836925,0.02029162285582634,lod_imputed,TRUE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_02280,hypothetical protein,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=0/3,-1.811863799041688,0.02801970843841999,lod_imputed,TRUE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_11415,3-isopropylmalate dehydratase large subunit,stp_TSB=3/3 stp_SN=2/3 stk_TSB=3/3 stk_SN=0/3,-1.520897748152032,0.03048775005998236,lod_imputed,TRUE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_09880,serine protease SplF,stp_TSB=3/3 stp_SN=0/3 stk_TSB=1/3 stk_SN=2/3,-1.711532666968311,0.05161173507883705,lod_imputed,TRUE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00040,histidine ammonia-lyase,stp_TSB=3/3 stp_SN=1/3 stk_TSB=3/3 stk_SN=0/3,-1.266561942189726,0.06379686754293251,lod_imputed,TRUE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_11050,hypothetical protein,stp_TSB=1/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=3/3,1.978643833295834,0.06566034322031951,lod_imputed,TRUE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_13770,hypothetical protein,stp_TSB=1/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=3/3,2.072139411396853,0.07824437269716551,lod_imputed,TRUE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_11540,potassium-transporting ATPase A chain,stp_TSB=0/3 stp_SN=2/3 stk_TSB=3/3 stk_SN=1/3,-1.561341461474051,0.08810800646374885,lod_imputed,TRUE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00055,azaleucine resistance protein AzlC,stp_TSB=3/3 stp_SN=1/3 stk_TSB=0/3 stk_SN=1/3,1.649014896958584,0.09050262380907284,lod_imputed,TRUE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14585,glutathione peroxidase,stp_TSB=3/3 stp_SN=0/3 stk_TSB=1/3 stk_SN=2/3,1.639437457654022,0.1000931240351277,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00860,capsular biosynthesis protein,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=0/3,-1.10707641834355,0.1157662461199877,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_05290,competence protein ComK,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=0/3,0.9722064404503344,0.1605626605440983,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01585,hypothetical protein,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=1/3,-1.014839600749766,0.164065352921453,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_09925,lantibiotic ABC transporter permease,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=0/3,-1.064208026836494,0.1938549173096914,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00885,UDP-N-acetylglucosamine 2-epimerase (non-hydrolyzing),stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=1/3,-0.8701975483141728,0.2003288241885134,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14270,"glycosyl-4,4'-diaponeurosporenoate acyltransferase",stp_TSB=3/3 stp_SN=1/3 stk_TSB=3/3 stk_SN=0/3,-1.042567877820914,0.2162062269251833,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00880,capsular biosynthesis protein,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=1/3,0.850661933768789,0.2271254765364253,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_03880,multidrug efflux MFS transporter NorA,stp_TSB=2/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=0/3,-1.075516908248293,0.239249051104009,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_02345,hypothetical protein,stp_TSB=3/3 stp_SN=2/3 stk_TSB=2/3 stk_SN=0/3,-0.9972573666005626,0.2470282951462454,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_08540,metal ABC transporter permease,stp_TSB=2/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=0/3,1.098786441908703,0.2869250324819417,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_02425,ABC transporter permease,stp_TSB=3/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=0/3,0.94326052032351,0.2907437773106072,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_06075,hypothetical protein,stp_TSB=3/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,-0.5640426631963733,0.326991240339738,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_04685,hypothetical protein,stp_TSB=3/3 stp_SN=2/3 stk_TSB=2/3 stk_SN=0/3,-0.7547432242892509,0.3518845389033507,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_10930,hypothetical protein,stp_TSB=1/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=3/3,0.931694065478585,0.3518845389033507,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00525,LysR family transcriptional regulator,stp_TSB=3/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=1/3,0.8144839521271007,0.3535406416604865,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_10995,transcriptional regulator,stp_TSB=0/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=3/3,0.8090618379191625,0.3632233845666283,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_11035,hypothetical protein,stp_TSB=0/3 stp_SN=1/3 stk_TSB=2/3 stk_SN=1/3,-0.894201969523455,0.3698961294534773,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00940,hypothetical protein,stp_TSB=3/3 stp_SN=1/3 stk_TSB=0/3 stk_SN=0/3,0.9198447246647778,0.3715691364522127,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_02405,sodium-dependent transporter,stp_TSB=3/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=2/3,0.8018308985364266,0.3754003624016471,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00355,ArgR family transcriptional regulator,stp_TSB=3/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=1/3,0.748901304904025,0.3766457256851492,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01260,acyl CoA:acetate/3-ketoacid CoA transferase,stp_TSB=3/3 stp_SN=1/3 stk_TSB=3/3 stk_SN=0/3,0.6031631039362207,0.4165237500185856,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_07850,hypothetical protein,stp_TSB=2/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=1/3,0.7777018933176194,0.4190958266618709,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14560,citrate transporter,stp_TSB=3/3 stp_SN=1/3 stk_TSB=3/3 stk_SN=0/3,-0.7875725020442923,0.4190958266618709,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01240,acetyl-CoA acetyltransferase,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=0/3,0.558149364684819,0.4315532034956204,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_02365,phenol-soluble modulin alpha 3 peptide,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=1/3,0.7130517091993095,0.4325570873587202,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_13800,hypothetical protein,stp_TSB=0/3 stp_SN=3/3 stk_TSB=1/3 stk_SN=3/3,0.6009361295716866,0.4422306200125422,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14805,methionine sulfoxide reductase A,stp_TSB=0/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=0/3,-0.723425522217634,0.46527749704293,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_11650,single-stranded DNA-binding protein,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=1/3,-0.628850327552362,0.4752796962790728,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_05810,regulator,stp_TSB=3/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=1/3,-0.5623861613169462,0.4780289496769949,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_05045,hypothetical protein,stp_TSB=3/3 stp_SN=3/3 stk_TSB=3/3 stk_SN=0/3,-0.6729322278634199,0.4806252613746383,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_13700,ABC transporter ATP-binding protein,stp_TSB=3/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,-0.4791332469936237,0.4855393149792913,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_10960,hypothetical protein,stp_TSB=1/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=3/3,0.6466412683091507,0.4866563333383346,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01970,cystathionine gamma-synthase,stp_TSB=2/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=0/3,-0.6358232179076384,0.4919240920729684,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_06285,hypothetical protein,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=0/3,-0.6777334676836739,0.4940676500323057,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_13695,MFS transporter,stp_TSB=3/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,0.5500112721524987,0.5463323204252962,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01255,long-chain fatty acid--CoA ligase,stp_TSB=3/3 stp_SN=1/3 stk_TSB=3/3 stk_SN=0/3,0.4391844629789265,0.5523323380819372,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_11090,hypothetical protein,stp_TSB=0/3 stp_SN=3/3 stk_TSB=3/3 stk_SN=3/3,0.4434023315420266,0.5636777409665346,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00950,cation transporter,stp_TSB=1/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=2/3,0.5088364406266219,0.5656859008487702,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_09975,gamma-hemolysin subunit A,stp_TSB=3/3 stp_SN=2/3 stk_TSB=2/3 stk_SN=0/3,-0.5239645624842566,0.5656859008487702,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_13050,Bcr/CflA family drug resistance efflux transporter,stp_TSB=3/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=3/3,0.5100546014016568,0.5759041633941988,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_13430,gamma-hemolysin component C,stp_TSB=3/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=2/3,-0.5089193521148798,0.5767590474410631,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14385,type VII secretion effector,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=1/3,-0.4583376986346068,0.5768259556678853,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_08170,toxin,stp_TSB=1/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=1/3,0.5583333382549702,0.5799469889354747,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01060,outer surface protein,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=1/3,0.3833097223825599,0.5897735699431118,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_13710,nickel ABC transporter permease,stp_TSB=3/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,-0.406796808322296,0.6016669260046029,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14770,accessory Sec system protein translocase subunit SecY2,stp_TSB=3/3 stp_SN=1/3 stk_TSB=3/3 stk_SN=0/3,0.4408304897286083,0.6016669260046029,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_15000,nickel transporter NixA,stp_TSB=3/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=1/3,0.485055422512072,0.6041781574940334,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_04625,pathogenicity island protein,stp_TSB=0/3 stp_SN=1/3 stk_TSB=1/3 stk_SN=2/3,0.5335787113449054,0.6166188025400139,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_06010,FPRL1 inhibitory protein,stp_TSB=0/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,-0.4302422598309071,0.6362387841888887,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_07340,aspartate kinase,stp_TSB=3/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=0/3,0.4438143232938202,0.6362387841888887,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_11710,ATP synthase subunit C,stp_TSB=2/3 stp_SN=1/3 stk_TSB=0/3 stk_SN=2/3,0.5008478919270971,0.6362387841888887,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_13390,hypothetical protein,stp_TSB=2/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,-0.3684869508200919,0.6424583179344282,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01510,ABC transporter,stp_TSB=2/3 stp_SN=0/3 stk_TSB=1/3 stk_SN=2/3,0.4687786536148377,0.6485310723259261,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_08780,iron transporter,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=0/3,-0.3902503219334466,0.6641208261937643,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01225,complement inhibitor,stp_TSB=1/3 stp_SN=3/3 stk_TSB=1/3 stk_SN=0/3,0.4302942165461324,0.6949700952816522,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00765,tetracycline efflux MFS transporter Tet(38),stp_TSB=0/3 stp_SN=1/3 stk_TSB=0/3 stk_SN=2/3,-0.4228179915596411,0.7025565532969521,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_09755,IS200/IS605 family transposase,stp_TSB=0/3 stp_SN=2/3 stk_TSB=1/3 stk_SN=0/3,-0.4056448825473734,0.7049841145551952,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14530,MBL fold hydrolase,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=2/3,0.3394965606918164,0.7090746361920107,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01280,hypothetical protein,stp_TSB=2/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,0.3927383499480812,0.7261800239470264,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_07580,amino acid permease,stp_TSB=1/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,-0.2860687029946249,0.7428420338210677,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00985,hypothetical protein,stp_TSB=3/3 stp_SN=1/3 stk_TSB=3/3 stk_SN=0/3,0.2490262030261685,0.7432083430098103,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_08195,site-specific integrase,stp_TSB=2/3 stp_SN=1/3 stk_TSB=0/3 stk_SN=1/3,0.3634522406092566,0.7472103479806759,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_06945,two-component sensor histidine kinase,stp_TSB=3/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=0/3,-0.3280029823192904,0.7474547056634602,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_09920,BsaG protein,stp_TSB=0/3 stp_SN=1/3 stk_TSB=2/3 stk_SN=0/3,-0.3589381393171706,0.7511761991347387,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14890,imidazole glycerol phosphate synthase subunit HisH,stp_TSB=3/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=0/3,0.3255708362648999,0.768919972108725,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01850,multidrug transporter,stp_TSB=3/3 stp_SN=1/3 stk_TSB=0/3 stk_SN=0/3,-0.3225694115117194,0.7707135539288812,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14190,ferrous iron transporter B,stp_TSB=2/3 stp_SN=1/3 stk_TSB=0/3 stk_SN=1/3,0.329666865332264,0.7736355891310926,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_09915,DUF4888 domain-containing protein,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=1/3,-0.2971248595321739,0.7858460231948575,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_10820,hypothetical protein,stp_TSB=2/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=0/3,0.3099749372335506,0.7929592035562425,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_02225,hypothetical protein,stp_TSB=1/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,-0.229813786358146,0.793293799134245,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_11395,acetolactate synthase 1 regulatory subunit,stp_TSB=3/3 stp_SN=2/3 stk_TSB=3/3 stk_SN=0/3,-0.288132375076164,0.7953746705830326,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_08015,DEAD/DEAH box helicase,stp_TSB=3/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=0/3,0.286421127531679,0.8068493562843453,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_13290,uroporphyrinogen-III C-methyltransferase,stp_TSB=2/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,-0.2146399633042457,0.8068493562843453,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14470,aspartate aminotransferase family protein,stp_TSB=3/3 stp_SN=3/3 stk_TSB=2/3 stk_SN=0/3,-0.2286570514177576,0.8098030585236926,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01275,hypothetical protein,stp_TSB=2/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,-0.2309957238081231,0.8189310199410713,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_02190,hypothetical protein,stp_TSB=2/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,-0.2397119408916458,0.8189310199410713,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_08800,allophanate hydrolase,stp_TSB=3/3 stp_SN=1/3 stk_TSB=3/3 stk_SN=0/3,-0.2067207811272929,0.819337929878806,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_12710,urease accessory protein UreF,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=1/3,-0.2219892522629565,0.8255870474590025,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_05415,staphostatin B,stp_TSB=3/3 stp_SN=0/3 stk_TSB=1/3 stk_SN=0/3,0.2594473474625729,0.8267636434264993,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_12570,MFS transporter,stp_TSB=3/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=1/3,0.2335464592519643,0.8369308580065818,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_02305,tandem-type lipoprotein,stp_TSB=3/3 stp_SN=1/3 stk_TSB=1/3 stk_SN=0/3,0.2283000771945647,0.8380178284702022,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_05335,hypothetical protein,stp_TSB=2/3 stp_SN=1/3 stk_TSB=1/3 stk_SN=0/3,0.2518316847957063,0.8380178284702022,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_09210,hypothetical protein,stp_TSB=0/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=1/3,0.243005992763059,0.8380178284702022,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_09455,acetoin utilization protein AcuC,stp_TSB=3/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=1/3,0.2075325428366045,0.841197147456231,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_12645,molybdenum ABC transporter permease subunit,stp_TSB=3/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,-0.2234120722978818,0.855315139285309,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_12105,iron-dicitrate transporter subunit FecD,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=2/3,-0.1760327922546367,0.8845732198001247,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_13460,adenosylmethionine--8-amino-7-oxononanoate transaminase,stp_TSB=2/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=1/3,-0.1837869740374289,0.8845732198001247,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_03675,hypothetical protein,stp_TSB=3/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=1/3,-0.1725177785780803,0.8959053691535038,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_04885,Na+/H+ antiporter subunit F,stp_TSB=2/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=3/3,0.1857759102364778,0.8969539554836283,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14535,choline transporter,stp_TSB=1/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=0/3,-0.1817471655549574,0.8985901426459085,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_08070,dUTPase,stp_TSB=1/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=0/3,0.1697350653613504,0.9035764257027656,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01895,deferrochelatase/peroxidase EfeB,stp_TSB=2/3 stp_SN=0/3 stk_TSB=1/3 stk_SN=0/3,-0.1685658350438904,0.9109792311389384,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01910,twin-arginine translocase TatA/TatE family subunit,stp_TSB=1/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,-0.1598599545037961,0.9192831208025812,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_12260,peptidase M23,stp_TSB=3/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=1/3,0.1330228728156034,0.933177287597151,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_07940,hypothetical protein,stp_TSB=0/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=1/3,0.1352311500210992,0.937103446164114,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_09895,serine protease SplC,stp_TSB=3/3 stp_SN=0/3 stk_TSB=1/3 stk_SN=1/3,0.1175971154417843,0.9416160603964968,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_03285,hypothetical protein,stp_TSB=2/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=0/3,0.1166915716003233,0.9428441800885452,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_05220,sodium:alanine symporter,stp_TSB=3/3 stp_SN=3/3 stk_TSB=3/3 stk_SN=0/3,-0.09231315720476656,0.9440008092390596,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00530,hypothetical protein,stp_TSB=3/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=0/3,-0.1177775535388757,0.9468751864402192,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_06860,hypothetical protein,stp_TSB=3/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=0/3,-0.1093549996770836,0.957680232544915,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_13970,MFS transporter,stp_TSB=0/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=2/3,-0.1083579613601798,0.957680232544915,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_10950,phage head-tail adapter protein,stp_TSB=0/3 stp_SN=1/3 stk_TSB=1/3 stk_SN=2/3,-0.1026563426865494,0.961408449169222,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_09855,hypothetical protein,stp_TSB=2/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=2/3,0.08441411080894308,0.9664579965510598,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_05790,protoheme IX farnesyltransferase,stp_TSB=3/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,-0.06508450979546593,0.9715597438348752,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_04610,transcriptional regulator,stp_TSB=1/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=1/3,-0.08100438547155878,0.9725372154828472,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_02210,hypothetical protein,stp_TSB=0/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=1/3,-0.06578647394020071,0.9822839811222186,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14655,transcriptional regulator,stp_TSB=0/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=2/3,0.06668231640284127,0.9822839811222186,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00680,siderophore biosynthesis protein SbnG,stp_TSB=3/3 stp_SN=1/3 stk_TSB=1/3 stk_SN=0/3,-0.05343837073018291,0.9891114129550488,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_10975,phage portal protein,stp_TSB=0/3 stp_SN=2/3 stk_TSB=2/3 stk_SN=2/3,-0.04520193956575397,0.9903381498893344,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14685,ArgR family transcriptional regulator,stp_TSB=2/3 stp_SN=1/3 stk_TSB=0/3 stk_SN=0/3,0.05095339214854984,0.9903381498893344,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_13715,peptide ABC transporter permease,stp_TSB=1/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=1/3,-0.04533688260375779,0.9965492957785078,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00225,hypothetical protein,stp_TSB=3/3 stp_SN=0/3 stk_TSB=3/3 stk_SN=0/3,-0.01041307674439582,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00270,hypothetical protein,stp_TSB=2/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=0/3,4.2944119889922854e-16,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00385,methyltransferase,stp_TSB=3/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,0.00416598748647045,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_00690,siderophore biosynthesis protein SbnI,stp_TSB=3/3 stp_SN=2/3 stk_TSB=1/3 stk_SN=0/3,-0.02731591938464072,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01090,hypothetical protein,stp_TSB=3/3 stp_SN=2/3 stk_TSB=3/3 stk_SN=0/3,-0.01957198967442819,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01115,peptide ABC transporter permease,stp_TSB=3/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=0/3,-0.00766332386403755,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01530,DUF5080 domain-containing protein,stp_TSB=2/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=0/3,-0.00851482037312713,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01605,DUF5080 domain-containing protein,stp_TSB=2/3 stp_SN=1/3 stk_TSB=0/3 stk_SN=1/3,-2.664535259100376e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_01650,hypothetical protein,stp_TSB=2/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=1/3,0.00552702678671747,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_02140,xanthine permease,stp_TSB=2/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=0/3,-2.318771536566107e-16,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_03160,protein VraX,stp_TSB=3/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=0/3,-3.19504171428384e-16,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_03550,manganese ABC transporter permease,stp_TSB=2/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=0/3,6.78588944988216e-5,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_03865,hypothetical protein,stp_TSB=0/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=0/3,-0.01194052668762663,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_04275,acetyltransferase,stp_TSB=2/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=0/3,3.155730283145952e-16,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_04565,thiol reductase thioredoxin,stp_TSB=0/3 stp_SN=3/3 stk_TSB=2/3 stk_SN=2/3,8.969180057752633e-17,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_04600,toxin,stp_TSB=0/3 stp_SN=1/3 stk_TSB=2/3 stk_SN=2/3,-0.01142342630132795,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_06355,serine/threonine protein kinase,stp_TSB=3/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=0/3,-1.332267629550188e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_06890,hypothetical protein,stp_TSB=0/3 stp_SN=3/3 stk_TSB=1/3 stk_SN=3/3,1.910522504832138e-31,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_07220,indole-3-glycerol-phosphate synthase,stp_TSB=1/3 stp_SN=1/3 stk_TSB=2/3 stk_SN=0/3,-1.703894532415486e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_07235,tryptophan synthase subunit alpha,stp_TSB=2/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=0/3,7.594032862140573e-16,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_07275,peptide ABC transporter permease,stp_TSB=2/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=0/3,1.266423546229374e-17,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_07575,quinolone resistance protein NorB,stp_TSB=0/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=3/3,0.00139885710525411,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_07955,phage tail protein,stp_TSB=1/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=1/3,5.521047371182606e-31,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_08050,hypothetical protein,stp_TSB=2/3 stp_SN=1/3 stk_TSB=0/3 stk_SN=0/3,-1.0501107439423e-30,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_09670,arsenical efflux pump membrane protein ArsB,stp_TSB=2/3 stp_SN=1/3 stk_TSB=0/3 stk_SN=0/3,2.7045772163336133e-16,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_09815,hypothetical protein,stp_TSB=2/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=0/3,-4.79966979296239e-16,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_09940,enterotoxin,stp_TSB=2/3 stp_SN=0/3 stk_TSB=1/3 stk_SN=0/3,-1.7320807095272388e-30,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_10695,sodium-dependent dicarboxylate transporter SdcS,stp_TSB=1/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=3/3,1.4589429347957269e-15,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_11095,hypothetical protein,stp_TSB=1/3 stp_SN=0/3 stk_TSB=2/3 stk_SN=3/3,-3.12455751289222e-16,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_11125,hypothetical protein,stp_TSB=3/3 stp_SN=1/3 stk_TSB=0/3 stk_SN=1/3,0.01718937731808385,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_12090,hypothetical protein,stp_TSB=1/3 stp_SN=3/3 stk_TSB=0/3 stk_SN=0/3,2.4981708155601567e-18,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_12190,PTS lactose EIICB component,stp_TSB=1/3 stp_SN=2/3 stk_TSB=0/3 stk_SN=1/3,6.113672015462841e-30,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_13735,diaminopimelate epimerase,stp_TSB=2/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=0/3,7.157353314987074e-16,1,lod_imputed,FALSE,NA
+interaction_stp_vs_stk_at_TSB_vs_SN,B7H15_14895,imidazoleglycerol-phosphate dehydratase,stp_TSB=2/3 stp_SN=0/3 stk_TSB=0/3 stk_SN=0/3,-2.7755575615628907e-17,1,lod_imputed,FALSE,NA
+stk_vs_anc_at_TSB,B7H15_06355,serine/threonine protein kinase,stk_TSB=0/3 anc_TSB=3/3,-2.338467551973393,2.403372537950488e-4,lod_imputed,TRUE,anc
+stk_vs_anc_at_TSB,B7H15_04650,hypothetical protein,stk_TSB=0/3 anc_TSB=3/3,-1.186165905284456,0.07468515870386691,lod_imputed,TRUE,anc
+stk_vs_anc_at_TSB,B7H15_08540,metal ABC transporter permease,stk_TSB=0/3 anc_TSB=2/3,-1.255264408464999,0.09111537172549385,lod_imputed,TRUE,anc
+stk_vs_anc_at_TSB,B7H15_13050,Bcr/CflA family drug resistance efflux transporter,stk_TSB=0/3 anc_TSB=3/3,-0.9427072487064722,0.1206775822183475,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_04610,transcriptional regulator,stk_TSB=0/3 anc_TSB=2/3,-1.074931878740785,0.1321314216469821,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_05810,regulator,stk_TSB=0/3 anc_TSB=3/3,-0.7932111757623815,0.1514527895989581,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_11035,hypothetical protein,stk_TSB=2/3 anc_TSB=0/3,0.8942019695234601,0.173824013261528,lod_imputed,FALSE,stk
+stk_vs_anc_at_TSB,B7H15_02405,sodium-dependent transporter,stk_TSB=0/3 anc_TSB=2/3,-0.8218137810896249,0.1976757216988094,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_13740,hypothetical protein,stk_TSB=0/3 anc_TSB=2/3,-0.7391686197824688,0.2523571070309504,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_02230,NA,stk_TSB=0/3 anc_TSB=3/3,-0.7143817186152076,0.2815521545848694,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_08070,dUTPase,stk_TSB=0/3 anc_TSB=3/3,-0.6052583311003173,0.3433425207881476,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_00950,cation transporter,stk_TSB=0/3 anc_TSB=2/3,-0.602201706344466,0.3607522033823165,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_04615,pathogenicity island protein,stk_TSB=0/3 anc_TSB=3/3,-0.5097848878538364,0.415304183683542,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_10820,hypothetical protein,stk_TSB=0/3 anc_TSB=2/3,-0.4993909619962832,0.4658200691650238,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_11075,MBL fold metallo-hydrolase,stk_TSB=0/3 anc_TSB=3/3,-0.452270036676772,0.4818978130441906,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_10995,transcriptional regulator,stk_TSB=0/3 anc_TSB=2/3,-0.4421837700169875,0.4850142461658182,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_13430,gamma-hemolysin component C,stk_TSB=0/3 anc_TSB=3/3,-0.4392918040724809,0.509097741423643,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_04665,pathogenicity island protein,stk_TSB=0/3 anc_TSB=2/3,-0.2450974068747457,0.7274417156402884,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_09905,serine protease SplA,stk_TSB=0/3 anc_TSB=2/3,-0.203209033461401,0.773872528907294,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_01275,hypothetical protein,stk_TSB=0/3 anc_TSB=3/3,-0.1849208914240577,0.8002079419407025,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_08015,DEAD/DEAH box helicase,stk_TSB=0/3 anc_TSB=2/3,-0.2018682931407332,0.804741390465513,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_14535,choline transporter,stk_TSB=2/3 anc_TSB=0/3,0.1817471655549422,0.8301534448219965,lod_imputed,FALSE,stk
+stk_vs_anc_at_TSB,B7H15_11100,hypothetical protein,stk_TSB=0/3 anc_TSB=2/3,-0.1446164653224886,0.8773854492733215,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_07275,peptide ABC transporter permease,stk_TSB=0/3 anc_TSB=3/3,-0.1316644732319206,0.8951444653068649,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_00385,methyltransferase,stk_TSB=0/3 anc_TSB=3/3,-0.1136463713269,0.8960165876232054,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_06075,hypothetical protein,stk_TSB=0/3 anc_TSB=3/3,-0.06944534038201144,0.9490225447723278,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_00270,hypothetical protein,stk_TSB=0/3 anc_TSB=2/3,-6.906271813870872e-15,1,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_00525,LysR family transcriptional regulator,stk_TSB=0/3 anc_TSB=3/3,-7.03603841856193e-15,1,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_00610,hypothetical protein,stk_TSB=0/3 anc_TSB=2/3,-1.545543184646336e-14,1,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_01140,peptidase M23,stk_TSB=0/3 anc_TSB=2/3,2.220446049250313e-15,1,lod_imputed,FALSE,stk
+stk_vs_anc_at_TSB,B7H15_01605,DUF5080 domain-containing protein,stk_TSB=0/3 anc_TSB=2/3,4.440892098500626e-16,1,lod_imputed,FALSE,stk
+stk_vs_anc_at_TSB,B7H15_05875,heme ABC transporter permease,stk_TSB=0/3 anc_TSB=2/3,1.0142422439153501e-14,1,lod_imputed,FALSE,stk
+stk_vs_anc_at_TSB,B7H15_07850,hypothetical protein,stk_TSB=3/3 anc_TSB=0/3,-6.135879106713231e-15,1,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_11070,single-stranded DNA-binding protein,stk_TSB=0/3 anc_TSB=3/3,-1.8054293844967592e-14,1,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_11125,hypothetical protein,stk_TSB=0/3 anc_TSB=3/3,-0.00956620398297085,1,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_11710,ATP synthase subunit C,stk_TSB=0/3 anc_TSB=2/3,1.942890293094024e-15,1,lod_imputed,FALSE,stk
+stk_vs_anc_at_TSB,B7H15_12090,hypothetical protein,stk_TSB=0/3 anc_TSB=2/3,-1.450300981818446e-15,1,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_12245,MerR family transcriptional regulator,stk_TSB=2/3 anc_TSB=0/3,1.054711873393899e-15,1,lod_imputed,FALSE,stk
+stk_vs_anc_at_TSB,B7H15_13115,hypothetical protein,stk_TSB=0/3 anc_TSB=2/3,5.0289339038767835e-16,1,lod_imputed,FALSE,stk
+stk_vs_anc_at_TSB,B7H15_13290,uroporphyrinogen-III C-methyltransferase,stk_TSB=0/3 anc_TSB=3/3,-0.0019958101638087,1,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_13695,MFS transporter,stk_TSB=0/3 anc_TSB=3/3,-9.363460849120301e-15,1,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_14805,methionine sulfoxide reductase A,stk_TSB=0/3 anc_TSB=3/3,-0.01066478732053988,1,lod_imputed,FALSE,anc
+stk_vs_anc_at_TSB,B7H15_14895,imidazoleglycerol-phosphate dehydratase,stk_TSB=0/3 anc_TSB=2/3,-0.03866115089479107,1,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_11090,hypothetical protein,stp_TSB=0/3 anc_TSB=3/3,-1.659600348952525,8.307265518200244e-4,lod_imputed,TRUE,anc
+stp_vs_anc_at_TSB,B7H15_13645,MFS transporter,stp_TSB=3/3 anc_TSB=0/3,1.870366065949715,0.00665842436782129,lod_imputed,TRUE,stp
+stp_vs_anc_at_TSB,B7H15_06035,hypothetical protein,stp_TSB=3/3 anc_TSB=0/3,1.332961213753773,0.02491965724535277,lod_imputed,TRUE,stp
+stp_vs_anc_at_TSB,B7H15_13305,cobalamin biosynthesis protein CbiX,stp_TSB=2/3 anc_TSB=0/3,1.043106632610155,0.08837243329762946,lod_imputed,TRUE,stp
+stp_vs_anc_at_TSB,B7H15_00940,hypothetical protein,stp_TSB=3/3 anc_TSB=0/3,0.9706020116941736,0.1185652157495181,lod_imputed,FALSE,stp
+stp_vs_anc_at_TSB,B7H15_13740,hypothetical protein,stp_TSB=0/3 anc_TSB=2/3,-0.7391686197824688,0.1859770334229582,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_04615,pathogenicity island protein,stp_TSB=0/3 anc_TSB=3/3,-0.5097848878538364,0.3428798376228986,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_11075,MBL fold metallo-hydrolase,stp_TSB=0/3 anc_TSB=3/3,-0.4522700366767717,0.4056368906597349,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_10995,transcriptional regulator,stp_TSB=0/3 anc_TSB=2/3,-0.4421837700169879,0.4096866806164303,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_01280,hypothetical protein,stp_TSB=2/3 anc_TSB=0/3,0.4022011305677942,0.4869517490117204,lod_imputed,FALSE,stp
+stp_vs_anc_at_TSB,B7H15_11540,potassium-transporting ATPase A chain,stp_TSB=0/3 anc_TSB=2/3,-0.3537572206307451,0.5184758113434818,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_01555,type VII secretion protein EsaB,stp_TSB=0/3 anc_TSB=3/3,-0.294562755978151,0.5817453864321445,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_04665,pathogenicity island protein,stp_TSB=0/3 anc_TSB=2/3,-0.2450974068747459,0.6690876785362367,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_01550,protein EssA,stp_TSB=0/3 anc_TSB=3/3,-0.2131013638421898,0.7225932164937487,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_01850,multidrug transporter,stp_TSB=3/3 anc_TSB=0/3,0.1223982447736274,0.8580829555401409,lod_imputed,FALSE,stp
+stp_vs_anc_at_TSB,B7H15_04565,thiol reductase thioredoxin,stp_TSB=0/3 anc_TSB=3/3,-0.07984449035933024,0.9134189684293434,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_12645,molybdenum ABC transporter permease subunit,stp_TSB=3/3 anc_TSB=0/3,0.06953470555057661,0.9450204807709086,lod_imputed,FALSE,stp
+stp_vs_anc_at_TSB,B7H15_00355,ArgR family transcriptional regulator,stp_TSB=3/3 anc_TSB=0/3,5.898059818321144e-17,1,lod_imputed,FALSE,stp
+stp_vs_anc_at_TSB,B7H15_00610,hypothetical protein,stp_TSB=0/3 anc_TSB=2/3,-1.546138506778803e-14,1,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_00690,siderophore biosynthesis protein SbnI,stp_TSB=3/3 anc_TSB=0/3,-4.558323369614604e-15,1,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_01490,MFS transporter,stp_TSB=2/3 anc_TSB=0/3,1.665334536937735e-16,1,lod_imputed,FALSE,stp
+stp_vs_anc_at_TSB,B7H15_02190,hypothetical protein,stp_TSB=2/3 anc_TSB=0/3,-7.825798475135797e-15,1,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_04600,toxin,stp_TSB=0/3 anc_TSB=2/3,5.330704328088951e-15,1,lod_imputed,FALSE,stp
+stp_vs_anc_at_TSB,B7H15_04625,pathogenicity island protein,stp_TSB=0/3 anc_TSB=3/3,-0.0235345566245625,1,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_06890,hypothetical protein,stp_TSB=0/3 anc_TSB=3/3,1.429604361745471e-14,1,lod_imputed,FALSE,stp
+stp_vs_anc_at_TSB,B7H15_07850,hypothetical protein,stp_TSB=2/3 anc_TSB=0/3,-6.1583636209824966e-15,1,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_08050,hypothetical protein,stp_TSB=2/3 anc_TSB=0/3,-1.8054293844967592e-14,1,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_10975,phage portal protein,stp_TSB=0/3 anc_TSB=2/3,-4.829470157119431e-15,1,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_11070,single-stranded DNA-binding protein,stp_TSB=0/3 anc_TSB=3/3,-1.8054293844967592e-14,1,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_13115,hypothetical protein,stp_TSB=0/3 anc_TSB=2/3,5.0289339038767835e-16,1,lod_imputed,FALSE,stp
+stp_vs_anc_at_TSB,B7H15_13390,hypothetical protein,stp_TSB=2/3 anc_TSB=0/3,2.220446049250313e-15,1,lod_imputed,FALSE,stp
+stp_vs_anc_at_TSB,B7H15_13735,diaminopimelate epimerase,stp_TSB=2/3 anc_TSB=0/3,-7.746434033620356e-15,1,lod_imputed,FALSE,anc
+stp_vs_anc_at_TSB,B7H15_14805,methionine sulfoxide reductase A,stp_TSB=0/3 anc_TSB=3/3,-0.01066478732053993,1,lod_imputed,FALSE,anc
+stp_vs_stk_at_TSB,B7H15_11540,potassium-transporting ATPase A chain,stp_TSB=0/3 stk_TSB=3/3,-1.712385097638674,0.00328324960249544,lod_imputed,TRUE,stk
+stp_vs_stk_at_TSB,B7H15_00055,azaleucine resistance protein AzlC,stp_TSB=3/3 stk_TSB=0/3,1.678127355246878,0.00693808975201408,lod_imputed,TRUE,stp
+stp_vs_stk_at_TSB,B7H15_11090,hypothetical protein,stp_TSB=0/3 stk_TSB=3/3,-1.112039359227621,0.01903760641416822,lod_imputed,TRUE,stk
+stp_vs_stk_at_TSB,B7H15_02405,sodium-dependent transporter,stp_TSB=3/3 stk_TSB=0/3,1.161524176998522,0.02052474638513806,lod_imputed,TRUE,stp
+stp_vs_stk_at_TSB,B7H15_08540,metal ABC transporter permease,stp_TSB=2/3 stk_TSB=0/3,1.098786441908704,0.08124009178368852,lod_imputed,TRUE,stp
+stp_vs_stk_at_TSB,B7H15_05810,regulator,stp_TSB=3/3 stk_TSB=0/3,0.9577242505592028,0.02994833767316953,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_00940,hypothetical protein,stp_TSB=3/3 stk_TSB=0/3,0.9706020116941846,0.1132914650886938,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_11035,hypothetical protein,stp_TSB=0/3 stk_TSB=2/3,-0.8942019695234551,0.1173414660726935,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_12260,peptidase M23,stp_TSB=3/3 stk_TSB=0/3,0.7137978893698738,0.1338572601832436,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_08015,DEAD/DEAH box helicase,stp_TSB=3/3 stk_TSB=0/3,0.5981600704816528,0.2398351920397288,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_01280,hypothetical protein,stp_TSB=2/3 stk_TSB=0/3,0.4022011305677986,0.4899907035836926,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_09920,BsaG protein,stp_TSB=0/3 stk_TSB=2/3,-0.3589381393171706,0.5517416378519394,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_14190,ferrous iron transporter B,stp_TSB=2/3 stk_TSB=0/3,0.329666865332264,0.5848315973219549,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_10820,hypothetical protein,stp_TSB=2/3 stk_TSB=0/3,0.3099749372335505,0.6080586104722739,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_01850,multidrug transporter,stp_TSB=3/3 stk_TSB=0/3,0.1223982447736314,0.8609431790639464,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_08195,site-specific integrase,stp_TSB=2/3 stk_TSB=0/3,0.1309798997088701,0.8609431790639464,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_09855,hypothetical protein,stp_TSB=2/3 stk_TSB=0/3,0.08441411080894312,0.9329161545419724,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_12645,molybdenum ABC transporter permease subunit,stp_TSB=3/3 stk_TSB=0/3,0.06953470555056901,0.9543815327030886,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_13430,gamma-hemolysin component C,stp_TSB=3/3 stk_TSB=0/3,0.05471068412491098,0.9697790606515612,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_14685,ArgR family transcriptional regulator,stp_TSB=2/3 stk_TSB=0/3,0.05095339214854969,0.9751006788361508,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_10975,phage portal protein,stp_TSB=0/3 stk_TSB=2/3,-0.04520193956575436,0.9757386242177766,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_13700,ABC transporter ATP-binding protein,stp_TSB=3/3 stk_TSB=0/3,0.03599148216961723,0.9860257735469844,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_00270,hypothetical protein,stp_TSB=2/3 stk_TSB=0/3,1.145176530397939e-15,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_00355,ArgR family transcriptional regulator,stp_TSB=3/3 stk_TSB=0/3,1.607221300492512e-15,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_00385,methyltransferase,stp_TSB=3/3 stk_TSB=0/3,0.01489601574895849,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_00525,LysR family transcriptional regulator,stp_TSB=3/3 stk_TSB=0/3,0.02348230029288507,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_01275,hypothetical protein,stp_TSB=2/3 stk_TSB=0/3,-8.881784197001252e-16,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_01605,DUF5080 domain-containing protein,stp_TSB=2/3 stk_TSB=0/3,-4.440892098500626e-16,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_02140,xanthine permease,stp_TSB=2/3 stk_TSB=0/3,1.8455585540295208e-17,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_02190,hypothetical protein,stp_TSB=2/3 stk_TSB=0/3,-9.822304327878759e-18,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_03550,manganese ABC transporter permease,stp_TSB=2/3 stk_TSB=0/3,6.785889449882161e-5,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_03675,hypothetical protein,stp_TSB=3/3 stk_TSB=0/3,4.440892098500626e-16,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_03865,hypothetical protein,stp_TSB=0/3 stk_TSB=2/3,-0.01194052668762662,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_04275,acetyltransferase,stp_TSB=2/3 stk_TSB=0/3,3.07835066380182e-16,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_04565,thiol reductase thioredoxin,stp_TSB=0/3 stk_TSB=2/3,-8.226630552475287e-18,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_04600,toxin,stp_TSB=0/3 stk_TSB=2/3,-0.01142342630132795,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_04885,Na+/H+ antiporter subunit F,stp_TSB=2/3 stk_TSB=0/3,8.881784197001252e-16,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_05790,protoheme IX farnesyltransferase,stp_TSB=3/3 stk_TSB=0/3,2.220446049250313e-16,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_06075,hypothetical protein,stp_TSB=3/3 stk_TSB=0/3,-4.440892098500626e-16,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_06355,serine/threonine protein kinase,stp_TSB=3/3 stk_TSB=0/3,-1.332267629550188e-15,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_07235,tryptophan synthase subunit alpha,stp_TSB=2/3 stk_TSB=0/3,9.600000641118974e-16,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_07275,peptide ABC transporter permease,stp_TSB=2/3 stk_TSB=0/3,-2.3624849612516276e-18,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_08050,hypothetical protein,stp_TSB=2/3 stk_TSB=0/3,-1.802822861908153e-30,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_09670,arsenical efflux pump membrane protein ArsB,stp_TSB=2/3 stk_TSB=0/3,-2.031673941166464e-31,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_09815,hypothetical protein,stp_TSB=2/3 stk_TSB=0/3,-4.799669792962373e-16,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_11125,hypothetical protein,stp_TSB=3/3 stk_TSB=0/3,0.01718937731808385,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_11710,ATP synthase subunit C,stp_TSB=2/3 stk_TSB=0/3,2.220446049250313e-16,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_13050,Bcr/CflA family drug resistance efflux transporter,stp_TSB=3/3 stk_TSB=0/3,0.00460012403314272,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_13290,uroporphyrinogen-III C-methyltransferase,stp_TSB=2/3 stk_TSB=0/3,6.9735883734267655e-16,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_13390,hypothetical protein,stp_TSB=2/3 stk_TSB=0/3,4.440892098500626e-16,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_13460,adenosylmethionine--8-amino-7-oxononanoate transaminase,stp_TSB=2/3 stk_TSB=0/3,-2.775557561562891e-16,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_13695,MFS transporter,stp_TSB=3/3 stk_TSB=0/3,-4.3934498115846776e-17,1,lod_imputed,FALSE,stk
+stp_vs_stk_at_TSB,B7H15_13710,nickel ABC transporter permease,stp_TSB=3/3 stk_TSB=0/3,1.4432899320127039e-15,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_13735,diaminopimelate epimerase,stp_TSB=2/3 stk_TSB=0/3,7.157353314987087e-16,1,lod_imputed,FALSE,stp
+stp_vs_stk_at_TSB,B7H15_14895,imidazoleglycerol-phosphate dehydratase,stp_TSB=2/3 stk_TSB=0/3,1.7347234759768069e-18,1,lod_imputed,FALSE,stp

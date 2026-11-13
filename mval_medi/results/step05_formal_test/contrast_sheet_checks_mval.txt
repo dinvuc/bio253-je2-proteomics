@@ -1,0 +1,12 @@
+Step 5 part 2: contrast sheet, run 2026-11-13
+[PASS] 27 samples, 3 per group after the join
+[PASS] direction: limma diff equals the group-mean formula in all 64876 tested rows (max |dev| 2.1e-14)
+[PASS] worked example: Stk1 stp - anc in TSB equals limma diff
+[PASS] eligibility rule == `tested` of the formal test (same rule, no drift)
+[PASS] supplied FDR = BH within each contrast over all 2324 supplied rows (incl. contaminants/decoys)
+[PASS] supplied estimate_type is constant over the 33 contrasts of each protein
+[PASS] supplied lod_imputed <=> at least one of the 9 groups is 0/3 (240 proteins)
+
+stp_vs_anc_at_TSB: diff = log2(stp) - log2(anc), within TSB. diff > 0 means HIGHER in stp; diff < 0 means HIGHER in anc.
+Worked example, Stk1 (B7H15_06355): mean stp_TSB = 10.98, mean anc_TSB = 16.40, difference = -5.42; limma diff = -5.42 -> Stk1 is HIGHER in anc = LOWER in stp.
+interaction_stp_vs_anc_at_TSB_vs_SN: difference of differences = (stp - anc in TSB) - (stp - anc in SN). Positive: the stp-vs-anc difference is larger in TSB than in SN.

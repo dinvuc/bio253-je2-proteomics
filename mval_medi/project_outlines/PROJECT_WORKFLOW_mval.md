@@ -23,7 +23,7 @@ Notes taken by the group at the presentation (Jonas). Readings marked "?" are ou
 | Agentic coding allowed, not mandatory | No change | — |
 | Data: JE2 proteome + phosphoproteome; contrasts supernatant, mutants, "tsp" (?= TSB), ancestor | Confirms our scope | Scope |
 | "07 emre (?= ermB) transposon effect" | Use notebook 07 (transposon insertion, ErmB marker) | Steps 3, 4, 4b |
-| Peptides on transposon sequences (from Jonas, not yet received) | A search including the transposon proteins (ErmB, GFP) | Step 4b (conditional) |
+| Peptides on transposon sequences (from Jonas, received 12 Nov: `FP24_transposonDB`) | A search including the transposon proteins (ErmB, GFP) | Step 4b (conditional) |
 | Friday: peptide values for H1 | Show Stp1/Stk1 at peptide level, not only as protein totals | Step 3 |
 | Friday: H2 & H3 responses compared to the ancestor | Report every mutant response relative to `anc` (interaction contrasts) | Steps 6, 7 |
 | Friday: stk1 broadly involved in many different effects (?) | Expect broad Stk1 effects; show them at pathway level rather than as single proteins. Meaning to be confirmed with Jonas | Step 10 |
@@ -114,7 +114,7 @@ The bundle contains processed course results, not instrument-level spectra. Spec
 **Do**
 
 - [x] Inspect JE2 genome coordinates, strand/orientation and neighboring genes around `stp1` and `stk1`; draw a small annotated gene diagram.
-- [x] Cite the operon/transcription-unit evidence for *stp1*–*stk1* from AureoWiki (look up the NCTC 8325 orthologs via `staa8_uniprot` / `read_protein_metadata()`), and the NE217/NE1919 insertion positions from NTML (ntml.unmc.edu) and `TRANSPOSON_INSERTIONS` in `R/constants.R`. Record which strain the AureoWiki evidence refers to (NCTC 8325, not JE2). *Done for AureoWiki/UniProt (SAOUHSC_01182 > … > 01186 > 01187, stk1 last). NTML entries for NE217/NE1919 are still to be checked by hand: the site loads its content by JavaScript.*
+- [x] Cite the operon/transcription-unit evidence for *stp1*–*stk1* from AureoWiki (look up the NCTC 8325 orthologs via `staa8_uniprot` / `read_protein_metadata()`), and the NE217/NE1919 insertion positions from NTML (ntml.unmc.edu) and `TRANSPOSON_INSERTIONS` in `R/constants.R`. Record which strain the AureoWiki evidence refers to (NCTC 8325, not JE2). *Done for AureoWiki/UniProt (SAOUHSC_01182 > … > 01186 > 01187, stk1 last). NTML strain mapping checked by hand by the group on 13 Nov: **NE217 = `stk` (stk1::Tn), NE1919 = `stp` (stp1::Tn)**, as in `R/constants.R`. The insertion coordinates (codon 46 / codon 189) still come from the NTML map table in `R/constants.R`; they were not re-read by hand.*
 - [x] ~~Peptide coverage via `plot_peptide_coverage()`~~: not possible, the peptide table will not be provided (12 Nov). Use the Step 3 substitutes (peptide counts per sample, Stk1 phosphopeptide map) and the non-peptide parts of notebook 07 (insertion codons, operon reasoning).
 - [x] Polar effect at peptide level: compare the number of Stk1 peptides quantified in `stp` with `anc` and `stk`. A drop of Stk1 in `stp` close to that in `stk` is what a polar insertion predicts ("same effect as the mutation"). It is consistent with polarity but does not prove the mechanism.
 - [x] Plot measured neighboring proteins and assess whether any accompanying changes are consistent across samples and conditions.
@@ -125,23 +125,25 @@ The bundle contains processed course results, not instrument-level spectra. Spec
 
 **Output / completion check:** Gene-context panel and a paragraph separating measured protein changes, the proposed explanation and unresolved alternatives. If Stk1 reduction is unsupported, revise the interpretation and continue the response comparisons without assuming combined disruption.
 
-## Step 4b — Transposon products (optional, depends on Jonas)
+## Step 4b — Transposon products (positive control; done 13 Nov with Jonas's transposon search)
 
-- [x] Checked 12 Nov: the search FASTA (`JE2_proteins.fasta`, 4,155 entries) contains only the genome's own IS-element transposases, **no ErmB and no GFP**. The transposon proteins were never searched for, so they cannot be pulled from any file we have. "Not found" means "never looked for" (`reference/README.md`).
-- [ ] If Jonas sends peptide/protein values from a search including the transposon sequences: plot ErmB (and GFP if present) across the 27 samples. Prediction: detected in `stk` and `stp`, absent in `anc`, a positive control for the insertion.
-- [ ] If nothing arrives, state this as a limitation on the poster; do not wait for it.
+- [x] Checked 12 Nov: the search FASTA of the **course tables** (`JE2_proteins.fasta`, 4,155 entries) contains only the genome's own IS-element transposases, **no ErmB and no GFP**. The transposon proteins were never searched for, so they cannot be pulled from any file we have. "Not found" means "never looked for" (`reference/README.md`).
+- [x] If Jonas sends peptide/protein values from a search including the transposon sequences: plot ErmB (and GFP if present) across the 27 samples. Prediction: detected in `stk` and `stp`, absent in `anc`, a positive control for the insertion.
+  *Done 13 Nov:* Jonas's FragPipe 24 search incl. the pBursa/pFA545 proteins is in `data/raw/FP24_transposonDB/` (local, not in the checksummed bundle). `scripts/04b_transposon_products_mval.R`: **ErmB 0 spectra in all 9 `anc` samples, 11–30 spectra (7–10 peptides) in all 18 `stk`/`stp` samples. Prediction met.** GFP was searched but not detected (ProteinProphet probability 0). Results and figure guide: `mval_medi/results/step04b_transposon/`.
+- [x] ~~If nothing arrives, state this as a limitation on the poster~~: not needed, the values arrived.
 
 ## Step 5 — Fix comparison definitions and analysis rules
 
 **Do**
 
-- [ ] Separate baseline contrasts (`stk_vs_anc_at_TSB`, `stp_vs_anc_at_TSB`) from within-genotype exposure contrasts and the three interaction contrasts below.
-- [ ] Use `explain_contrast()` and check one example against group means to verify the direction. Say which group is higher whenever reporting a simple fold change.
-- [ ] Begin with supplied DEA results. Document the tested feature universe, filtering, missingness and original FDR adjustment scope. Do not renormalize; refit only as declared below.
+- [x] Separate baseline contrasts (`stk_vs_anc_at_TSB`, `stp_vs_anc_at_TSB`) from within-genotype exposure contrasts and the three interaction contrasts below.
+- [x] Use `explain_contrast()` and check one example against group means to verify the direction. Say which group is higher whenever reporting a simple fold change.
+- [x] Begin with supplied DEA results. Document the tested feature universe, filtering, missingness and original FDR adjustment scope. Do not renormalize; refit only as declared below.
 - [x] **Formal test (group decision 12 Nov 2026, fixed before results were seen):** our own refit `scripts/05_formal_test_mval.R`. limma, model `~ 0 + group` (9 genotype × medium means, all 27 samples, n = 3), all 33 course contrasts written out as `A - B`; `treat(lfc = 1)` tests H0 |log2FC| ≤ 1; hit = **BH-FDR < 0.05**, BH within each contrast over the tested proteins. The threshold is part of the test: no post-hoc |log2FC| filter. No batch term (one acquisition day; run order blocked by group, so not separable). Full table: `data/derived/limma_treat_total_mval.tsv.gz` (local); summaries in `mval_medi/results/step05_formal_test/`.
-- [ ] The supplied course screen (**FDR < 0.1 and |diff| > 1**, `lm_impute`) is kept as a labelled comparison only, and remains the source for presence/absence (`lod_imputed`) evidence, which our observed-only test cannot score.
-- [ ] Define comparison-specific quantitative eligibility before selecting hits: initially require detection in at least two of three samples in every group needed for that comparison, and observed rather than `lod_imputed` estimates. Report eligible and excluded counts; retain sparse/one-sided signals separately.
-- [ ] Keep supplied FDR values labeled as supplied. Declare any additional testing families if new tests are performed; do not imply the original FDR controls every later selection or combined claim.
+- [x] The supplied course screen (**FDR < 0.1 and |diff| > 1**, `lm_impute`) is kept as a labelled comparison only, and remains the source for presence/absence (`lod_imputed`) evidence, which our observed-only test cannot score.
+- [x] Define comparison-specific quantitative eligibility before selecting hits: initially require detection in at least two of three samples in every group needed for that comparison, and observed rather than `lod_imputed` estimates. Report eligible and excluded counts; retain sparse/one-sided signals separately.
+- [x] Keep supplied FDR values labeled as supplied. Declare any additional testing families if new tests are performed; do not imply the original FDR controls every later selection or combined claim.
+  *Done 13 Nov:* `scripts/05b_contrast_sheet_mval.R`, written up in `mval_medi/results/step05_formal_test/methods_sheet_mval.md`. Contrast families in `contrast_sheet_mval.csv`; direction verified for all 64,876 tested rows against group means; eligible counts 1,876–2,065 per primary contrast, on/off and sparse proteins kept in `one_sided_signals_mval.csv`. Supplied FDR = BH per contrast over all 2,324 rows. **Finding:** supplied `lod_imputed` is a per-protein label (any of the 9 groups 0/3 → all 33 contrasts labelled), so for eligible rows our observed-only estimate is used.
 
 | Contrast | What it answers |
 |---|---|
@@ -159,12 +161,13 @@ For example, the stp-versus-parent interaction is `(stp_TSB - stp_SN) - (anc_TSB
 
 **Do**
 
-- [ ] **Frame every response relative to the ancestor** (presentation feedback): the main H2 results are `interaction_stk_vs_anc_at_TSB_vs_SN` and `interaction_stp_vs_anc_at_TSB_vs_SN`, with formal hits from Step 5 (treat lfc = 1, BH-FDR < 0.05). Show `TSB_vs_SN_at_anc` as the reference response next to them.
-- [ ] Summarize baseline mutant differences separately from TSB-to-SN changes within each genotype.
-- [ ] Examine the two mutant-versus-parent interaction contrasts across eligible proteins. Report effect distributions, eligible counts and screened-hit counts.
-- [ ] Retain effect estimates, standard errors, FDR, model and observed/imputed status for each selected candidate.
-- [ ] Plot per-sample values for representative candidates before interpreting them. Use consistent axes and explain the response difference in words.
-- [ ] Keep a separate exploratory summary of one-sided detection patterns; do not rank large imputed fold changes as precise quantitative effects.
+- [x] **Frame every response relative to the ancestor** (presentation feedback): the main H2 results are `interaction_stk_vs_anc_at_TSB_vs_SN` and `interaction_stp_vs_anc_at_TSB_vs_SN`, with formal hits from Step 5 (treat lfc = 1, BH-FDR < 0.05). Show `TSB_vs_SN_at_anc` as the reference response next to them.
+- [x] Summarize baseline mutant differences separately from TSB-to-SN changes within each genotype.
+- [x] Examine the two mutant-versus-parent interaction contrasts across eligible proteins. Report effect distributions, eligible counts and screened-hit counts.
+- [x] Retain effect estimates, standard errors, FDR, model and observed/imputed status for each selected candidate.
+- [x] Plot per-sample values for representative candidates before interpreting them. Use consistent axes and explain the response difference in words.
+- [x] Keep a separate exploratory summary of one-sided detection patterns; do not rank large imputed fold changes as precise quantitative effects.
+  *Done 13 Nov:* `scripts/06_altered_responses_mval.R`, results + figure guide in `mval_medi/results/step06_responses/`. Eligible: 1,882 (`stk`) / 1,931 (`stp`). Formal interaction hits: **5 in `stk`** (kdpD, argF, arcA, rbsD, B7H15_14515) and **1 in `stp`** (ilvA); supplied screen 96 / 90. Mutant and `anc` responses correlate (r = 0.85 / 0.86): most of the PASN response is shared. Raw plots: argF and B7H15_14515 are mainly a TSB baseline difference in `stk` that disappears in SN; arcA and kdpD differ from `anc` in both media with opposite sign; only rbsD is mainly an SN-response difference. ilvA also drops in `stk_SN` (1/3 detected, so not testable in our model); the supplied `lm_impute` estimate for `stk` is 3.01 (FDR 0.001), the same direction as in `stp`, so this is probably a shared mutant pattern resting on one `stk` replicate. Candidate plots use one panel per protein with its own y-scale (abundance levels differ); x layout is the same.
 
 **Why:** This establishes whether a mutation changes the exposure response beyond any pre-existing TSB difference.
 
@@ -174,12 +177,13 @@ For example, the stp-versus-parent interaction is `(stp_TSB - stp_SN) - (anc_TSB
 
 **Do**
 
-- [ ] Compare the two mutant-versus-parent interaction estimates for the same eligible proteins, with direction and uncertainty visible. Record proteins eligible in one comparison but not the other.
-- [ ] **Polar-effect test of H3 (presentation feedback):** scatter `stp_vs_anc_at_TSB` against `stk_vs_anc_at_TSB` (baseline), and the two interactions against each other (response). If the `stp` insertion has "the same effect as the `stk` mutation", points lie near the diagonal. Report the slope/correlation with its uncertainty, and the proteins far off the diagonal (candidate phosphatase-specific effects). Remember the shared `anc` reference inflates the correlation.
-- [ ] Describe same-direction changes and opposite-direction changes. Label significance in both comparisons as a descriptive classification with its testing limits.
-- [ ] Inspect the direct `stp_vs_stk` interaction for candidates and report its uncertainty. A hit in one mutant but not the other is not by itself evidence of a difference between mutants.
-- [ ] Use a heatmap and individual-value plots to show representative shared and distinct patterns. State any centering/scaling used only for display.
-- [ ] Explain that correlations share the parental reference, and that a nonsignificant direct contrast does not establish equivalence.
+- [x] Compare the two mutant-versus-parent interaction estimates for the same eligible proteins, with direction and uncertainty visible. Record proteins eligible in one comparison but not the other.
+- [x] **Polar-effect test of H3 (presentation feedback):** scatter `stp_vs_anc_at_TSB` against `stk_vs_anc_at_TSB` (baseline), and the two interactions against each other (response). If the `stp` insertion has "the same effect as the `stk` mutation", points lie near the diagonal. Report the slope/correlation with its uncertainty, and the proteins far off the diagonal (candidate phosphatase-specific effects). Remember the shared `anc` reference inflates the correlation.
+- [x] Describe same-direction changes and opposite-direction changes. Label significance in both comparisons as a descriptive classification with its testing limits.
+- [x] Inspect the direct `stp_vs_stk` interaction for candidates and report its uncertainty. A hit in one mutant but not the other is not by itself evidence of a difference between mutants.
+- [x] Use a heatmap and individual-value plots to show representative shared and distinct patterns. State any centering/scaling used only for display.
+- [x] Explain that correlations share the parental reference, and that a nonsignificant direct contrast does not establish equivalence.
+  *Done 13 Nov:* `scripts/07_shared_distinct_mval.R`, results + figure guide in `mval_medi/results/step07_shared_distinct/`. **`stp` shares a moderate part of the `stk` effect pattern.** The observed r (0.41 baseline, 0.43 response) cannot be judged alone, because the shared `anc` noise alone gives r = 0.50 with a wide range (simulated 0.37–0.63). Noise-corrected r of the true effects: **0.37 (95% CI 0.29–0.45) baseline, 0.38 (0.24–0.52) response**: clearly above 0, far below 1. Split-reference r (independent `anc` replicates, a lower bound): 0.11–0.33 / 0.03–0.15. *(Corrected 13 Nov: a first version compared the observed r with a fixed 0.5 and wrongly called the similarity "weak".)* Only 3 proteins are hits in both mutants (same direction, all lower than `anc` in TSB). 20 (TSB) + 4 (response) proteins differ directly between `stp` and `stk`. Few shared hits partly reflects the strict test (treat lfc = 1, n = 3). Conclusion limited to the 1,853–1,988 proteins eligible in both.
 
 **Why:** Similar response components could be consistent with reduced kinase function, while direct comparisons reveal supported differences.
 
@@ -285,9 +289,11 @@ If time is short, finish Steps 1-7 and the relevant interpretation/reporting in 
 
 **12 November 2026 (later):** Steps 3–4 done (`scripts/03_mutant_validation_mval.R`, `scripts/04_polar_effect_mval.R`; notebook `2026-11-12_steps3-4_mutant_validation_mval.md`). Stk1 is lost in `stk` (1/9 samples, 1 peptide) and nearly lost in `stp` (median 0–1 peptides vs 28–32 in anc). Stp1 in `stp` rests on 1–2 peptides, which explains the erratic wild-type-like values. Neighbours are unchanged (0 formal hits, |diff| ≤ 0.74). This is consistent with a polar insertion (stk1 is the last gene of the AureoWiki transcription unit) but does not prove it. The `HIQDSVPNVTtDVR` peptide is sporadic in all strains and gives no evidence for a truncated product.
 
+**13 November 2026:** Steps 4b, 5 (rest), 6 and 7 done (branch `steps6-7-responses-mval`; notebook `2026-11-13_steps4b-7_responses_mval.md`). ErmB positive control met (0/9 `anc`, 18/18 mutants). H2: 5 `stk` and 1 `stp` interaction hits; most of the PASN response is shared with `anc`. H3: `stp` shares a moderate part of the `stk` pattern (noise-corrected r ≈ 0.37–0.38); 24 direct `stp_vs_stk` differences.
+
 **Next actions, in order (for Friday 13 Nov):**
-1. ~~Step 3~~ done; check NE217/NE1919 on ntml.unmc.edu by hand.
-2. Steps 6–7: interactions relative to `anc`; `stp` vs `stk` effect scatter (polar effect / H3).
+1. ~~Step 3~~ done; ~~check NE217/NE1919 on ntml.unmc.edu~~ mapping confirmed by the group 13 Nov (NE217 = stk, NE1919 = stp).
+2. ~~Steps 6–7~~ done 13 Nov.
 3. Step 10: enrichment for the `stk` contrasts ("Stk1 broadly involved").
-4. Ask Jonas: meaning of "stk1 broadly involved", whether transposon-search values will come, poster format/deadline.
+4. Ask Jonas: meaning of "stk1 broadly involved"; whether `FP24_transposonDB` is the final transposon search and may be cited on the poster; poster format/deadline.
 5. Step 12: poster figures + abstract.
