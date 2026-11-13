@@ -161,12 +161,13 @@ For example, the stp-versus-parent interaction is `(stp_TSB - stp_SN) - (anc_TSB
 
 **Do**
 
-- [ ] **Frame every response relative to the ancestor** (presentation feedback): the main H2 results are `interaction_stk_vs_anc_at_TSB_vs_SN` and `interaction_stp_vs_anc_at_TSB_vs_SN`, with formal hits from Step 5 (treat lfc = 1, BH-FDR < 0.05). Show `TSB_vs_SN_at_anc` as the reference response next to them.
-- [ ] Summarize baseline mutant differences separately from TSB-to-SN changes within each genotype.
-- [ ] Examine the two mutant-versus-parent interaction contrasts across eligible proteins. Report effect distributions, eligible counts and screened-hit counts.
-- [ ] Retain effect estimates, standard errors, FDR, model and observed/imputed status for each selected candidate.
-- [ ] Plot per-sample values for representative candidates before interpreting them. Use consistent axes and explain the response difference in words.
-- [ ] Keep a separate exploratory summary of one-sided detection patterns; do not rank large imputed fold changes as precise quantitative effects.
+- [x] **Frame every response relative to the ancestor** (presentation feedback): the main H2 results are `interaction_stk_vs_anc_at_TSB_vs_SN` and `interaction_stp_vs_anc_at_TSB_vs_SN`, with formal hits from Step 5 (treat lfc = 1, BH-FDR < 0.05). Show `TSB_vs_SN_at_anc` as the reference response next to them.
+- [x] Summarize baseline mutant differences separately from TSB-to-SN changes within each genotype.
+- [x] Examine the two mutant-versus-parent interaction contrasts across eligible proteins. Report effect distributions, eligible counts and screened-hit counts.
+- [x] Retain effect estimates, standard errors, FDR, model and observed/imputed status for each selected candidate.
+- [x] Plot per-sample values for representative candidates before interpreting them. Use consistent axes and explain the response difference in words.
+- [x] Keep a separate exploratory summary of one-sided detection patterns; do not rank large imputed fold changes as precise quantitative effects.
+  *Done 13 Nov:* `scripts/06_altered_responses_mval.R`, results + figure guide in `mval_medi/results/step06_responses/`. Eligible: 1,882 (`stk`) / 1,931 (`stp`). Formal interaction hits: **5 in `stk`** (kdpD, argF, arcA, rbsD, B7H15_14515) and **1 in `stp`** (ilvA); supplied screen 96 / 90. Mutant and `anc` responses correlate (r = 0.85 / 0.86): most of the PASN response is shared. Raw plots: argF, arcA and B7H15_14515 are mostly a TSB baseline difference in `stk`; ilvA also drops in `stk_SN`, but only 1/3 detected there (untestable). Candidate plots use one panel per protein with its own y-scale (abundance levels differ); x layout is the same.
 
 **Why:** This establishes whether a mutation changes the exposure response beyond any pre-existing TSB difference.
 
