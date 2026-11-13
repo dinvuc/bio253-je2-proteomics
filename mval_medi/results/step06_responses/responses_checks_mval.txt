@@ -1,3 +1,4 @@
 Step 6 altered responses, run 2026-11-13
 [PASS] interaction == response_anc - response_mutant for all 3813 eligible rows (max |dev| 2.2e-15)
 [PASS] candidate count equals the Step 5 formal hit counts
+[PASS] interaction_stp_vs_stk == response_stk - response_stp for all 1876 eligible rows (max |dev| 2.2e-15)
