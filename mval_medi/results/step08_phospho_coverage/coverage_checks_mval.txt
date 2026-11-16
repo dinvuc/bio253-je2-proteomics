@@ -1,4 +1,4 @@
-Step 8 checks, 2026-11-13
+Step 8 checks, 2026-11-16
 [PASS] reinjected flag: one value per sample, known for all 27
 [PASS] 27 samples, 3 per group
 [PASS] 18 primary samples (anc/stk/stp x TSB/SN)

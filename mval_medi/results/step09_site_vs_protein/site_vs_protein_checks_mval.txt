@@ -1,4 +1,4 @@
-Step 9 checks, 2026-11-13
+Step 9 checks, 2026-11-16
 [NOTE] primary search from Step 8: STY; sensitivity: STYH
 [PASS] total proteome: protein_key unique (exact match target)
 [NOTE] locus tags with > 1 total-proteome entry (not used for matching): B7H15_13880 -> lcl_CP020619.1_prot_2694 / pseudoOrframeshift117_rev_frm2

@@ -11,7 +11,8 @@
 - **Rules written into the script headers BEFORE any site was selected** (AI proposal,
   the group still has to confirm them, rules section 10):
   - eligible = 2 of 3 per group (Step 5 rule); localised = median per-sample
-    `loc_prob` ≥ 0.75 (class I cutoff, Olsen et al. 2006 *Cell*, PMID 17081983);
+    `loc_prob` ≥ 0.75 (class I cutoff, Olsen et al. 2006 *Cell*, PMID 17081983,
+    doi:10.1016/j.cell.2006.09.026);
     pH exploratory only; primary search = more supported sites
   - Step 9 categories: consistent (|site − protein| < 1), residual (≥ 1 and ≥ 2 SE),
     unresolved; SE assumes independent layers; no p-value/FDR for the adjusted effect
@@ -30,14 +31,15 @@
   eligible and **91–184 supported**. Shortlist: 236 S/T/Y sites on 133 proteins.
 - **Search choice:** STY 1,159 vs STYH 1,150 supported site × contrast pairs → STY
   (near tie). Same site, same contrast: r = 0.96; 51 hits shared, 9 STY-only, 2 STYH-only.
-- **Localisation:** the best-of-27 score would call roughly twice as many sites
-  "localised" as our per-sample median (STY S 1,183 vs 690).
+- **Localisation:** on the sites detected in the primary samples, the best-of-27 score
+  would call ~1.7× as many sites "localised" as our per-sample median (STY S/T/Y
+  2,109 vs 1,272). 401 sites have a median of 0, 221 of them pass on the best score alone.
 - **Site hits (our test, new BH family):** 62 site × contrast hits = 37 sites on 25 proteins.
   55 are within-genotype TSB vs SN, 6 genotype differences in TSB, 1 interaction
   (`stp_vs_stk`). **0 hits in `interaction_stk_vs_anc` and `interaction_stp_vs_anc`.**
 - **Step 9 categories:** 17 consistent with protein amount, 40 residual, 5 unresolved.
   - `stk_vs_anc_at_TSB`, deoB T85 (`B7H15_00775`): site diff = −3.81 (lower in `stk`),
-    protein +0.05 → adjusted −3.86 ± 0.68. `stk_TSB` 2/3 detected. T87 is on the same peptide.
+    protein +0.05 → adjusted −3.86 ± 0.68. `stk_TSB` 2/3 detected. T87 shares its peptides (near-identical values): not separate evidence.
   - `stp_vs_anc_at_TSB`, pyk T537 (`B7H15_09250`): site +1.99 (higher in `stp`),
     protein +0.14 → adjusted +1.84 ± 0.25.
   - `stp_vs_anc_at_TSB`, Stk1 T164 (`B7H15_06355`): site −4.22, protein −5.42 (both
@@ -62,8 +64,23 @@
 - `B7H15_04940` T269: +10.8 log2 on two `stp_SN` values near the detection floor. We
   added a QC flag (within-group range > 3 log2, 3 hits) after seeing this. It changes no
   category or hit rule.
-- SN phospho samples detect ~2× more sites than TSB: missing-not-at-random, and a likely
-  cause of the layer offset.
+- In `anc` and `stk`, SN phospho samples detect ~2× more sites than TSB (`stp` only
+  ~1.1×): missing-not-at-random, and a likely contributor to the layer offset (which is
+  smallest in `stp`).
+
+## Recheck (16 Nov)
+An independent recalculation (separate code: plain group means and a direct limma call)
+reproduced every count, estimate, category and the offset sensitivity exactly. It found
+three wrong statements, now fixed in the scripts and documents:
+1. "Best score roughly doubles the localised sites": compared different site sets.
+   Correct: ~1.7× (2,109 vs 1,272 on the same sites).
+2. "SN detects ~2× more sites": true for `anc` and `stk`, not for `stp` (673 vs 623).
+3. Audit row "534 / 492 peptides carrying ≥ 2 sites" compared whole peptide-list
+   strings. Correct count: 2,780 (STYH) / 2,445 (STY) sites share a peptide sequence
+   with another site, i.e. about two thirds are not independent.
+Also: the Olsen et al. 2006 reference was checked in PubMed (doi:10.1016/j.cell.2006.09.026);
+the 0.75 "class I" definition itself is in the full text, not the abstract (group to confirm).
+The Step 9 figure's label placement is now seeded, so the figure is reproducible.
 - The project plan (5 Nov) had put phospho out of scope; the workflow keeps it as a
   supporting layer. Result: it supports H1 (Stk1 site), adds nothing to H2.
 

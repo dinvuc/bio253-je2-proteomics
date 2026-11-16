@@ -14,7 +14,7 @@ contrasts of the [Step 5 contrast sheet](../step05_formal_test/contrast_sheet_mv
 |---|---|---|
 | JE2 only | `keep_je2()`: locus tag, no `rev_` decoy | same filter as the total proteome |
 | eligible | ≥ 2 of 3 observed values in **every** group of the contrast | Step 5 rule; NA stays NA |
-| localised | **median** per-sample `loc_prob` over the primary samples where the site was detected ≥ 0.75 | `best_loc_prob` is the best of 27 samples, so one lucky spectrum passes. 0.75 = conventional "class I" cutoff (Olsen et al. 2006, *Cell* 127:635, PMID 17081983). It is **not** a measured false-localisation rate |
+| localised | **median** per-sample `loc_prob` over the primary samples where the site was detected ≥ 0.75 | `best_loc_prob` is the best of 27 samples, so one lucky spectrum passes. 0.75 = conventional "class I" cutoff (Olsen et al. 2006, *Cell* 127:635–48, PMID 17081983, [doi:10.1016/j.cell.2006.09.026](https://doi.org/10.1016/j.cell.2006.09.026); reference checked in PubMed, the 0.75 definition is in the full text, not the abstract: group to confirm). It is **not** a measured false-localisation rate |
 | histidine | pH sites counted and listed, never in the shortlist | no validated pH localisation cutoff; pH is acid-labile |
 | supported | eligible + localised + residue S/T/Y | |
 | primary search | more supported S/T/Y site × contrast pairs; tie → STYH | |
@@ -36,15 +36,21 @@ practically a tie.** STYH is the sensitivity check; both give nearly the same an
 | features per `site_id` | 1 (one peptide feature per site) | 1 |
 | in abundance table, not in site table | 33 | 0 |
 | in site table, not in abundance table | 0 | 32 |
-| peptides that carry ≥ 2 sites | 534 | 492 |
+| sites with ≥ 2 peptide forms (e.g. singly + doubly phosphorylated) | 473 | 414 |
+| **sites that share a peptide sequence with another site** | **2,780** | **2,445** |
 
 - **The STY abundance table stores observed values only** (16,209 rows, no NA rows).
   The script fills in every site × sample with NA before counting; otherwise "2 of 3"
   would be counted against the wrong denominator.
 - Detection agrees 100 % between the site table (`intensity`) and the abundance table
   (`normalized_abundance`) for every shared site × sample cell, in both searches.
-- **Sites on the same peptide are not independent evidence** (e.g. deoB T85 and T87
-  have identical patterns). Count proteins/peptides, not sites, when you summarise.
+- **Sites that share a peptide are not independent evidence.** About two thirds of the
+  JE2 sites (STY 2,445 of 3,774) share an unmodified peptide sequence with another
+  site. Example: deoB T85 and T87 are measured partly from the same peptides (incl. the
+  doubly phosphorylated form) and have almost identical values (`stk_TSB` 16.2/16.3 for
+  both). Count proteins/peptides, not sites, when you summarise.
+  *(Corrected 16 Nov: the first version reported "534 / 492 peptides carrying ≥ 2 sites";
+  that number compared whole peptide-list strings and was not a count of shared peptides.)*
 
 ### `supplied_model_audit_mval.csv`: what the supplied phospho DEAs say about themselves
 - **STYH** (`lm_impute`): in the 9 primary contrasts 35,523 of 36,936 rows (96 %) are
@@ -59,19 +65,26 @@ practically a tie.** STYH is the sensitivity check; both give nearly the same an
   Triangles = the two reinjected `stk_pulseSN` phospho samples.
 - **Result (median per group, STY):** `anc_TSB` 536, `anc_SN` 1,033; `stk_TSB` 424,
   `stk_SN` 874; `stp_TSB` 623, `stp_SN` 673. STYH is similar.
-- **Caveat:** SN samples (especially `anc_SN`, `stk_SN`) see about **twice as many sites**
-  as TSB. "Only detected in SN" is therefore expected for many sites even without biology
-  (missing not at random). It also matters for Step 9 (layer offset).
+- **Caveat:** in `anc` and `stk`, SN samples see about **twice as many sites** as TSB
+  (1,033 vs 536; 874 vs 424). In `stp` the difference is small (673 vs 623). For `anc`
+  and `stk`, "only detected in SN" is therefore expected for many sites even without
+  biology (missing not at random). It also matters for Step 9 (layer offset, which is
+  largest in `anc` and smallest in `stp`, matching this pattern).
+  *(Corrected 16 Nov: the first version said "SN ~2× TSB" for all strains.)*
 
 ### `fig_localisation_mval.png` + `residue_counts_mval.csv`
 - **Compares:** for each site detected in ≥ 1 primary sample, the median per-sample
   `loc_prob` (our rule, orange) and `best_loc_prob` (blue), per residue and search. Dashed = 0.75.
 - **How to read:** many sites have a **median per-sample loc_prob of 0**: in most samples
-  FragPipe placed the phosphate on another residue of the peptide, but their best score
-  is high. A peak at 0.5 = two equally likely positions.
-- **Result (STY):** localised by our rule S 690 / T 412 / Y 170, by `best_loc_prob`
-  alone S 1,183 / T 844 / Y 343. The best score would roughly double the number of "localised" sites.
-- **Histidine (STYH):** 408 pH sites; 82 pass our localisation rule (203 by best score),
+  FragPipe placed the phosphate on another residue of the peptide. In STY these are 401
+  sites (S 158 / T 161 / Y 82); their best score is still high (median 0.78) and 221 of
+  them would pass a `best_loc_prob` ≥ 0.75 filter. A peak at 0.5 = two equally likely positions.
+- **Result (STY, sites detected in ≥ 1 primary sample):** localised by our rule
+  S 690 / T 412 / Y 170 (1,272), by `best_loc_prob` alone S 1,083 / T 740 / Y 286
+  (2,109). **The best score alone would call about 1.7× as many sites "localised".**
+  *(Corrected 16 Nov: the first version counted `best_loc_prob` over all sites, not only
+  those detected in the primary samples, and said "roughly double".)*
+- **Histidine (STYH):** 408 pH sites; 82 pass our localisation rule (170 by best score),
   30 are eligible in some primary contrast, **8 are eligible and localised**. Listed in
   `histidine_sites_mval.csv`, exploratory only.
 

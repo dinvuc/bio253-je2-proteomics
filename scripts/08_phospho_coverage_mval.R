@@ -114,8 +114,16 @@ load_search <- function(s) {
     in_abundance_not_in_site_table = length(setdiff(unique(abund$site_id), unique(sites$site_id))),
     in_site_table_not_in_abundance = length(setdiff(unique(sites$site_id), unique(abund$site_id))),
     site_id_starts_with_protein_key = all(str_starts(abund$site_id, fixed(abund$protein_key))),
-    peptides_carrying_2plus_sites = keep_je2(abund) |> distinct(Peptide, site_id) |>
-      count(Peptide) |> filter(n > 1) |> nrow())
+    # `Peptide` is a ";"-separated list of the peptide forms behind a site. Split
+    # it and compare unmodified sequences: sites that share a sequence are NOT
+    # independent evidence. (Fixed 16 Nov: the first version compared the whole
+    # list string, which is not a count of shared peptides.)
+    sites_with_2plus_peptide_forms = keep_je2(abund) |> distinct(site_id, Peptide) |>
+      filter(str_detect(Peptide, ";")) |> nrow(),
+    sites_sharing_a_peptide_sequence = keep_je2(abund) |> distinct(site_id, Peptide) |>
+      tidyr::separate_rows(Peptide, sep = ";") |> mutate(seq = toupper(Peptide)) |>
+      distinct(site_id, seq) |> group_by(seq) |> filter(n() > 1) |> ungroup() |>
+      pull(site_id) |> n_distinct())
   list(sites = sites, abund = abund_full, audit = audit)
 }
 dat <- purrr::set_names(SEARCHES) |> purrr::map(load_search)
@@ -194,7 +202,9 @@ residue_counts <- purrr::imap(si, \(x, s) {
               detected_in_primary = sum(!is.na(n_primary_detected)),
               eligible_in_any_primary_contrast = sum(eligible_any_primary, na.rm = TRUE),
               localised_median_per_sample = sum(localised),
-              localised_best_loc_prob_only = sum(localised_best_only),
+              # same denominator as the median rule: sites detected in >= 1 primary
+              # sample (fixed 16 Nov: first version counted best_loc_prob over ALL sites)
+              localised_best_loc_prob_only = sum(localised_best_only & !is.na(n_primary_detected)),
               eligible_and_localised = sum(eligible_any_primary & localised, na.rm = TRUE)) |>
     mutate(search = s, .before = 1)
 }) |> bind_rows()

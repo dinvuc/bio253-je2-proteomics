@@ -180,7 +180,7 @@ write_csv(track, file.path(out, "site_vs_protein_tracking_mval.csv"))
 print(track)
 
 # SENSITIVITY (added after seeing median_signed_adjusted of -0.2 to -0.65 in the
-# TSB_vs_SN contrasts; SN phospho samples detect ~2x more sites, Step 8). If that
+# TSB_vs_SN contrasts; in anc and stk the SN phospho samples detect ~2x more sites, Step 8). If that
 # global offset is a layer artefact, how many "residual" hits remain once it is
 # removed? Labelled sensitivity only: the main categories above are unchanged.
 offset_sens <- hits |> filter(tested_protein) |>
@@ -242,7 +242,7 @@ p <- ggplot(pd, aes(diff_protein, diff_site)) +
   geom_point(data = filter(pd, category != "no site hit"), aes(colour = category), size = 2) +
   ggrepel::geom_text_repel(data = filter(pd, category == "residual adjusted change"),
                            aes(label = lab_site(filter(pd, category == "residual adjusted change"))),
-                           size = 2.4, max.overlaps = 20, min.segment.length = 0) +
+                           size = 2.4, max.overlaps = 20, min.segment.length = 0, seed = 1) +
   facet_wrap(~contrast, ncol = 3) +
   scale_colour_manual(values = cat_cols, drop = FALSE) +
   labs(x = "protein effect, total proteome (log2, A - B)", y = "phosphosite effect (log2, A - B)", colour = NULL,

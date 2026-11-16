@@ -63,7 +63,7 @@ The genotype (baseline) and interaction hits, the ones that matter for our quest
 | contrast | site | site diff | protein diff | adjusted ± se_adj | category | in words |
 |---|---|---|---|---|---|---|
 | stk_vs_anc_at_TSB | deoB T85 (`B7H15_00775`) | −3.81 | +0.05 | −3.86 ± 0.68 | residual | site lower in `stk` than `anc` in TSB; protein unchanged. `stk_TSB` 2/3 detected |
-| stp_vs_stk_at_TSB | deoB T85 / T87 | +5.08 / +4.74 | +0.02 | +5.06 / +4.71 | residual | site higher in `stp` than `stk`; T85 and T87 sit on the same peptide → one piece of evidence |
+| stp_vs_stk_at_TSB | deoB T85 / T87 | +5.08 / +4.74 | +0.02 | +5.06 / +4.71 | residual | site higher in `stp` than `stk`; T85 and T87 are measured partly from the same peptides and have near-identical values → one piece of evidence |
 | stp_vs_anc_at_TSB | pyk T537 (`B7H15_09250`) | +1.99 | +0.14 | +1.84 ± 0.25 | residual | site higher in `stp` than `anc`; protein unchanged |
 | stp_vs_anc_at_TSB | Stk1 T164 / T166 (`B7H15_06355`) | −4.22 / −4.14 | −5.42 | +1.21 ± 0.61 / +1.28 ± 0.71 | unresolved | site and protein both much lower in `stp`; the site drop is mostly the protein drop (H1) |
 | interaction_stp_vs_stk_at_TSB_vs_SN | T157 of `B7H15_09315` | −2.28 | −1.21 | −1.06 ± 0.35 | residual (borderline, just past 1) | the `stp`-vs-`stk` difference at this site is larger in SN than in TSB |
@@ -77,8 +77,10 @@ Y845 T52 (`TSB_vs_SN_at_stp`).
   medium contrasts (0.68–0.72) than in genotype contrasts (0.32–0.63) and interactions (0.32–0.44).
 - **`median_signed_adjusted` (layer offset):** −0.65 (`TSB_vs_SN_at_anc`), −0.43 (`stk`),
   −0.17 (`stp`). Across all sites, site signals lean towards "higher in SN" relative to
-  their proteins. Likely in part technical: SN phospho samples detect ~2× more sites
-  (Step 8), and each layer was normalised on its own.
+  their proteins. Likely in part technical: in `anc` and `stk` the SN phospho samples
+  detect ~2× more sites than TSB, in `stp` only ~1.1× (Step 8), and the offset follows
+  the same order (largest in `anc`, smallest in `stp`). Each layer was also normalised
+  on its own. This is a correlation across three strains, not a proof of the cause.
 
 ### `offset_sensitivity_mval.csv`
 The categories are recomputed after subtracting each contrast's median offset (a labelled
