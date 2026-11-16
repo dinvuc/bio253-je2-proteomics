@@ -194,3 +194,19 @@ fit_limma_treat <- function(m, samples, lfc = MVAL_LFC, min_obs = MVAL_MIN_OBS) 
     mutate(modelName = paste0("limma ~0+group, treat(lfc=", lfc, ")"),
            estimate_type = "observed")   # no imputation in this model
 }
+
+# ==============================================================================
+# 7. x positions for plots of the 18 PRIMARY samples (TSB and SN only)
+# ==============================================================================
+# add_x_position() / medium_x_axis() in R/plot.R place the media in the order of
+# MEDIA = TSB, SNpulse, SN, so SN sits at x = 3. With only TSB and SN on a 2-slot
+# axis the SN points fall outside the limits and are silently dropped (Step 8,
+# 13 Nov). These two give TSB = 1, SN = 2, genotypes side by side.
+add_x_primary <- function(x) {
+  offset <- c(anc = -0.27, stk = 0, stp = 0.27)
+  stopifnot(all(as.character(x$medium) %in% c("TSB", "SN")))
+  mutate(x, x_pos = unname(c(TSB = 1, SN = 2)[as.character(medium)]) + unname(offset[as.character(genotype)]))
+}
+primary_x_axis <- function() {
+  scale_x_continuous(breaks = 1:2, labels = c("TSB", "SN"), limits = c(0.6, 2.4))
+}

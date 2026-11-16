@@ -69,3 +69,9 @@ test_that("fit_limma_treat: sign, treat threshold and min_obs on toy data", {
   expect_false(filter(res, protein_key == "p3")$tested)
   expect_true(is.na(filter(res, protein_key == "p3")$FDR))
 })
+
+test_that("add_x_primary puts SN at 2, not at 3 (where MEDIA would put it)", {
+  x <- tibble(genotype = c("anc", "stp"), medium = c("TSB", "SN")) |> add_x_primary()
+  expect_equal(x$x_pos, c(1 - 0.27, 2 + 0.27))
+  expect_error(add_x_primary(tibble(genotype = "anc", medium = "SNpulse")))
+})
