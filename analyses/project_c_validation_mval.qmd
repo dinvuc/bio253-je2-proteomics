@@ -1,0 +1,76 @@
+---
+title: "Project C · 1 – sample QC and mutant validation (H1)"
+subtitle: "Bio253 HS2026 · group mval · Steps 2–4b, recomputed live"
+---
+
+Short, re-runnable version of Steps 2–4b. Full scripts: `scripts/02_sample_qc_mval.R`,
+`03_mutant_validation_mval.R`, `04_polar_effect_mval.R`, `04b_transposon_products_mval.R`.
+
+```{r setup}
+source("../R/setup.R")
+samples <- read_samples()
+abund   <- read_abundances("total") |> keep_je2()
+```
+
+## Sample design
+
+Join by sample **name** (never by position) and check 27 samples, 3 per group.
+
+```{r design}
+stopifnot(setequal(unique(abund$sample), samples$sample), all(table(samples$group) == 3))
+count(samples, genotype, medium) |> tidyr::pivot_wider(names_from = medium, values_from = n)
+```
+
+Proteins detected per sample (missing = not detected, never 0):
+
+```{r depth, fig.height=3.5}
+abund |> group_by(sample, genotype, medium) |> summarise(detected = sum(!is.na(normalized_abundance)), .groups = "drop") |>
+  ggplot(aes(medium, detected, colour = genotype)) +
+  geom_point(position = position_dodge(width = 0.5), size = 2) +
+  scale_colour_manual(values = GENOTYPE_COLOURS) + labs(y = "JE2 proteins with a value")
+```
+
+## Stp1 and Stk1 per sample
+
+```{r enzymes, fig.height=4}
+plot_protein("B7H15_0635[05]", abund)
+```
+
+Detections out of 3 per group (TSB and SN = primary analysis):
+
+```{r detections}
+abund |> filter(locus_tag %in% c("B7H15_06350", "B7H15_06355")) |>
+  mutate(protein = if_else(locus_tag == "B7H15_06350", "Stp1", "Stk1")) |>
+  group_by(protein, group) |> summarise(detected = sum(!is.na(normalized_abundance)), .groups = "drop") |>
+  tidyr::pivot_wider(names_from = group, values_from = detected)
+```
+
+## The formal estimates (Step 5 model)
+
+```{r estimates}
+f5 <- read_tsv("../data/derived/limma_treat_total_mval.tsv.gz", show_col_types = FALSE)
+f5 |> filter(locus_tag %in% c("B7H15_06350", "B7H15_06355"),
+             contrast %in% c("stk_vs_anc_at_TSB", "stp_vs_anc_at_TSB", "stk_vs_anc_at_SN", "stp_vs_anc_at_SN")) |>
+  transmute(protein = if_else(locus_tag == "B7H15_06350", "Stp1", "Stk1"), contrast,
+            diff = round(diff, 2), SE = round(std.error, 2), tested, FDR = signif(FDR, 2))
+explain_contrast("stp_vs_anc_at_TSB")
+```
+
+`tested = FALSE`: a group has fewer than 2 of 3 values, so the protein is on/off in that
+contrast (presence/absence, no fold change). Stk1 in `stk` is such a case: it is absent.
+
+## Transposon marker (positive control)
+
+```{r ermb, fig.height=3}
+read_csv("../mval_medi/results/step04b_transposon/ermb_per_sample_mval.csv", show_col_types = FALSE) |>
+  ggplot(aes(group, spectral_count, colour = genotype)) + geom_point(size = 2) +
+  scale_colour_manual(values = GENOTYPE_COLOURS) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + labs(x = NULL, y = "ErmB spectra")
+```
+
+**Result (H1):** Stk1 absent in `stk`; ~43-fold lower in `stp`; Stp1 down to 0–2 peptides
+in `stp`; ErmB only in the mutants. Consistent with a polar insertion, not proof of it.
+
+```{r session}
+sessionInfo()
+```

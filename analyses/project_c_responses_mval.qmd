@@ -1,0 +1,69 @@
+---
+title: "Project C · 2 – PASN responses relative to anc (H2, H3)"
+subtitle: "Bio253 HS2026 · group mval · Steps 5–7 and 11, recomputed live"
+---
+
+Short, re-runnable version of Steps 5–7. Full scripts: `scripts/05_formal_test_mval.R`,
+`06_altered_responses_mval.R`, `07_shared_distinct_mval.R`, `11_robustness_mval.R`.
+
+```{r setup}
+source("../R/setup.R")
+f5 <- read_tsv("../data/derived/limma_treat_total_mval.tsv.gz", show_col_types = FALSE) |> keep_je2()
+```
+
+## Hit rule
+
+limma `~ 0 + group`, `treat(lfc = 1)`, BH-FDR < 0.05 within each contrast, tested only with
+≥ 2 of 3 values in every group. `interaction_X_vs_anc_at_TSB_vs_SN > 0` = the SN response
+is **lower** in X than in `anc`.
+
+```{r hits}
+f5 |> filter(contrast %in% c("interaction_stk_vs_anc_at_TSB_vs_SN", "interaction_stp_vs_anc_at_TSB_vs_SN",
+                             "interaction_stp_vs_stk_at_TSB_vs_SN")) |>
+  group_by(contrast) |>
+  summarise(tested = sum(tested), hits = sum(tested & FDR < MVAL_FDR, na.rm = TRUE))
+```
+
+## H2: mutant response vs anc response
+
+```{r h2, fig.height=4.5}
+resp <- f5 |> filter(contrast %in% c("TSB_vs_SN_at_anc", "TSB_vs_SN_at_stk", "TSB_vs_SN_at_stp"), tested) |>
+  # key by protein_key: one locus tag (B7H15_13880) also has a 6-frame entry
+  select(protein_key, contrast, diff) |> tidyr::pivot_wider(names_from = contrast, values_from = diff) |>
+  tidyr::pivot_longer(c(TSB_vs_SN_at_stk, TSB_vs_SN_at_stp), names_to = "mutant", values_to = "mutant_response") |>
+  filter(!is.na(TSB_vs_SN_at_anc), !is.na(mutant_response))
+resp |> group_by(mutant) |> summarise(proteins = n(), r = round(cor(TSB_vs_SN_at_anc, mutant_response), 2))
+ggplot(resp, aes(TSB_vs_SN_at_anc, mutant_response)) + geom_abline(colour = "grey40") +
+  geom_point(alpha = 0.3, size = 0.8) + facet_wrap(~mutant) + coord_equal() +
+  labs(x = "anc: log2 (TSB - SN)", y = "mutant: log2 (TSB - SN)")
+```
+
+Per-sample values of the `stk` response hits (always look before trusting a fold change):
+
+```{r h2-raw, fig.height=5}
+plot_protein("B7H15_11550|B7H15_14670|B7H15_14675|B7H15_14515|B7H15_01460")
+```
+
+## H3: stp effects vs stk effects
+
+```{r h3}
+read_csv("../mval_medi/results/step07_shared_distinct/similarity_stats_mval.csv", show_col_types = FALSE) |>
+  transmute(layer, n, observed_r = round(r, 2), noise_only_r = round(r_noise_only, 2),
+            noise_corrected_r = round(r_true_corrected, 2), ci = sprintf("%.2f-%.2f", r_true_low, r_true_high))
+```
+
+Both mutants are compared with the **same** `anc` means, so noise alone correlates them
+(r ≈ 0.5). The noise-corrected r ≈ 0.37–0.38 is the shared part of the true effects.
+
+## Robustness (Step 11)
+
+```{r robust}
+read_csv("../mval_medi/results/step11_robustness/loso_hit_stability_mval.csv", show_col_types = FALSE) |>
+  filter(str_starts(contrast, "interaction")) |>
+  transmute(contrast, protein = coalesce(gene, locus_tag), diff = round(diff, 2),
+            leave_one_out = paste0(refits_still_hit, "/18"), in_shifted_block = !is.na(in_own_block))
+```
+
+```{r session}
+sessionInfo()
+```
