@@ -1,0 +1,5 @@
+protein_key,locus_tag,product,contrast,diff,FDR,statistic,estimate_type,imputed
+lcl_CP020619.1_prot_ARG46960.1_2577,B7H15_13295,nitrite reductase (NAD(P)H) small subunit,stp_vs_anc_at_SN,-2.442116256176483,7.359245073115663e-4,-11.973048453384488,observed,FALSE
+lcl_CP020619.1_prot_ARG44864.1_356,B7H15_01790,glycine cleavage system protein H,stp_vs_anc_at_SN,-2.8168296782205218,0.00144092333807407,-9.945174356940242,observed,FALSE
+lcl_CP020619.1_prot_ARG46620.1_2217,B7H15_11425,L-threonine dehydratase biosynthetic IlvA,stp_vs_anc_at_SN,-2.2208641248437964,0.00144092333807407,-12.035244908291434,observed,FALSE
+lcl_CP020619.1_prot_ARG45359.1_883,B7H15_04540,glycine cleavage system protein H,stp_vs_anc_at_SN,-2.559869436890141,0.00166608643804238,-9.900909356189883,observed,FALSE

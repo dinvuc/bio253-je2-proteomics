@@ -1,0 +1,2 @@
+protein_key,locus_tag,product,contrast,diff,FDR,statistic,estimate_type,imputed
+lcl_CP020619.1_prot_ARG46620.1_2217,B7H15_11425,L-threonine dehydratase biosynthetic IlvA,interaction_stp_vs_anc_at_TSB_vs_SN,2.357307855897023,0.03905851858453745,9.52166712408326,observed,FALSE

@@ -1,0 +1,222 @@
+---
+title: "Does the stp1 mutant behave like a kinase mutant?"
+subtitle: "Bio253 HS2026 · Topic C · group mval · final report behind the A0 poster"
+date: today
+---
+
+```{r setup}
+#| include: false
+# Paths are relative to reports/. The live numbers below need the local course data
+# (data/derived/, git-ignored); everything else is read from mval_medi/results/.
+source("../R/setup.R")
+library(knitr)
+res_dir <- "../mval_medi/results"
+rd <- \(...) readr::read_csv(file.path(res_dir, ...), show_col_types = FALSE)
+total <- readr::read_tsv("../data/derived/limma_treat_total_mval.tsv.gz", show_col_types = FALSE)
+```
+
+::: {.callout-note}
+## How to read this report
+Every number comes from a script in `scripts/` (Steps 1–12 of
+[our workflow](../mval_medi/project_outlines/PROJECT_WORKFLOW_mval.md)); each results folder
+has a `figure_guide_mval.md` that says what each figure compares. Fold changes are
+**log2, A − B**: `stp_vs_anc_at_TSB = −5.4` means **higher in anc**, lower in stp.
+:::
+
+# 1. Question and hypotheses
+
+Stk1 (PknB, kinase) and Stp1 (phosphatase) are encoded in one *stp1–stk1* transcription
+unit. The `stp` strain carries a transposon in *stp1* (NE1919, codon 189 of 247) upstream of
+*stk1*, so it may also lack Stk1 (a polar effect).
+
+- **H1** `stp` has reduced Stp1 **and** Stk1; `stk` has reduced Stk1.
+- **H2** Some protein responses to *P. aeruginosa* spent medium (PASN) differ from the parent.
+- **H3** Part of the `stp` pattern resembles `stk` (shared reduced-kinase component).
+
+# 2. Design and data
+
+*S. aureus* JE2 (`anc`), NE217 *stk1*::Tn (`stk`), NE1919 *stp1*::Tn (`stp`); TSB or
+~15 h in 70 % TSB + 30 % cell-free, sterile-filtered PAO1 spent medium (`SN`, "PASN": only
+secreted molecules plus partial nutrient depletion; never living *P. aeruginosa*).
+n = 3 per group. Primary analysis: 18 samples (TSB, SN); all 27 (incl. SNpulse) inform the
+variance. Total proteome: `r n_distinct(total$protein_key)` JE2 proteins; phosphoproteome
+searched twice (STY, STYH).
+
+# 3. Methods
+
+| step | what | rule |
+|---|---|---|
+| model | limma, `~ 0 + group` (9 means), every contrast written as A − B | no reference level can flip a sign |
+| hit | `treat()` (McCarthy & Smyth 2009) H0: \|log2FC\| ≤ 1; **BH-FDR < 0.05** within contrast | fixed 12 Nov, before results; no post-hoc fold-change filter |
+| eligibility | tested only with ≥ 2 of 3 observed values in every group of the contrast | missing = not detected, never 0; no imputation |
+| interaction | (mutant TSB − SN) − (anc TSB − SN) | > 0: SN response lower in the mutant |
+| H3 similarity | correlation of `stp` and `stk` effects, corrected for the shared `anc` noise | method of moments, bootstrap CI |
+| phospho | ≥ 2 of 3 per group, median per-sample localisation ≥ 0.75 (Olsen et al. 2006), S/T/Y; own BH family | site − protein in the same contrast, descriptive |
+| pathways | rank test + limma `cameraPR` (Wu & Smyth 2012); robust = both FDR < 0.05 | background = proteins tested in the contrast |
+| robustness | leave-one-sample-out, alternative thresholds, genome-position scan | sensitivity only |
+
+Software: R, limma (Ritchie et al. 2015), tidyverse; versions in section 10.
+
+**Hand check of one number** (workflow Step 12): the Stk1 difference `stp_vs_anc_at_TSB`
+recomputed from the per-sample values, next to the model estimate.
+
+```{r hand-check}
+ab <- read_abundances("total") |> keep_je2() |> filter(locus_tag == "B7H15_06355", group %in% c("stp_TSB", "anc_TSB"))
+by_hand <- ab |> group_by(group) |> summarise(mean = mean(normalized_abundance, na.rm = TRUE), n = sum(!is.na(normalized_abundance)))
+model <- total |> filter(locus_tag == "B7H15_06355", contrast == "stp_vs_anc_at_TSB")
+kable(by_hand, digits = 2)
+stopifnot(abs((by_hand$mean[by_hand$group == "stp_TSB"] - by_hand$mean[by_hand$group == "anc_TSB"]) - model$diff) < 1e-8)
+explain_contrast("stp_vs_anc_at_TSB")
+```
+
+Mean of `stp_TSB` minus mean of `anc_TSB` = **`r round(model$diff, 2)`** = the model
+estimate (SE `r round(model$std.error, 2)`, FDR `r signif(model$FDR, 2)`): Stk1 is
+**higher in anc**, about `r round(2^-model$diff)`-fold.
+
+# 4. H1: what do the mutants lack?
+
+```{r fig1, echo=FALSE, out.width="100%"}
+include_graphics(file.path(res_dir, "step12_poster/fig1_h1_enzymes_mval.png"))
+```
+
+```{r h1-table, echo=FALSE}
+kable(rd("step03_validation/evidence_table_mval.csv"),
+      caption = "Step 3 evidence table (detections TSB/SNpulse/SN of 3 each; supplied lm_impute estimates are presence/absence evidence where lod_imputed).")
+```
+
+- **Stk1:** not detected in `stk` in TSB or SN (0/6). In `stp` it is ~43-fold lower in TSB
+  (estimate above) and resting on 1–2 peptides (29–32 in `anc`), and not detected in SN.
+  The site T164 of Stk1 falls with the protein (Step 9).
+- **Stp1:** 0–2 peptides in `stp` vs 9–15 in `anc`. The abundance values that remain are
+  erratic, so the **size** of the loss cannot be estimated. Stp1 is unchanged in `stk`.
+- **Insertion control:** ErmB (transposon marker) in 18/18 mutant samples, 0/9 `anc`
+  (Step 4b, separate FragPipe search incl. transposon proteins).
+- Neighbours of *stp1/stk1* are unchanged (Step 4). The pattern fits a polar insertion;
+  protein data cannot exclude reduced stability, regulation or a secondary mutation.
+
+# 5. H2: altered responses to PASN
+
+```{r fig2, echo=FALSE, out.width="100%"}
+include_graphics(file.path(res_dir, "step12_poster/fig2_h2_responses_mval.png"))
+```
+
+```{r h2-table, echo=FALSE}
+stab <- rd("step11_robustness/loso_hit_stability_mval.csv")
+stab |> filter(str_starts(contrast, "interaction")) |>
+  transmute(contrast, protein = coalesce(gene, locus_tag), diff = round(diff, 2), FDR = signif(FDR, 2),
+            `in words` = if_else(diff > 0, "SN response lower in first strain", "SN response higher in first strain"),
+            `leave-one-out` = paste0(refits_still_hit, "/18"),
+            `in shifted genomic block` = !is.na(in_own_block)) |>
+  kable(caption = "All formal interaction hits (Step 6/7) with their Step 11 stability. First strain = the mutant named first in the contrast.")
+```
+
+Both mutants keep most of the PASN response (r = 0.85 `stk`, 0.86 `stp` against `anc`).
+Only 5 of 1,882 (`stk`) and 1 of 1,931 (`stp`) tested proteins change their response.
+Raw values (Step 6) show that argF and B7H15_14515 are mainly a TSB baseline difference in
+`stk`, arcA and kdpD differ in both media, and only rbsD is mainly an SN difference. The
+single `stp` hit, ilvA, is fragile (9/18 refits) and probably shared with `stk` (one `stk_SN`
+replicate only). A lower threshold (1.5-fold) triples the lists but keeps the shape:
+`stk` 15 vs `stp` 5 (Step 11).
+
+# 6. H3: does stp look like stk?
+
+```{r fig3, echo=FALSE, out.width="100%"}
+include_graphics(file.path(res_dir, "step12_poster/fig3_h3_shared_distinct_mval.png"))
+```
+
+```{r h3-table, echo=FALSE}
+rd("step07_shared_distinct/similarity_stats_mval.csv") |>
+  transmute(layer, proteins = n, `observed r` = round(r, 2), `noise-only r` = round(r_noise_only, 2),
+            `noise-corrected r` = round(r_true_corrected, 2),
+            `95% CI` = sprintf("%.2f-%.2f", r_true_low, r_true_high),
+            `split-reference r (lower bound)` = sprintf("%.2f-%.2f", r_split_reference_min, r_split_reference_max)) |>
+  kable(caption = "Similarity of the stp and stk effects (Step 7).")
+```
+
+Both axes subtract the same `anc` means, so noise alone gives r ≈ 0.50. After removing that
+part, the true effects correlate moderately (0.37–0.38): clearly above 0, far below 1.
+Only 3 proteins are hits in both mutants (same direction). 20 (TSB) + 4 (response) proteins
+differ directly; 6 of the 20 lie in genomic blocks that shift as a unit (section 8). At
+pathway level `stp` shares the peptidoglycan-synthesis and cytolysis shifts of `stk`, not the
+SigB/*mazEF* or ATP-synthase shifts (Step 10).
+
+# 7. Phosphorylation (supporting layer)
+
+```{r phospho, echo=FALSE}
+rd("step08_phospho_coverage/phospho_hit_counts_mval.csv") |> filter(search == "STY") |>
+  select(contrast, supported_sites, our_hits_up, our_hits_down, supplied_screen_hits_all_sites) |>
+  kable(caption = "Step 8 (STY search): sites usable per contrast and site hits (treat lfc = 1, our BH-FDR < 0.05). Supplied screen for comparison only.")
+```
+
+Only 91–184 of 3,774 sites per contrast are measured often and localised well enough; none
+responds differently to PASN in a mutant. Of 62 site hits (mostly TSB vs SN), 17 follow
+their protein, 40 change more than their protein (Step 9; the adjusted effect is descriptive,
+assuming independent layers). Genotype examples: deoB T85 lower in `stk` (TSB, protein
+unchanged), pyk T537 higher in `stp`, Stk1 T164 lower in `stp` with the protein.
+
+```{r fig-phospho, echo=FALSE, out.width="100%"}
+include_graphics(file.path(res_dir, "step09_site_vs_protein/fig_paired_layers_mval.png"))
+```
+
+# 8. Pathway level and genome position
+
+```{r fig4, echo=FALSE, out.width="100%"}
+include_graphics(file.path(res_dir, "step12_poster/fig4_pathways_genome_mval.png"))
+```
+
+```{r blocks, echo=FALSE}
+rd("step11_robustness/genome_top_windows_mval.csv") |>
+  mutate(p_familywise = if_else(p_familywise == 0, "< 0.001", as.character(round(p_familywise, 3)))) |>
+  kable(caption = "Most extreme 10-protein window per contrast (Step 11; threshold = genome-wide 5 %, 1000 permutations).")
+```
+
+Many functional terms shift in both mutants, `stp` as many as `stk` in TSB and SN; `stk` has
+more only in the response. "Stk1 broadly involved" is therefore **not** specific to the kinase
+mutant. Two genomic blocks change as a unit:
+
+- **`stk`, B7H15_11470–11590** (SigB operon, *mazEF*, *alr1*, *acpS*, *kdpCBA/DE*, *murF*,
+  *ddl*): +1.5 log2, the top window in the genome. Unrelated neighbours rising ~2-fold
+  together fit a copy-number change in this strain; regional regulation is the alternative.
+- **`stp`, B7H15_10910–11150, a prophage:** −2.1 log2 in TSB; it also drives the most
+  extreme windows of both interaction contrasts.
+
+# 9. Answers, limitations and follow-up
+
+| | answer | status (Step 11) |
+|---|---|---|
+| **H1** | `stp` lacks most Stk1 (~43-fold) as well as Stp1; `stk` lacks Stk1 | **supported**; polar mechanism consistent, not proven |
+| **H2** | Few altered PASN responses (5 `stk`, 1 `stp`); the response is largely intact | **supported, small**; 2 `stk` hits fully robust, `stp` hit fragile |
+| **H3** | A moderate shared component (r ≈ 0.37) plus clear differences | **partly supported (tentative)** |
+
+**Limitations.** n = 3 (non-significance is weak evidence of no effect); no clean deletions
+or complemented strains; the `stp` strain is a phosphatase mutant with strongly reduced kinase,
+not a phosphatase-only mutant; phosphosite coverage is sparse; two genomic blocks may reflect
+strain differences; PASN mixes secreted molecules and nutrient depletion; total-proteome run
+order was blocked by group (drift cannot be separated from group).
+
+**Follow-up proposal (future experiments).** (1) Sequence the three strains or run qPCR on
+the *stk* block (B7H15_11465–11700) and the prophage region. (2) Measure *stp1*/*stk1*
+transcripts in `stp` to test polarity. (3) Compare clean Δ*stp1* (keeping Stk1), Δ*stk1* and
+a verified double deletion with complemented strains under PASN.
+
+# 10. References, software and AI use
+
+- Olsen JV et al. (2006) *Cell* 127:635–48. [doi:10.1016/j.cell.2006.09.026](https://doi.org/10.1016/j.cell.2006.09.026)
+- McCarthy DJ, Smyth GK (2009) *Bioinformatics* 25:765–71. [doi:10.1093/bioinformatics/btp053](https://doi.org/10.1093/bioinformatics/btp053)
+- Wu D, Smyth GK (2012) *Nucleic Acids Res* 40:e133. [doi:10.1093/nar/gks461](https://doi.org/10.1093/nar/gks461)
+- Ritchie ME et al. (2015) *Nucleic Acids Res* 43:e47. [doi:10.1093/nar/gkv007](https://doi.org/10.1093/nar/gkv007)
+- Stk1/Stp1 background (checked 5 Nov, see [evidence review](../mval_medi/docs/stk_stp_rescue_evidence_mval.md)):
+  Sun et al. 2012 *PNAS* [doi:10.1073/pnas.1205952109](https://doi.org/10.1073/pnas.1205952109);
+  Burnside et al. 2010 *PLOS ONE* [doi:10.1371/journal.pone.0011071](https://doi.org/10.1371/journal.pone.0011071);
+  Beltramini et al. 2009 *Infect Immun* [doi:10.1128/IAI.01499-08](https://doi.org/10.1128/IAI.01499-08);
+  Huemer et al. 2023 *Sci Signal* [doi:10.1126/scisignal.abj8194](https://doi.org/10.1126/scisignal.abj8194).
+- Genome: *S. aureus* JE2, GenBank CP020619.1. Protein names: `read_protein_metadata()` (UniProt orthologs, `ortholog_quality == "good"`).
+
+**AI use.** Claude Code (Anthropic) wrote and ran the analysis scripts under the group's
+rules, proposed the Step 8–11 rules (marked "group to confirm" in the figure guides), found
+and fixed errors (documented in the lab notebook), and drafted this report. The group checks
+every number and claim before submission.
+
+```{r session}
+sessionInfo()
+```

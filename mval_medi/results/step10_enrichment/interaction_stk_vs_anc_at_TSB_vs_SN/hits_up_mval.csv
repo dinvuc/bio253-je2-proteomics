@@ -1,0 +1,3 @@
+protein_key,locus_tag,product,contrast,diff,FDR,statistic,estimate_type,imputed
+lcl_CP020619.1_prot_ARG46640.1_2237,B7H15_11550,sensor histidine kinase,interaction_stk_vs_anc_at_TSB_vs_SN,5.126315623383311,9.502671192764524e-11,28.731102739286808,observed,FALSE
+lcl_CP020619.1_prot_ARG47184.1_2821,B7H15_14515,betaine-aldehyde dehydrogenase,interaction_stk_vs_anc_at_TSB_vs_SN,2.0651032003508423,0.00228482334141946,11.628263032899998,observed,FALSE
