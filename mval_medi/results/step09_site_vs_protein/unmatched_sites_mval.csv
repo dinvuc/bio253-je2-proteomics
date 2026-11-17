@@ -1,0 +1,5 @@
+search,site_id,locus_tag,gene,residue,position,contrast,matched,tested_protein,min_obs_protein
+STY,lcl_CP020619.1_prot_ARG45703.1_1243_T164,B7H15_06355,NA,T,164,TSB_vs_SN_at_stp,TRUE,FALSE,0
+STY,lcl_CP020619.1_prot_ARG45703.1_1243_T166,B7H15_06355,NA,T,166,TSB_vs_SN_at_stp,TRUE,FALSE,0
+STY,lcl_CP020619.1_prot_ARG45703.1_1243_T164,B7H15_06355,NA,T,164,interaction_stp_vs_anc_at_TSB_vs_SN,TRUE,FALSE,0
+STY,lcl_CP020619.1_prot_ARG45703.1_1243_T166,B7H15_06355,NA,T,166,interaction_stp_vs_anc_at_TSB_vs_SN,TRUE,FALSE,0

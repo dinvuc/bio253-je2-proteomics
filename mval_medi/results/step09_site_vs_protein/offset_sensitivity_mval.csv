@@ -1,0 +1,8 @@
+contrast,offset,n_residual_main,n_residual_after_offset,lost,gained
+stk_vs_anc_at_TSB,-0.07620149596269071,1,1,,
+stp_vs_anc_at_TSB,0.38461053493135466,1,1,,
+stp_vs_stk_at_TSB,0.5177340504910823,2,2,,
+TSB_vs_SN_at_anc,-0.6487807293256056,6,7,pflB S742,B7H15_04940 S264; Y845 T22
+TSB_vs_SN_at_stk,-0.43495977959933363,16,15,fda S22; rplY S67; qoxB T552,Y2093 S51; B7H15_04940 S264
+TSB_vs_SN_at_stp,-0.17480424742366896,13,13,fda S22,trxA S71
+interaction_stp_vs_stk_at_TSB_vs_SN,0.5782534282121681,1,1,,

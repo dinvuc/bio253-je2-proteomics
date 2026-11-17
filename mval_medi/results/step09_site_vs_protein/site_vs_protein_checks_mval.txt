@@ -1,0 +1,21 @@
+Step 9 checks, 2026-11-16
+[NOTE] primary search from Step 8: STY; sensitivity: STYH
+[PASS] total proteome: protein_key unique (exact match target)
+[NOTE] locus tags with > 1 total-proteome entry (not used for matching): B7H15_13880 -> lcl_CP020619.1_prot_2694 / pseudoOrframeshift117_rev_frm2
+[PASS] STY : site table has only the 9 primary contrasts
+[PASS] STY : every site matched to a total protein by exact protein_key
+[PASS] STY : locus_tag identical in both layers for every matched site
+[PASS] STY : one row per site x contrast after the join
+[PASS] STY : no adjusted value uses an untested (sparse) protein estimate
+[PASS] STYH : site table has only the 9 primary contrasts
+[PASS] STYH : every site matched to a total protein by exact protein_key
+[PASS] STYH : locus_tag identical in both layers for every matched site
+[PASS] STYH : one row per site x contrast after the join
+[PASS] STYH : no adjusted value uses an untested (sparse) protein estimate
+[PASS] phospho and total layers use the same 27 sample names (join by name possible)
+[NOTE] QC flag: 3 of 62 site hits have a within-group range > 3 log2 in a group of their contrast: pgcA S193, B7H15_04940 T269, Y845 T52
+[PASS] category counts add up to the number of site hits (primary search)
+[NOTE] offset sensitivity: residual site hits 40 (main) -> 40 after removing the per-contrast median signed offset
+[NOTE] STY site hits: 62; same category in STYH: 46; different: 14; site not supported in STYH: 2
+[NOTE] by hand: B7H15_04940 T269 in TSB_vs_SN_at_stp: site stp_TSB - stp_SN = 10.796, protein = 1.306, adjusted = 9.490 (model: 9.490)
+[PASS] hand-computed adjusted effect equals the model value

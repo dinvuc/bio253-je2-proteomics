@@ -1,0 +1,19 @@
+search,contrast,supported_sites,our_hits_up,our_hits_down,supplied_screen_hits_all_sites,supplied_screen_hits_supported,meaning
+STY,stk_vs_anc_at_TSB,118,0,1,40,13,"stk_vs_anc_at_TSB: diff = log2(stk) - log2(anc), within TSB. diff > 0 means HIGHER in stk; diff < 0 means HIGHER in anc."
+STY,stp_vs_anc_at_TSB,155,1,2,39,10,"stp_vs_anc_at_TSB: diff = log2(stp) - log2(anc), within TSB. diff > 0 means HIGHER in stp; diff < 0 means HIGHER in anc."
+STY,stp_vs_stk_at_TSB,114,2,0,64,18,"stp_vs_stk_at_TSB: diff = log2(stp) - log2(stk), within TSB. diff > 0 means HIGHER in stp; diff < 0 means HIGHER in stk."
+STY,TSB_vs_SN_at_anc,184,2,8,170,72,"TSB_vs_SN_at_anc: diff = log2(TSB) - log2(SN), within anc. diff > 0 means HIGHER in TSB; diff < 0 means HIGHER in SN."
+STY,TSB_vs_SN_at_stk,124,11,15,151,54,"TSB_vs_SN_at_stk: diff = log2(TSB) - log2(SN), within stk. diff > 0 means HIGHER in TSB; diff < 0 means HIGHER in SN."
+STY,TSB_vs_SN_at_stp,148,11,8,147,50,"TSB_vs_SN_at_stp: diff = log2(TSB) - log2(SN), within stp. diff > 0 means HIGHER in TSB; diff < 0 means HIGHER in SN."
+STY,interaction_stk_vs_anc_at_TSB_vs_SN,100,0,0,16,3,interaction_stk_vs_anc_at_TSB_vs_SN: difference of differences = (stk - anc in TSB) - (stk - anc in SN). Positive: the stk-vs-anc difference is larger in TSB than in SN.
+STY,interaction_stp_vs_anc_at_TSB_vs_SN,125,0,0,33,1,interaction_stp_vs_anc_at_TSB_vs_SN: difference of differences = (stp - anc in TSB) - (stp - anc in SN). Positive: the stp-vs-anc difference is larger in TSB than in SN.
+STY,interaction_stp_vs_stk_at_TSB_vs_SN,91,0,1,51,6,interaction_stp_vs_stk_at_TSB_vs_SN: difference of differences = (stp - stk in TSB) - (stp - stk in SN). Positive: the stp-vs-stk difference is larger in TSB than in SN.
+STYH,stk_vs_anc_at_TSB,118,0,1,60,8,"stk_vs_anc_at_TSB: diff = log2(stk) - log2(anc), within TSB. diff > 0 means HIGHER in stk; diff < 0 means HIGHER in anc."
+STYH,stp_vs_anc_at_TSB,152,1,3,72,7,"stp_vs_anc_at_TSB: diff = log2(stp) - log2(anc), within TSB. diff > 0 means HIGHER in stp; diff < 0 means HIGHER in anc."
+STYH,stp_vs_stk_at_TSB,116,0,0,106,9,"stp_vs_stk_at_TSB: diff = log2(stp) - log2(stk), within TSB. diff > 0 means HIGHER in stp; diff < 0 means HIGHER in stk."
+STYH,TSB_vs_SN_at_anc,186,2,8,111,33,"TSB_vs_SN_at_anc: diff = log2(TSB) - log2(SN), within anc. diff > 0 means HIGHER in TSB; diff < 0 means HIGHER in SN."
+STYH,TSB_vs_SN_at_stk,125,9,11,123,37,"TSB_vs_SN_at_stk: diff = log2(TSB) - log2(SN), within stk. diff > 0 means HIGHER in TSB; diff < 0 means HIGHER in SN."
+STYH,TSB_vs_SN_at_stp,141,11,9,170,33,"TSB_vs_SN_at_stp: diff = log2(TSB) - log2(SN), within stp. diff > 0 means HIGHER in TSB; diff < 0 means HIGHER in SN."
+STYH,interaction_stk_vs_anc_at_TSB_vs_SN,100,0,0,17,2,interaction_stk_vs_anc_at_TSB_vs_SN: difference of differences = (stk - anc in TSB) - (stk - anc in SN). Positive: the stk-vs-anc difference is larger in TSB than in SN.
+STYH,interaction_stp_vs_anc_at_TSB_vs_SN,119,0,0,43,1,interaction_stp_vs_anc_at_TSB_vs_SN: difference of differences = (stp - anc in TSB) - (stp - anc in SN). Positive: the stp-vs-anc difference is larger in TSB than in SN.
+STYH,interaction_stp_vs_stk_at_TSB_vs_SN,93,0,1,56,3,interaction_stp_vs_stk_at_TSB_vs_SN: difference of differences = (stp - stk in TSB) - (stp - stk in SN). Positive: the stp-vs-stk difference is larger in TSB than in SN.
