@@ -71,6 +71,10 @@ practically a tie.** STYH is the sensitivity check; both give nearly the same an
   biology (missing not at random). It also matters for Step 9 (layer offset, which is
   largest in `anc` and smallest in `stp`, matching this pattern).
   *(Corrected 16 Nov: the first version said "SN ~2× TSB" for all strains.)*
+- **Conclusion:** phospho detection depth differs strongly between samples and media,
+  much more than in the total proteome (Step 2). Presence/absence of a site between TSB
+  and SN is therefore not trustworthy on its own, and site effects must be compared with
+  care across media.
 
 ### `fig_localisation_mval.png` + `residue_counts_mval.csv`
 - **Compares:** for each site detected in ≥ 1 primary sample, the median per-sample
@@ -87,6 +91,10 @@ practically a tie.** STYH is the sensitivity check; both give nearly the same an
 - **Histidine (STYH):** 408 pH sites; 82 pass our localisation rule (170 by best score),
   30 are eligible in some primary contrast, **8 are eligible and localised**. Listed in
   `histidine_sites_mval.csv`, exploratory only.
+- **Conclusion:** many sites are placed on a residue only in a minority of samples.
+  Using the per-sample median instead of the best score removes about 40 % of the
+  "localised" sites and keeps only sites whose position is reproducible. Histidine
+  phosphorylation is too sparse to analyse (8 usable sites).
 
 ### `coverage_per_contrast_mval.csv` + `fig_coverage_funnel_mval.png`
 - **Compares:** per primary contrast, how many JE2 sites exist (grey), are eligible
@@ -94,6 +102,9 @@ practically a tie.** STYH is the sensitivity check; both give nearly the same an
 - **Result:** of 3,774 STY sites only **119–296 are eligible and 91–184 supported per
   contrast** (2–5 %). Interactions need 4 groups and have the fewest (91–125). STYH: 93–186.
 - **Meaning:** the phospho layer can only speak about a small, abundant subset of sites.
+- **Conclusion:** coverage is the limiting factor of the phosphoproteome: 2–5 % of the
+  sites per contrast are usable, and the interaction contrasts (H2) are the worst covered.
+  Absence of a phospho change is therefore weak evidence.
 
 ### `phospho_hit_counts_mval.csv`: our site hits vs the supplied screen
 Site hit = treat(lfc = 1) BH-FDR < 0.05 over the supported sites. "up" = higher in the
@@ -127,6 +138,8 @@ detections per primary group, and the contrasts in which the site is a hit.
 - **STY vs STYH** (`fig_sty_vs_styh_mval.png`): 1,068 site × contrast pairs supported in
   both searches; estimates r = 0.96, points on the identity line. Hits: 51 in both, 9 STY
   only, 2 STYH only. The choice of search hardly matters.
+  - *Figure conclusion:* the points lie on the identity line in every panel, so the
+    primary-search choice (a near tie) does not drive any result.
 - **Reinjected samples** (`stk_pulseSN_1/2`, not in the primary contrasts but in the
   pooled variance): refit without them → hits 62 → 78 (none lost, 16 new). The main fit
   is the **more conservative** one.
@@ -139,6 +152,12 @@ detections per primary group, and the contrasts in which the site is a hit.
 - Things visible there: the Stk1 site (`B7H15_06355` T164) is absent in `stk` and
   ~4 log2 lower in `stp` (compare Step 3: the Stk1 protein is lost in `stk` and nearly
   lost in `stp`); deoB T85 is low in `stk` TSB only (2/3, both near 16).
+- **Key points:** most of the strongest site hits are TSB-vs-SN changes in metabolic
+  enzymes (e.g. fda, pgi, pflB, glyA). The normalised values and the raw FragPipe intensities
+  show the same patterns.
+- **Conclusion:** the site hits are visible in the per-sample values and do not come from
+  the normalisation. The Stk1 site confirms H1 at the phospho level. deoB T85 rests on two
+  low `stk_TSB` values and later fails the refinement checks (Step 9c).
 
 ## Decision for Step 9
 Coverage is **sufficient for a small, descriptive protein-matching step** on the 236

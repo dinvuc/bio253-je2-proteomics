@@ -87,3 +87,54 @@ protein (abundance-driven). A bar that reaches clearly beyond it changes beyond 
 `stp_vs_anc_at_TSB`: the rectangle reaches −5.4 and the T164 bar (−4.2, `**`, refined) ends
 inside it, so the site loss follows the protein loss. The two pink `NotLoc` bars pointing up
 come from the sporadic `HIQDSVPNVTtDVR` peptide (Step 3) and are not hits.
+
+## Per figure: key points and conclusion
+
+Signs: "PASN response" = TSB − SN (> 0 = lower in SN, < 0 = higher in SN); genotype panels =
+first strain minus second, in TSB.
+
+### `fig_n_to_c_refined_B7H15_11735_glyA_mval.png`: glyA (serine hydroxymethyltransferase)
+- **Description:** glyA with its phosphosites in the 6 standard contrasts.
+- **Key points:** Y51 in the `stk` PASN response: site +4.6 while the protein changes only
+  +0.7 (both lower in SN). Refined hit (`**`). No site hit in the genotype panels.
+- **Conclusion:** in `stk`, Y51 phosphorylation drops in PASN far more than the glyA
+  protein does: a robust usage change of a one-carbon/amino-acid metabolism enzyme in the
+  medium response. It is not a strain difference.
+
+### `fig_n_to_c_refined_B7H15_10065_traP_mval.png`: traP (signal transduction protein TRAP)
+- **Key points:** S150 in the `anc` PASN response: site −2.7 (higher in SN) while the
+  protein is flat (+0.2). Refined. The same site in `stp` (−2.6 vs −0.2) is a hit but not
+  refined (faded asterisk).
+- **Conclusion:** PASN increases S150 phosphorylation of traP without changing the
+  protein: a usage change in the parent, with the same direction in `stp`. It is not a
+  strain difference.
+
+### `fig_n_to_c_refined_B7H15_04690_Y845_mval.png`: B7H15_04690 (CsbD family protein)
+- **Key points:** 10 site hits, all in the PASN responses (site lower in SN). In `stk`, T52, T17
+  and T22 (+3.2 to +4.4) follow the protein (+3.8): refined, abundance-driven. In `stp`, T22
+  (+3.8 vs protein +2.8) reaches beyond the protein (refined); T52/T17/S5 also exceed the
+  protein in `stp` but are not refined.
+- **Conclusion:** most of this protein's phospho signal simply follows its strong drop in
+  PASN. Only in `stp` is there a robust extra drop at T22 beyond the protein.
+
+### `fig_n_to_c_refined_B7H15_06355_nogene_mval.png`: Stk1 (serine/threonine kinase)
+- **Key points:** `stp_vs_anc_at_TSB`: protein −5.4 (rectangle), T164 −4.2 and T166 −4.1
+  (`**`, refined), both inside the rectangle. No Stk1 site is testable in `stk` (the protein
+  is absent), and in `TSB_vs_SN_at_stk` and `stp_vs_stk` there is no estimate at all. The
+  pink `NotLoc` bars pointing up are the sporadic `HIQ…` peptide, not hits.
+- **Conclusion (H1):** the only robust strain difference in the phosphoproteome is the loss
+  of Stk1 sites in `stp`, and it follows the loss of the Stk1 protein itself. This is
+  consistent with the polar effect, and it gives no evidence that Stp1 loss changes Stk1
+  phosphorylation.
+
+### `fig_paired_layers_mval.png` (copied from Step 9)
+- **Description / how to read:** see the [Step 9 guide](../figure_guide_mval.md#fig_paired_layers_mvalpng-fig-4c-per-sample-values-of-both-layers).
+  Top row = site, bottom row = its protein, per sample.
+- **Conclusion:** it is the selection basis for this folder. Of its 6 proteins, glyA, traP,
+  B7H15_04690 and Stk1 survive the refinement; deoB and pgcA (shown there) do not.
+
+## Folder conclusion
+Of 62 phosphosite hits, 20 are robust. The robust "usage" changes are all PASN responses of
+metabolic, stress or signalling proteins. The only robust strain difference is the Stk1
+site loss in `stp`, explained by the Stk1 protein loss. The phosphoproteome therefore
+supports H1 and adds nothing to H2/H3.
