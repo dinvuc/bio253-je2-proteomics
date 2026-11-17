@@ -1,0 +1,7 @@
+contrast,first_tag,last_tag,start,window_mean,threshold,p_familywise
+interaction_stk_vs_anc_at_TSB_vs_SN,B7H15_11010,B7H15_11115,2112715,-1.181,1.044,0.011
+interaction_stp_vs_anc_at_TSB_vs_SN,B7H15_10925,B7H15_11110,2103129,-1.328,0.93,0
+stk_vs_anc_at_SN,B7H15_01460,B7H15_01545,315665,1.093,1.054,0.039
+stk_vs_anc_at_TSB,B7H15_11500,B7H15_11550,2189711,1.51,0.901,0
+stp_vs_anc_at_SN,B7H15_07835,B7H15_08155,1555995,-1.096,0.953,0.006
+stp_vs_anc_at_TSB,B7H15_10925,B7H15_11110,2103129,-2.079,1.06,0

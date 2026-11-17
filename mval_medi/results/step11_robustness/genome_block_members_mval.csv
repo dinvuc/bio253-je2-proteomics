@@ -1,0 +1,320 @@
+locus_tag,start,strand,gene,product,block_contrast,block,protein_key,stk_vs_anc_at_TSB,stk_vs_anc_at_SN,stp_vs_anc_at_TSB,stp_vs_anc_at_SN
+B7H15_11010,2112715,-,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46547.1_2134,-0.4,0.3,-1.57,0.13
+B7H15_11015,2113098,-,NA,DUF1381 domain-containing protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,NA,NA,NA,NA,NA
+B7H15_11020,2113301,-,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,NA,NA,NA,NA,NA
+B7H15_11025,2113583,-,NA,dUTP pyrophosphatase,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46550.1_2137,NA,0.92,NA,-0.46
+B7H15_11030,2114109,-,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46551.1_2138,-0.08,0.96,-2.06,-0.81
+B7H15_11035,2114341,-,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46552.1_2139,NA,NA,NA,NA
+B7H15_11040,2114570,-,NA,acetyltransferase,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46553.1_2140,-0.33,0.49,-2.49,-0.91
+B7H15_11045,2114950,-,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,NA,NA,NA,NA,NA
+B7H15_11050,2115196,-,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46555.1_2142,NA,NA,NA,NA
+B7H15_11055,2115577,-,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46556.1_2143,-1.33,1.05,NA,NA
+B7H15_11060,2115990,-,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,NA,NA,NA,NA,NA
+B7H15_11065,2116215,-,NA,DNA replication protein DnaD,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46558.1_2145,NA,NA,NA,NA
+B7H15_11070,2117138,-,NA,single-stranded DNA-binding protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46559.1_2146,NA,NA,NA,NA
+B7H15_11075,2117609,-,NA,MBL fold metallo-hydrolase,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46560.1_2147,NA,NA,NA,NA
+B7H15_11080,2118307,-,NA,recombinase,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46561.1_2148,-0.03,0.55,-1.8,-0.5
+B7H15_11085,2119229,-,NA,ATPase,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46562.1_2149,-0.3,0.45,-2.36,-0.82
+B7H15_11090,2121181,-,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46563.1_2150,-0.55,0.5,NA,-1.37
+B7H15_11095,2121453,-,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46564.1_2151,-0.75,0.28,NA,NA
+B7H15_11100,2121753,-,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46565.1_2152,NA,NA,NA,NA
+B7H15_11105,2122108,-,NA,DUF1270 domain-containing protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,NA,NA,NA,NA,NA
+B7H15_11110,2122266,-,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46567.1_2154,-1.17,1.07,-2.74,-0.93
+B7H15_11115,2122645,+,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46568.1_2155,-1.63,-0.41,-0.52,-0.37
+B7H15_11120,2123064,-,NA,oxidoreductase,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46569.1_2156,-0.35,0.02,-1.78,-0.85
+B7H15_11125,2123867,+,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46570.1_2157,NA,NA,0.1,NA
+B7H15_11130,2124185,-,NA,hypothetical protein,interaction_stk_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG46571.1_2158,0.21,0.42,NA,-0.57
+B7H15_01055,221558,-,ptsG,PTS glucose EIICBA component,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44726.1_209,-0.17,0.29,0.08,0.34
+B7H15_01060,224204,+,NA,outer surface protein,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG47308.1_210,-0.17,NA,0.14,NA
+B7H15_01065,225244,+,murQ,N-acetylmuramic acid 6-phosphate etherase,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44727.1_211,-0.05,0.97,0.1,NA
+B7H15_01070,226152,+,PTXBC,permease,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44728.1_212,-1,-0.09,-0.55,-1.27
+B7H15_01075,227609,+,NA,MurR/RpiR family transcriptional regulator,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44729.1_213,-1.73,NA,-1.17,NA
+B7H15_01080,228678,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,1,NA,NA,NA,NA,NA
+B7H15_01085,229172,+,NA,type-1 restriction enzyme R protein,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44731.1_215,0.09,0.2,0.35,0.36
+B7H15_01090,232166,+,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44732.1_216,0.93,NA,1.34,-3.38
+B7H15_01095,233010,+,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44733.1_217,-0.06,-0.24,0.04,-0.14
+B7H15_01100,233920,+,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44734.1_218,-0.82,NA,-0.52,-1.55
+B7H15_01105,235297,-,NA,ABC transporter ATP-binding protein,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44735.1_219,-0.21,-0.59,0.62,0.26
+B7H15_01110,236846,+,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44736.1_220,NA,NA,NA,NA
+B7H15_01115,238330,+,NA,peptide ABC transporter permease,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44737.1_221,NA,NA,NA,NA
+B7H15_01120,239510,+,NA,peptide ABC transporter substrate-binding protein,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44738.1_222,-0.12,-0.46,-0.19,0.12
+B7H15_01125,241323,+,NA,gamma-glutamyltransferase,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44739.1_223,-1.49,NA,0.11,-0.73
+B7H15_01130,243627,-,Y172,tandem-type lipoprotein,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44740.1_224,-0.71,NA,-0.08,-2.41
+B7H15_01135,244590,-,azoR,FMN-dependent NADH-azoreductase,interaction_stp_vs_anc_at_TSB_vs_SN,1,lcl_CP020619.1_prot_ARG44741.1_225,-1.48,-1.35,0.19,0.21
+B7H15_10920,2098355,-,NA,phage tail tape measure protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46529.1_2116,1.65,1.51,1.27,1.24
+B7H15_10925,2103129,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46530.1_2117,-0.31,-0.02,-2.73,-1.58
+B7H15_10930,2103529,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46531.1_2118,NA,1.14,NA,-0.2
+B7H15_10935,2103795,-,NA,phage tail protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46532.1_2119,0.19,0.94,-2.69,-0.48
+B7H15_10940,2104443,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_10945,2104844,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_10950,2105245,-,NA,phage head-tail adapter protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46535.1_2122,NA,NA,NA,NA
+B7H15_10955,2105591,-,NA,phage head-tail adapter protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_10960,2105865,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46537.1_2124,NA,0.23,NA,-0.31
+B7H15_10965,2106169,-,NA,phage major capsid protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46538.1_2125,-0.13,0.59,-2.23,-1.04
+B7H15_10970,2107338,-,NA,peptidase,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46539.1_2126,0.73,-0.14,-0.12,-0.58
+B7H15_10975,2108059,-,NA,phage portal protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46540.1_2127,0.28,0.02,NA,-3.06
+B7H15_10980,2109262,-,NA,terminase,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_10985,2110920,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_10990,2111394,-,NA,HNH endonuclease,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_10995,2111925,-,NA,transcriptional regulator,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46544.1_2131,NA,NA,NA,NA
+B7H15_11000,2112369,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46545.1_2132,NA,NA,NA,NA
+B7H15_11005,2112569,-,NA,transcriptional regulator,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_11010,2112715,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46547.1_2134,-0.4,0.3,-1.57,0.13
+B7H15_11015,2113098,-,NA,DUF1381 domain-containing protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_11020,2113301,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_11025,2113583,-,NA,dUTP pyrophosphatase,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46550.1_2137,NA,0.92,NA,-0.46
+B7H15_11030,2114109,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46551.1_2138,-0.08,0.96,-2.06,-0.81
+B7H15_11035,2114341,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46552.1_2139,NA,NA,NA,NA
+B7H15_11040,2114570,-,NA,acetyltransferase,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46553.1_2140,-0.33,0.49,-2.49,-0.91
+B7H15_11045,2114950,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_11050,2115196,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46555.1_2142,NA,NA,NA,NA
+B7H15_11055,2115577,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46556.1_2143,-1.33,1.05,NA,NA
+B7H15_11060,2115990,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_11065,2116215,-,NA,DNA replication protein DnaD,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46558.1_2145,NA,NA,NA,NA
+B7H15_11070,2117138,-,NA,single-stranded DNA-binding protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46559.1_2146,NA,NA,NA,NA
+B7H15_11075,2117609,-,NA,MBL fold metallo-hydrolase,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46560.1_2147,NA,NA,NA,NA
+B7H15_11080,2118307,-,NA,recombinase,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46561.1_2148,-0.03,0.55,-1.8,-0.5
+B7H15_11085,2119229,-,NA,ATPase,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46562.1_2149,-0.3,0.45,-2.36,-0.82
+B7H15_11090,2121181,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46563.1_2150,-0.55,0.5,NA,-1.37
+B7H15_11095,2121453,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46564.1_2151,-0.75,0.28,NA,NA
+B7H15_11100,2121753,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46565.1_2152,NA,NA,NA,NA
+B7H15_11105,2122108,-,NA,DUF1270 domain-containing protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_11110,2122266,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46567.1_2154,-1.17,1.07,-2.74,-0.93
+B7H15_11115,2122645,+,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46568.1_2155,-1.63,-0.41,-0.52,-0.37
+B7H15_11120,2123064,-,NA,oxidoreductase,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46569.1_2156,-0.35,0.02,-1.78,-0.85
+B7H15_11125,2123867,+,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46570.1_2157,NA,NA,0.1,NA
+B7H15_11130,2124185,-,NA,hypothetical protein,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46571.1_2158,0.21,0.42,NA,-0.57
+B7H15_11135,2124416,-,NA,transcriptional regulator,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_11140,2124676,-,NA,transcriptional regulator,interaction_stp_vs_anc_at_TSB_vs_SN,2,NA,NA,NA,NA,NA
+B7H15_11145,2124813,+,NA,transcriptional regulator,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46573.1_2161,-0.08,-0.14,-0,0.12
+B7H15_11150,2125542,+,NA,ATP-dependent helicase,interaction_stp_vs_anc_at_TSB_vs_SN,2,lcl_CP020619.1_prot_ARG46574.1_2162,-0.38,-0.27,0.28,0.49
+B7H15_01445,313711,-,NA,SAM-dependent methyltransferase,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44797.1_287,-0.14,0.21,0.43,0.41
+B7H15_01450,314491,+,NA,hypothetical protein,stk_vs_anc_at_SN,1,NA,NA,NA,NA,NA
+B7H15_01455,314723,-,rbsK,ribokinase,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44799.1_289,-0.02,0.35,0.02,0.19
+B7H15_01460,315665,-,rbsD,D-ribose pyranase,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44800.1_290,0.25,5.61,-0.16,0.98
+B7H15_01465,316084,-,NA,ribose transporter RbsU,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44801.1_291,NA,NA,NA,NA
+B7H15_01470,317197,-,NA,LacI family transcriptional regulator,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44802.1_292,0.1,0.24,-0.32,-0.13
+B7H15_01475,318346,+,NA,NADH-quinone oxidoreductase subunit L,stk_vs_anc_at_SN,1,NA,NA,NA,NA,NA
+B7H15_01480,318575,+,NA,hypothetical protein,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44804.1_294,-0.23,0.35,0.26,0.12
+B7H15_01485,319213,+,NA,transposase,stk_vs_anc_at_SN,1,NA,NA,NA,NA,NA
+B7H15_01490,319640,-,NA,MFS transporter,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44805.1_296,NA,NA,NA,NA
+B7H15_01495,321250,+,NA,choloylglycine hydrolase,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44806.1_297,0.37,0.11,0,-0.23
+B7H15_01500,322568,+,lytM,glycyl-glycine endopeptidase LytM,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44807.1_298,2.3,1.94,0.36,1.43
+B7H15_01505,323570,-,NA,multidrug ABC transporter ATP-binding protein,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44808.1_299,0.79,0.87,0.39,0.42
+B7H15_01510,324243,-,NA,ABC transporter,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44809.1_300,NA,NA,0.48,NA
+B7H15_01515,325160,-,NA,hypothetical protein,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44810.1_301,1.3,NA,0.27,NA
+B7H15_01520,326394,-,NA,hypothetical protein,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44811.1_302,0.59,0.29,0.05,-0.14
+B7H15_01525,328188,+,NA,DUF5079 domain-containing protein,stk_vs_anc_at_SN,1,NA,NA,NA,NA,NA
+B7H15_01530,328875,+,NA,DUF5080 domain-containing protein,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44813.1_304,0.15,NA,-1.63,NA
+B7H15_01535,329605,-,NA,CHAP domain-containing protein,stk_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG44814.1_305,-0.25,0.63,-0.01,-0.26
+B7H15_01460,315665,-,rbsD,D-ribose pyranase,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44800.1_290,0.25,5.61,-0.16,0.98
+B7H15_01465,316084,-,NA,ribose transporter RbsU,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44801.1_291,NA,NA,NA,NA
+B7H15_01470,317197,-,NA,LacI family transcriptional regulator,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44802.1_292,0.1,0.24,-0.32,-0.13
+B7H15_01475,318346,+,NA,NADH-quinone oxidoreductase subunit L,stk_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_01480,318575,+,NA,hypothetical protein,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44804.1_294,-0.23,0.35,0.26,0.12
+B7H15_01485,319213,+,NA,transposase,stk_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_01490,319640,-,NA,MFS transporter,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44805.1_296,NA,NA,NA,NA
+B7H15_01495,321250,+,NA,choloylglycine hydrolase,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44806.1_297,0.37,0.11,0,-0.23
+B7H15_01500,322568,+,lytM,glycyl-glycine endopeptidase LytM,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44807.1_298,2.3,1.94,0.36,1.43
+B7H15_01505,323570,-,NA,multidrug ABC transporter ATP-binding protein,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44808.1_299,0.79,0.87,0.39,0.42
+B7H15_01510,324243,-,NA,ABC transporter,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44809.1_300,NA,NA,0.48,NA
+B7H15_01515,325160,-,NA,hypothetical protein,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44810.1_301,1.3,NA,0.27,NA
+B7H15_01520,326394,-,NA,hypothetical protein,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44811.1_302,0.59,0.29,0.05,-0.14
+B7H15_01525,328188,+,NA,DUF5079 domain-containing protein,stk_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_01530,328875,+,NA,DUF5080 domain-containing protein,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44813.1_304,0.15,NA,-1.63,NA
+B7H15_01535,329605,-,NA,CHAP domain-containing protein,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44814.1_305,-0.25,0.63,-0.01,-0.26
+B7H15_01540,330746,+,esxA,virulence factor EsxA,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44815.1_306,-0.34,-0.12,-1.65,-1.31
+B7H15_01545,331123,+,esaA,type VII secretion protein EsaA,stk_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG44816.1_307,0.51,1.01,-0.69,-0.07
+B7H15_11640,2215959,-,tenA,thiaminase II,stk_vs_anc_at_SN,3,lcl_CP020619.1_prot_ARG46657.1_2255,0.51,0.39,-0.06,-0.06
+B7H15_11645,2217034,-,sceD,transglycosylase SceD,stk_vs_anc_at_SN,3,lcl_CP020619.1_prot_ARG46658.1_2256,3.38,3.53,-0.04,1.72
+B7H15_11650,2218166,-,NA,single-stranded DNA-binding protein,stk_vs_anc_at_SN,3,lcl_CP020619.1_prot_ARG46659.1_2257,-2.47,NA,-2.74,NA
+B7H15_11655,2218644,+,NA,hypothetical protein,stk_vs_anc_at_SN,3,lcl_CP020619.1_prot_ARG46660.1_2258,0.95,0.88,0.12,-0.18
+B7H15_11660,2219206,-,fabZ,beta-hydroxyacyl-ACP dehydratase,stk_vs_anc_at_SN,3,lcl_CP020619.1_prot_ARG46661.1_2259,0.83,0.6,-0.16,-0
+B7H15_11665,2219680,-,murA,UDP-N-acetylglucosamine 1-carboxyvinyltransferase,stk_vs_anc_at_SN,3,lcl_CP020619.1_prot_ARG46662.1_2260,0.89,1.05,0.31,0.28
+B7H15_11670,2221056,-,NA,hypothetical protein,stk_vs_anc_at_SN,3,NA,NA,NA,NA,NA
+B7H15_11675,2221421,-,NA,hypothetical protein,stk_vs_anc_at_SN,3,NA,NA,NA,NA,NA
+B7H15_11680,2221851,-,atpC,ATP synthase epsilon chain,stk_vs_anc_at_SN,3,lcl_CP020619.1_prot_ARG46665.1_2263,0.5,0.86,0.1,0.02
+B7H15_11685,2222275,-,atpD,ATP synthase subunit beta,stk_vs_anc_at_SN,3,lcl_CP020619.1_prot_ARG46666.1_2264,0.53,0.94,0.07,0.09
+B7H15_11690,2223709,-,atpG,ATP synthase subunit gamma,stk_vs_anc_at_SN,3,lcl_CP020619.1_prot_ARG46667.1_2265,0.48,0.81,0.08,0.07
+B7H15_11695,2224606,-,atpA,ATP synthase subunit alpha,stk_vs_anc_at_SN,3,lcl_CP020619.1_prot_ARG46668.1_2266,0.69,0.88,0.2,0.05
+B7H15_11700,2226136,-,atpH,ATP synthase subunit delta,stk_vs_anc_at_SN,3,lcl_CP020619.1_prot_ARG46669.1_2267,0.41,0.83,0.08,0.02
+B7H15_11470,2186330,-,NA,RNA polymerase sigma factor SigB,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46624.1_2221,1.03,1.14,0.32,0.49
+B7H15_11475,2187075,-,rsbW,anti-sigma B factor RsbW,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46625.1_2222,0.81,1.02,0.17,0.27
+B7H15_11480,2187556,-,rsbV,anti-anti-sigma factor,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46626.1_2223,0.2,0.38,-0.93,-0.88
+B7H15_11485,2188001,-,NA,serine/threonine protein phosphatase,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46627.1_2224,0.7,0.98,0.15,0.19
+B7H15_11490,2189154,+,NA,hypothetical protein,stk_vs_anc_at_TSB,1,NA,NA,NA,NA,NA
+B7H15_11495,2189352,-,mazF,mRNA interferase MazF,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46629.1_2226,0.87,0.86,-0.45,-0.11
+B7H15_11500,2189711,-,mazE,antitoxin MazE,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46630.1_2227,1.75,1.81,-0.72,0.1
+B7H15_11505,2189966,-,alr1,alanine racemase,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46631.1_2228,0.93,0.98,0.51,0.37
+B7H15_11510,2191180,-,acpS,holo-ACP synthase,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46632.1_2229,0.87,1.2,-0.16,0.36
+B7H15_11515,2191543,-,NA,hypothetical protein,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46633.1_2230,1.03,0.39,0.24,-0.18
+B7H15_11520,2192021,-,NA,hypothetical protein,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46634.1_2231,0.93,1.23,0.36,0.42
+B7H15_11525,2193597,-,NA,hypothetical protein,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46635.1_2232,1.21,0.64,0.13,-0.22
+B7H15_11530,2194284,-,kdpC,potassium-transporting ATPase subunit C,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46636.1_2233,2.25,NA,0.21,NA
+B7H15_11535,2194864,-,kdpB,potassium-transporting ATPase subunit B,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46637.1_2234,2.18,NA,-0.88,NA
+B7H15_11540,2196910,-,kdpA,potassium-transporting ATPase A chain,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46638.1_2235,2.59,NA,NA,-2.52
+B7H15_11545,2198610,-,NA,potassium-transporting ATPase subunit F,stk_vs_anc_at_TSB,1,NA,NA,NA,NA,NA
+B7H15_11550,2198858,+,kdpD,sensor histidine kinase,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46640.1_2237,1.35,-3.78,0.08,NA
+B7H15_11555,2201515,+,kdpE,DNA-binding response regulator,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46641.1_2238,1.08,NA,-0.47,NA
+B7H15_11560,2202579,-,cshA,DEAD/DEAH box family ATP-dependent RNA helicase,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46642.1_2239,0.58,0.89,0.35,0.3
+B7H15_11565,2204616,-,murF,"UDP-N-acetylmuramoylalanyl-D-glutamyl-2, 6-diaminopimelate--D-alanyl-D-alanine ligase",stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46643.1_2240,0.84,1.03,0.28,0.24
+B7H15_11570,2205989,-,ddl,D-alanine--D-alanine ligase A,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46644.1_2241,1,0.95,0.35,0.18
+B7H15_11575,2207377,+,NA,rod shape-determining protein RodA,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46645.1_2242,0.14,0.48,-0.06,0.1
+B7H15_11580,2208843,-,NA,hypothetical protein,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46646.1_2243,1.57,1.6,-0.28,NA
+B7H15_11585,2209108,-,NA,hypothetical protein,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46647.1_2244,0.71,0.81,-0.93,-0.12
+B7H15_11590,2209329,-,NA,CsoR family transcriptional regulator,stk_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46648.1_2245,1.11,0.76,0.05,0.28
+B7H15_04460,882145,+,NA,cold-shock protein,stp_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG45344.1_867,-0.15,0.07,-0.96,-0.26
+B7H15_04465,882841,-,NA,hypothetical protein,stp_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG45345.1_868,0.82,NA,-0.72,-2.9
+B7H15_04470,883121,-,NA,hypothetical protein,stp_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG45346.1_869,NA,-0.07,-0.81,NA
+B7H15_04475,883493,-,NA,hypothetical protein,stp_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG45347.1_870,-0.7,-1.37,-0.95,-0.98
+B7H15_04480,884250,-,NA,hypothetical protein,stp_vs_anc_at_SN,1,NA,NA,NA,NA,NA
+B7H15_04485,884467,-,NA,hypothetical protein,stp_vs_anc_at_SN,1,NA,NA,NA,NA,NA
+B7H15_04490,885068,+,NA,hypothetical protein,stp_vs_anc_at_SN,1,NA,NA,NA,NA,NA
+B7H15_04495,885268,-,NA,hypothetical protein,stp_vs_anc_at_SN,1,NA,NA,NA,NA,NA
+B7H15_04500,885750,+,NA,histidine phosphatase family protein,stp_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG47332.1_875,-0.77,NA,0.51,NA
+B7H15_04505,886383,-,NA,lysine transporter LysE,stp_vs_anc_at_SN,1,NA,NA,NA,NA,NA
+B7H15_04510,887155,-,NA,N-acetyltransferase,stp_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG45353.1_877,-0.19,-0.01,-0.09,-0.27
+B7H15_04515,888048,-,OHRL,organic hydroperoxide reductase OsmC/OhrA,stp_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG45354.1_878,0.63,-0.27,-0.78,-1.14
+B7H15_04520,888618,+,aroD,3-dehydroquinase,stp_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG45355.1_879,0.09,0.1,-0.08,0.1
+B7H15_04525,889417,+,NA,nitroreductase,stp_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG45356.1_880,-0.1,0.2,-0.1,-0.15
+B7H15_04530,890106,-,NA,thiol reductase thioredoxin,stp_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG45357.1_881,-0.24,-0.91,-0.5,-1.29
+B7H15_04535,890570,+,NA,arsenate reductase,stp_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG45358.1_882,-0.06,-0.14,-0.64,-0.42
+B7H15_04540,891084,+,gcvH,glycine cleavage system protein H,stp_vs_anc_at_SN,1,lcl_CP020619.1_prot_ARG45359.1_883,-0.59,-2.79,-1.11,-2.56
+B7H15_07835,1555995,+,NA,ferredoxin,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG45985.1_1538,0.46,-0.72,-0.94,-0.41
+B7H15_07840,1556349,-,NA,riboflavin transporter RibU,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07845,1557173,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07850,1557491,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG45988.1_1541,NA,NA,NA,NA
+B7H15_07855,1558420,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07860,1558619,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07865,1559614,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG45991.1_1544,NA,NA,NA,NA
+B7H15_07870,1560622,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07875,1561056,-,lukDv,leucotoxin LukD,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG45992.1_1546,-1.1,-0.43,-0.81,-0.14
+B7H15_07880,1562035,-,hlgC,gamma-hemolysin subunit A,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG45993.1_1547,-0.53,-0.6,-1.28,-0.57
+B7H15_07885,1563363,-,PH,amidase,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07890,1564828,-,NA,phage holin,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07895,1565266,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07900,1565611,-,NA,XkdX family protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07905,1565768,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07910,1566157,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07915,1567623,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07920,1569549,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07925,1569839,-,NA,peptidase,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07930,1571431,-,NA,phage tail protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07935,1572255,-,NA,phage tail tape measure protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07940,1578469,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46005.1_1559,NA,NA,NA,-3.35
+B7H15_07945,1578669,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07950,1579077,-,NA,phage tail protein,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46007.1_1561,2.78,NA,0.54,NA
+B7H15_07955,1579624,-,NA,phage tail protein,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46008.1_1562,NA,NA,NA,NA
+B7H15_07960,1580300,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07965,1580696,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07970,1581094,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07975,1581438,-,NA,phage head-tail adapter protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07980,1581785,-,NA,phage major capsid protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07985,1582960,-,NA,Clp protease ClpP,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07990,1583717,-,NA,phage portal protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_07995,1584960,-,NA,terminase,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08000,1586641,-,NA,terminase,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08005,1587073,-,NA,HNH endonuclease,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08010,1587544,-,NA,transcriptional regulator,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08015,1587994,-,NA,DEAD/DEAH box helicase,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46019.1_1574,NA,NA,1.1,-3.75
+B7H15_08020,1589342,-,NA,nuclease,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08025,1589766,+,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08030,1589973,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08035,1592475,+,NA,hypothetical protein,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46022.1_1578,0.26,0.82,0.65,0.98
+B7H15_08040,1592708,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08045,1592976,-,NA,transcriptional regulator,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08050,1593125,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46025.1_1581,NA,NA,NA,NA
+B7H15_08055,1593504,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08060,1593733,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08065,1593933,-,NA,DUF1381 domain-containing protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08070,1594176,-,NA,dUTPase,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46029.1_1585,NA,NA,NA,0.3
+B7H15_08075,1594705,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46030.1_1586,0.61,-0.27,-0.96,-0.28
+B7H15_08080,1594968,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08085,1595225,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08090,1595428,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08095,1595685,-,NA,PVL family protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08100,1596086,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08105,1596284,-,NA,DNA polymerase,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08110,1598304,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46036.1_1593,0.07,NA,1.35,-0.68
+B7H15_08115,1598887,-,NA,nuclease,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08120,1600050,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08125,1600426,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08130,1600691,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08135,1600986,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08140,1601396,-,NA,DUF1270 domain-containing protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08145,1601569,-,NA,helix-turn-helix domain-containing protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08150,1601857,-,NA,hypothetical protein,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08155,1602140,+,NA,hypothetical protein,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46044.1_1602,-0.69,NA,-0.38,-3.05
+B7H15_08160,1602615,-,NA,transcriptional regulator,stp_vs_anc_at_SN,2,NA,NA,NA,NA,NA
+B7H15_08165,1602967,+,NA,transcriptional regulator,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46046.1_1604,-0.16,-0.28,-0.31,-0.35
+B7H15_08170,1603309,+,NA,toxin,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46047.1_1605,NA,NA,NA,NA
+B7H15_08175,1603788,+,NA,hypothetical protein,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46048.1_1606,-0.2,NA,0.28,0.25
+B7H15_08180,1604251,+,NA,hypothetical protein,stp_vs_anc_at_SN,2,lcl_CP020619.1_prot_ARG46049.1_1607,0.16,-0.14,0.57,0.37
+B7H15_09880,1940443,-,splF,serine protease SplF,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46370.1_1946,NA,NA,-2,NA
+B7H15_09885,1941313,-,splE,serine protease SplE,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46371.1_1947,NA,NA,-1.19,NA
+B7H15_09890,1942187,-,splD,serine protease SplD,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46372.1_1948,NA,NA,NA,NA
+B7H15_09895,1943027,-,splC,serine protease SplC,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46373.1_1949,NA,NA,-1.54,NA
+B7H15_09900,1943804,-,splB,serine protease SplB,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46374.1_1950,NA,-2.78,-1.63,-3.25
+B7H15_09905,1944651,-,splA,serine protease SplA,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46375.1_1951,NA,NA,NA,NA
+B7H15_09910,1945794,-,NA,hypothetical protein,stp_vs_anc_at_TSB,1,NA,NA,NA,NA,NA
+B7H15_09915,1946322,+,NA,DUF4888 domain-containing protein,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46377.1_1953,-0.17,NA,-1.14,NA
+B7H15_09920,1947362,-,NA,BsaG protein,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46378.1_1954,NA,NA,NA,NA
+B7H15_09925,1948057,-,NA,lantibiotic ABC transporter permease,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46379.1_1955,0.12,NA,-0.77,NA
+B7H15_09930,1948815,-,NA,lantibiotic ABC transporter ATP-binding protein,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46380.1_1956,0.3,-0.52,-0.69,-0.65
+B7H15_09935,1949530,-,NA,peptidase S8,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46381.1_1957,0.07,-0.39,-0.29,-0.05
+B7H15_09940,1950913,-,NA,enterotoxin,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46382.1_1958,NA,NA,NA,NA
+B7H15_09945,1951447,-,NA,lanthionine synthetase,stp_vs_anc_at_TSB,1,NA,NA,NA,NA,NA
+B7H15_09950,1952684,-,NA,bacteriocin biosynthesis protein,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46384.1_1960,0.25,0.03,-1.26,-1.15
+B7H15_09955,1955742,-,NA,lantibiotic epidermin,stp_vs_anc_at_TSB,1,NA,NA,NA,NA,NA
+B7H15_09960,1956329,+,NA,hypothetical protein,stp_vs_anc_at_TSB,1,NA,NA,NA,NA,NA
+B7H15_09965,1956622,-,NA,lantibiotic epidermin,stp_vs_anc_at_TSB,1,NA,NA,NA,NA,NA
+B7H15_09970,1957007,-,lukDv,leucotoxin LukDv,stp_vs_anc_at_TSB,1,lcl_CP020619.1_prot_ARG46388.1_1964,-0.46,-0.54,-0.26,-0.12
+B7H15_10910,2093073,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46527.1_2114,1.21,1.15,2.98,0.54
+B7H15_10915,2096874,-,NA,phage tail protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46528.1_2115,0.84,0.75,NA,-0.28
+B7H15_10920,2098355,-,NA,phage tail tape measure protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46529.1_2116,1.65,1.51,1.27,1.24
+B7H15_10925,2103129,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46530.1_2117,-0.31,-0.02,-2.73,-1.58
+B7H15_10930,2103529,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46531.1_2118,NA,1.14,NA,-0.2
+B7H15_10935,2103795,-,NA,phage tail protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46532.1_2119,0.19,0.94,-2.69,-0.48
+B7H15_10940,2104443,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_10945,2104844,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_10950,2105245,-,NA,phage head-tail adapter protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46535.1_2122,NA,NA,NA,NA
+B7H15_10955,2105591,-,NA,phage head-tail adapter protein,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_10960,2105865,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46537.1_2124,NA,0.23,NA,-0.31
+B7H15_10965,2106169,-,NA,phage major capsid protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46538.1_2125,-0.13,0.59,-2.23,-1.04
+B7H15_10970,2107338,-,NA,peptidase,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46539.1_2126,0.73,-0.14,-0.12,-0.58
+B7H15_10975,2108059,-,NA,phage portal protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46540.1_2127,0.28,0.02,NA,-3.06
+B7H15_10980,2109262,-,NA,terminase,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_10985,2110920,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_10990,2111394,-,NA,HNH endonuclease,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_10995,2111925,-,NA,transcriptional regulator,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46544.1_2131,NA,NA,NA,NA
+B7H15_11000,2112369,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46545.1_2132,NA,NA,NA,NA
+B7H15_11005,2112569,-,NA,transcriptional regulator,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_11010,2112715,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46547.1_2134,-0.4,0.3,-1.57,0.13
+B7H15_11015,2113098,-,NA,DUF1381 domain-containing protein,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_11020,2113301,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_11025,2113583,-,NA,dUTP pyrophosphatase,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46550.1_2137,NA,0.92,NA,-0.46
+B7H15_11030,2114109,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46551.1_2138,-0.08,0.96,-2.06,-0.81
+B7H15_11035,2114341,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46552.1_2139,NA,NA,NA,NA
+B7H15_11040,2114570,-,NA,acetyltransferase,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46553.1_2140,-0.33,0.49,-2.49,-0.91
+B7H15_11045,2114950,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_11050,2115196,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46555.1_2142,NA,NA,NA,NA
+B7H15_11055,2115577,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46556.1_2143,-1.33,1.05,NA,NA
+B7H15_11060,2115990,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_11065,2116215,-,NA,DNA replication protein DnaD,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46558.1_2145,NA,NA,NA,NA
+B7H15_11070,2117138,-,NA,single-stranded DNA-binding protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46559.1_2146,NA,NA,NA,NA
+B7H15_11075,2117609,-,NA,MBL fold metallo-hydrolase,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46560.1_2147,NA,NA,NA,NA
+B7H15_11080,2118307,-,NA,recombinase,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46561.1_2148,-0.03,0.55,-1.8,-0.5
+B7H15_11085,2119229,-,NA,ATPase,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46562.1_2149,-0.3,0.45,-2.36,-0.82
+B7H15_11090,2121181,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46563.1_2150,-0.55,0.5,NA,-1.37
+B7H15_11095,2121453,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46564.1_2151,-0.75,0.28,NA,NA
+B7H15_11100,2121753,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46565.1_2152,NA,NA,NA,NA
+B7H15_11105,2122108,-,NA,DUF1270 domain-containing protein,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_11110,2122266,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46567.1_2154,-1.17,1.07,-2.74,-0.93
+B7H15_11115,2122645,+,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46568.1_2155,-1.63,-0.41,-0.52,-0.37
+B7H15_11120,2123064,-,NA,oxidoreductase,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46569.1_2156,-0.35,0.02,-1.78,-0.85
+B7H15_11125,2123867,+,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46570.1_2157,NA,NA,0.1,NA
+B7H15_11130,2124185,-,NA,hypothetical protein,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46571.1_2158,0.21,0.42,NA,-0.57
+B7H15_11135,2124416,-,NA,transcriptional regulator,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_11140,2124676,-,NA,transcriptional regulator,stp_vs_anc_at_TSB,2,NA,NA,NA,NA,NA
+B7H15_11145,2124813,+,NA,transcriptional regulator,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46573.1_2161,-0.08,-0.14,-0,0.12
+B7H15_11150,2125542,+,NA,ATP-dependent helicase,stp_vs_anc_at_TSB,2,lcl_CP020619.1_prot_ARG46574.1_2162,-0.38,-0.27,0.28,0.49

@@ -1,0 +1,4 @@
+protein_key,locus_tag,product,contrast,diff,FDR,statistic,estimate_type,imputed
+lcl_CP020619.1_prot_ARG47215.1_2852,B7H15_14670,ornithine carbamoyltransferase,interaction_stk_vs_anc_at_TSB_vs_SN,-2.3694616929117593,9.650337073553e-5,-13.340351841150056,observed,FALSE
+lcl_CP020619.1_prot_ARG47216.1_2853,B7H15_14675,arginine deiminase,interaction_stk_vs_anc_at_TSB_vs_SN,-4.977059146471056,0.00287184531847383,-7.462177142272972,observed,FALSE
+lcl_CP020619.1_prot_ARG44800.1_290,B7H15_01460,D-ribose pyranase,interaction_stk_vs_anc_at_TSB_vs_SN,-5.358087327068857,0.01115052295044983,-6.408526280246737,observed,FALSE

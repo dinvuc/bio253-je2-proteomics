@@ -1,0 +1,4 @@
+layer,n_terms,r_auc_stk_stp
+SN response (interaction),1777,0.30013137689417274
+baseline SN,1794,0.5258909847150227
+baseline TSB,1835,0.22808973136758665

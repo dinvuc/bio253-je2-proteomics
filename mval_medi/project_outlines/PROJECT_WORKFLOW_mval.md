@@ -225,18 +225,19 @@ For example, the stp-versus-parent interaction is `(stp_TSB - stp_SN) - (anc_TSB
 
 **Do**
 
-- [ ] Annotate reliable shared and distinct candidates using JE2 annotations, bacterial STRING mappings and verified protein/literature evidence. Record mapping ambiguity and accession provenance.
-- [ ] Use `mval_medi/docs/stk_stp_rescue_evidence_mval.md` to distinguish complementation, genetic suppression and compensation. Verify cited claims in the source and note differences from our strain, exposure and measurements.
-- [ ] If candidate numbers and mapping coverage permit enrichment, define the foreground and the **eligible measured/tested background under the same filters**. Analyze directions separately where meaningful; deduplicate proteins and term memberships.
-- [ ] Use a separate phosphoproteome background for phospho candidates and count a protein only once despite multiple sites. Record mapping losses, tested terms, term-size filters and multiple-testing correction.
-- [ ] If coverage is poor, provide an annotated candidate summary instead of an uninformative enrichment test.
-- [ ] Run enrichment with `Rscript scripts/10_enrichment_mval.R <contrast> ...` (helpers in `R/helpers_mval.R`, tested in `tests/testthat/test-helpers_mval.R`). It does both methods from lecture 06 (slide 25):
+- [x] Annotate reliable shared and distinct candidates using JE2 annotations, bacterial STRING mappings and verified protein/literature evidence. Record mapping ambiguity and accession provenance.
+- [x] Use `mval_medi/docs/stk_stp_rescue_evidence_mval.md` to distinguish complementation, genetic suppression and compensation. Verify cited claims in the source and note differences from our strain, exposure and measurements.
+- [x] If candidate numbers and mapping coverage permit enrichment, define the foreground and the **eligible measured/tested background under the same filters**. Analyze directions separately where meaningful; deduplicate proteins and term memberships.
+- [x] Use a separate phosphoproteome background for phospho candidates and count a protein only once despite multiple sites. Record mapping losses, tested terms, term-size filters and multiple-testing correction.
+- [x] If coverage is poor, provide an annotated candidate summary instead of an uninformative enrichment test.
+- [x] Run enrichment with `Rscript scripts/10_enrichment_mval.R <contrast> ...` (helpers in `R/helpers_mval.R`, tested in `tests/testthat/test-helpers_mval.R`). It does both methods from lecture 06 (slide 25):
   - **ORA:** formal hits from step 5 (treat lfc = 1, BH-FDR < 0.05), up and down separately, one-sided Fisher test. The background is the JE2 proteins tested in that contrast that carry ≥ 1 term of the category. BH-FDR per category, term size 5–500. Presence/absence (`lod_imputed`) proteins are not formal hits; they are counted in step 5.
   - **Rank-based (GSEA-like):** observed estimates only, ranked by the moderated t `statistic`, Wilcoxon test per term. `auc` > 0.5 = shifted towards higher in the first group of the contrast.
   - For the real Step 10 run, restrict hits *and* background to the Step 5 eligible proteins, and use the Step 6–7 candidate sets as foreground.
-- [ ] **"Stk1 broadly involved in many different effects" (presentation feedback; exact meaning to be confirmed with Jonas):** run the enrichment for `stk_vs_anc_at_TSB`, `stk_vs_anc_at_SN` and `interaction_stk_vs_anc_at_TSB_vs_SN`. Show *how many* different functional categories change (one pathway-level figure) rather than single proteins. Keep "broad" as a description of the measured changes: Stk1 phosphorylation targets are only claimed with a checkable source.
+- [x] **"Stk1 broadly involved in many different effects" (presentation feedback; exact meaning to be confirmed with Jonas):** run the enrichment for `stk_vs_anc_at_TSB`, `stk_vs_anc_at_SN` and `interaction_stk_vs_anc_at_TSB_vs_SN`. Show *how many* different functional categories change (one pathway-level figure) rather than single proteins. Keep "broad" as a description of the measured changes: Stk1 phosphorylation targets are only claimed with a checkable source.
 - [ ] Paste the written `string_upload_*_mval.txt` lists into STRING ("Multiple proteins", organism `STRG0B09NBK`) for network pictures. Note that the website's default background is the whole genome; set a custom background where possible, or report the difference.
-- [ ] Plausibility check, done 11 Nov on `stk_vs_anc`: our local method reproduces the lecture's example (slides 36–38). Cytolysis / killing of cells and copper ion transport come out lower in `stk`; vancomycin resistance comes out higher in `stk`. The "Virulence" keyword (KW-0843) did not reproduce with our measured background. Treat it as background-dependent.
+- [x] Plausibility check, done 11 Nov on `stk_vs_anc`: our local method reproduces the lecture's example (slides 36–38). Cytolysis / killing of cells and copper ion transport come out lower in `stk`; vancomycin resistance comes out higher in `stk`. The "Virulence" keyword (KW-0843) did not reproduce with our measured background. Treat it as background-dependent.
+  *Done 17 Nov:* `scripts/10_enrichment_mval.R` for `stk_vs_anc_at_TSB/_SN`, `interaction_stk_vs_anc_*` and the three `stp` counterparts; `scripts/10b_step10_summary_mval.R`, results + figure guide in `mval_medi/results/step10_enrichment/summary/`. Rules set before the summary was run (**group to confirm**): the Wilcoxon rank test is checked with limma `cameraPR` (correlation-aware; Wu & Smyth 2012), robust = both FDR < 0.05; ORA terms with 1–2 hit proteins are labelled, not counted as pathways. Robust terms `stk` 35 / 143 / 44, `stp` 192 / 168 / 8 (TSB / SN / response): **"broad" shifts are not specific to the kinase mutant**. `stk` shows small specific modules (SigB/`mazEF` cluster, ATP synthase F1, vancomycin resistance/peptidoglycan, purine synthesis in the response); `stp` shows large general terms (surface proteins lower, nucleic-acid metabolism higher). `stp` shares the peptidoglycan and cytolysis shifts with `stk`. Source-linked candidate table (49 proteins, UniProt links). Phospho ORA (own background, 25 of 133 proteins): carbohydrate metabolism / glycolysis / pentose phosphate, from the medium response. STRING upload + background lists written; **pasting them into the website is still open (manual)**. Fix: interaction contrasts were labelled "higher in interaction_stk".
 
 **Why:** Functional themes can help explain results, but annotation coverage and the background determine what an enrichment analysis can support.
 
@@ -246,10 +247,11 @@ For example, the stp-versus-parent interaction is `(stp_TSB - stp_SN) - (anc_TSB
 
 **Do**
 
-- [ ] Reinspect the individual samples behind each headline conclusion, including contradictory features and unexpected enzyme signals.
-- [ ] Check whether conclusions rely on one replicate, imputed values, ambiguous mapping, localization choices or marginal thresholds. Where appropriate, compare reasonable prespecified alternatives and document why they were chosen.
-- [ ] Keep any justified sample-exclusion or alternative-search analysis labeled as sensitivity analysis. Refit only if necessary, with explicit design, filtering, batch and missingness assumptions.
-- [ ] Treat SNpulse as optional after the primary story is complete. Investigate the two reinjected stk pulse phospho measurements and batch/genotype confounding first; do not claim a longitudinal recovery trajectory.
+- [x] Reinspect the individual samples behind each headline conclusion, including contradictory features and unexpected enzyme signals.
+- [x] Check whether conclusions rely on one replicate, imputed values, ambiguous mapping, localization choices or marginal thresholds. Where appropriate, compare reasonable prespecified alternatives and document why they were chosen.
+- [x] Keep any justified sample-exclusion or alternative-search analysis labeled as sensitivity analysis. Refit only if necessary, with explicit design, filtering, batch and missingness assumptions.
+- [x] Treat SNpulse as optional after the primary story is complete. Investigate the two reinjected stk pulse phospho measurements and batch/genotype confounding first; do not claim a longitudinal recovery trajectory.
+  *Done 17 Nov:* `scripts/11_robustness_mval.R`, results + **headline table** in `mval_medi/results/step11_robustness/figure_guide_mval.md`. Leave-one-sample-out: 34 of 64 H1–H3 hits stay hits in all 18 refits (Stk1 drop in `stp` 18/18; `stk` response hits argF and B7H15_14515 18/18; `stp` response hit ilvA 9/18). Alternative thresholds (1.5-fold; FDR 0.1) change list sizes, not the shape of the answers. **Genome-position scan (permutation null):** a `stk` block B7H15_11470–11590 (SigB, `mazEF`, `kdp`, `murF`, `ddl`…) +1.5 log2, top window in the genome; an `stp` prophage block B7H15_10910–11150 −2.1 log2; 14 of 64 hits lie in such blocks (incl. kdpD, rbsD). Could be co-regulation or strain differences (copy number, prophage): **DNA data needed**. SNpulse not analysed (optional); reinjected samples checked in Step 8. No sample excluded. Fix: a first circular-shift null could never flag a window.
 
 **Why:** A conclusion should survive reasonable checks and acknowledge where the design cannot resolve an alternative explanation.
 
@@ -257,16 +259,17 @@ For example, the stp-versus-parent interaction is `(stp_TSB - stp_SN) - (anc_TSB
 
 ## Step 12 — Assemble and verify the final deliverables
 
-- [ ] Create short project notebooks in `analyses/` for QC/validation, response comparisons and phospho follow-up, reusing existing helpers and templates. Keep each notebook independently renderable in under one minute.
+- [x] Create short project notebooks in `analyses/` for QC/validation, response comparisons and phospho follow-up, reusing existing helpers and templates. Keep each notebook independently renderable in under one minute.
 - [ ] **Main deliverable: A0 poster + abstract** (presentation feedback). Poster panels: question/design; Figure 1 (H1: enzyme abundances + peptide counts + gene context/polar effect); Figure 2 (H2: responses relative to `anc`); Figure 3 (H3: `stp` vs `stk` effect scatter); Figure 4 (Stk1 broad effects, pathway level) only if Step 10 supports it; methods box (model, treat lfc = 1, BH-FDR < 0.05, n = 3); limitations; GitHub repo link/QR code. Abstract: question, approach, one key number per hypothesis, conclusion within limits.
-- [ ] **Every poster figure is produced by a script in `scripts/`** (`fig_*_mval.png`, ≥ 300 dpi for A0) so the repo reproduces the poster; the repo is graded as participation. Each group member commits their own part.
-- [ ] Write `reports/project_c_report_mval.qmd` and render a final HTML report with explicit setup paths/output settings as the supporting document behind the poster. Include the question, design, methods, figures, H1-H3 answers, limitations, citations and software versions.
-- [ ] Deliver Figure 1 (gene context and enzyme profiles), Figure 2 (interaction comparisons), Figure 3 (selected shared/distinct responses), and Figure 4 only if protein/site coverage supports it.
-- [ ] Give each hypothesis one conclusion: supported within stated limits, unsupported by the measurements, or unresolved. Separate expected results from actual findings.
-- [ ] Include a short follow-up proposal: verify insertion/genotype, measure `stk1`/`stp1` transcripts, and compare clean single/double deletions plus complemented strains to test polarity/suppression causally. These are future experiments, not prerequisites for completing this course analysis.
-- [ ] Check one numerical example by hand, render all new/changed reports, inspect every figure and confirm contrast directions. Run `Rscript tests/run_tests.R` if `R/` helpers change.
-- [ ] Update the lab notebook. Review the Git diff and staged-file list before any commit or publication; include code/reports and exclude course measurement files and unintended files.
+- [x] **Every poster figure is produced by a script in `scripts/`** (`fig_*_mval.png`, ≥ 300 dpi for A0) so the repo reproduces the poster; the repo is graded as participation. Each group member commits their own part.
+- [x] Write `reports/project_c_report_mval.qmd` and render a final HTML report with explicit setup paths/output settings as the supporting document behind the poster. Include the question, design, methods, figures, H1-H3 answers, limitations, citations and software versions.
+- [x] Deliver Figure 1 (gene context and enzyme profiles), Figure 2 (interaction comparisons), Figure 3 (selected shared/distinct responses), and Figure 4 only if protein/site coverage supports it.
+- [x] Give each hypothesis one conclusion: supported within stated limits, unsupported by the measurements, or unresolved. Separate expected results from actual findings.
+- [x] Include a short follow-up proposal: verify insertion/genotype, measure `stk1`/`stp1` transcripts, and compare clean single/double deletions plus complemented strains to test polarity/suppression causally. These are future experiments, not prerequisites for completing this course analysis.
+- [x] Check one numerical example by hand, render all new/changed reports, inspect every figure and confirm contrast directions. Run `Rscript tests/run_tests.R` if `R/` helpers change.
+- [x] Update the lab notebook. Review the Git diff and staged-file list before any commit or publication; include code/reports and exclude course measurement files and unintended files.
 - [ ] Prepare the final presentation from verified findings, including negative results and limitations. Confirm course submission requirements with the group/lecturer.
+  *Done 17 Nov (all except the poster layout and the presentation):* `scripts/12_poster_figures_mval.R` → 4 poster figures at 300 dpi, `abstract_mval.md` (~250 words), `poster_text_mval.md` (text blocks) and figure guide in `mval_medi/results/step12_poster/`. Final report `reports/project_c_report_mval.qmd` + rendered HTML (24 s; hand check: Stk1 `stp_vs_anc_at_TSB` = −5.42 from group means = model). Project notebooks `analyses/project_c_{validation,responses,phospho}_mval.qmd` (each < 15 s; recomputed numbers match the step outputs). Answers: **H1 supported** (`stp` lacks most Stk1 and Stp1; polar mechanism consistent, not proven), **H2 supported but small** (5 / 1 altered responses), **H3 partly supported** (noise-corrected r ≈ 0.37 plus clear differences). **Still open (group):** poster layout (A0) and QR code, the gene-context panel at 300 dpi (Step 4 makes it at 150 dpi), presentation, submission requirements, and checking every number in the abstract.
 
 **Why:** The group must be able to explain, reproduce and defend what it submits.
 
@@ -296,9 +299,11 @@ If time is short, finish Steps 1-7 and the relevant interpretation/reporting in 
 
 **13 November 2026 (later):** Steps 8–9 done (branch `steps8-9-phospho-mval`; notebook `2026-11-13_steps8-9_phospho_mval.md`). The phospho layer supports only a small descriptive follow-up: 236 supported sites (133 proteins), 62 site hits, none in the H2 interactions. Of the hits, 17 follow the protein change, 40 show a residual change; Stk1 T164/T166 drops in `stp` together with the Stk1 protein. **Group to confirm** the Step 8 localisation rule and the Step 9 categories (proposed by the AI before results).
 
-**Next actions, in order (for Friday 13 Nov):**
-1. ~~Step 3~~ done; ~~check NE217/NE1919 on ntml.unmc.edu~~ mapping confirmed by the group 13 Nov (NE217 = stk, NE1919 = stp).
-2. ~~Steps 6–7~~ done 13 Nov. ~~Steps 8–9~~ done 13 Nov (confirm rules).
-3. Step 10: enrichment for the `stk` contrasts ("Stk1 broadly involved").
-4. Ask Jonas: meaning of "stk1 broadly involved"; whether `FP24_transposonDB` is the final transposon search and may be cited on the poster; poster format/deadline.
-5. Step 12: poster figures + abstract.
+**17 November 2026:** Steps 10–12 done (branch `steps10-12-final-mval`; notebook `2026-11-17_steps10-12_final_mval.md`). Pathway shifts in both mutants, not specific to `stk`; two genomic blocks (SigB/`mazEF`/`kdp` in `stk`, a prophage in `stp`) change as a unit and need DNA-level checks. Poster figures, abstract, poster text, report and project notebooks are in the repo.
+
+**Next actions, in order:**
+1. ~~Steps 3–12~~ done (analysis side).
+2. **Group:** confirm the rules marked "group to confirm" (Steps 8–11); check every number in the abstract and poster text against the figure guides.
+3. **Group:** lay out the A0 poster (figures + `poster_text_mval.md`), add a QR code to the repo, re-run Step 4 at 300 dpi if the gene-context panel is used.
+4. Ask Jonas: meaning of "stk1 broadly involved"; whether `FP24_transposonDB` may be cited; poster format/deadline; whether genome data of NE217/NE1919 exist (Step 11 blocks).
+5. Optional: STRING network pictures (paste `step10_enrichment/summary/string_upload_candidates_mval.txt`, set the background file).

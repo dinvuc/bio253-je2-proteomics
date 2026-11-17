@@ -1,0 +1,31 @@
+contrast,method,n,mutant,layer
+interaction_stk_vs_anc_at_TSB_vs_SN,"ORA, >= 3 hit proteins",1,stk,SN response (interaction)
+interaction_stk_vs_anc_at_TSB_vs_SN,"ORA, driven by 1-2 proteins",13,stk,SN response (interaction)
+interaction_stk_vs_anc_at_TSB_vs_SN,"rank, Wilcoxon",97,stk,SN response (interaction)
+interaction_stk_vs_anc_at_TSB_vs_SN,"rank, cameraPR",62,stk,SN response (interaction)
+interaction_stk_vs_anc_at_TSB_vs_SN,"rank, robust (both)",44,stk,SN response (interaction)
+stk_vs_anc_at_SN,"ORA, >= 3 hit proteins",5,stk,baseline SN
+stk_vs_anc_at_SN,"ORA, driven by 1-2 proteins",18,stk,baseline SN
+stk_vs_anc_at_SN,"rank, Wilcoxon",316,stk,baseline SN
+stk_vs_anc_at_SN,"rank, cameraPR",174,stk,baseline SN
+stk_vs_anc_at_SN,"rank, robust (both)",143,stk,baseline SN
+stk_vs_anc_at_TSB,"ORA, >= 3 hit proteins",13,stk,baseline TSB
+stk_vs_anc_at_TSB,"ORA, driven by 1-2 proteins",17,stk,baseline TSB
+stk_vs_anc_at_TSB,"rank, Wilcoxon",51,stk,baseline TSB
+stk_vs_anc_at_TSB,"rank, cameraPR",75,stk,baseline TSB
+stk_vs_anc_at_TSB,"rank, robust (both)",35,stk,baseline TSB
+interaction_stp_vs_anc_at_TSB_vs_SN,"ORA, >= 3 hit proteins",0,stp,SN response (interaction)
+interaction_stp_vs_anc_at_TSB_vs_SN,"ORA, driven by 1-2 proteins",21,stp,SN response (interaction)
+interaction_stp_vs_anc_at_TSB_vs_SN,"rank, Wilcoxon",41,stp,SN response (interaction)
+interaction_stp_vs_anc_at_TSB_vs_SN,"rank, cameraPR",14,stp,SN response (interaction)
+interaction_stp_vs_anc_at_TSB_vs_SN,"rank, robust (both)",8,stp,SN response (interaction)
+stp_vs_anc_at_SN,"ORA, >= 3 hit proteins",11,stp,baseline SN
+stp_vs_anc_at_SN,"ORA, driven by 1-2 proteins",38,stp,baseline SN
+stp_vs_anc_at_SN,"rank, Wilcoxon",294,stp,baseline SN
+stp_vs_anc_at_SN,"rank, cameraPR",179,stp,baseline SN
+stp_vs_anc_at_SN,"rank, robust (both)",168,stp,baseline SN
+stp_vs_anc_at_TSB,"ORA, >= 3 hit proteins",1,stp,baseline TSB
+stp_vs_anc_at_TSB,"ORA, driven by 1-2 proteins",24,stp,baseline TSB
+stp_vs_anc_at_TSB,"rank, Wilcoxon",284,stp,baseline TSB
+stp_vs_anc_at_TSB,"rank, cameraPR",202,stp,baseline TSB
+stp_vs_anc_at_TSB,"rank, robust (both)",192,stp,baseline TSB

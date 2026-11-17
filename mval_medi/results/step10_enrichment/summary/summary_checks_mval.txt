@@ -1,0 +1,9 @@
+Step 10 summary checks, 2026-11-17
+[PASS] enrichment output exists for all 6 contrasts
+[PASS] every rank-tested term also got a cameraPR result
+[PASS] robust terms: Wilcoxon and cameraPR agree in direction (by construction, recounted)
+[NOTE] Fig 4b shows 16 terms (top robust stk terms, size <= 200, overlap coefficient < 0.8)
+[NOTE] AUC correlation stk vs stp, SN response (interaction): r = 0.30 over 1777 terms; AUC correlation stk vs stp, baseline SN: r = 0.53 over 1794 terms; AUC correlation stk vs stp, baseline TSB: r = 0.23 over 1835 terms
+[PASS] all candidate locus tags found in the metadata
+[NOTE] candidates: 71 rows, 49 proteins (43 with a good UniProt ortholog)
+[NOTE] phospho ORA: 25 hit proteins of 133 background proteins; terms with FDR < 0.05: 12 (with >= 3 hits: 12)

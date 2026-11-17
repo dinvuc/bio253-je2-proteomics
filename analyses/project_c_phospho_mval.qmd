@@ -1,0 +1,57 @@
+---
+title: "Project C · 3 – phosphosite follow-up"
+subtitle: "Bio253 HS2026 · group mval · Steps 8–9, recomputed live"
+---
+
+Short, re-runnable version of Steps 8–9. Full scripts: `scripts/08_phospho_coverage_mval.R`,
+`09_site_vs_protein_mval.R`. STY and STYH are two searches of the same runs, not
+replicates; STY is primary (near tie with STYH, same results, Step 8).
+
+```{r setup}
+source("../R/setup.R")
+sites <- read_sites("STY") |> keep_je2()
+prim  <- read_samples() |> filter(medium %in% c("TSB", "SN")) |> pull(sample)
+```
+
+## Coverage and localisation
+
+Rule (fixed before selection): localised = **median of the per-sample** `loc_prob` over the
+primary samples where the site was seen ≥ 0.75. `best_loc_prob` is only the best of 27.
+
+```{r localisation}
+loc <- sites |> filter(sample %in% prim, !is.na(intensity)) |>
+  group_by(site_id, residue) |>
+  summarise(median_loc = median(loc_prob), best = first(best_loc_prob), .groups = "drop")
+loc |> group_by(residue) |>
+  summarise(detected = n(), localised_median_rule = sum(median_loc >= 0.75), localised_best_only = sum(best >= 0.75))
+```
+
+Usable sites per contrast (≥ 2 of 3 per group + localised + S/T/Y):
+
+```{r coverage}
+read_csv("../mval_medi/results/step08_phospho_coverage/coverage_per_contrast_mval.csv", show_col_types = FALSE) |>
+  filter(search == "STY") |> select(contrast, je2_sites, eligible_2of3, supported_STY)
+```
+
+## The Stk1 phosphosite follows the protein
+
+```{r stk1-site, fig.height=4}
+plot_sites(unique(sites$site_id[sites$locus_tag == "B7H15_06355" & sites$position %in% c(164, 166)]), sites)
+```
+
+## Site vs protein, same contrast (Step 9)
+
+Adjusted effect = site − protein (log2, same contrast, observed estimates only). Its SE assumes
+independent layers (descriptive, no p-value).
+
+```{r categories}
+read_csv("../mval_medi/results/step09_site_vs_protein/category_counts_mval.csv", show_col_types = FALSE) |>
+  filter(search == "STY")
+```
+
+**Result:** the phospho layer adds no evidence about altered PASN responses (no site hit in
+the mutant-vs-`anc` interactions); it supports H1 (Stk1 site lost with the protein).
+
+```{r session}
+sessionInfo()
+```
