@@ -1,14 +1,5 @@
 locus_tag,gene,product,aa_length,why
-B7H15_00775,deoB,phosphopentomutase,392,paired-layer figure (no refined hit)
-B7H15_01205,pflB,formate acetyltransferase,749,refined hit
-B7H15_04365,eno,enolase,434,refined hit
-B7H15_04690,Y845,CsbD family protein,64,refined hit + paired-layer figure
-B7H15_04940,NA,NAD-specific glutamate dehydrogenase,414,refined hit
-B7H15_04970,pgi,glucose-6-phosphate isomerase,443,refined hit
-B7H15_05485,qoxB,cytochrome ubiquinol oxidase subunit I,662,refined hit
-B7H15_06355,NA,serine/threonine protein kinase,664,refined hit + paired-layer figure
-B7H15_10065,traP,signal transduction protein TRAP,167,refined hit + paired-layer figure
-B7H15_10475,Y2093,hypothetical protein,66,refined hit
-B7H15_11735,glyA,serine hydroxymethyltransferase,412,refined hit + paired-layer figure
-B7H15_13850,pgcA,phosphoglucomutase,602,paired-layer figure (no refined hit)
-B7H15_14480,fda,class I fructose-bisphosphate aldolase,296,refined hit
+B7H15_04690,Y845,CsbD family protein,64,paired-layer figure + refined hit
+B7H15_06355,NA,serine/threonine protein kinase,664,paired-layer figure + refined hit
+B7H15_10065,traP,signal transduction protein TRAP,167,paired-layer figure + refined hit
+B7H15_11735,glyA,serine hydroxymethyltransferase,412,paired-layer figure + refined hit

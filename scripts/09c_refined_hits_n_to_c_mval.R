@@ -30,8 +30,9 @@
 #   plain lines (no end points); asterisks above the line end: ** FDR < 0.01, * FDR < 0.05.
 #   Our data: solid = localised, dashed = not localised (the chapter: observed/imputed;
 #   we do not impute). Refined hits get a black outline ring around the asterisks.
-# Proteins: every protein with >= 1 refined hit + the 6 proteins of fig_paired_layers_mval.png
-#   (deoB, glyA, pgcA, traP, B7H15_04690, Stk1), even if their hits are not refined.
+# Proteins: the proteins of fig_paired_layers_mval.png that also have >= 1 refined hit
+#   (glyA, traP, B7H15_04690, Stk1; deoB and pgcA have no refined hit). The paired-layer
+#   figure is copied into the folder.
 # Output:   mval_medi/results/step09_site_vs_protein/n_to_c_refined/
 #             refined_hits_mval.csv          all 62 hits with checks a-c and the verdict
 #             refined_summary_mval.csv       counts per contrast
@@ -196,16 +197,22 @@ panel <- function(pk, ct, len, id) {
   g
 }
 
-proteins <- tibble(locus_tag = unique(c(refined$locus_tag[refined$refined], KEY_PAIRED))) |>
+# Plotted = IMPORTANT and SIGNIFICANT (group request, 17 Nov): proteins of
+# fig_paired_layers_mval.png that also have >= 1 refined site hit. deoB and pgcA are in
+# the paired-layer figure but have no refined hit, so they are not plotted any more.
+proteins <- tibble(locus_tag = intersect(KEY_PAIRED, unique(refined$locus_tag[refined$refined]))) |>
   left_join(distinct(sty, locus_tag, protein_key), by = "locus_tag") |>
   left_join(meta, by = "locus_tag") |>
   left_join(cat9 |> distinct(locus_tag, product), by = "locus_tag") |>
-  mutate(why = case_when(locus_tag %in% refined$locus_tag[refined$refined] & locus_tag %in% KEY_PAIRED ~ "refined hit + paired-layer figure",
-                         locus_tag %in% KEY_PAIRED ~ "paired-layer figure (no refined hit)",
-                         TRUE ~ "refined hit")) |>
+  mutate(why = "paired-layer figure + refined hit") |>
   arrange(locus_tag)
 check("one protein_key per plotted locus tag", !anyDuplicated(proteins$locus_tag))
 write_csv(proteins |> select(locus_tag, gene, product, aa_length, why), file.path(out, "plotted_proteins_mval.csv"))
+# remove figures of proteins that are no longer selected (the folder holds only the current set)
+unlink(list.files(out, pattern = "^fig_n_to_c_refined_.*\\.png$", full.names = TRUE))
+# the paired-layer figure (Step 9) the selection is based on, next to the N-to-C plots
+check("paired-layer figure copied", file.copy("mval_medi/results/step09_site_vs_protein/fig_paired_layers_mval.png",
+                                              file.path(out, "fig_paired_layers_mval.png"), overwrite = TRUE))
 
 pdf(file.path(out, "n_to_c_refined_all_mval.pdf"), width = 14, height = 11)
 for (i in seq_len(nrow(proteins))) {

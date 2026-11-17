@@ -41,9 +41,17 @@ from leave-one-out: dropping a single sample removes the hit. Per contrast:
 
 ## Figures (`fig_n_to_c_refined_<locus>_<gene>_mval.png`, `n_to_c_refined_all_mval.pdf`)
 
-**Which proteins** (`plotted_proteins_mval.csv`, 13 proteins): every protein with ≥ 1 refined
-hit (11), plus the key proteins of `../fig_paired_layers_mval.png`. Those are deoB, glyA,
-pgcA, traP, B7H15_04690 and Stk1; deoB and pgcA are included although they have no refined hit.
+**Which proteins** (`plotted_proteins_mval.csv`, 4 proteins): only proteins that are **important
+and significant**, i.e. shown in [`fig_paired_layers_mval.png`](fig_paired_layers_mval.png) (copied
+into this folder) **and** carrying ≥ 1 refined hit. That gives glyA (`B7H15_11735`), traP
+(`B7H15_10065`), `B7H15_04690` and Stk1 (`B7H15_06355`). deoB and pgcA are in the paired-layer
+figure but have no refined hit, so they are not plotted (their hits are still listed with the
+reason in `refined_hits_mval.csv`). The other 7 proteins with refined hits (pflB, eno,
+`B7H15_04940`, pgi, qoxB, Y2093/`B7H15_10475`, fda) are not in the paired-layer figure; their
+plots are in the first version in [`../n_to_c/`](../n_to_c/).
+
+**Note on the copied `fig_paired_layers_mval.png`:** it is the Step 9 figure unchanged, so it
+still shows deoB T85/T87 and pgcA T191, which did **not** pass the refinement.
 
 **Layout:** the same 3 × 2 grid for every protein, so proteins can be compared. Left
 column: genotype difference in TSB (`stk_vs_anc`, `stp_vs_anc`, `stp_vs_stk`). Right
