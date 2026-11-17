@@ -138,3 +138,38 @@ protein was not tested in that contrast (not a hit-level problem: none of the 62
   other ~3,500 sites is **not** evidence of no change.
 - No direct Stk1/Stp1 substrates can be claimed: the data cannot separate direct from
   indirect phosphorylation changes.
+
+## N-to-C expression plots (`n_to_c/`, added 17 Nov)
+
+Made by [`scripts/09b_n_to_c_plots_mval.R`](../../../scripts/09b_n_to_c_plots_mval.R), in the
+style of Fig. 1 of Wolski, Dittmann, Panse, Kunz & Grossmann, "Integrated Analysis of
+Posttranslational Modifications and Total Proteome: Methods for Distinguishing Abundance
+from Usage Changes" (Chapter 8, ISBN 978-1-0716-5519-1; there made with
+`prophosqua::n_to_c_expression_multicontrast`).
+
+- **Which proteins:** all 25 proteins of `fig_adjusted_effects_mval.png` (every protein with
+  ≥ 1 site hit). One figure per protein (`fig_n_to_c_<locus>_<gene>_mval.png`), all in one
+  PDF (`n_to_c_all_proteins_mval.pdf`).
+- **Which contrasts:** every contrast in which that protein has a site hit, **together in
+  one figure**, one panel each (1–3 panels), same y-scale in all panels of a protein.
+- **How to read (as in the chapter):** x = amino-acid position, N to C (0 to protein
+  length, `aa_length` from the metadata). Light-yellow rectangle = protein log2FC in the
+  same contrast (our Step 5 total-proteome refit). Vertical lines = sites at their position,
+  height = site log2FC (our Step 8 STY refit), colour = residue. Red `*` FDR < 0.05,
+  `**` FDR < 0.01 (our site test, treat |log2FC| > 1, BH over the supported sites). Each
+  panel title: protein, length, number of sites, number of not-localised sites; subtitle:
+  the direction in words and the protein estimate with its FDR.
+- **Differences from the chapter:** the chapter uses solid/dashed lines for observed/imputed
+  estimates. Our refit does not impute, so **solid = localised** (supported) and
+  **dashed = tested but not localised** (median per-sample loc_prob < 0.75; never a hit).
+  Grey ticks on the zero line = sites measured but too sparse to test in that contrast.
+  No rectangle = protein not tested in that contrast.
+- **What it shows:** a site line that ends inside the rectangle changes no more than its
+  protein (abundance-driven). A line that sticks out of the rectangle changes beyond the
+  protein. These are the residual changes of Fig 4b, which shows the same sites as
+  protein-adjusted (usage) effects.
+- **Example, Stk1 (`B7H15_06355`, `stp_vs_anc_at_TSB`):** the rectangle is −5.42 (protein
+  much higher in `anc`) and the T164/T166 lines end inside it: the site loss follows the
+  protein loss. Two **not-localised** sites near positions 231/240 (from the sporadic
+  `HIQDSVPNVTtDVR` peptide, Step 3) point upwards. They are not hits, and Step 3 found that
+  peptide sporadic in all strains, so they are not evidence of anything.
