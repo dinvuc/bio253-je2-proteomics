@@ -1,0 +1,8 @@
+contrast,site_hits,n_refined,refined_residual,refined_consistent,refined_unresolved,lost_loso,lost_styh,lost_qc
+TSB_vs_SN_at_anc,10,6,5,1,0,3,1,0
+TSB_vs_SN_at_stk,26,9,4,5,0,16,6,1
+TSB_vs_SN_at_stp,19,3,3,0,0,16,1,2
+interaction_stp_vs_stk_at_TSB_vs_SN,1,0,0,0,0,1,0,0
+stk_vs_anc_at_TSB,1,0,0,0,0,1,1,0
+stp_vs_anc_at_TSB,3,2,0,0,2,1,0,0
+stp_vs_stk_at_TSB,2,0,0,0,0,2,2,0
