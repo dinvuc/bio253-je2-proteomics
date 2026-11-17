@@ -32,6 +32,9 @@ ErmB detected in the 18 mutant samples, absent from the 9 `anc` samples.
 - **Caveat:** spectral counts are a rough amount measure. `stk` has fewer ErmB
   spectra than `stp` in TSB and SNpulse (11–15 vs 25–30); this is described, not
   tested, and with n = 3 we do not interpret it.
+- **Conclusion:** the positive control works. The transposon marker is present in every
+  mutant sample (18/18) and absent from every parent sample (0/9), so both mutants carry
+  the insertion and no sample is mislabelled between parent and mutant.
 
 ### `fig_ermb_peptide_map_mval.png`: which parts of ErmB were seen
 - **Compares:** the ErmB peptides (x = position in the 245-aa protein) per sample.
@@ -43,6 +46,8 @@ ErmB detected in the 18 mutant samples, absent from the 9 `anc` samples.
 - **Caveat:** `QVTSIELDSHLFNLSSEK` (53–70) is seen in 9/9 `stp` and 0/9 `stk`
   samples. The reason is not known (detection limit, as `stk` has fewer ErmB
   spectra overall, or something else); not interpreted.
+- **Conclusion:** ErmB is identified by many independent peptides spread over the protein
+  (68 % coverage), not by one stray peptide, so its detection in the mutants is reliable.
 
 ## Tables
 

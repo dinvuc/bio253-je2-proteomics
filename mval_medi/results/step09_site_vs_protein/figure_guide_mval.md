@@ -110,6 +110,13 @@ protein was not tested in that contrast (not a hit-level problem: none of the 62
 - **What it shows:** in the three TSB-vs-SN panels many hits lie in or near the band
   (protein-driven), others well below it (site higher in SN than its protein). Genotype
   and interaction panels have almost no hits.
+- **Key points:** site and protein effects correlate (r 0.68–0.72 in the TSB-vs-SN
+  contrasts, 0.32–0.63 in the genotype contrasts). Of the 62 site hits, 17 follow the
+  protein, 40 go beyond it, and 5 are unresolved.
+- **Conclusion:** a large part of the phosphosite changes simply follows protein amount,
+  so raw site changes must not be read as regulation. The residual changes concentrate in
+  the medium response. The strains barely differ in phosphorylation beyond what their
+  proteins explain.
 
 ### `fig_adjusted_effects_mval.png`: Fig 4b, adjusted effects of all site hits
 - **Compares:** for each of the 62 hits, the adjusted effect (filled, ± 2·se_adj) and the
@@ -118,6 +125,13 @@ protein was not tested in that contrast (not a hit-level problem: none of the 62
   the site change was protein amount. **x** = QC flag (fragile spread).
 - **Caveat:** error bars assume independence (see above); they are not confidence
   intervals from a test.
+- **Key points:** the largest adjusted effect, `B7H15_04940` T269 (+9.5), is QC-flagged
+  (two values near the detection floor). The genotype hits are deoB T85/T87 (residual,
+  site lower in `stk`), pyk T537 (residual, higher in `stp`) and Stk1 T164/T166
+  (unresolved, but mostly following the protein loss). 3 hits carry the QC flag.
+- **Conclusion:** after taking out the protein change, most medium-response site hits
+  keep a residual change (abundance and usage both change). The genotype site hits are
+  few and partly fragile: Step 9c finds that only Stk1 T164/T166 survive all robustness checks.
 
 ### `fig_paired_layers_mval.png`: Fig 4c, per-sample values of both layers
 - **Compares:** top row = normalised phosphosite values, bottom row = its total protein,
@@ -130,6 +144,12 @@ protein was not tested in that contrast (not a hit-level problem: none of the 62
 - **Stk1 T164:** protein 0/3 in `stk` and 3/3 at a very low level in `stp_TSB` (0/3 in
   `stp_SN`); the site is absent in `stk` and low in `stp` (2/3 in `stp_SN` even though
   the protein is 0/3 there: phospho-enrichment can see a peptide the total proteome misses).
+- **Key points:** glyA Y51 and traP S150 change clearly while their protein is nearly flat
+  (residual). Y845 T52 moves in parallel with its protein (consistent). deoB and pgcA
+  show residual-looking patterns, but each rests on 1–2 low values in one group.
+- **Conclusion:** the paired plots make the two categories visible. glyA Y51, traP S150,
+  B7H15_04690 (Y845) and Stk1 T164 hold up in the refinement (Step 9c), while deoB and
+  pgcA do not. See [`n_to_c_refined/`](n_to_c_refined/), which keeps exactly these four proteins.
 
 ## Limits
 - n = 3 per group; one search choice that was nearly a tie; categories rest on a 2-fold
@@ -173,3 +193,9 @@ from Usage Changes" (Chapter 8, ISBN 978-1-0716-5519-1; there made with
   protein loss. Two **not-localised** sites near positions 231/240 (from the sporadic
   `HIQDSVPNVTtDVR` peptide, Step 3) point upwards. They are not hits, and Step 3 found that
   peptide sporadic in all strains, so they are not evidence of anything.
+- **Key points across the 25 proteins:** see the per-protein table in
+  [`n_to_c/figure_guide_mval.md`](n_to_c/figure_guide_mval.md).
+- **Conclusion:** the N-to-C view shows in one picture whether a site change is carried by
+  its protein. Most medium-response sites of central metabolic enzymes reach beyond their
+  protein's rectangle, whereas the Stk1 sites in `stp` stay inside it. The refined subset is
+  in [`n_to_c_refined/`](n_to_c_refined/).

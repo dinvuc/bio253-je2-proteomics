@@ -40,6 +40,12 @@ check, an assumption or a few samples; **unresolved** = the data cannot decide.
 - **Caveat:** with n = 3, dropping one sample removes a third of a group's data, so some
   losses are expected even for real effects. "Fragile" means "do not lean on it alone",
   not "false".
+- **Conclusion:** about half of the formal hits are fully robust. The ones the conclusions
+  lean on most hold up: the Stk1 drop in `stp`; the shared surface-protein decreases
+  (coagulase and `B7H15_02275` stable in both mutants, the fibronectin-binding protein
+  `B7H15_13900` stable in `stk` but 14/18 in `stp`); and the `stk` response hits argF and
+  B7H15_14515. ilvA, the single `stp` response hit,
+  is fragile.
 
 ## 2. Threshold sensitivity (`threshold_sensitivity_mval.csv`)
 
@@ -87,6 +93,10 @@ response of similar size in all three strains.
 - **Formal hits inside a flagged block of their own mutant: 14 of 64**, e.g. kdpC
   (`stk` TSB), kdpD and rbsD (`stk` response), B7H15_10925/10935/11085 (`stp` TSB, prophage),
   mazE (`stp_vs_stk`). Column `in_own_block` in `loso_hit_stability_mval.csv`.
+- **Conclusion:** the strongest positional signals are one block per mutant (SigB/*mazEF*/*kdp*
+  region higher in `stk`, prophage lower in `stp`). About a fifth of the hits lie in such
+  blocks, so they may reflect strain differences in genome content rather than kinase or
+  phosphatase function. DNA-level checks are needed before these hits are interpreted biologically.
 
 ## Not done (and why)
 - **SNpulse** stays optional (workflow): the primary story is TSB vs SN. The two reinjected
