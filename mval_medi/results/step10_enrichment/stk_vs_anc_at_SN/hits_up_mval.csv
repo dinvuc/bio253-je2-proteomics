@@ -1,0 +1,5 @@
+protein_key,locus_tag,product,contrast,diff,FDR,statistic,estimate_type,imputed
+lcl_CP020619.1_prot_ARG46658.1_2256,B7H15_11645,transglycosylase SceD,stk_vs_anc_at_SN,3.531870415139029,1.5358451932837001e-7,15.964140512607468,observed,FALSE
+lcl_CP020619.1_prot_ARG46696.1_2295,B7H15_11840,aminobenzoyl-glutamate utilization protein B,stk_vs_anc_at_SN,1.4784948995330929,1.21171344600406e-4,22.128143549601624,observed,FALSE
+lcl_CP020619.1_prot_ARG44800.1_290,B7H15_01460,D-ribose pyranase,stk_vs_anc_at_SN,5.606172840158694,1.768216911536281e-4,8.656438341533592,observed,FALSE
+lcl_CP020619.1_prot_ARG44807.1_298,B7H15_01500,glycyl-glycine endopeptidase LytM,stk_vs_anc_at_SN,1.9419080056030111,0.0103500175567277,9.92601554017192,observed,FALSE

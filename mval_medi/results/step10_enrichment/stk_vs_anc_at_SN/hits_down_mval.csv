@@ -1,0 +1,9 @@
+protein_key,locus_tag,product,contrast,diff,FDR,statistic,estimate_type,imputed
+lcl_CP020619.1_prot_ARG46640.1_2237,B7H15_11550,sensor histidine kinase,stk_vs_anc_at_SN,-3.777470085204913,8.722666411845313e-10,-27.332059772844357,observed,FALSE
+lcl_CP020619.1_prot_ARG46960.1_2577,B7H15_13295,nitrite reductase (NAD(P)H) small subunit,stk_vs_anc_at_SN,-2.9956405048713304,1.4927006090649495e-6,-14.686831072449008,observed,FALSE
+lcl_CP020619.1_prot_ARG44613.1_82,B7H15_00420,hypothetical protein,stk_vs_anc_at_SN,-1.9732028546842528,3.395743097741576e-5,-16.04105569685476,observed,FALSE
+lcl_CP020619.1_prot_ARG45359.1_883,B7H15_04540,glycine cleavage system protein H,stk_vs_anc_at_SN,-2.7933253988992544,1.6059590337002088e-4,-10.803856313251249,observed,FALSE
+lcl_CP020619.1_prot_ARG44612.1_81,B7H15_00415,copper-translocating P-type ATPase,stk_vs_anc_at_SN,-1.5122497592036677,6.062900366422485e-4,-18.23052677389907,observed,FALSE
+lcl_CP020619.1_prot_ARG44864.1_356,B7H15_01790,glycine cleavage system protein H,stk_vs_anc_at_SN,-2.4816626020130297,0.00441759787650027,-8.76182449473092,observed,FALSE
+lcl_CP020619.1_prot_ARG47071.1_2698,B7H15_13900,fibronectin-binding protein,stk_vs_anc_at_SN,-1.69508719898327,0.02620686290454578,-10.666479621505482,observed,FALSE
+lcl_CP020619.1_prot_ARG44792.1_280,B7H15_01410,antiholin-like protein LrgA,stk_vs_anc_at_SN,-1.9831554858515936,0.03008461151191685,-8.628404955724609,observed,FALSE

@@ -84,8 +84,17 @@ for (ct in contrasts) {
   write_csv(rank_res, file.path(out, "rank_enrichment_mval.csv"))
 
   # ---- short console summary -------------------------------------------------------
-  first_group  <- str_split_i(str_remove(ct, "_at_.*"), "_vs_", 1)
-  second_group <- str_split_i(str_remove(ct, "_at_.*"), "_vs_", 2)
+  # Interaction contrasts need their own wording (fixed 17 Nov: they were printed
+  # as "higher in interaction_stk"). interaction_X_vs_Y_at_TSB_vs_SN > 0 means the
+  # TSB - SN difference is larger in X, i.e. the SN response is LOWER in X than in Y.
+  if (str_starts(ct, "interaction_")) {
+    gx <- str_match(ct, "^interaction_([a-z]+)_vs_([a-z]+)_at_")
+    first_group  <- paste0("TSB-vs-SN difference larger in ", gx[2], " (SN response lower in ", gx[2], ")")
+    second_group <- paste0("TSB-vs-SN difference larger in ", gx[3], " (SN response lower in ", gx[3], ")")
+  } else {
+    first_group  <- str_split_i(str_remove(ct, "_at_.*"), "_vs_", 1)
+    second_group <- str_split_i(str_remove(ct, "_at_.*"), "_vs_", 2)
+  }
   show <- \(x) x |> filter(FDR < 0.05) |> slice_head(n = 8) |>
     transmute(category = str_trunc(category, 28), term, description = str_trunc(term_description, 45),
               n = paste0(hits_in_term, "/", term_size), imputed = hits_imputed, FDR = signif(FDR, 2))
