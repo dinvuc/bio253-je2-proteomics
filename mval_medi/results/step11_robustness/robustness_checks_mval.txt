@@ -1,0 +1,11 @@
+Step 11 checks, 2026-11-17
+[PASS] 27 samples, 3 per group
+[PASS] full refit reproduces Step 5 FDR (max abs diff < 1e-10)
+[PASS] 18 LOSO refits done
+[NOTE] LOSO: 34 of 64 main hits in the H1-H3 contrasts stay a hit in all 18 refits
+[PASS] all 6 scanned contrasts present in the Step 5 table
+[NOTE] genome scan: 11 flagged blocks over 6 contrasts (window 10 proteins, 1000 permutations)
+[NOTE] stk_vs_anc_at_TSB, SigB/mazEF region (windows starting B7H15_11465-11570): best window B7H15_11500-B7H15_11550 mean 1.510, threshold 0.901, family-wise p = 0.000, rank 1 of 2002 windows
+[NOTE] stk_vs_anc_at_SN, SigB/mazEF region (windows starting B7H15_11465-11570): best window B7H15_11470-B7H15_11520 mean 0.998, threshold 1.054, family-wise p = 0.104, rank 8 of 1964 windows
+[NOTE] stp_vs_anc_at_TSB, SigB/mazEF region (windows starting B7H15_11465-11570): best window B7H15_11535-B7H15_11590 mean -0.150, threshold 1.060, family-wise p = 1.000, rank 927 of 2065 windows
+[NOTE] formal hits (H1-H3 contrasts) lying in a flagged block of their own mutant: 14 of 64 (kdpC [stk_vs_anc_at_TSB], lytM [stk_vs_anc_at_TSB], sceD [stk_vs_anc_at_TSB], B7H15_10925 [stp_vs_anc_at_TSB], B7H15_10935 [stp_vs_anc_at_TSB], B7H15_11085 [stp_vs_anc_at_TSB], mazE [stp_vs_stk_at_TSB], lytM [stp_vs_stk_at_TSB], azoR [stp_vs_stk_at_TSB], B7H15_10935 [stp_vs_stk_at_TSB], B7H15_11085 [stp_vs_stk_at_TSB], sceD [stp_vs_stk_at_TSB], rbsD [interaction_stk_vs_anc_at_TSB_vs_SN], kdpD [interaction_stk_vs_anc_at_TSB_vs_SN])
