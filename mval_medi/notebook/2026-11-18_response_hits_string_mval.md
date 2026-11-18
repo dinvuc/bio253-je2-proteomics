@@ -43,6 +43,22 @@ Claude Code: wrote and ran the script, searched PubMed, wrote `hits_biology_mval
 the figure guide. The biology is interpretation (rules section 10). A group member must
 check the numbers and read the cited papers (only abstracts were checked).
 
+## Part 2: STRING network from the course's own JE2 organism
+- question: can the network come from the course JE2 organism on STRING instead of the
+  NCTC 8325 reference strain?
+- found: the course organism `STRG0B09NBK` ("JE2_Bio253_HS26") answers the STRING API and
+  uses our `protein_key` as its protein id; the older `STRG0A35SHG` (source of the local
+  files in `data/raw/resources/`) does not answer the API
+- changed `scripts/06d_response_hits_string_mval.R` (branch `string-je2-organism-mval`):
+  query by protein_key, join nodes directly (ortholog mapping and the arc-copy rule
+  removed); layout now one circle per hit module, dashed lines between modules
+- result: 37 proteins, 70 links (score ≥ 0.7), all 37 found in our metadata as CDS;
+  6 modules, only arcA–argF linked directly (0.918), 6 links between modules via shared
+  partners (14470, 11190, 12195/12200); new partner of kdpD: Y1819 (B7H15_09315,
+  `stk` delta −1.12, not a hit); kdpD/peptide results unchanged
+- the NCTC 8325 numbers in "Results" above (30 nodes, 64 edges, 5 modules) are replaced
+  by these
+
 ## Next steps
 - decide if the poster says "kdp switched off by PASN in all strains" instead of
   "kdpD stk-specific"
