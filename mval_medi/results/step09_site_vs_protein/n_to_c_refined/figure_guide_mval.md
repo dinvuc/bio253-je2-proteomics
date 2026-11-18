@@ -41,10 +41,13 @@ from leave-one-out: dropping a single sample removes the hit. Per contrast:
 
 ## Figures (`fig_n_to_c_refined_<locus>_<gene>_mval.png`, `n_to_c_refined_all_mval.pdf`)
 
-**Which proteins** (`plotted_proteins_mval.csv`, 4 proteins): only proteins that are **important
+**Which proteins** (`plotted_proteins_mval.csv`, 5 proteins): proteins that are **important
 and significant**, i.e. shown in [`fig_paired_layers_mval.png`](fig_paired_layers_mval.png) (copied
 into this folder) **and** carrying ≥ 1 refined hit. That gives glyA (`B7H15_11735`), traP
-(`B7H15_10065`), `B7H15_04690` and Stk1 (`B7H15_06355`). deoB and pgcA are in the paired-layer
+(`B7H15_10065`), `B7H15_04690` and Stk1 (`B7H15_06355`). **Added on group request (18 Nov):**
+kdpD (`B7H15_11550`), a formal protein hit of Step 6
+([`fig_response_vs_anc_mval.png`](../../step06_responses/fig_response_vs_anc_mval.png),
+`interaction_stk_vs_anc_at_TSB_vs_SN`). It has no site hit; it is drawn for its protein layer. deoB and pgcA are in the paired-layer
 figure but have no refined hit, so they are not plotted (their hits are still listed with the
 reason in `refined_hits_mval.csv`). The other 7 proteins with refined hits (pflB, eno,
 `B7H15_04940`, pgi, qoxB, Y2093/`B7H15_10475`, fda) are not in the paired-layer figure; their
@@ -126,6 +129,28 @@ first strain minus second, in TSB.
   of Stk1 sites in `stp`, and it follows the loss of the Stk1 protein itself. This is
   consistent with the polar effect, and it gives no evidence that Stp1 loss changes Stk1
   phosphorylation.
+
+### `fig_n_to_c_refined_B7H15_11550_kdpD_mval.png`: kdpD (sensor histidine kinase KdpD)
+- **Description:** kdpD (885 aa; UniProt ortholog Q2FWH7, "Sensor histidine kinase KdpD",
+  membrane, from `read_protein_metadata()`) in the same 6 contrasts. Added because it is a
+  Step 6 interaction hit (`stk` vs `anc`), not because of a phosphosite.
+- **Key points (protein, yellow rectangles; total-proteome treat test):**
+  - `TSB_vs_SN_at_anc`: −1.03 (slightly higher in SN; FDR 1.0, no change).
+  - `TSB_vs_SN_at_stk`: **+4.09 (much lower in SN; FDR 1e-12)**. The difference between these
+    two panels is the Step 6 interaction (+5.13, FDR 1e-10): only `stk` loses kdpD in PASN.
+  - `TSB_vs_SN_at_stp`: **no estimate** (`stp_SN` 1/3 detected), so `stp` cannot be judged.
+  - Genotype in TSB: `stk` − `anc` +1.35 (higher in `stk`, FDR 0.28), `stp` − `anc` +0.08,
+    `stp` − `stk` −1.27 (FDR 0.73): no TSB difference.
+  - **Phosphosites:** 10 sites in the STY table, but only S830 (localised) has ≥ 2 of 3 values
+    in both groups of any of the 6 contrasts: `stk_vs_anc_at_TSB` +2.16 (SE 0.94, FDR 1.0, not
+    a hit; `anc_TSB` 2/3, `stk_TSB` 3/3). S830 is never detected in an SN sample, so there is no
+    site information for the PASN response at all.
+- **Caveats:** the `stk` drop rests on 2/3 detected replicates in both `anc_SN` and `stk_SN`;
+  in Step 11 kdpD holds in 14/18 leave-one-out refits and lies in a genomic block
+  (`B7H15_11470`–`11590`) that shifts as a unit in `stk`, so the call is **tentative**.
+- **Conclusion:** kdpD is a protein-level, not a phosphorylation-level, result: in `stk` the
+  KdpD protein drops strongly in PASN, while in `anc` it does not. The phosphoproteome cannot
+  test whether KdpD phosphorylation changes too (too few values).
 
 ### `fig_paired_layers_mval.png` (copied from Step 9)
 - **Description / how to read:** see the [Step 9 guide](../figure_guide_mval.md#fig_paired_layers_mvalpng-fig-4c-per-sample-values-of-both-layers).
