@@ -194,6 +194,17 @@ Question: does the strain effect stay on the hit, or do the genes around it chan
 - **Conclusion:** the altered responses are mostly gene-specific. The exception, argF and
   arcA moving together, points to the arc/arg gene cluster responding as a unit in `stk`.
 
+### `hits_biology/`: function, STRING network and kdpD peptide check (Step 6d)
+Made by [`scripts/06d_response_hits_string_mval.R`](../../../scripts/06d_response_hits_string_mval.R).
+The 7 coloured proteins of Fig 2 with their function (UniProt), a STRING v12.5 network
+coloured by our responses, and a stk-vs-stp comparison of kdpD down to peptide level.
+Short result: 5 unrelated STRING modules. The arc operon (arcA + argF) is the most solid
+`stk` effect. The kdp system is switched off by PASN in **all** strains (~95 % of KdpD
+peptide evidence lost), and the `stk`-specific kdpD interaction is not supported at
+peptide level. Details and hypotheses with sources:
+[`hits_biology/hits_biology_mval.md`](hits_biology/hits_biology_mval.md); figures:
+[`hits_biology/figure_guide_mval.md`](hits_biology/figure_guide_mval.md).
+
 ## Tables
 
 | file | content |
