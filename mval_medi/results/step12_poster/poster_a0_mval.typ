@@ -86,7 +86,7 @@
   #how[Phosphoproteome: 236 usable sites; none responds differently to PASN in a mutant.]
   #v(10mm)
   #sec(4)[#stp resembles #stk only in part]
-  #how[r corrected for the shared #anc reference (noise alone would give r = 0.50). #text(fill: black)[●] altered in both mutants, same direction; #text(fill: red)[●] #stp and #stk differ directly.]
+  #how[Each dot = one protein. r = similarity of the true #stk and #stp effects after removing the noise both share through #anc (0 = unrelated, 1 = identical).]
   #fig("poster/p3_h3_shared_distinct_mval.pdf")
 ]
 

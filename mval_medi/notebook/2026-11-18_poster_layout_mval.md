@@ -50,3 +50,23 @@ check every number and all wording before printing.
 - Check every number against the figure guides; scan the QR code; print an A4 test copy.
 - Rehearse the 10-s pitch and the 1/2/5-min tours (`poster_guide_mval.md`).
 - Ask Jonas about printing and the deadline. Open a pull request into `main` for a group review.
+
+## Addendum (18 Nov, later): Fig 3 (H3) label fix and redesign
+- **Question:** could a visitor misread the "r = 0.37" on Fig 3?
+- **Problem:** yes. The poster text gave the noise-only r (0.50) next to it, which invites
+  "0.37 < 0.50, so no similarity". But 0.37 is the *noise-corrected* r of the true effects and
+  must be compared with 0, not with 0.50.
+- **What was run:** `Rscript scripts/12b_poster_a0_figures_mval.R`, then
+  `quarto typst compile mval_medi/results/step12_poster/poster_a0_mval.typ`.
+- **Changes to `p3_h3_shared_distinct_mval`:** r now shown with its bootstrap 95 % CI
+  (baseline 0.37, 0.29–0.45; response 0.38, 0.24–0.52; read from
+  `step07_shared_distinct/similarity_stats_mval.csv`) and the words "corrected for the shared
+  anc noise"; r, CI and key moved to a text column next to each panel (inside the panel they
+  covered points); key with counts (20 / 4 differ directly, 3 altered in both); the 3 "both"
+  proteins numbered 1–3 and named in the key (fibronectin-binding, B7H15_02275, coagulase);
+  direction of the axes under each panel title; axes ±5.6 (±5 clipped one protein at −5.36).
+  New PASS checks in the script for the r values and the axis range.
+- **Poster text:** the "how to read" line of section 4 now explains r in words
+  (0 = unrelated, 1 = identical) instead of quoting the noise-only r; the dot key moved
+  into the figure. Poster still one page.
+- **AI use:** Claude Code redrew the figure, edited the poster line and this entry.
