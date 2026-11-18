@@ -59,5 +59,22 @@ abstract: [`abstract_mval.md`](abstract_mval.md). Full write-up: [`reports/proje
   biological interpretation.
 
 ### Not on the poster as a separate figure
-Gene context (Step 4, `step04_polar_effect/fig_gene_context_mval.png`, 150 dpi; re-run Step 4
-with `dpi = 300` if it is used on the A0 poster) and the phospho panels (Steps 8–9).
+Gene context (Step 4, `step04_polar_effect/fig_gene_context_mval.png`, 150 dpi; replaced on the
+poster by the two-gene sketch `poster/p0_operon_mval`) and the phospho panels (Steps 8–9).
+
+## `poster/`: the A0 poster versions (Step 12b, 18 Nov)
+
+Made by [`scripts/12b_poster_a0_figures_mval.R`](../../../scripts/12b_poster_a0_figures_mval.R) and placed by
+[`poster_a0_mval.typ`](poster_a0_mval.typ) → [`poster_a0_mval.pdf`](poster_a0_mval.pdf). Same data and
+numbers as `fig1`–`fig4` above, redrawn for the poster (see [`poster_guide_mval.md`](poster_guide_mval.md)):
+drawn at the printed column width (243 mm), Arial ≥ 22–24 pt, no gridlines, direct labels instead
+of legends, no figure titles (the poster heading carries the message), vector PDF + 300 dpi PNG.
+
+| file | poster section | compares | differences from the report figure |
+|---|---|---|---|
+| `p0_operon_mval` | 1 | *stp1* and *stk1* drawn to scale (247 / 664 aa) with the two insertion sites (codon 189 in *stp1*, codon 46 in *stk1*), from `TRANSPOSON_INSERTIONS` | new; a two-gene sketch instead of the full Step 4 gene context |
+| `p1_h1_enzymes_mval` | 2 | as `fig1`: a abundance, b peptides, c ErmB, 18 samples | protein in columns, medium in rows; strains on the x axis (no legend); "n.d." row for not detected; the Stk1 fold change `stp` vs `anc` in TSB (log2 −5.42, 43× lower; computed in the script) written on the panel |
+| `p2_h2_responses_mval` | 3 | as `fig2`: mutant vs `anc` PASN response, per protein | panels stacked; hits filled = robust (stable in 18/18 refits and not in a shifted block), open = fragile or in a block; key written in the panel |
+| `p3_h3_shared_distinct_mval` | 4 | as `fig3`: `stp` vs `stk` effects, baseline and response | panels stacked; only the noise-corrected r on the panel (the noise-only r = 0.50 is in the poster text); 20 baseline direct hits counted, not named |
+| `p4_pathways_genome_mval` | 5 | a total robust terms per mutant and layer; b genome scan | a: totals only (no up/down split), horizontal bars; b: filled area instead of a thin line, labels on the panels |
+| `qr_repo_mval.svg` | fine print | link to the repository | new |
