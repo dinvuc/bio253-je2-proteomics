@@ -270,6 +270,7 @@ For example, the stp-versus-parent interaction is `(stp_TSB - stp_SN) - (anc_TSB
 - [x] Update the lab notebook. Review the Git diff and staged-file list before any commit or publication; include code/reports and exclude course measurement files and unintended files.
 - [ ] Prepare the final presentation from verified findings, including negative results and limitations. Confirm course submission requirements with the group/lecturer.
   *Done 17 Nov (all except the poster layout and the presentation):* `scripts/12_poster_figures_mval.R` → 4 poster figures at 300 dpi, `abstract_mval.md` (~250 words), `poster_text_mval.md` (text blocks) and figure guide in `mval_medi/results/step12_poster/`. Final report `reports/project_c_report_mval.qmd` + rendered HTML (24 s; hand check: Stk1 `stp_vs_anc_at_TSB` = −5.42 from group means = model). Project notebooks `analyses/project_c_{validation,responses,phospho}_mval.qmd` (each < 15 s; recomputed numbers match the step outputs). Answers: **H1 supported** (`stp` lacks most Stk1 and Stp1; polar mechanism consistent, not proven), **H2 supported but small** (5 / 1 altered responses), **H3 partly supported** (noise-corrected r ≈ 0.37 plus clear differences). **Still open (group):** poster layout (A0) and QR code, the gene-context panel at 300 dpi (Step 4 makes it at 150 dpi), presentation, submission requirements, and checking every number in the abstract.
+  *Done 18 Nov (Step 12b):* A0 poster laid out after the lecture "Academic posters" (`scripts/12b_poster_a0_figures_mval.R`, `step12_poster/poster_a0_mval.typ` → `poster_a0_mval.pdf`), QR code, two-gene sketch instead of the 150 dpi gene-context panel, presentation tours in `poster_guide_mval.md`. Still open: author names/e-mail, number check, presentation rehearsal, submission requirements.
 
 **Why:** The group must be able to explain, reproduce and defend what it submits.
 
@@ -304,6 +305,6 @@ If time is short, finish Steps 1-7 and the relevant interpretation/reporting in 
 **Next actions, in order:**
 1. ~~Steps 3–12~~ done (analysis side).
 2. **Group:** confirm the rules marked "group to confirm" (Steps 8–11); check every number in the abstract and poster text against the figure guides.
-3. **Group:** lay out the A0 poster (figures + `poster_text_mval.md`), add a QR code to the repo, re-run Step 4 at 300 dpi if the gene-context panel is used.
+3. ~~**Group:** lay out the A0 poster~~ done 18 Nov (Step 12b, branch `poster-guidelines-mval`): `scripts/12b_poster_a0_figures_mval.R` + `step12_poster/poster_a0_mval.typ` → `poster_a0_mval.pdf` (A0 portrait, vector, QR code), laid out after the poster lecture; checklist and 1/2/5-min tours in `step12_poster/poster_guide_mval.md`. **Group:** fill in names and e-mail (red on the poster), check the numbers, print an A4 test copy.
 4. Ask Jonas: meaning of "stk1 broadly involved"; whether `FP24_transposonDB` may be cited; poster format/deadline; whether genome data of NE217/NE1919 exist (Step 11 blocks).
 5. Optional: STRING network pictures (paste `step10_enrichment/summary/string_upload_candidates_mval.txt`, set the background file).

@@ -1,7 +1,14 @@
-# Poster text blocks (A0) – draft for the group to edit
+# Poster text: long version (for questions at the poster)
 
-Figures: `fig1_h1_enzymes_mval.png` … `fig4_pathways_genome_mval.png` in this folder
+> **Since 18 Nov the poster text lives in [`poster_a0_mval.typ`](poster_a0_mval.typ)**
+> (rendered: [`poster_a0_mval.pdf`](poster_a0_mval.pdf); see [`poster_guide_mval.md`](poster_guide_mval.md)).
+> Following the poster lecture, most of the text below was cut from the poster ("edit
+> ruthlessly"). It stays here as the long version: details to explain in the 5-minute tour and
+> to answer questions. Edit wording on the poster in the `.typ` file, not here.
+
+Report figures: `fig1_h1_enzymes_mval.png` … `fig4_pathways_genome_mval.png` in this folder
 (300 dpi, made by [`scripts/12_poster_figures_mval.R`](../../../scripts/12_poster_figures_mval.R)).
+Poster figures: [`poster/`](poster/) (made by [`scripts/12b_poster_a0_figures_mval.R`](../../../scripts/12b_poster_a0_figures_mval.R)).
 Every number below is in a figure guide of Steps 3–11; check it there before printing.
 
 ## 1. Question and design
@@ -58,5 +65,4 @@ transcripts; clean Δ*stp1*, Δ*stk1* and double deletions with complemented str
 
 ## 7. Code
 All figures: github.com/dinvuc/bio253-je2-proteomics (code and reports only, no raw data).
-QR code: not generated here (the `qrcode` package is not installed; any QR generator
-for the link works).
+QR code: `poster/qr_repo_mval.svg` (R package `qrcode`, made by Step 12b).
