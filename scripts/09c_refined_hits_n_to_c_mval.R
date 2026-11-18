@@ -32,7 +32,10 @@
 #   we do not impute). Refined hits get a black outline ring around the asterisks.
 # Proteins: the proteins of fig_paired_layers_mval.png that also have >= 1 refined hit
 #   (glyA, traP, B7H15_04690, Stk1; deoB and pgcA have no refined hit). The paired-layer
-#   figure is copied into the folder.
+#   figure is copied into the folder. Plus, on group request (18 Nov), kdpD (B7H15_11550),
+#   a Step 6 protein interaction hit (stk vs anc) without any site hit, and deoB, pyk and
+#   Y1819, whose site hits FAILED the refinement (drawn to show why). A site hit outside
+#   the grid (Y1819 T157, an interaction) gets an extra panel in a 4th row.
 # Output:   mval_medi/results/step09_site_vs_protein/n_to_c_refined/
 #             refined_hits_mval.csv          all 62 hits with checks a-c and the verdict
 #             refined_summary_mval.csv       counts per contrast
@@ -200,12 +203,21 @@ panel <- function(pk, ct, len, id) {
 # Plotted = IMPORTANT and SIGNIFICANT (group request, 17 Nov): proteins of
 # fig_paired_layers_mval.png that also have >= 1 refined site hit. deoB and pgcA are in
 # the paired-layer figure but have no refined hit, so they are not plotted any more.
-proteins <- tibble(locus_tag = intersect(KEY_PAIRED, unique(refined$locus_tag[refined$refined]))) |>
-  left_join(distinct(sty, locus_tag, protein_key), by = "locus_tag") |>
+# Added on request (group, 18 Nov): kdpD, a formal protein interaction hit of Step 6
+# (fig_response_vs_anc_mval.png, interaction_stk_vs_anc_at_TSB_vs_SN). It has no site hit,
+# so it is drawn for its protein rectangles; its phosphosites are mostly too sparse to test.
+# Also on request (18 Nov): proteins whose Step 8 site hits FAILED the refinement, drawn
+# so the failure can be seen (faded asterisks): deoB T85/T87, pyk T537, Y1819 T157.
+EXTRA <- tibble(locus_tag = c("B7H15_11550", "B7H15_00775", "B7H15_09250", "B7H15_09315"),
+                why = c("Step 6 interaction hit (stk vs anc), group request",
+                        rep("Step 8 site hit(s), NOT refined, group request", 3)))
+proteins <- tibble(locus_tag = intersect(KEY_PAIRED, unique(refined$locus_tag[refined$refined])),
+                   why = "paired-layer figure + refined hit") |>
+  bind_rows(EXTRA) |>
+  left_join(distinct(sty, locus_tag, protein_key, product), by = "locus_tag") |>   # product: also for proteins without a site hit
   left_join(meta, by = "locus_tag") |>
-  left_join(cat9 |> distinct(locus_tag, product), by = "locus_tag") |>
-  mutate(why = "paired-layer figure + refined hit") |>
   arrange(locus_tag)
+check("every plotted protein is in the STY site table", !anyNA(proteins$protein_key))
 check("one protein_key per plotted locus tag", !anyDuplicated(proteins$locus_tag))
 write_csv(proteins |> select(locus_tag, gene, product, aa_length, why), file.path(out, "plotted_proteins_mval.csv"))
 # remove figures of proteins that are no longer selected (the folder holds only the current set)
@@ -214,25 +226,36 @@ unlink(list.files(out, pattern = "^fig_n_to_c_refined_.*\\.png$", full.names = T
 check("paired-layer figure copied", file.copy("mval_medi/results/step09_site_vs_protein/fig_paired_layers_mval.png",
                                               file.path(out, "fig_paired_layers_mval.png"), overwrite = TRUE))
 
-pdf(file.path(out, "n_to_c_refined_all_mval.pdf"), width = 14, height = 11)
+# PDF page height = the tallest figure (a protein with an extra row needs 4 rows, not 3)
+max_rows <- max(purrr::map_int(proteins$locus_tag, \(lt)
+  as.integer(ceiling(length(union(GRID, refined$contrast[refined$locus_tag == lt])) / 2))))
+pdf(file.path(out, "n_to_c_refined_all_mval.pdf"), width = 14, height = 11 * max_rows / 3)
 for (i in seq_len(nrow(proteins))) {
   pr <- proteins[i, ]
   id <- paste0(pr$locus_tag, if (!is.na(pr$gene)) paste0(" (", pr$gene, ")") else "")
-  plots <- purrr::map(GRID, \(ct) panel(pr$protein_key, ct, pr$aa_length, id))
+  # a site hit in a contrast outside the grid (e.g. an interaction) gets an extra panel
+  # below the grid, so every Step 8 hit of a plotted protein is visible
+  extra_ct <- setdiff(unique(refined$contrast[refined$locus_tag == pr$locus_tag]), GRID)
+  cts <- c(GRID, extra_ct)
+  plots <- purrr::map(cts, \(ct) panel(pr$protein_key, ct, pr$aa_length, id))
+  n_hit <- sum(refined$locus_tag == pr$locus_tag)
   n_ref <- sum(refined$refined & refined$locus_tag == pr$locus_tag)
   fig <- wrap_plots(plots, ncol = 2, byrow = TRUE) +
     plot_annotation(
       title = sprintf("Protein: %s (length: %d)", id, pr$aa_length),
-      subtitle = sprintf("%s  |  %s  |  refined site hits: %d", str_trunc(coalesce(pr$product, ""), 60), pr$why, n_ref),
-      caption = paste("Left: genotype difference in TSB (A - B as named). Right: PASN response TSB - SN within each strain (> 0 = lower in SN).",
+      subtitle = sprintf("%s  |  %s  |  Step 8 site hits: %d, refined: %d", str_trunc(coalesce(pr$product, ""), 60),
+                         pr$why, n_hit, n_ref),
+      caption = paste(c("Left: genotype difference in TSB (A - B as named). Right: PASN response TSB - SN within each strain (> 0 = lower in SN).",
+                      if (length(extra_ct)) paste0("Bottom row: contrast outside the grid in which this protein has a site hit (",
+                                                   paste(extra_ct, collapse = ", "), "; interaction = (TSB - SN) of first strain minus that of second).") else NULL,
                       "Yellow rectangle = protein log2FC (total proteome); bars = phosphosite log2FC (STY); NotLoc = site not localised (median loc_prob < 0.75).",
                       "** FDR < 0.01, * FDR < 0.05 (site test, treat |log2FC| > 1). Bright red = refined hit (leave-one-out 18/18, also a hit in STYH, no QC flag);",
                       "faded = hit that failed a check. Every estimate is observed (no imputation). Each panel has its own y-scale (as in the chapter).",
-                      "Style after Wolski, Dittmann, Panse, Kunz & Grossmann, ch. 8, Fig. 1 and prophosqua (MIT).", sep = "\n"),
+                      "Style after Wolski, Dittmann, Panse, Kunz & Grossmann, ch. 8, Fig. 1 and prophosqua (MIT)."), collapse = "\n"),   # c() drops the NULL: no empty line
       theme = theme(plot.title = element_text(size = 12, face = "bold"), plot.subtitle = element_text(size = 9),
                     plot.caption = element_text(size = 7.5)))
   ggsave(file.path(out, sprintf("fig_n_to_c_refined_%s_%s_mval.png", pr$locus_tag, coalesce(pr$gene, "nogene"))),
-         fig, width = 14, height = 11, dpi = 200, bg = "white")
+         fig, width = 14, height = 11 * ceiling(length(cts) / 2) / 3, dpi = 200, bg = "white")
   print(fig)
 }
 invisible(dev.off())

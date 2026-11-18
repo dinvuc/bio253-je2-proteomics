@@ -1,5 +1,9 @@
 locus_tag,gene,product,aa_length,why
+B7H15_00775,deoB,phosphopentomutase,392,"Step 8 site hit(s), NOT refined, group request"
 B7H15_04690,Y845,CsbD family protein,64,paired-layer figure + refined hit
 B7H15_06355,NA,serine/threonine protein kinase,664,paired-layer figure + refined hit
+B7H15_09250,pyk,pyruvate kinase,585,"Step 8 site hit(s), NOT refined, group request"
+B7H15_09315,Y1819,universal stress protein UspA,166,"Step 8 site hit(s), NOT refined, group request"
 B7H15_10065,traP,signal transduction protein TRAP,167,paired-layer figure + refined hit
+B7H15_11550,kdpD,sensor histidine kinase,885,"Step 6 interaction hit (stk vs anc), group request"
 B7H15_11735,glyA,serine hydroxymethyltransferase,412,paired-layer figure + refined hit
