@@ -32,7 +32,8 @@
 #   we do not impute). Refined hits get a black outline ring around the asterisks.
 # Proteins: the proteins of fig_paired_layers_mval.png that also have >= 1 refined hit
 #   (glyA, traP, B7H15_04690, Stk1; deoB and pgcA have no refined hit). The paired-layer
-#   figure is copied into the folder.
+#   figure is copied into the folder. Plus, on group request (18 Nov), kdpD (B7H15_11550),
+#   a Step 6 protein interaction hit (stk vs anc) without any site hit.
 # Output:   mval_medi/results/step09_site_vs_protein/n_to_c_refined/
 #             refined_hits_mval.csv          all 62 hits with checks a-c and the verdict
 #             refined_summary_mval.csv       counts per contrast
@@ -200,12 +201,18 @@ panel <- function(pk, ct, len, id) {
 # Plotted = IMPORTANT and SIGNIFICANT (group request, 17 Nov): proteins of
 # fig_paired_layers_mval.png that also have >= 1 refined site hit. deoB and pgcA are in
 # the paired-layer figure but have no refined hit, so they are not plotted any more.
-proteins <- tibble(locus_tag = intersect(KEY_PAIRED, unique(refined$locus_tag[refined$refined]))) |>
-  left_join(distinct(sty, locus_tag, protein_key), by = "locus_tag") |>
+# Added on request (group, 18 Nov): kdpD, a formal protein interaction hit of Step 6
+# (fig_response_vs_anc_mval.png, interaction_stk_vs_anc_at_TSB_vs_SN). It has no site hit,
+# so it is drawn for its protein rectangles; its phosphosites are mostly too sparse to test.
+EXTRA <- tibble(locus_tag = "B7H15_11550",
+                why = "Step 6 interaction hit (stk vs anc), group request")
+proteins <- tibble(locus_tag = intersect(KEY_PAIRED, unique(refined$locus_tag[refined$refined])),
+                   why = "paired-layer figure + refined hit") |>
+  bind_rows(EXTRA) |>
+  left_join(distinct(sty, locus_tag, protein_key, product), by = "locus_tag") |>   # product: also for proteins without a site hit
   left_join(meta, by = "locus_tag") |>
-  left_join(cat9 |> distinct(locus_tag, product), by = "locus_tag") |>
-  mutate(why = "paired-layer figure + refined hit") |>
   arrange(locus_tag)
+check("every plotted protein is in the STY site table", !anyNA(proteins$protein_key))
 check("one protein_key per plotted locus tag", !anyDuplicated(proteins$locus_tag))
 write_csv(proteins |> select(locus_tag, gene, product, aa_length, why), file.path(out, "plotted_proteins_mval.csv"))
 # remove figures of proteins that are no longer selected (the folder holds only the current set)
