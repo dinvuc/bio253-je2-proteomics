@@ -41,15 +41,20 @@ from leave-one-out: dropping a single sample removes the hit. Per contrast:
 
 ## Figures (`fig_n_to_c_refined_<locus>_<gene>_mval.png`, `n_to_c_refined_all_mval.pdf`)
 
-**Which proteins** (`plotted_proteins_mval.csv`, 5 proteins): proteins that are **important
-and significant**, i.e. shown in [`fig_paired_layers_mval.png`](fig_paired_layers_mval.png) (copied
-into this folder) **and** carrying ≥ 1 refined hit. That gives glyA (`B7H15_11735`), traP
-(`B7H15_10065`), `B7H15_04690` and Stk1 (`B7H15_06355`). **Added on group request (18 Nov):**
-kdpD (`B7H15_11550`), a formal protein hit of Step 6
-([`fig_response_vs_anc_mval.png`](../../step06_responses/fig_response_vs_anc_mval.png),
-`interaction_stk_vs_anc_at_TSB_vs_SN`). It has no site hit; it is drawn for its protein layer. deoB and pgcA are in the paired-layer
-figure but have no refined hit, so they are not plotted (their hits are still listed with the
-reason in `refined_hits_mval.csv`). The other 7 proteins with refined hits (pflB, eno,
+**Which proteins** (`plotted_proteins_mval.csv`, 8 proteins; column `why`):
+- **paired-layer figure + refined hit** (4): proteins that are **important and significant**,
+  i.e. shown in [`fig_paired_layers_mval.png`](fig_paired_layers_mval.png) (copied into this
+  folder) **and** carrying ≥ 1 refined hit: glyA (`B7H15_11735`), traP (`B7H15_10065`),
+  `B7H15_04690` and Stk1 (`B7H15_06355`).
+- **Step 6 interaction hit, group request (18 Nov)** (1): kdpD (`B7H15_11550`), a formal
+  protein hit of Step 6 ([`fig_response_vs_anc_mval.png`](../../step06_responses/fig_response_vs_anc_mval.png),
+  `interaction_stk_vs_anc_at_TSB_vs_SN`). It has no site hit; it is drawn for its protein layer.
+- **Step 8 site hit(s), NOT refined, group request (18 Nov)** (3): deoB (`B7H15_00775`, T85/T87),
+  pyk (`B7H15_09250`, T537), Y1819 (`B7H15_09315`, T157). Their site hits **failed** the
+  refinement (faded asterisks); they are drawn so the reason can be seen, not because they are
+  robust. pgcA (in the paired-layer figure, no refined hit) is still not plotted.
+
+The other 7 proteins with refined hits (pflB, eno,
 `B7H15_04940`, pgi, qoxB, Y2093/`B7H15_10475`, fda) are not in the paired-layer figure; their
 plots are in the first version in [`../n_to_c/`](../n_to_c/).
 
@@ -83,6 +88,10 @@ installed because its dependencies must be compiled with Rtools):
 
 **Our additions:** bright red asterisks = refined hit; faded asterisks = hit that failed a
 robustness check. Sites too sparse to test are not drawn (prophosqua draws only estimated sites).
+If a plotted protein has a site hit in a contrast **outside** the 6-panel grid (so far only
+Y1819 T157 in `interaction_stp_vs_stk_at_TSB_vs_SN`), that contrast is added as an extra panel
+in a 4th row, so every Step 8 hit of a plotted protein is visible. The subtitle gives
+"Step 8 site hits: n, refined: m" for the protein.
 
 **How to read:** a bar that ends inside the yellow rectangle changes no more than its
 protein (abundance-driven). A bar that reaches clearly beyond it changes beyond the protein
@@ -151,6 +160,51 @@ first strain minus second, in TSB.
 - **Conclusion:** kdpD is a protein-level, not a phosphorylation-level, result: in `stk` the
   KdpD protein drops strongly in PASN, while in `anc` it does not. The phosphoproteome cannot
   test whether KdpD phosphorylation changes too (too few values).
+
+### `fig_n_to_c_refined_B7H15_00775_deoB_mval.png`: deoB (phosphopentomutase) — NOT refined
+- **Description:** deoB (392 aa) with its sites T85 and T87, which sit on the same peptide.
+  Group request; none of its 5 Step 8 site hits passed the refinement.
+- **Key points:** protein flat everywhere (|diff| ≤ 0.66, FDR 1). The three hit contrasts all
+  point at **one group**: the sites are low in `stk` TSB.
+  - `stk_vs_anc_at_TSB`: T85 −3.81 (FDR 0.034, hit; lower in `stk`); T87 −3.54 (FDR 0.06)
+  - `stp_vs_stk_at_TSB`: T85 +5.08, T87 +4.74 (FDR < 0.01; higher in `stp` = lower in `stk`)
+  - `TSB_vs_SN_at_stk`: T85 −5.34, T87 −5.01 (FDR < 0.001; higher in SN, because `stk` TSB is low)
+  - raw values: `stk_TSB` **2/3 detected**, 16.2 and 16.3; every other group 3/3 at about
+    19–23 (e.g. T85 `anc_TSB` 19.9–20.4, `stp_TSB` 21.3–21.4).
+- **Why not refined:** dropping `JE2stk_TSB_1` or `JE2stk_TSB_3` removes the hits (16/18;
+  T85 `stk_vs_anc` 13/18); T85 is not a hit in STYH for the genotype contrasts, T87 is not
+  supported in STYH.
+- **Conclusion:** the deoB "strain differences" and the `stk` PASN response rest on two
+  low values in one group, with the third replicate missing. Whether the missing value is
+  also low (not detected because it is low) or just missed cannot be told. Not a robust result;
+  the protein itself does not change.
+
+### `fig_n_to_c_refined_B7H15_09250_pyk_mval.png`: pyk (pyruvate kinase) — NOT refined
+- **Description:** pyk (585 aa); one Step 8 site hit, T537 in `stp_vs_anc_at_TSB`.
+- **Key points:** T537 `stp` − `anc` in TSB = **+1.99** (SE 0.24, FDR 0.013; higher in `stp`)
+  while the protein is +0.14: a change beyond the protein. All groups 3/3 detected and tight
+  (`anc_TSB` 24.2–24.6, `stp_TSB` 26.3–26.4). Same direction but not a hit in `stp_vs_stk`
+  (+1.67, FDR 0.12) and none in `stk_vs_anc` (+0.31). In SN, `stp` is also highest (26.6–27.0).
+- **Why not refined:** it is a hit in STYH and has no QC flag, but fails leave-one-out
+  **narrowly: 17/18**, lost only when `JE2anc_TSB_1` is dropped. With n = 3 the evidence is
+  close to the treat threshold (|log2FC| > 1).
+- **Conclusion:** the most nearly robust of the three: T537 tends to be more phosphorylated
+  in `stp` (which lacks Stp1 and most of Stk1) than in `anc`, in TSB, without a protein change.
+  Treat as a candidate, not a result.
+
+### `fig_n_to_c_refined_B7H15_09315_Y1819_mval.png`: Y1819 (universal stress protein UspA) — NOT refined
+- **Description:** Y1819 (166 aa); one Step 8 site hit, T157 in
+  `interaction_stp_vs_stk_at_TSB_vs_SN`, shown in the **extra bottom panel** (4th row).
+- **Key points:** interaction = (TSB − SN in `stp`) − (TSB − SN in `stk`) = **−2.28**
+  (SE 0.33, FDR 0.045): the PASN response of T157 differs between the mutants. Read from the
+  grid: in `stk` T157 is lower in SN (+0.99), in `stp` higher in SN (−1.28); neither alone is
+  a hit (FDR 0.92, 0.52). Part of it follows the protein (protein interaction −1.21, FDR 1),
+  so the site goes about 1 log2 beyond its protein. Raw values 3/3 everywhere; the pattern
+  comes from a low `stp_TSB` (17.7–17.8) and a low `stk_SN` (18.0–18.2).
+- **Why not refined:** a hit in STYH and no QC flag, but leave-one-out only **5/18**: dropping
+  almost any of 13 samples removes it. The weakest of the three.
+- **Conclusion:** a fragile interaction close to the FDR cut-off; partly explained by the
+  protein. Do not interpret on its own.
 
 ### `fig_paired_layers_mval.png` (copied from Step 9)
 - **Description / how to read:** see the [Step 9 guide](../figure_guide_mval.md#fig_paired_layers_mvalpng-fig-4c-per-sample-values-of-both-layers).
