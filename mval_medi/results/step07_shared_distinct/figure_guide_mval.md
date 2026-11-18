@@ -58,6 +58,10 @@ No new test is run here. All hits are the Step 5 formal hits (treat lfc = 1, BH-
   effect". The correction assumes noise independent of the true effects and equal
   variance across groups within a protein. It is dominated by high-variance proteins,
   hence the wide CI.
+- **Conclusion (H3):** `stp` shares a moderate part of the `stk` pattern (r ≈ 0.37–0.38
+  after removing the shared noise), both before and during the PASN response. This fits
+  `stp` also lacking most Stk1, but `stp` is clearly not just a kinase mutant: most of
+  its effect pattern is its own. H3 is partly supported.
 
 ### `fig_heatmap_mval.png`: Fig 3b, all 46 genotype-hit proteins
 - **Compares:** observed group means of the 6 TSB/SN groups for every protein that is
@@ -68,6 +72,12 @@ No new test is run here. All hits are the Step 5 formal hits (treat lfc = 1, BH-
   detected. Rows are clustered for display (NA set to 0 only for the ordering).
 - **Check:** Stk1 (`B7H15_06355`) is dark grey in `stk_TSB`, `stk_SN`, `stp_SN` and
   low in `stp_TSB`, as Step 3 found.
+- **Key points:** 46 proteins are a formal hit in at least one genotype contrast. Only 3
+  of them are hits in both mutants in the same direction, and 24 differ directly between
+  `stp` and `stk` (`class_counts_mval.csv`). Stk1 is the clearest shared loss.
+- **Conclusion:** shared and mutant-specific patterns coexist. The heatmap is an overview
+  to pick candidates, not a test. Read the scatter (Fig 3a) for the strength of the
+  similarity and the direct contrasts for the differences.
 
 ### `fig_shared_distinct_raw_mval.png`: per-sample values, shared vs distinct
 - **Compares:** all 27 samples for (a) the 3 proteins that are hits in both mutants in
@@ -77,6 +87,14 @@ No new test is run here. All hits are the Step 5 formal hits (treat lfc = 1, BH-
 - **How to read:** one point = one sample; `n/3` = detected replicates.
 - **Inspected 13 Nov:** all shown groups 3/3, replicates tight; the effects are visible
   in the raw values.
+- **Key points:** (a) coagulase −2.26 / −3.00, `B7H15_02275` −2.21 / −2.34 and FnBPB
+  `B7H15_13900` −2.81 / −1.67 (`stk` / `stp` vs `anc`, TSB) are all lower in both mutants,
+  and the difference largely closes in SN. (b) SceD is higher in `stk` than in `stp`
+  (direct contrast −3.42).
+- **Conclusion:** the shared component includes secreted and surface proteins that are
+  lower in both mutants in TSB (coagulase, a fibronectin-binding protein, an
+  uncharacterised secreted protein). The distinct component includes cell-wall
+  hydrolases. Both are real in the per-sample values and are not driven by single replicates.
 
 ## Tables
 

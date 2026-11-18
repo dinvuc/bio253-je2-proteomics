@@ -23,8 +23,12 @@ polar effect is consistent with it, not proof of it.
   listed by AureoWiki for strain **NCTC 8325** (SAOUHSC_01182–01187;
   MicrobesOnline and Mäder et al. 2016, PMID 27035918). We placed it on JE2
   genes by gene order, which is an assumption.
-- **Point of the figure:** *stk1* is directly downstream of *stp1* (4 bp overlap)
-  and is the last gene of the unit, so an insertion in *stp1* can block *stk1*.
+- **Key points:** *stk1* starts 4 bp before the end of *stp1* (overlapping genes, same
+  strand) and is the **last gene** of the transcription unit. The NE1919 insertion sits at
+  codon 189 of 247 in *stp1*, i.e. upstream of the whole *stk1* gene.
+- **Conclusion:** the genome layout makes a polar effect plausible: a transposon in
+  *stp1* can stop transcription or translation of *stk1*. This is a mechanism to test,
+  not a measurement.
 
 ### `fig_neighbours_mval.png` — are nearby proteins changed?
 - **Compares:** per-sample log2 abundance of the 9 measured proteins around
@@ -34,7 +38,11 @@ polar effect is consistent with it, not proof of it.
 - **Data:** `read_abundances("total")`, normalised log2.
 - **How to read:** one point = one sample, colour = genotype. All panels share
   one y axis, so small shifts look small. All 9 proteins are detected in 27/27 samples.
-- **Matching numbers:** `neighbour_contrasts_mval.csv` (largest |diff| = 0.74, no formal hit).
+- **Key points:** all 9 neighbours are detected in 27/27 samples. The largest mutant-vs-`anc`
+  difference is |log2| = 0.74 (`neighbour_contrasts_mval.csv`), with no formal hit.
+- **Conclusion:** only *stp1*/*stk1* themselves change. The insertions do not disturb
+  the expression of the surrounding genes, so the Stk1 loss in `stp` is specific to the
+  gene downstream of the insertion, as a polar effect predicts.
 
 ### `fig_neighbours_by_genotype_mval.png` — the same neighbourhood, one strain per panel
 - **Made by:** `scripts/04b_neighbours_by_genotype_mval.R`.
@@ -52,6 +60,10 @@ polar effect is consistent with it, not proof of it.
   and Stk1 are low and patchy, and the replicates scatter widely: Stp1 SN_2 = 18.4
   and pulseSN_3 = 18.1, while the other `stp` samples are around 12–14. Check those
   two samples before you trust a group mean.
+- **Key points:** neighbours flat in every strain; in `stk` only Stk1 drops (1/9 detected);
+  in `stp` both Stp1 and Stk1 drop, with two outlying Stp1 values.
+- **Conclusion:** the same picture as `fig_neighbours_mval.png`, now with the two enzymes
+  in place. The defect is confined to the two genes, and `stp` loses both.
 
 ### `fig_neighbours_by_genotype_medium_mval.png` — 6 panels: strain × medium
 - **Made by:** `scripts/04b_neighbours_by_genotype_mval.R` (figure 2).
@@ -66,6 +78,10 @@ polar effect is consistent with it, not proof of it.
   In `stp` TSB, Stp1 is 1/3 (~11.9) and Stk1 is 3/3 at ~10.5–11.4, about 5 log2
   below `anc`. In `stp` SN, Stp1 splits into one sample at 18.4 (`JE2stp_SN_2`)
   and two at ~13.
+- **Key points:** the pattern is the same in TSB and SN. PASN does not rescue or deepen
+  the loss of either enzyme.
+- **Conclusion:** the enzyme defects are stable across the two media of the primary
+  analysis, so H2/H3 compare mutants with a constant enzyme state.
 
 ### `fig_stk1_peptides_by_strain_mval.png` — polar effect at peptide level
 - **Compares:** Stk1 peptides quantified per sample in `anc` vs `stk` vs `stp`,
@@ -75,6 +91,11 @@ polar effect is consistent with it, not proof of it.
 - **Data:** Step 3 table `enzyme_per_sample_mval.csv` (`nr_children_protein_Id`).
 - **How to read:** filled dot = detected; `x` = not detected (0 peptides, count
   scale, never logged).
+- **Key points:** Stk1 peptides: `anc` 27–32, `stk` 0, `stp` 1–2 in TSB and 0 in SN.
+- **Conclusion:** `stp` falls to almost the `stk` level, far below `anc`, which is exactly
+  what a polar insertion predicts. It is consistent with polarity but does not prove the
+  mechanism: reduced stability, regulation or a secondary mutation would look the same in
+  protein data.
 
 ## Tables
 

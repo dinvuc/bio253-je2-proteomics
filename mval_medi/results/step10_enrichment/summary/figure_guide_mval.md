@@ -104,6 +104,12 @@ the website's default (whole genome) inflates easy-to-measure categories.
   the opposite. Colour = annotation source.
 - **Read with:** the counts table above (overlapping terms; `stp` ≥ `stk` except in the
   response).
+- **Key points:** robust terms `stk` 35 / 143 / 44 and `stp` 192 / 168 / 8 (baseline TSB /
+  baseline SN / SN response). `stk` terms are small, specific modules; `stp` terms are
+  large, general ones.
+- **Conclusion:** both mutants shift many functional categories, so "Stk1 broadly involved"
+  is not specific to the kinase mutant. Only the change of the PASN response is broader
+  in `stk` (44 vs 8 terms).
 
 ### `fig_pathway_shifts_mval.png`: Fig 4b
 - **Compares:** the 16 top robust `stk` terms (size ≤ 200; a term nested ≥ 80 % in one
@@ -116,6 +122,10 @@ the website's default (whole genome) inflates easy-to-measure categories.
   cell-killing / haemolysis clusters (lower). It does **not** share the SigB/`mazEF`
   cluster, ATP synthase F1 or vancomycin resistance, and not the purine-response
   difference.
+- **Conclusion (H3 at pathway level):** `stp` shares part of the `stk` pattern (cell-wall
+  synthesis up, toxins/cytolysis down), consistent with its reduced Stk1. The most specific
+  `stk` signals are not shared, and the SigB/*mazEF* one coincides with a genomic block of
+  the `stk` strain (Step 11).
 
 ## Interpretation (marked as interpretation; group to check)
 - Pathway level supports Step 7: `stp` shares **part** of the `stk` pattern (cell wall
