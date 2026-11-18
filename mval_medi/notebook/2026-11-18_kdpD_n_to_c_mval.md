@@ -32,5 +32,21 @@ when it is drawn in the same N-to-C style as the refined-hit proteins of Step 9c
 Claude Code: edited the script, re-ran it, checked the kdpD site/protein numbers and wrote
 the figure-guide section. A group member still has to check the numbers and the figure.
 
+## Part 2: deoB, pyk, Y1819 (non-refined site hits) added to the same folder
+- question: what do the site hits that failed the refinement look like, and why did they fail?
+- added deoB (`B7H15_00775`), pyk (`B7H15_09250`), Y1819 (`B7H15_09315`) to `EXTRA`, labelled
+  "Step 8 site hit(s), NOT refined"; site hits outside the 6-panel grid now get an extra
+  4th-row panel (only Y1819 T157, `interaction_stp_vs_stk_at_TSB_vs_SN`); subtitle now
+  "Step 8 site hits: n, refined: m"; fixed an empty caption line. 8 figures, all checks PASS.
+- deoB T85/T87: all 5 hits come from `stk_TSB` being low (2/3 detected, 16.2/16.3 vs ~20–21
+  elsewhere); e.g. `stp_vs_stk_at_TSB` T85 +5.08 (higher in `stp`), FDR 6e-4; protein flat.
+  LOSO 13–16/18 -> not robust.
+- pyk T537, `stp_vs_anc_at_TSB`: +1.99 (higher in `stp`), SE 0.24, FDR 0.013, protein +0.14;
+  STYH hit, LOSO 17/18 (lost only without `JE2anc_TSB_1`) -> near-robust candidate.
+- Y1819 T157, `interaction_stp_vs_stk_at_TSB_vs_SN`: −2.28, FDR 0.045 (lower in SN in `stk`,
+  higher in SN in `stp`); protein interaction −1.21; LOSO 5/18 -> fragile.
+- all estimates observed (no imputation); n = 3 per group.
+
 ## Next steps
 - decide whether kdpD belongs on the poster as a protein-level `stk` result
+- decide whether pyk T537 is worth mentioning as a near-robust `stp` candidate
