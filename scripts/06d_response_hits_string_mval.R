@@ -3,8 +3,9 @@
 #
 # Run from the repository root:   Rscript scripts/06d_response_hits_string_mval.R   (~1 min)
 # Needs scripts/05_formal_test_mval.R first. Uses the STRING web API ONCE and caches
-# the answer in the output folder (public reference data, no course data is sent:
-# only NCTC 8325 locus tags such as SAOUHSC_02314).
+# the answer in the output folder. Only protein identifiers are sent (no measurements),
+# to the course's own JE2 organism on STRING (STRG0B09NBK, "JE2_Bio253_HS26").
+# Delete string_partners_mval.tsv to query STRING again.
 #
 # ---- Plan (coding rules, section 4) -----------------------------------------
 # Aim:      (1) Annotate the 7 proteins shown in colour in fig_response_vs_anc_mval.png
@@ -15,8 +16,9 @@
 #           (3) kdpD: compare stk and stp, and check the protein value at peptide level.
 # Input:    data/derived/limma_treat_total_mval.tsv.gz  our limma ~0+group, treat(lfc = 1)
 #           read_abundances("total"), read_peptides()     per-sample log2 values (not changed)
-#           read_protein_metadata()                       names, UniProt, SAOUHSC via up_kegg
-#           STRING v12 API, species 93061 (S. aureus NCTC 8325): interaction_partners
+#           read_protein_metadata()                       names, UniProt, keywords
+#           STRING v12.5 API, course JE2 organism STRG0B09NBK (its STRING ids are our
+#             protein_key, so no ortholog mapping is needed): interaction_partners
 #             (score >= 0.7, 6 per hit) and network among hits + partners (score >= 0.7)
 # Analysis: descriptive. response_X = log2(X_SN) - log2(X_TSB) = -diff(TSB_vs_SN_at_X).
 #           Node colour = response_mutant - response_anc = -diff(interaction_X_vs_anc...),
@@ -33,8 +35,8 @@
 #             fig_kdpD_peptides_mval.png          peptide counts + peptide-matched SN change
 #             kdp_contrasts_mval.csv, kdpD_peptide_matched_mval.csv
 #             checks_mval.txt
-# Check:    7 proteins; 27 samples / 3 per group joined by name; every STRING node maps to
-#           exactly one JE2 locus tag (or is listed as unmapped); kdpD numbers equal Step 6.
+# Check:    7 proteins, all found in STRING; 27 samples / 3 per group joined by name;
+#           every STRING node found in our metadata by protein_key; kdpD numbers equal Step 6.
 
 suppressMessages(source("R/setup.R"))
 suppressPackageStartupMessages(library(patchwork))
@@ -43,7 +45,7 @@ dir.create(out, showWarnings = FALSE, recursive = TRUE)
 checks <- character()
 note <- function(...) { msg <- paste0(...); message(msg); checks <<- c(checks, msg) }
 
-STRING_SPECIES <- 93061   # S. aureus NCTC 8325 = the strain of our UniProt orthologs
+STRING_SPECIES <- "STRG0B09NBK"   # course JE2 genome on STRING ("JE2_Bio253_HS26")
 STRING_SCORE   <- 700     # "high confidence" in STRING (0-1000 scale)
 STRING_LIMIT   <- 6       # partners per hit: enough for operon/pathway, still readable
 FDR_EXPLORATORY <- 0.1    # display only (see Step 6 figure guide), never a hit
@@ -54,8 +56,7 @@ INTER <- c(stk = "interaction_stk_vs_anc_at_TSB_vs_SN",
 # ---- 1. the 7 proteins of Fig 2 ------------------------------------------------
 meta <- read_protein_metadata(cds_only = TRUE) |>
   filter(!is.na(locus_tag)) |>
-  mutate(saouhsc = str_extract(up_kegg, "SAOUHSC_\\d+"),
-         gene = coalesce(gene_symbol_best, locus_tag))
+  mutate(gene = coalesce(gene_symbol_best, locus_tag))
 stopifnot(!anyDuplicated(meta$locus_tag))
 # CDS only: drops the frameshift/pseudo fragments that share a locus tag with a CDS
 res  <- read_tsv("data/derived/limma_treat_total_mval.tsv.gz", show_col_types = FALSE) |>
@@ -80,7 +81,7 @@ inter <- res |> filter(contrast %in% INTER) |>
             FDR = if_else(tested, FDR, NA_real_))
 
 hit_table <- meta |> filter(locus_tag %in% hits) |>
-  select(locus_tag, gene, product, uniprot_acc, ortholog_quality, saouhsc,
+  select(protein_key, locus_tag, gene, product, uniprot_acc, ortholog_quality, in_string,
          up_protein_name, up_ec, up_keywords) |>
   left_join(resp, by = "locus_tag") |>
   left_join(hits_long |> group_by(locus_tag) |>
@@ -89,7 +90,7 @@ hit_table <- meta |> filter(locus_tag %in% hits) |>
                                         collapse = "; "), .groups = "drop"),
             by = "locus_tag") |>
   arrange(hit_in, locus_tag)
-stopifnot(nrow(hit_table) == 7, all(hit_table$ortholog_quality == "good"), !anyNA(hit_table$saouhsc))
+stopifnot(nrow(hit_table) == 7, all(hit_table$ortholog_quality == "good"), all(hit_table$in_string))
 write_csv(hit_table, file.path(out, "response_hits_function_mval.csv"))
 
 # ---- 2. STRING: partners and edges (cached) -------------------------------------
@@ -106,9 +107,10 @@ f_part <- file.path(out, "string_partners_mval.tsv")
 f_edge <- file.path(out, "string_edges_mval.tsv")
 if (!file.exists(f_part) || !file.exists(f_edge)) {
   message("querying STRING (first run only) ...")
-  partners <- string_get("interaction_partners", hit_table$saouhsc,
+  hit_ids <- paste0(STRING_SPECIES, ".", hit_table$protein_key)   # STRING id = prefix + protein_key
+  partners <- string_get("interaction_partners", hit_ids,
                          required_score = STRING_SCORE, limit = STRING_LIMIT)
-  node_ids <- unique(c(paste0(STRING_SPECIES, ".", hit_table$saouhsc), partners$stringId_B))
+  node_ids <- unique(c(hit_ids, partners$stringId_B))
   edges <- string_get("network", node_ids, required_score = STRING_SCORE)
   version <- jsonlite::fromJSON(httr::content(
     httr::GET(paste0(STRING_URL, "json/version"), httr::timeout(30)), "text", encoding = "UTF-8"))
@@ -124,51 +126,44 @@ if (!file.exists(f_part) || !file.exists(f_edge)) {
   httr::stop_for_status(img)
   writeBin(httr::content(img, "raw"), file.path(out, "fig_string_official_mval.png"))
 }
+strip <- function(x) str_remove(x, paste0("^", STRING_SPECIES, "\\."))   # STRING id -> protein_key
 partners <- read_tsv(f_part, show_col_types = FALSE)
 edges <- read_tsv(f_edge, show_col_types = FALSE) |>
-  transmute(a = str_remove(stringId_A, "^\\d+\\."), b = str_remove(stringId_B, "^\\d+\\."),
-            score, name_a = preferredName_A, name_b = preferredName_B) |>
+  transmute(a = strip(stringId_A), b = strip(stringId_B), score) |>
   distinct(pair = paste(pmin(a, b), pmax(a, b)), .keep_all = TRUE)   # one row per pair
 note("CHECK STRING: ", nrow(partners), " partner rows, ", nrow(edges),
      " edges (score >= ", STRING_SCORE / 1000, ") among hits + partners; ",
      readLines(file.path(out, "string_version_mval.txt")))
 
-# ---- 3. nodes: map STRING (SAOUHSC) back to JE2 and add our numbers ---------------
-string_names <- bind_rows(select(edges, id = a, sname = name_a), select(edges, id = b, sname = name_b))
-nodes <- tibble(saouhsc = unique(c(hit_table$saouhsc, str_remove(partners$stringId_B, "^\\d+\\."))))  |>
-  left_join(distinct(string_names, id, .keep_all = TRUE), by = c("saouhsc" = "id")) |>
-  left_join(meta |> filter(ortholog_quality == "good", !is.na(saouhsc)) |>
-              select(saouhsc, locus_tag, gene, product, blastortho_evalue),
-            by = "saouhsc", relationship = "many-to-many")
-# JE2 has a second copy of some arc genes (B7H15_00330-00350) that maps to the same
-# NCTC 8325 protein. Keep ONE JE2 protein per STRING node: the Fig 2 protein if it is
-# one, otherwise the best ortholog (lowest e-value), on a tie the one detected in more
-# of the 27 samples (more data to colour the node with). The other copies are listed.
+# ---- 3. nodes: STRING id = our protein_key, so a plain join gives locus tag + numbers --
+# full metadata here (not cds_only): a STRING partner could be a pseudo/frameshift entry
+meta_all <- read_protein_metadata() |> mutate(gene = coalesce(gene_symbol_best, locus_tag))
 ab <- read_abundances("total")
 n_det <- ab |> group_by(locus_tag) |> summarise(n_detected = sum(!is.na(normalized_abundance)))
-nodes <- nodes |> left_join(n_det, by = "locus_tag") |>
-  arrange(saouhsc, !(locus_tag %in% hits), blastortho_evalue, desc(n_detected))
-dup <- nodes |> group_by(saouhsc) |> filter(n() > 1) |>
-  summarise(txt = paste0(saouhsc[1], " -> kept ", locus_tag[1], " (", n_detected[1], "/27), not ",
-                         paste0(locus_tag[-1], " (", n_detected[-1], "/27)", collapse = "/")),
-            .groups = "drop")
-note("CHECK nodes: ", n_distinct(nodes$saouhsc), " STRING nodes; unmapped to JE2: ",
-     sum(is.na(nodes$locus_tag)), "; mapped to >1 JE2 locus: ", nrow(dup),
-     if (nrow(dup)) paste0(" (", paste(dup$txt, collapse = "; "), ")") else "")
-nodes <- nodes |> distinct(saouhsc, .keep_all = TRUE) |>
+nodes <- tibble(id = unique(c(hit_table$protein_key, strip(partners$stringId_B)))) |>
+  left_join(select(meta_all, protein_key, entry_class, locus_tag, gene, product),
+            by = c("id" = "protein_key")) |>
+  left_join(n_det, by = "locus_tag")
+stopifnot(!anyDuplicated(nodes$id), all(edges$a %in% nodes$id), all(edges$b %in% nodes$id))
+note("CHECK nodes: ", nrow(nodes), " STRING nodes; not in our metadata: ", sum(is.na(nodes$locus_tag)),
+     "; entry classes: ", paste(names(table(nodes$entry_class)), table(nodes$entry_class), collapse = ", "))
+nodes <- nodes |>
   mutate(is_hit = locus_tag %in% hits,
          # gene symbol, or a short product name if there is none, plus the locus number
          # (two different JE2 proteins are both called argF, so the number is needed)
-         name = if_else(gene != locus_tag, gene, str_trunc(product, 18)),
-         label = paste0(name, "\n", str_remove(locus_tag, "B7H15_"))) |>
+         name = if_else(gene != locus_tag, gene, str_trunc(coalesce(product, ""), 18)),
+         label = paste0(name, "\n", str_remove(coalesce(locus_tag, id), "B7H15_"))) |>
   left_join(resp, by = "locus_tag")
 write_csv(nodes |> left_join(inter |> pivot_wider(names_from = mutant, values_from = c(delta, FDR)),
                              by = "locus_tag"),
           file.path(out, "string_nodes_mval.csv"))
 
-# ---- 4. layout: one small circle per STRING module ----------------------------------
-# Module = connected group of nodes. Hits sit in the middle, partners on a ring. This
-# is simpler to read (and to explain) than a force layout, and it is deterministic.
+# ---- 4. layout: one small circle per hit module ---------------------------------------
+# Module = Fig 2 proteins that are linked to each other directly (arcA + argF), plus the
+# partners that STRING returned for them; a partner returned for several hits goes to
+# the hit it scores highest with. Hits sit in the middle, partners on a ring. Links
+# between modules are drawn dashed. Simpler to read and explain than a force layout,
+# and deterministic.
 module_of <- function(ids, e) {
   m <- setNames(seq_along(ids), ids)
   repeat {                                  # merge until no edge joins two modules
@@ -180,29 +175,43 @@ module_of <- function(ids, e) {
     if (!changed) return(m)
   }
 }
-nodes$module <- module_of(nodes$saouhsc, edges)[nodes$saouhsc]
+hit_ids <- nodes$id[nodes$is_hit]
+hit_mod <- module_of(hit_ids, filter(edges, a %in% hit_ids, b %in% hit_ids))
+partner_mod <- partners |>
+  transmute(hit = strip(stringId_A), id = strip(stringId_B), score) |>
+  filter(!id %in% hit_ids) |>
+  slice_max(score, by = id, n = 1, with_ties = FALSE) |>
+  transmute(id, module = unname(hit_mod[hit]))
+nodes <- nodes |>
+  left_join(bind_rows(tibble(id = names(hit_mod), module = unname(hit_mod)), partner_mod), by = "id")
+stopifnot(!anyNA(nodes$module))
 mods <- nodes |> group_by(module) |> summarise(first_hit = min(label[is_hit]), n = n(), .groups = "drop") |>
-  arrange(-n, first_hit) |> mutate(slot = row_number(), cx = ((slot - 1) %% 3) * 3.2,
-                                    cy = -((slot - 1) %/% 3) * 3.2)
+  arrange(-n, first_hit) |> mutate(slot = row_number(), cx = ((slot - 1) %% 4) * 3.9,
+                                    cy = -((slot - 1) %/% 4) * 3.4)
 nodes <- nodes |> left_join(mods, by = "module") |> group_by(module) |>
   mutate(k_hit = cumsum(is_hit), n_hit = sum(is_hit), k_par = cumsum(!is_hit), n_par = sum(!is_hit),
-         x = if_else(is_hit, cx + (k_hit - (n_hit + 1) / 2) * 0.95, cx + 1.15 * cos(2 * pi * k_par / n_par)),
-         y = if_else(is_hit, cy, cy + 1.15 * sin(2 * pi * k_par / n_par))) |>
+         r = 0.9 + 0.05 * n_par,                         # bigger ring for more partners
+         x = if_else(is_hit, cx + (k_hit - (n_hit + 1) / 2) * 0.95, cx + r * cos(2 * pi * (k_par - 0.5) / pmax(n_par, 1))),
+         y = if_else(is_hit, cy, cy + r * sin(2 * pi * (k_par - 0.5) / pmax(n_par, 1)))) |>
   ungroup()
-seg <- edges |> left_join(select(nodes, saouhsc, x, y), by = c("a" = "saouhsc")) |>
-  left_join(select(nodes, saouhsc, xend = x, yend = y), by = c("b" = "saouhsc"))
+seg <- edges |> left_join(select(nodes, id, x, y, mod_a = module), by = c("a" = "id")) |>
+  left_join(select(nodes, id, xend = x, yend = y, mod_b = module), by = c("b" = "id")) |>
+  mutate(link = if_else(mod_a == mod_b, "within module", "between modules"))
+note("CHECK layout: ", nrow(mods), " modules; ", sum(seg$link == "between modules"),
+     " of ", nrow(seg), " edges link two modules")
 
 # one panel per mutant, same layout, colour = our measured response difference
 plot_nodes <- inter |> filter(locus_tag %in% nodes$locus_tag) |>
-  right_join(tidyr::crossing(select(nodes, saouhsc, locus_tag, label, is_hit, x, y),
+  right_join(tidyr::crossing(select(nodes, id, locus_tag, label, is_hit, x, y),
                              mutant = names(INTER)),
              by = c("locus_tag", "mutant")) |>
   mutate(panel = if_else(mutant == "stk", "stk vs anc",
                          "stp vs anc  (stp also lacks most Stk1)"),
          sig = !is.na(FDR) & FDR < MVAL_FDR)
 p_net <- ggplot() +
-  geom_segment(data = seg, aes(x, y, xend = xend, yend = yend, linewidth = score),
+  geom_segment(data = seg, aes(x, y, xend = xend, yend = yend, linewidth = score, linetype = link),
                colour = "grey65") +
+  scale_linetype_manual(values = c(`within module` = "solid", `between modules` = "22"), name = NULL) +
   geom_point(data = plot_nodes, aes(x, y, fill = pmax(pmin(delta, 5), -5), shape = is_hit,
                                     size = is_hit, stroke = if_else(sig, 1.4, 0.4))) +
   geom_text(data = plot_nodes, aes(x, y + if_else(is_hit, 0.2, 0.13), label = label,
@@ -220,12 +229,12 @@ p_net <- ggplot() +
   coord_equal() + theme_void(base_size = 10) +
   theme(legend.position = "bottom", strip.text = element_text(size = 10, margin = margin(4, 0, 4, 0))) +
   labs(title = "STRING neighbourhood of the proteins in fig_response_vs_anc_mval.png",
-       subtitle = paste0("STRING v12, S. aureus NCTC 8325 orthologs, score >= 0.7, up to ", STRING_LIMIT,
+       subtitle = paste0("STRING v12.5, course JE2 organism (", STRING_SPECIES, "), score >= 0.7, up to ", STRING_LIMIT,
                          " partners per protein. Red = rises more in SN (PASN) in the mutant than in anc;",
                          "\nblue = rises less / falls more. Grey = not testable (< 2/3 replicates in a group).",
                          " Thick outline = formal interaction hit (treat lfc = 1, BH-FDR < 0.05)."),
        caption = "B7H15_06000 has no STRING partner at score >= 0.7. Colours are observed limma estimates; n = 3 per group.")
-ggsave(file.path(out, "fig_string_network_mval.png"), p_net, width = 14, height = 6.3, dpi = 200, bg = "white")
+ggsave(file.path(out, "fig_string_network_mval.png"), p_net, width = 16, height = 7.5, dpi = 200, bg = "white")
 
 # ---- 5. kdpD in both mutants -------------------------------------------------------
 KDP <- meta |> filter(str_detect(coalesce(gene_symbol_best, ""), "^kdp[A-E]$") |

@@ -1,1 +1,1 @@
-STRING 12.5 species 93061 queried 2026-11-18
+STRING 12.5 species STRG0B09NBK queried 2026-11-18

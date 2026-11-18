@@ -16,33 +16,34 @@ observed estimates only, n = 3. `stp` also lacks most Stk1.
 ### `fig_string_network_mval.png`: STRING neighbourhood coloured by our data
 - **Compares:** for every protein in the network, the PASN response of `stk` (left) or
   `stp` (right) against the PASN response of `anc`.
-- **Data:** STRING v12.5, *S. aureus* NCTC 8325 (taxon 93061), edges with combined score
-  ≥ 0.7. Network = the 7 proteins + up to 6 best partners each (30 nodes, 64 edges).
-  Each STRING node is mapped back to a JE2 locus tag via the UniProt/KEGG ortholog
-  (`up_kegg`, `ortholog_quality == "good"`).
+- **Data:** STRING v12.5, the course's own JE2 organism `STRG0B09NBK` ("JE2_Bio253_HS26",
+  the same genome and protein ids as our FASTA). Links with combined score ≥ 0.7. Network =
+  the 7 proteins + up to 6 best partners each (37 proteins, 70 links). STRING's protein id
+  is our `protein_key`, so every node joins directly to our data (no ortholog mapping).
 - **How to read:** square = Fig 2 protein, circle = STRING partner, thick outline =
   formal interaction hit in that panel, grey = not testable (< 2/3 replicates in a group),
   line width = STRING score. Label = gene (or short product) + locus number. Layout: one
-  circle per connected module (hits in the middle), positions are arbitrary.
-- **Result:** 5 separate modules + 1 isolated protein (B7H15_06000). Only arcA–argF are
-  linked to each other. Partners that move with their hit: betA with B7H15_14515 (`stk`),
-  ilvD / B7H15_11390 with ilvA (`stk`). Partners that do not: rbsK (rbsD), arcC1 / argG /
-  argH (arcA/argF). The kdp partners are almost all grey (not detected in SN).
-- **Caveat:** STRING edges include text-mining and co-expression in other organisms, so
-  an edge means "functionally associated", not a physical contact. Mapping choice: JE2
-  has a second copy of arcA / argF / arcC1 (B7H15_00330–00350); when two JE2 proteins
-  map to one STRING node, the Fig 2 protein is kept, otherwise the best ortholog, then the
-  one detected in more samples (listed in `checks_mval.txt`; argF B7H15_00335 vs 06085
-  was a tie).
+  circle per **hit module** (Fig 2 proteins linked to each other, here only arcA + argF,
+  in the middle; each partner sits with the hit it scores highest with). Solid lines =
+  within a module, dashed = between modules (6 of 70). Positions are arbitrary.
+- **Result:** 6 modules; no direct link between Fig 2 proteins except arcA–argF. The
+  dashed links run through shared partners (aspartate aminotransferase 14470,
+  B7H15_11190, lacD 12200 / lactose transporter 12195). Partners that move with their hit
+  in `stk`: betA (B7H15_14515), acetolactate synthase 11390 (ilvA), Y1819 (kdpD). Partners
+  that do not: the arc / arginine partners, rbsK and the LacI regulators. The kdp partners
+  are grey (too few SN values).
+- **Caveat:** STRING scores for an uploaded genome are transferred from related organisms
+  (text-mining, co-expression, databases), so a link means "functionally associated", not
+  a physical contact. The partner list differs slightly from STRING's NCTC 8325 entry.
 - **Conclusion:** the Fig 2 proteins are not one pathway. Only the arc operon, and weakly
   betaine and ilv–leu, show partners that move together.
 
-### `fig_string_official_mval.png`: STRING's own picture of the same 30 nodes
-- **Compares:** nothing from our data; it is the STRING website rendering (evidence view,
-  coloured lines = evidence types) for comparison and for the poster.
-- **How to read:** STRING names, e.g. `argF-2` = our argF hit B7H15_14670, `ABD31928.1` =
-  B7H15_14515, `ABD30224.1` = B7H15_06000. The background is transparent (looks black in
-  dark viewers).
+### `fig_string_official_mval.png`: STRING's own picture of the same 37 proteins
+- **Compares:** nothing from our data; it is the STRING website rendering for the course
+  JE2 organism (evidence view, coloured lines = evidence types), for comparison and for
+  the poster.
+- **How to read:** nodes are labelled with JE2 locus tags (B7H15_…). The background is
+  transparent (looks black in dark viewers).
 
 ### `fig_kdp_operon_raw_mval.png`: kdp proteins per sample, 9 groups
 - **Compares:** kdpC, kdpB, kdpA, kdpD, kdpE (KdpF = B7H15_11545 not detected) in
@@ -67,11 +68,11 @@ observed estimates only, n = 3. `stp` also lacks most Stk1.
 
 | file | content |
 |---|---|
-| `response_hits_function_mval.csv` | the 7 proteins: gene, product, UniProt, SAOUHSC, UniProt name / EC / keywords, response per genotype, where they are hits (delta, FDR) |
-| `string_partners_mval.tsv` | STRING `interaction_partners` answer (score ≥ 0.7, 6 per protein), raw |
-| `string_edges_mval.tsv` | STRING `network` answer among all 30 nodes (score ≥ 0.7), raw, with evidence channels |
-| `string_version_mval.txt` | STRING version, species and query date |
-| `string_nodes_mval.csv` | each node: SAOUHSC, JE2 locus tag, gene, product, samples detected, responses, delta and FDR for `stk` and `stp` vs `anc` |
+| `response_hits_function_mval.csv` | the 7 proteins: protein_key, gene, product, UniProt, in STRING, UniProt name / EC / keywords, response per genotype, where they are hits (delta, FDR) |
+| `string_partners_mval.tsv` | STRING `interaction_partners` answer, JE2 organism (score ≥ 0.7, 6 per protein), raw |
+| `string_edges_mval.tsv` | STRING `network` answer among all 37 proteins (score ≥ 0.7), raw, with evidence channels |
+| `string_version_mval.txt` | STRING version, organism and query date |
+| `string_nodes_mval.csv` | each node: protein_key (= STRING id), JE2 locus tag, gene, product, samples detected, responses, delta and FDR for `stk` and `stp` vs `anc` |
 | `kdp_contrasts_mval.csv` | kdp proteins: SN responses, TSB baselines and interactions from our limma fit (diff, SE, FDR, tested) |
 | `kdpD_peptide_matched_mval.csv` | every kdpD / kdpE peptide seen in SN with the mean of the same peptide in TSB (same genotype) and the difference |
 | `checks_mval.txt` | CHECK lines (counts, mapping, peptide fractions, depth) |

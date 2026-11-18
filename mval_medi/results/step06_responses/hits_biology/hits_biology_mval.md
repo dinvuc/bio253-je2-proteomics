@@ -30,12 +30,21 @@ poster.
 | `B7H15_11425` **ilvA** | Threonine deaminase, isoleucine biosynthesis (Q2FWJ9) | `stp`: response −2.85 vs anc −0.49; delta −2.36 (FDR 0.039) | 9/18 | low |
 | `B7H15_06000` | Fibrinogen-binding protein, secreted (Q2FZC2, unreviewed) | `stp`: −2.89 in TSB, normal in SN; delta +2.31 (FDR 0.077, **exploratory, not a hit**) | (18/18 in stp vs stk) | low |
 
-**STRING (v12.5, NCTC 8325, score ≥ 0.7).** Among the 7 proteins themselves there is only
-one link: arcA–argF (0.995). Each protein has its own neighbourhood: kdpD → kdpABCE;
-arcA/argF → arcC, argG/H/J, carB; ilvA → ilvC/D, leuB, acetolactate synthase; B7H15_14515
-→ betA; rbsD → rbsK, ribose transporter; B7H15_06000 → none. **The hits are not one
-pathway; they are 5 separate modules.** That argues against a single Stk1-controlled
-programme. It fits better with several local effects (or artefacts) next to each other.
+**STRING (v12.5, the course's own JE2 organism `STRG0B09NBK` "JE2_Bio253_HS26", score
+≥ 0.7, up to 6 partners each; 37 proteins, 70 links).** Among the 7 proteins themselves
+there is only one link: arcA–argF (0.918). Each protein has its own neighbourhood:
+kdpD → kdpA/B/C/E + Y1819 (B7H15_09315, a Step 9c phospho-site protein);
+arcA/argF → the second arc copy (arcC1 00330, argF 00335), argF 06085, argB, rocD, carA,
+arginase, nitric oxide synthase, B7H15_11190; ilvA → leuB, acetolactate synthase 11390,
+threonine synthase, metE, trpB, glyA; B7H15_14515 → betA, a GbsR/MarR-family regulator
+(B7H15_14525, the neighbouring gene), crtP, amidohydrolase, lacD, aspartate aminotransferase
+14470; rbsD → rbsK, two LacI-family regulators, a lactose-specific transporter;
+B7H15_06000 → none. Only 6 of the 70 links join two modules, and none of them is a direct
+link between two Fig 2 proteins. **The hits are not one pathway; they are 6 separate
+modules.** That argues against a single Stk1-controlled programme. It fits better with
+several local effects (or artefacts) next to each other. In our data, partners that move
+with their hit in `stk` are betA (−1.76, not a hit), acetolactate synthase 11390 (−1.16)
+and Y1819 (−1.12). The arc partners, rbsK and the LacI regulators stay near 0.
 
 ---
 
@@ -133,9 +142,9 @@ ornithine + carbamoyl-P → ATP. It runs under anaerobic conditions and is activ
 **Data.** Both proteins are **low in `stk` in TSB** (arcA −3.74, argF −1.63 vs `anc`) and
 rise in SN (arcA +4.06 in `stk` vs −0.92 in `anc`). Two enzymes of one operon move together,
 so this is not a single-protein accident. `stp` behaves like `anc` (and arcA/argF are also
-hits in `stp` vs `stk`). JE2 has a **second arc gene copy** (B7H15_00330–00350, mapped
-to the same NCTC 8325 orthologs). Its arcA rises in SN in `anc` (+1.42) and less in `stk`
-(+0.35). So the `stk` effect is specific to the main operon B7H15_14655–14675.
+hits in `stp` vs `stk`). JE2 has a **second arc gene copy** (B7H15_00330–00350; STRING
+lists its argF and arcC1 as partners). Its arcA rises in SN in `anc` (+1.42) and less in
+`stk` (+0.35), and its argF (00335) responds like in `anc` (delta −0.66). So the `stk` effect is specific to the main operon B7H15_14655–14675.
 
 **Hypothesis (interpretation).** PASN contains HQNO, which pushes *S. aureus* towards
 fermentative growth (Orazi & O'Toole 2017, PMID 28720732,
@@ -211,7 +220,8 @@ controlled by those regulators.
 ---
 
 ## Take-home for the poster (draft)
-- The 7 proteins fall into **5 unrelated STRING modules**, so there is no single
+- The 7 proteins fall into **6 STRING modules** (course JE2 organism) with no direct link
+  except arcA–argF, so there is no single
   Stk1-controlled response programme.
 - **Most solid:** the arc operon (arcA + argF) in `stk`, i.e. arginine catabolism switched
   off in TSB and switched on in PASN.
