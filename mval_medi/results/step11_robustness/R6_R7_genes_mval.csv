@@ -1,0 +1,136 @@
+view,in_region,locus_tag,start,end,strand,gap,tu,gene,product,diff_stk_vs_anc_at_TSB,diff_stk_vs_anc_at_SN,diff_stp_vs_anc_at_TSB,diff_stp_vs_anc_at_SN,estimate_type_stk_vs_anc_at_TSB,estimate_type_stk_vs_anc_at_SN,estimate_type_stp_vs_anc_at_TSB,estimate_type_stp_vs_anc_at_SN
+R7,FALSE,B7H15_11380,2165978,2166133,+,64,1043,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R7,FALSE,B7H15_11385,2166451,2168139,+,317,1044,ilvD,dihydroxy-acid dehydratase,0.19,-1.05,0.21,-0.2,observed,observed,observed,observed
+R7,FALSE,B7H15_11390,2168167,2169936,+,27,1044,NA,"acetolactate synthase, large subunit, biosynthetic type",0.29,-0.87,0.11,-0.19,observed,observed,observed,observed
+R7,FALSE,B7H15_11395,2169936,2170190,+,-1,1044,NA,acetolactate synthase 1 regulatory subunit,0.24,NA,-0.01,-0.36,observed,observed,observed,observed
+R7,FALSE,B7H15_11400,2170327,2171331,+,136,1044,ilvC,ketol-acid reductoisomerase,0.13,-0.42,-0.01,0.43,observed,observed,observed,observed
+R7,FALSE,B7H15_11405,2171361,2172890,+,29,1044,leuA,2-isopropylmalate synthase,0.4,-2.14,0.32,-0.54,observed,observed,observed,observed
+R7,FALSE,B7H15_11410,2172893,2173939,+,2,1044,leuB,3-isopropylmalate dehydrogenase,0.7,NA,0.45,-0.01,observed,observed,observed,observed
+R7,FALSE,B7H15_11415,2173953,2175323,+,13,1044,leuC,3-isopropylmalate dehydratase large subunit,0.46,NA,0.11,NA,observed,observed,observed,observed
+R7,FALSE,B7H15_11420,2175324,2175896,+,0,1044,leuD,3-isopropylmalate dehydratase small subunit,0.56,NA,-0.04,NA,observed,observed,observed,observed
+R7,FALSE,B7H15_11425,2175911,2177179,+,14,1044,ilvA,L-threonine dehydratase biosynthetic IlvA,0.45,NA,0.14,-2.22,observed,observed,observed,observed
+R7,FALSE,B7H15_11455,2182617,2182724,-,5437,1045,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R7,FALSE,B7H15_11460,2183298,2183753,-,573,1046,SPRTL,SprT family protein,NA,NA,NA,NA,observed,observed,observed,observed
+R7,FALSE,B7H15_11465,2183746,2185896,-,-8,1046,NA,RNA-binding protein,0.71,0.97,0.3,0.3,observed,observed,observed,observed
+R7,TRUE,B7H15_11470,2186330,2187100,-,433,1047,NA,RNA polymerase sigma factor SigB,1.03,1.14,0.32,0.49,observed,observed,observed,observed
+R7,TRUE,B7H15_11475,2187075,2187584,-,-26,1047,rsbW,anti-sigma B factor RsbW,0.81,1.02,0.17,0.27,observed,observed,observed,observed
+R7,TRUE,B7H15_11480,2187556,2187882,-,-29,1047,rsbV,anti-anti-sigma factor,0.2,0.38,-0.93,-0.88,observed,observed,observed,observed
+R7,TRUE,B7H15_11485,2188001,2189002,-,118,1047,NA,serine/threonine protein phosphatase,0.7,0.98,0.15,0.19,observed,observed,observed,observed
+R7,TRUE,B7H15_11490,2189154,2189387,+,151,1048,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R7,TRUE,B7H15_11495,2189352,2189714,-,-36,1049,mazF,mRNA interferase MazF,0.87,0.86,-0.45,-0.11,observed,observed,observed,observed
+R7,TRUE,B7H15_11500,2189711,2189881,-,-4,1049,mazE,antitoxin MazE,1.75,1.81,-0.72,0.1,observed,observed,observed,observed
+R7,TRUE,B7H15_11505,2189966,2191114,-,84,1049,alr1,alanine racemase,0.93,0.98,0.51,0.37,observed,observed,observed,observed
+R7,TRUE,B7H15_11510,2191180,2191539,-,65,1049,acpS,holo-ACP synthase,0.87,1.2,-0.16,0.36,observed,observed,observed,observed
+R7,TRUE,B7H15_11515,2191543,2192034,-,3,1049,NA,hypothetical protein,1.03,0.39,0.24,-0.18,observed,observed,observed,observed
+R7,TRUE,B7H15_11520,2192021,2193604,-,-14,1049,NA,hypothetical protein,0.93,1.23,0.36,0.42,observed,observed,observed,observed
+R7,TRUE,B7H15_11525,2193597,2194076,-,-8,1049,NA,hypothetical protein,1.21,0.64,0.13,-0.22,observed,observed,observed,observed
+R7,TRUE,B7H15_11530,2194284,2194844,-,207,1050,kdpC,potassium-transporting ATPase subunit C,2.25,NA,0.21,NA,observed,observed,observed,observed
+R7,TRUE,B7H15_11535,2194864,2196891,-,19,1050,kdpB,potassium-transporting ATPase subunit B,2.18,NA,-0.88,NA,observed,observed,observed,observed
+R7,TRUE,B7H15_11540,2196910,2198586,-,18,1050,kdpA,potassium-transporting ATPase A chain,2.59,NA,NA,-2.52,observed,observed,observed,observed
+R7,TRUE,B7H15_11545,2198610,2198720,-,23,1050,NA,potassium-transporting ATPase subunit F,NA,NA,NA,NA,NA,NA,NA,NA
+R7,TRUE,B7H15_11550,2198858,2201515,+,137,1051,kdpD,sensor histidine kinase,1.35,-3.78,0.08,NA,observed,observed,observed,observed
+R7,TRUE,B7H15_11555,2201515,2202210,+,-1,1051,kdpE,DNA-binding response regulator,1.08,NA,-0.47,NA,observed,observed,observed,observed
+R7,TRUE,B7H15_11560,2202579,2204099,-,368,1052,cshA,DEAD/DEAH box family ATP-dependent RNA helicase,0.58,0.89,0.35,0.3,observed,observed,observed,observed
+R7,TRUE,B7H15_11565,2204616,2205974,-,516,1053,murF,"UDP-N-acetylmuramoylalanyl-D-glutamyl-2, 6-diaminopimelate--D-alanyl-D-alanine ligase",0.84,1.03,0.28,0.24,observed,observed,observed,observed
+R7,TRUE,B7H15_11570,2205989,2207059,-,14,1053,ddl,D-alanine--D-alanine ligase A,1,0.95,0.35,0.18,observed,observed,observed,observed
+R7,TRUE,B7H15_11575,2207377,2208579,+,317,1054,NA,rod shape-determining protein RodA,0.14,0.48,-0.06,0.1,observed,observed,observed,observed
+R7,TRUE,B7H15_11580,2208843,2208980,-,263,1055,NA,hypothetical protein,1.57,1.6,-0.28,NA,observed,observed,observed,observed
+R7,TRUE,B7H15_11585,2209108,2209317,-,127,1055,NA,hypothetical protein,0.71,0.81,-0.93,-0.12,observed,observed,observed,observed
+R7,TRUE,B7H15_11590,2209329,2209622,-,11,1055,NA,CsoR family transcriptional regulator,1.11,0.76,0.05,0.28,observed,observed,observed,observed
+R7,FALSE,B7H15_11595,2209788,2211272,+,165,1056,NA,cardiolipin synthase,0.44,0.54,0.16,-0.11,observed,observed,observed,observed
+R7,FALSE,B7H15_11600,2211300,2211947,+,27,1056,NA,phosphohydrolase,0.79,1.03,0.49,0.48,observed,observed,observed,observed
+R7,FALSE,B7H15_11605,2212007,2212114,-,59,1057,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R7,FALSE,B7H15_11610,2212122,2212214,-,7,1057,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R7,FALSE,B7H15_11615,2212356,2212603,+,141,1058,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R7,FALSE,B7H15_11620,2212760,2213632,-,156,1059,yidC,protein translocase component YidC,0.62,0.74,-0.15,-0.12,observed,observed,observed,observed
+R7,FALSE,B7H15_11625,2213718,2214359,-,85,1059,thiE,thiamine phosphate synthase,0.01,-0.05,-0.49,-0.56,observed,observed,observed,observed
+R7,FALSE,B7H15_11630,2214361,2215152,-,1,1059,thiM,hydroxyethylthiazole kinase,0.32,0.43,-0.01,-0.5,observed,observed,observed,observed
+R7,FALSE,B7H15_11635,2215136,2215966,-,-17,1059,NA,bifunctional hydroxymethylpyrimidine kinase/phosphomethylpyrimidine kinase,0.32,0.39,0.16,0.16,observed,observed,observed,observed
+R7,FALSE,B7H15_11640,2215959,2216648,-,-8,1059,tenA,thiaminase II,0.51,0.39,-0.06,-0.06,observed,observed,observed,observed
+R7,FALSE,B7H15_11645,2217034,2217729,-,385,1060,sceD,transglycosylase SceD,3.38,3.53,-0.04,1.72,observed,observed,observed,observed
+R7,FALSE,B7H15_11650,2218166,2218513,-,436,1061,NA,single-stranded DNA-binding protein,-2.47,NA,-2.74,NA,observed,observed,observed,observed
+R7,FALSE,B7H15_11655,2218644,2219147,+,130,1062,NA,hypothetical protein,0.95,0.88,0.12,-0.18,observed,observed,observed,observed
+R7,FALSE,B7H15_11660,2219206,2219646,-,58,1063,fabZ,beta-hydroxyacyl-ACP dehydratase,0.83,0.6,-0.16,-0,observed,observed,observed,observed
+R7,FALSE,B7H15_11665,2219680,2220945,-,33,1063,murA,UDP-N-acetylglucosamine 1-carboxyvinyltransferase,0.89,1.05,0.31,0.28,observed,observed,observed,observed
+R7,FALSE,B7H15_11670,2221056,2221289,-,110,1063,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R7,FALSE,B7H15_11675,2221421,2221513,-,131,1063,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R7,FALSE,B7H15_11680,2221851,2222255,-,337,1064,atpC,ATP synthase epsilon chain,0.5,0.86,0.1,0.02,observed,observed,observed,observed
+R7,FALSE,B7H15_11685,2222275,2223687,-,19,1064,atpD,ATP synthase subunit beta,0.53,0.94,0.07,0.09,observed,observed,observed,observed
+R7,FALSE,B7H15_11690,2223709,2224575,-,21,1064,atpG,ATP synthase subunit gamma,0.48,0.81,0.08,0.07,observed,observed,observed,observed
+R7,FALSE,B7H15_11695,2224606,2226114,-,30,1064,atpA,ATP synthase subunit alpha,0.69,0.88,0.2,0.05,observed,observed,observed,observed
+R7,FALSE,B7H15_11700,2226136,2226675,-,21,1064,atpH,ATP synthase subunit delta,0.41,0.83,0.08,0.02,observed,observed,observed,observed
+R6,FALSE,B7H15_10815,2083923,2085677,-,10,997,eap,MAP domain-containing protein,-0.65,-1.32,-1.01,-1,observed,observed,observed,observed
+R6,FALSE,B7H15_10820,2086063,2086263,+,385,998,NA,hypothetical protein,NA,NA,-0.28,NA,observed,observed,observed,observed
+R6,FALSE,B7H15_10825,2086635,2086814,+,371,999,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,FALSE,B7H15_10830,2086838,2087146,+,23,999,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,FALSE,B7H15_10835,2087125,2087385,+,-22,999,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,FALSE,B7H15_10840,2087438,2087788,-,52,1000,scn,inhibitor,-2.13,-1.54,-0.24,0.09,observed,observed,observed,observed
+R6,FALSE,B7H15_10845,2088473,2088922,+,684,1001,chp,chemotaxis inhibitory protein,-0.29,-1.94,-0.82,0.07,observed,observed,observed,observed
+R6,FALSE,B7H15_10850,2089017,2089313,-,94,1002,NA,peptidoglycan hydrolase,NA,NA,NA,NA,NA,NA,NA,NA
+R6,FALSE,B7H15_10855,2089220,2089474,-,-94,1002,NA,amidase,NA,NA,NA,NA,NA,NA,NA,NA
+R6,FALSE,B7H15_10860,2089401,2089556,+,-74,1003,NA,amidase,NA,NA,NA,NA,NA,NA,NA,NA
+R6,FALSE,B7H15_10865,2089532,2089715,-,-25,1004,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,FALSE,B7H15_10870,2090002,2090493,-,286,1005,NA,staphylokinase,0.18,0.08,0.14,-0.03,observed,observed,observed,observed
+R6,FALSE,B7H15_10875,2090684,2091439,-,190,1006,NA,amidase,-0.46,0.2,-3.22,-2.31,observed,observed,observed,observed
+R6,FALSE,B7H15_10880,2091451,2091705,-,11,1006,NA,phage holin,NA,NA,NA,NA,NA,NA,NA,NA
+R6,FALSE,B7H15_10885,2091757,2091864,+,51,1007,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,FALSE,B7H15_10890,2091917,2092093,-,52,1008,NA,putative holin-like toxin,-0.26,NA,-0.5,NA,observed,observed,observed,observed
+R6,FALSE,B7H15_10895,2092243,2092539,-,149,1008,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,FALSE,B7H15_10900,2092597,2092884,-,57,1008,NA,hypothetical protein,-0.27,0.72,-0.44,-0.58,observed,observed,observed,observed
+R6,FALSE,B7H15_10905,2092931,2093083,-,46,1008,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_10910,2093073,2096858,-,-11,1008,NA,hypothetical protein,1.21,1.15,2.98,0.54,observed,observed,observed,observed
+R6,TRUE,B7H15_10915,2096874,2098358,-,15,1008,NA,phage tail protein,0.84,0.75,NA,-0.28,observed,observed,observed,observed
+R6,TRUE,B7H15_10920,2098355,2102884,-,-4,1008,NA,phage tail tape measure protein,1.65,1.51,1.27,1.24,observed,observed,observed,observed
+R6,TRUE,B7H15_10925,2103129,2103479,-,244,1009,NA,hypothetical protein,-0.31,-0.02,-2.73,-1.58,observed,observed,observed,observed
+R6,TRUE,B7H15_10930,2103529,2103753,-,49,1009,NA,hypothetical protein,NA,1.14,NA,-0.2,observed,observed,observed,observed
+R6,TRUE,B7H15_10935,2103795,2104439,-,41,1009,NA,phage tail protein,0.19,0.94,-2.69,-0.48,observed,observed,observed,observed
+R6,TRUE,B7H15_10940,2104443,2104847,-,3,1009,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_10945,2104844,2105248,-,-4,1009,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_10950,2105245,2105607,-,-4,1009,NA,phage head-tail adapter protein,NA,NA,NA,NA,observed,observed,observed,observed
+R6,TRUE,B7H15_10955,2105591,2105875,-,-17,1009,NA,phage head-tail adapter protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_10960,2105865,2106149,-,-11,1009,NA,hypothetical protein,NA,0.23,NA,-0.31,observed,observed,observed,observed
+R6,TRUE,B7H15_10965,2106169,2107314,-,19,1009,NA,phage major capsid protein,-0.13,0.59,-2.23,-1.04,observed,observed,observed,observed
+R6,TRUE,B7H15_10970,2107338,2108075,-,23,1009,NA,peptidase,0.73,-0.14,-0.12,-0.58,observed,observed,observed,observed
+R6,TRUE,B7H15_10975,2108059,2109246,-,-17,1009,NA,phage portal protein,0.28,0.02,NA,-3.06,observed,observed,observed,observed
+R6,TRUE,B7H15_10980,2109262,2110923,-,15,1009,NA,terminase,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_10985,2110920,2111264,-,-4,1009,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_10990,2111394,2111693,-,129,1009,NA,HNH endonuclease,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_10995,2111925,2112341,-,231,1010,NA,transcriptional regulator,NA,NA,NA,NA,observed,observed,observed,observed
+R6,TRUE,B7H15_11000,2112369,2112569,-,27,1010,NA,hypothetical protein,NA,NA,NA,NA,observed,observed,observed,observed
+R6,TRUE,B7H15_11005,2112569,2112718,-,-1,1010,NA,transcriptional regulator,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_11010,2112715,2113101,-,-4,1010,NA,hypothetical protein,-0.4,0.3,-1.57,0.13,observed,observed,observed,observed
+R6,TRUE,B7H15_11015,2113098,2113304,-,-4,1010,NA,DUF1381 domain-containing protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_11020,2113301,2113546,-,-4,1010,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_11025,2113583,2114116,-,36,1010,NA,dUTP pyrophosphatase,NA,0.92,NA,-0.46,observed,observed,observed,observed
+R6,TRUE,B7H15_11030,2114109,2114351,-,-8,1010,NA,hypothetical protein,-0.08,0.96,-2.06,-0.81,observed,observed,observed,observed
+R6,TRUE,B7H15_11035,2114341,2114577,-,-11,1010,NA,hypothetical protein,NA,NA,NA,NA,observed,observed,observed,observed
+R6,TRUE,B7H15_11040,2114570,2114941,-,-8,1010,NA,acetyltransferase,-0.33,0.49,-2.49,-0.91,observed,observed,observed,observed
+R6,TRUE,B7H15_11045,2114950,2115192,-,8,1010,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_11050,2115196,2115564,-,3,1010,NA,hypothetical protein,NA,NA,NA,NA,observed,observed,observed,observed
+R6,TRUE,B7H15_11055,2115577,2115981,-,12,1010,NA,hypothetical protein,-1.33,1.05,NA,NA,observed,observed,observed,observed
+R6,TRUE,B7H15_11060,2115990,2116208,-,8,1010,NA,hypothetical protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_11065,2116215,2117108,-,6,1010,NA,DNA replication protein DnaD,NA,NA,NA,NA,observed,observed,observed,observed
+R6,TRUE,B7H15_11070,2117138,2117608,-,29,1010,NA,single-stranded DNA-binding protein,NA,NA,NA,NA,observed,observed,observed,observed
+R6,TRUE,B7H15_11075,2117609,2118226,-,0,1010,NA,MBL fold metallo-hydrolase,NA,NA,NA,NA,observed,observed,observed,observed
+R6,TRUE,B7H15_11080,2118307,2119227,-,80,1010,NA,recombinase,-0.03,0.55,-1.8,-0.5,observed,observed,observed,observed
+R6,TRUE,B7H15_11085,2119229,2121172,-,1,1010,NA,ATPase,-0.3,0.45,-2.36,-0.82,observed,observed,observed,observed
+R6,TRUE,B7H15_11090,2121181,2121444,-,8,1010,NA,hypothetical protein,-0.55,0.5,NA,-1.37,observed,observed,observed,observed
+R6,TRUE,B7H15_11095,2121453,2121713,-,8,1010,NA,hypothetical protein,-0.75,0.28,NA,NA,observed,observed,observed,observed
+R6,TRUE,B7H15_11100,2121753,2122013,-,39,1010,NA,hypothetical protein,NA,NA,NA,NA,observed,observed,observed,observed
+R6,TRUE,B7H15_11105,2122108,2122269,-,94,1010,NA,DUF1270 domain-containing protein,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_11110,2122266,2122586,-,-4,1010,NA,hypothetical protein,-1.17,1.07,-2.74,-0.93,observed,observed,observed,observed
+R6,TRUE,B7H15_11115,2122645,2122875,+,58,1011,NA,hypothetical protein,-1.63,-0.41,-0.52,-0.37,observed,observed,observed,observed
+R6,TRUE,B7H15_11120,2123064,2123816,-,188,1012,NA,oxidoreductase,-0.35,0.02,-1.78,-0.85,observed,observed,observed,observed
+R6,TRUE,B7H15_11125,2123867,2124196,+,50,1013,NA,hypothetical protein,NA,NA,0.1,NA,observed,observed,observed,observed
+R6,TRUE,B7H15_11130,2124185,2124400,-,-12,1014,NA,hypothetical protein,0.21,0.42,NA,-0.57,observed,observed,observed,observed
+R6,TRUE,B7H15_11135,2124416,2124679,-,15,1014,NA,transcriptional regulator,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_11140,2124676,2124850,-,-4,1014,NA,transcriptional regulator,NA,NA,NA,NA,NA,NA,NA,NA
+R6,TRUE,B7H15_11145,2124813,2125526,+,-38,1015,NA,transcriptional regulator,-0.08,-0.14,-0,0.12,observed,observed,observed,observed
+R6,TRUE,B7H15_11150,2125542,2126474,+,15,1015,NA,ATP-dependent helicase,-0.38,-0.27,0.28,0.49,observed,observed,observed,observed
+R6,FALSE,B7H15_11155,2126480,2126821,+,5,1015,NA,hypothetical protein,-0.25,-0.17,0.76,0.3,observed,observed,observed,observed
+R6,FALSE,B7H15_11160,2127025,2127207,+,203,1016,NA,hypothetical protein,0.11,-0.27,0.63,-0.81,observed,observed,observed,observed
+R6,FALSE,B7H15_11165,2127285,2127998,+,77,1016,NA,toxin MazF,-0.59,-0.15,0.22,0.19,observed,observed,observed,observed
+R6,FALSE,B7H15_11170,2128189,2129226,+,190,1017,NA,site-specific integrase,NA,NA,NA,NA,NA,NA,NA,NA
+R6,FALSE,B7H15_11175,2129283,2130107,+,56,1017,NA,sphingomyelin phosphodiesterase,NA,NA,NA,NA,observed,observed,observed,observed
+R6,FALSE,B7H15_11180,2130345,2131361,-,237,1018,LUKL1,gamma-hemolysin subunit B,-1.58,-1.52,-0.56,-1.1,observed,observed,observed,observed
+R6,FALSE,B7H15_11185,2131383,2132438,-,21,1018,LUKL2,succinyl-diaminopimelate desuccinylase,-0.69,-1.3,-0.89,-0.98,observed,observed,observed,observed

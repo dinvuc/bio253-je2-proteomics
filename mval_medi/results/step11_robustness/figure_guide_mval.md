@@ -165,7 +165,101 @@ label lies in that region (`genome_blocks_checks_mval.txt`, 8/8 PASS).
 The Step 11 scan with each flagged window labelled R1–R8 and the region contents in the
 caption. Window means are recomputed (deterministic); the thresholds are the Step 11 ones
 (check: same number of flagged windows). Use this version in the report instead of
-`fig_genome_scan_mval.png`.
+`fig_genome_scan_mval.png`. Dotted vertical lines mark every region R1–R8 in all six
+panels, so you can see whether a block flagged in one contrast also moves in the others.
+
+**Conclusion (Steps 11, 11b and 11c together).**
+1. **A few short blocks carry part of the mutant signal.** Most of the genome sits near 0.
+   Eight regions pass the genome-wide 5 % threshold: R7, R8 and R2 are **higher in `stk`
+   than in `anc`** (about +1); R3, R4, R5 and R6 are **lower in `stp` than in `anc`** (about −1).
+2. **At baseline, every block belongs to one mutant only.** No block is shared by `stk` and
+   `stp` in TSB or SN. `stp` also lacks most Stk1 (polar effect inside *stp1-stk1*), so if a
+   block came from losing Stk1, both mutants should show it. They don't.
+3. **No block is a polar effect.** The *stp1/stk1* locus (pink line, 1.23 Mb) sits in a flat
+   stretch of every panel. R6 and R7 are 860 and 953 kb away. A polar effect only reaches genes
+   downstream in the same transcript.
+4. **R7 is a stretch of DNA, not an operon or a regulon (Step 11c).** About 23 kb and 8 putative
+   TUs on both strands go up together in `stk`, in all replicates and all media. The SigB targets
+   are not up, so this is not more SigB activity. It is most likely a regional effect of the
+   `stk` strain background (e.g. an extra copy of that DNA). R8 lies right next to it (2.22 Mb),
+   and `stk` values stay at about +0.5 between the two, so R7–R8 may be one larger region
+   (B7H15_11460–11700). Not tested.
+5. **R6 is a prophage-level change in `stp`.** The phiSa3-like prophage in *hlb* is lower in
+   `stp` at TSB, not in `stk`. In the SN-response (interaction) panels it is flagged in *both*
+   mutants. Both contrasts share the same `anc` reference, so that flag may say more about how
+   the prophage in `anc` responds to PASN than about either mutant.
+6. **Consequence for H3.** Two of the "`stk`-only" pathway shifts in Fig 4b are essentially one
+   block each: the SigB/*mazEF* cluster (9/10 in R7) and ATP synthase (5/5 in R8). Treat them as
+   positional or strain-background signals, not as Stk1 signalling. The **shared** shifts (cell
+   wall up, cell killing down) and the `stk` PASN-response terms do not rest on a block.
+7. **Genome-wide, effects follow transcription units** (same-TU neighbours r = 0.31, divergent
+   neighbours r ≈ 0). Some co-changing neighbours are therefore expected. The flagged blocks
+   stand out because they span many TUs at once.
+
+Caveats: n = 3 per group; the scan tests windows, not genes. The causes in 4 and 5 are
+hypotheses. A DNA-level check (WGS or genomic qPCR of B7H15_11460–11700 in `stk`, and of the
+R6 prophage in all three strains) can decide them.
+
+*One-line version for the report:* "The genome scan finds a few mutant-specific blocks far
+from the transposon. The largest (R7, `stk`) spans many operons on both strands without
+activating SigB. Part of the `stk`-only pathway signal (SigB/*mazEF*, ATP synthase) is therefore
+likely positional or due to strain background, whereas the shared pathway shifts are not."
+
+## 3c. Genome context of R7 and R6 at baseline TSB (Step 11c)
+
+Made by [`scripts/11c_R6_R7_context_mval.R`](../../../scripts/11c_R6_R7_context_mval.R) (~20 s;
+no new test). Question: do the changed proteins in the two baseline-TSB blocks sit in one
+operon, many operons or a whole stretch of DNA, and could a polar effect of the transposon
+explain them? **Putative TU** (transcription unit) = neighbouring genes on the same strand
+with gaps < 150 bp, as in Steps 6b/6c. This is a hint from the sequence, not a measured operon.
+
+### `fig_R6_R7_genome_context_mval.png`
+- **A (R7, 2.19 Mb), stk vs anc and stp vs anc in TSB.** Gene map (arrows = strand, colour =
+  `stk_vs_anc_at_TSB`, blue bars = putative TUs) and per-gene log2 diffs (> 0 = **higher in the
+  mutant**). In `stk`, 7 of the 8 tested TUs in the ~23 kb block are higher by > 0.5 log2,
+  on both strands: *rsbU-V-W-sigB*, *mazEF-alr1-acpS*, *kdpABC* (+2.3, the strongest), *kdpDE*,
+  *murF-ddl*. In `stp` the same TUs are about 0. The rise crosses TU boundaries and strands,
+  so **it is not one operon**.
+- **B (R6, 2.09 Mb), same layout, colour = `stp_vs_anc_at_TSB`.** A prophage inserted in *hlb*
+  (*hlb* fragments on both sides; integrase, *scn*, *chp*, staphylokinase at the edges:
+  phiSa3-like). Most phage proteins (capsid, portal, replication module; several '−' strand TUs)
+  are **lower in `stp` than in `anc`** (about −2). A few phage proteins near the left end are
+  higher in `stp`. In `stk` the region is about 0.
+- **C (raw per-sample values).** Block score = mean over the block's proteins of
+  log2(sample) − mean log2(anc TSB). R7: all three `stk` replicates are about +1.1 in TSB, and
+  `stk` stays up in SN (+0.6) and SNpulse (+1.0). R6: all three `stp` TSB replicates are
+  negative (−0.6 to −1.3; replicate 3 is the weakest).
+- **D (genome-wide).** Pearson r of the log2 diffs of adjacent gene pairs. In `stk` TSB, pairs
+  in the same putative TU are alike (r = 0.31 without R6/R7, 95% CI 0.24–0.37). Divergent pairs,
+  which have their own promoters, are not (r = −0.05, CI −0.19 to 0.09). `stp` shows the same
+  pattern, but weaker (0.19 vs 0.08). So mutant effects follow transcription units, which
+  suggests they mostly act at the level of transcription. These are protein data, so this is
+  indirect.
+- **E (SigB test).** In `stk` the *sigB* operon proteins are higher (+0.2 to +1.0). The
+  classic SigB target Asp23 (outside R7) is unchanged (−0.01), and so is CrtN (+0.01; CrtM
+  +0.35). More SigB protein, together with more anti-sigma factor RsbW, but **no sign of more
+  SigB activity**. Tamber et al. 2010 even report *lower* SigB activity in a USA300
+  *pknB*/*stk1* mutant (doi:10.1128/IAI.00296-10).
+
+**Polar effect?** No. The transposons sit in *stp1*/*stk1* at 1.23 Mb, 860 kb (401 putative
+TUs) before R6 and 953 kb before R7. A polar effect only reaches genes downstream in the
+*same* transcript. Also, `stp` lacks most Stk1 (polar effect inside *stp1-stk1*), yet R7 is
+flat in `stp`. So R7 does not simply follow Stk1 loss, and R6 (only in `stp`) does not follow
+it either.
+
+**Reading.** R7 is a **regional** effect specific to the `stk` strain. It covers many TUs on
+both strands, has sharp-ish edges, holds in every medium and doesn't activate the SigB regulon.
+This fits a copy-number change of this stretch of DNA in NE217 (one extra copy ≈ +1 log2), or a
+local regulator; *kdp* rises further on top of that. R6 is a prophage-level change in `stp`,
+e.g. less spontaneous induction or a different prophage state (hypothesis). Both are
+hypotheses that a DNA-level check (WGS or genomic qPCR across B7H15_11460–11600 and the
+prophage) can decide. All proteins in R6/R7 are observed in both groups (no LOD imputation).
+n = 3 per group. The TU-level numbers are descriptive; the genome-wide test is the Step 11
+permutation scan.
+
+Tables: `R6_R7_genes_mval.csv` (gene, strand, gap, TU, diffs, estimate type),
+`R6_R7_tu_effects_mval.csv` (TU means per contrast), `operon_coherence_mval.csv` (r per pair
+type, contrast, with/without R6–R7), `R6_R7_context_checks_mval.txt` (9 PASS).
 
 ## Not done (and why)
 - **SNpulse** stays optional (workflow): the primary story is TSB vs SN. The two reinjected
