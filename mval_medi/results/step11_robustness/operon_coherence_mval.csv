@@ -1,0 +1,33 @@
+contrast,set,type,n_pairs,r,lo,hi,mutant,medium
+stk_vs_anc_at_TSB,whole genome,convergent  → ←,169,0.182,0.031,0.324,stk,TSB
+stk_vs_anc_at_TSB,whole genome,divergent  ← →  (2 promoters),188,-0.005,-0.148,0.139,stk,TSB
+stk_vs_anc_at_TSB,whole genome,same TU,802,0.398,0.338,0.455,stk,TSB
+stk_vs_anc_at_TSB,whole genome,"same strand, gap >= 150 bp",344,0.13,0.025,0.233,stk,TSB
+stk_vs_anc_at_TSB,without R6 and R7,convergent  → ←,166,0.166,0.014,0.311,stk,TSB
+stk_vs_anc_at_TSB,without R6 and R7,divergent  ← →  (2 promoters),185,-0.051,-0.194,0.094,stk,TSB
+stk_vs_anc_at_TSB,without R6 and R7,same TU,778,0.306,0.241,0.368,stk,TSB
+stk_vs_anc_at_TSB,without R6 and R7,"same strand, gap >= 150 bp",340,0.107,0.001,0.211,stk,TSB
+stp_vs_anc_at_TSB,whole genome,convergent  → ←,180,0.065,-0.082,0.209,stp,TSB
+stp_vs_anc_at_TSB,whole genome,divergent  ← →  (2 promoters),195,0.085,-0.057,0.222,stp,TSB
+stp_vs_anc_at_TSB,whole genome,same TU,848,0.204,0.139,0.268,stp,TSB
+stp_vs_anc_at_TSB,whole genome,"same strand, gap >= 150 bp",360,0.109,0.006,0.21,stp,TSB
+stp_vs_anc_at_TSB,without R6 and R7,convergent  → ←,177,0.055,-0.093,0.201,stp,TSB
+stp_vs_anc_at_TSB,without R6 and R7,divergent  ← →  (2 promoters),191,0.076,-0.067,0.215,stp,TSB
+stp_vs_anc_at_TSB,without R6 and R7,same TU,830,0.193,0.126,0.257,stp,TSB
+stp_vs_anc_at_TSB,without R6 and R7,"same strand, gap >= 150 bp",356,0.137,0.034,0.238,stp,TSB
+stk_vs_anc_at_SN,whole genome,convergent  → ←,157,0.056,-0.101,0.211,stk,SN
+stk_vs_anc_at_SN,whole genome,divergent  ← →  (2 promoters),181,0.139,-0.007,0.279,stk,SN
+stk_vs_anc_at_SN,whole genome,same TU,778,0.306,0.24,0.368,stk,SN
+stk_vs_anc_at_SN,whole genome,"same strand, gap >= 150 bp",348,0.211,0.108,0.309,stk,SN
+stk_vs_anc_at_SN,without R6 and R7,convergent  → ←,155,0.044,-0.115,0.2,stk,SN
+stk_vs_anc_at_SN,without R6 and R7,divergent  ← →  (2 promoters),178,0.131,-0.017,0.272,stk,SN
+stk_vs_anc_at_SN,without R6 and R7,same TU,753,0.254,0.186,0.32,stk,SN
+stk_vs_anc_at_SN,without R6 and R7,"same strand, gap >= 150 bp",345,0.198,0.094,0.297,stk,SN
+stp_vs_anc_at_SN,whole genome,convergent  → ←,167,0.1,-0.053,0.248,stp,SN
+stp_vs_anc_at_SN,whole genome,divergent  ← →  (2 promoters),185,-0.014,-0.158,0.131,stp,SN
+stp_vs_anc_at_SN,whole genome,same TU,778,0.119,0.049,0.187,stp,SN
+stp_vs_anc_at_SN,whole genome,"same strand, gap >= 150 bp",346,-0.016,-0.122,0.089,stp,SN
+stp_vs_anc_at_SN,without R6 and R7,convergent  → ←,166,0.096,-0.057,0.245,stp,SN
+stp_vs_anc_at_SN,without R6 and R7,divergent  ← →  (2 promoters),182,-0.019,-0.164,0.127,stp,SN
+stp_vs_anc_at_SN,without R6 and R7,same TU,755,0.102,0.03,0.172,stp,SN
+stp_vs_anc_at_SN,without R6 and R7,"same strand, gap >= 150 bp",343,-0,-0.106,0.106,stp,SN

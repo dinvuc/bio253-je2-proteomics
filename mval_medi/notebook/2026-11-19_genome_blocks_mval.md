@@ -45,3 +45,48 @@ script checks them. To check by the group: the labels R1–R8, especially
 - Decide whether the H3 report shows `fig_genome_blocks_mval.png` next to Fig 4b.
 - Optional sensitivity check: re-run the Fig 4b term tests without the block proteins.
 - DNA-level check of R7/R8 (`stk`) and R5/R6 (`stp`), as in the poster's "Next" line.
+
+---
+
+# 2026-11-19 (later) – Step 11c: genome context of R7 and R6 at baseline TSB
+
+## Question
+Do the changed proteins in R7 (`stk`) and R6 (`stp`) sit in one operon, many operons or a
+whole stretch of DNA? Do `stk` effects follow operons genome-wide? Could a polar effect of
+the transposon explain R6/R7?
+
+## What we did
+- ran `Rscript scripts/11c_R6_R7_context_mval.R` (~20 s; no new test). Putative TU = same
+  strand, gap < 150 bp (a hint from the sequence, not a measured operon).
+- checks (`R6_R7_context_checks_mval.txt`): 9/9 PASS, incl. "R7 mean reproduces Step 11b
+  (1.12)", "R6 prophage sits inside hlb", "stk TSB: same-TU pairs more alike than divergent pairs".
+- new: `fig_R6_R7_genome_context_mval.png` + 3 tables; figure guide section 3c.
+
+## Results (key numbers)
+- R7 (~23 kb): in `stk` TSB 7 of 8 tested TUs higher by > 0.5 log2 on both strands; *kdpABC*
+  +2.3 (higher in `stk`). All 3 `stk` replicates ≈ +1.1; still up in SN (+0.6) and SNpulse (+1.0).
+  `stp` ≈ 0.
+- SigB test: *sigB* operon +0.7 on average in `stk`, target Asp23 −0.01 → no sign of more SigB
+  activity (cf. Tamber et al. 2010, doi:10.1128/IAI.00296-10: lower SigB activity in a USA300
+  *pknB* mutant).
+- R6: phiSa3-like prophage in *hlb* (*scn*, *chp*, staphylokinase, integrase). Most phage
+  proteins about −2 in `stp` TSB (lower in `stp`), ≈ 0 in `stk`. Per-sample −0.6 to −1.3.
+- Genome-wide (without R6/R7), r of adjacent-pair diffs in `stk` TSB: same TU 0.31,
+  divergent −0.05. `stp`: 0.19 vs 0.08.
+- Polar effect excluded: R6/R7 lie 860/953 kb from the insertions (401 putative TUs between).
+- No LOD-imputed values in R6/R7.
+
+## Problems / interpretation
+- R7 looks like a regional, strain-specific effect (copy-number change? local regulator?).
+  It is not the Stk1-loss signature, because `stp` also lacks most Stk1 and R7 is flat there.
+- Proteomics only: "follows TUs" suggests transcription-level effects but is indirect.
+
+## AI use
+Claude Code (Opus 5.5) wrote the 11c script, the figure and guide section 3c; it looked up
+Tamber et al. 2010 on PubMed. To check by the group: the TU rule, the choice of SigB reporters
+(Asp23, CrtM/N), and the "phiSa3-like" label (based on gene content only).
+
+## Next steps
+- WGS / genomic qPCR across B7H15_11460–11600 in NE217 vs JE2 (copy number), and the R6
+  prophage in all three strains.
+- Optional: AureoWiki / published transcriptome operon maps instead of the 150 bp rule.

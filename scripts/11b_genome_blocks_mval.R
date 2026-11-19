@@ -170,7 +170,13 @@ lab <- scan |> filter(flagged) |>
 check("every flagged window falls in a region", !anyNA(lab$region))
 tn <- annot |> filter(locus_tag == "B7H15_06355")   # stk1; stp1 is 4 bp upstream
 facet_lab <- setNames(paste0(CT$mutant, " vs anc: ", CT$layer), CT$contrast)
+# one dotted line per region in EVERY panel, so a block flagged in one contrast can be
+# compared with the other five. Neighbouring regions (R6/R7/R8) get staggered labels.
+reg_lines <- members |> group_by(region) |> summarise(mid = (min(start) + max(start)) / 2e6) |>
+  arrange(mid) |> mutate(y_lab = c(2.55, 2.25)[(row_number() - 1) %% 2 + 1])
 p2 <- ggplot(scan, aes(start / 1e6, window_mean)) +
+  geom_vline(data = reg_lines, aes(xintercept = mid), linetype = 3, colour = "#56B4E9", linewidth = 0.4) +
+  geom_text(data = reg_lines, aes(x = mid, y = y_lab, label = region), size = 2.3, colour = "#1F6E9C") +
   geom_hline(aes(yintercept = threshold), linetype = 2, colour = "grey50") +
   geom_hline(aes(yintercept = -threshold), linetype = 2, colour = "grey50") +
   geom_vline(xintercept = tn$start / 1e6, colour = "#CC79A7") +
@@ -182,7 +188,7 @@ p2 <- ggplot(scan, aes(start / 1e6, window_mean)) +
   scale_y_continuous(expand = expansion(mult = 0.18)) +
   labs(x = "genome position (Mb, JE2 CP020619.1; window start)", y = "mean log2 effect of 10 neighbouring proteins",
        title = "Step 11: are effects clustered along the genome? (regions named in Step 11b)",
-       subtitle = "Dashed = genome-wide 5% threshold (1000 random permutations). Orange = flagged window. Pink = stp1/stk1 locus.",
+       subtitle = "Dashed = genome-wide 5% threshold (1000 random permutations). Orange = flagged window. Pink = stp1/stk1 locus. Blue dotted = regions R1-R8, drawn in every panel.",
        caption = paste(sprintf("%s %s", regions$region, regions$label), collapse = " | ") |> str_wrap(170)) +
   theme(strip.text = element_text(size = 8), plot.caption = element_text(hjust = 0, size = 8))
 ggsave(file.path(out, "fig_genome_scan_labelled_mval.png"), p2, width = 13, height = 7, dpi = 200)
