@@ -1,0 +1,112 @@
+region,cluster,cluster_function,locus_tag,gene,product,strand,start,diff_stk_vs_anc_at_TSB,diff_stk_vs_anc_at_SN,diff_stp_vs_anc_at_TSB,diff_stp_vs_anc_at_SN
+R7,R7-1,"Transcription regulator activity (3/11)
+  RNA polymerase sigma factor SigB, anti-sigma B factor Rsb...",B7H15_11470,NA,RNA polymerase sigma factor SigB,-,2186330,1.03,1.14,0.32,0.49
+R7,R7-1,"Transcription regulator activity (3/11)
+  RNA polymerase sigma factor SigB, anti-sigma B factor Rsb...",B7H15_11475,rsbW,anti-sigma B factor RsbW,-,2187075,0.81,1.02,0.17,0.27
+R7,R7-1,"Transcription regulator activity (3/11)
+  RNA polymerase sigma factor SigB, anti-sigma B factor Rsb...",B7H15_11480,rsbV,anti-anti-sigma factor,-,2187556,0.2,0.38,-0.93,-0.88
+R7,R7-1,"Transcription regulator activity (3/11)
+  RNA polymerase sigma factor SigB, anti-sigma B factor Rsb...",B7H15_11485,NA,serine/threonine protein phosphatase,-,2188001,0.7,0.98,0.15,0.19
+R7,-,not linked (score < 0.4),B7H15_11490,NA,hypothetical protein,+,2189154,NA,NA,NA,NA
+R7,R7-1,"Transcription regulator activity (3/11)
+  RNA polymerase sigma factor SigB, anti-sigma B factor Rsb...",B7H15_11495,mazF,mRNA interferase MazF,-,2189352,0.87,0.86,-0.45,-0.11
+R7,R7-1,"Transcription regulator activity (3/11)
+  RNA polymerase sigma factor SigB, anti-sigma B factor Rsb...",B7H15_11500,mazE,antitoxin MazE,-,2189711,1.75,1.81,-0.72,0.1
+R7,R7-3,"Vancomycin resistance (3/4)
+  alanine racemase, UDP-N-acetylmuramoylalanyl-D-glutamyl-2...",B7H15_11505,alr1,alanine racemase,-,2189966,0.93,0.98,0.51,0.37
+R7,R7-1,"Transcription regulator activity (3/11)
+  RNA polymerase sigma factor SigB, anti-sigma B factor Rsb...",B7H15_11510,acpS,holo-ACP synthase,-,2191180,0.87,1.2,-0.16,0.36
+R7,R7-1,"Transcription regulator activity (3/11)
+  RNA polymerase sigma factor SigB, anti-sigma B factor Rsb...",B7H15_11515,NA,hypothetical protein,-,2191543,1.03,0.39,0.24,-0.18
+R7,R7-1,"Transcription regulator activity (3/11)
+  RNA polymerase sigma factor SigB, anti-sigma B factor Rsb...",B7H15_11520,NA,hypothetical protein,-,2192021,0.93,1.23,0.36,0.42
+R7,R7-1,"Transcription regulator activity (3/11)
+  RNA polymerase sigma factor SigB, anti-sigma B factor Rsb...",B7H15_11525,NA,hypothetical protein,-,2193597,1.21,0.64,0.13,-0.22
+R7,R7-2,"Potassium transport (3/5)
+  potassium-transporting ATPase C, potassium-transporting A...",B7H15_11530,kdpC,potassium-transporting ATPase subunit C,-,2194284,2.25,NA,0.21,NA
+R7,R7-2,"Potassium transport (3/5)
+  potassium-transporting ATPase C, potassium-transporting A...",B7H15_11535,kdpB,potassium-transporting ATPase subunit B,-,2194864,2.18,NA,-0.88,NA
+R7,R7-2,"Potassium transport (3/5)
+  potassium-transporting ATPase C, potassium-transporting A...",B7H15_11540,kdpA,potassium-transporting ATPase A chain,-,2196910,2.59,NA,NA,-2.52
+R7,-,not linked (score < 0.4),B7H15_11545,NA,potassium-transporting ATPase subunit F,-,2198610,NA,NA,NA,NA
+R7,R7-2,"Potassium transport (3/5)
+  potassium-transporting ATPase C, potassium-transporting A...",B7H15_11550,kdpD,sensor histidine kinase,+,2198858,1.35,-3.78,0.08,NA
+R7,R7-2,"Potassium transport (3/5)
+  potassium-transporting ATPase C, potassium-transporting A...",B7H15_11555,kdpE,DNA-binding response regulator,+,2201515,1.08,NA,-0.47,NA
+R7,R7-1,"Transcription regulator activity (3/11)
+  RNA polymerase sigma factor SigB, anti-sigma B factor Rsb...",B7H15_11560,cshA,DEAD/DEAH box family ATP-dependent RNA helicase,-,2202579,0.58,0.89,0.35,0.3
+R7,R7-3,"Vancomycin resistance (3/4)
+  alanine racemase, UDP-N-acetylmuramoylalanyl-D-glutamyl-2...",B7H15_11565,murF,"UDP-N-acetylmuramoylalanyl-D-glutamyl-2, 6-diaminopimelate--D-alanyl-D-alanine ligase",-,2204616,0.84,1.03,0.28,0.24
+R7,R7-3,"Vancomycin resistance (3/4)
+  alanine racemase, UDP-N-acetylmuramoylalanyl-D-glutamyl-2...",B7H15_11570,ddl,D-alanine--D-alanine ligase A,-,2205989,1,0.95,0.35,0.18
+R7,R7-3,"Vancomycin resistance (3/4)
+  alanine racemase, UDP-N-acetylmuramoylalanyl-D-glutamyl-2...",B7H15_11575,NA,rod shape-determining protein RodA,+,2207377,0.14,0.48,-0.06,0.1
+R7,R7-4,"no specific STRING term
+  CsoR transcriptional regulator",B7H15_11580,NA,hypothetical protein,-,2208843,1.57,1.6,-0.28,NA
+R7,R7-4,"no specific STRING term
+  CsoR transcriptional regulator",B7H15_11585,NA,hypothetical protein,-,2209108,0.71,0.81,-0.93,-0.12
+R7,R7-4,"no specific STRING term
+  CsoR transcriptional regulator",B7H15_11590,NA,CsoR family transcriptional regulator,-,2209329,1.11,0.76,0.05,0.28
+R6,-,not linked (score < 0.4),B7H15_10910,NA,hypothetical protein,-,2093073,1.21,1.15,2.98,0.54
+R6,R6-3,"no specific STRING term
+  tail, tail tape measure",B7H15_10915,NA,phage tail protein,-,2096874,0.84,0.75,NA,-0.28
+R6,R6-3,"no specific STRING term
+  tail, tail tape measure",B7H15_10920,NA,phage tail tape measure protein,-,2098355,1.65,1.51,1.27,1.24
+R6,R6-1,"no specific STRING term
+  head-tail adapter, major capsid, portal",B7H15_10925,NA,hypothetical protein,-,2103129,-0.31,-0.02,-2.73,-1.58
+R6,-,not linked (score < 0.4),B7H15_10930,NA,hypothetical protein,-,2103529,NA,1.14,NA,-0.2
+R6,-,not linked (score < 0.4),B7H15_10935,NA,phage tail protein,-,2103795,0.19,0.94,-2.69,-0.48
+R6,R6-1,"no specific STRING term
+  head-tail adapter, major capsid, portal",B7H15_10940,NA,hypothetical protein,-,2104443,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_10945,NA,hypothetical protein,-,2104844,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_10950,NA,phage head-tail adapter protein,-,2105245,NA,NA,NA,NA
+R6,R6-1,"no specific STRING term
+  head-tail adapter, major capsid, portal",B7H15_10955,NA,phage head-tail adapter protein,-,2105591,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_10960,NA,hypothetical protein,-,2105865,NA,0.23,NA,-0.31
+R6,R6-1,"no specific STRING term
+  head-tail adapter, major capsid, portal",B7H15_10965,NA,phage major capsid protein,-,2106169,-0.13,0.59,-2.23,-1.04
+R6,R6-2,"Pyrimidine metabolism (2/4)
+  peptidase, terminase, HNH endonuclease, dUTP pyrophosphatase",B7H15_10970,NA,peptidase,-,2107338,0.73,-0.14,-0.12,-0.58
+R6,R6-1,"no specific STRING term
+  head-tail adapter, major capsid, portal",B7H15_10975,NA,phage portal protein,-,2108059,0.28,0.02,NA,-3.06
+R6,R6-2,"Pyrimidine metabolism (2/4)
+  peptidase, terminase, HNH endonuclease, dUTP pyrophosphatase",B7H15_10980,NA,terminase,-,2109262,NA,NA,NA,NA
+R6,R6-1,"no specific STRING term
+  head-tail adapter, major capsid, portal",B7H15_10985,NA,hypothetical protein,-,2110920,NA,NA,NA,NA
+R6,R6-2,"Pyrimidine metabolism (2/4)
+  peptidase, terminase, HNH endonuclease, dUTP pyrophosphatase",B7H15_10990,NA,HNH endonuclease,-,2111394,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_10995,NA,transcriptional regulator,-,2111925,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11000,NA,hypothetical protein,-,2112369,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11005,NA,transcriptional regulator,-,2112569,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11010,NA,hypothetical protein,-,2112715,-0.4,0.3,-1.57,0.13
+R6,-,not linked (score < 0.4),B7H15_11015,NA,DUF1381 domain-containing protein,-,2113098,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11020,NA,hypothetical protein,-,2113301,NA,NA,NA,NA
+R6,R6-2,"Pyrimidine metabolism (2/4)
+  peptidase, terminase, HNH endonuclease, dUTP pyrophosphatase",B7H15_11025,NA,dUTP pyrophosphatase,-,2113583,NA,0.92,NA,-0.46
+R6,-,not linked (score < 0.4),B7H15_11030,NA,hypothetical protein,-,2114109,-0.08,0.96,-2.06,-0.81
+R6,-,not linked (score < 0.4),B7H15_11035,NA,hypothetical protein,-,2114341,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11040,NA,acetyltransferase,-,2114570,-0.33,0.49,-2.49,-0.91
+R6,-,not linked (score < 0.4),B7H15_11045,NA,hypothetical protein,-,2114950,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11050,NA,hypothetical protein,-,2115196,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11055,NA,hypothetical protein,-,2115577,-1.33,1.05,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11060,NA,hypothetical protein,-,2115990,NA,NA,NA,NA
+R6,R6-4,"no specific STRING term
+  DNA replication DnaD, ATPase",B7H15_11065,NA,DNA replication protein DnaD,-,2116215,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11070,NA,single-stranded DNA-binding protein,-,2117138,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11075,NA,MBL fold metallo-hydrolase,-,2117609,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11080,NA,recombinase,-,2118307,-0.03,0.55,-1.8,-0.5
+R6,R6-4,"no specific STRING term
+  DNA replication DnaD, ATPase",B7H15_11085,NA,ATPase,-,2119229,-0.3,0.45,-2.36,-0.82
+R6,-,not linked (score < 0.4),B7H15_11090,NA,hypothetical protein,-,2121181,-0.55,0.5,NA,-1.37
+R6,-,not linked (score < 0.4),B7H15_11095,NA,hypothetical protein,-,2121453,-0.75,0.28,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11100,NA,hypothetical protein,-,2121753,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11105,NA,DUF1270 domain-containing protein,-,2122108,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11110,NA,hypothetical protein,-,2122266,-1.17,1.07,-2.74,-0.93
+R6,-,not linked (score < 0.4),B7H15_11115,NA,hypothetical protein,+,2122645,-1.63,-0.41,-0.52,-0.37
+R6,-,not linked (score < 0.4),B7H15_11120,NA,oxidoreductase,-,2123064,-0.35,0.02,-1.78,-0.85
+R6,-,not linked (score < 0.4),B7H15_11125,NA,hypothetical protein,+,2123867,NA,NA,0.1,NA
+R6,-,not linked (score < 0.4),B7H15_11130,NA,hypothetical protein,-,2124185,0.21,0.42,NA,-0.57
+R6,-,not linked (score < 0.4),B7H15_11135,NA,transcriptional regulator,-,2124416,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11140,NA,transcriptional regulator,-,2124676,NA,NA,NA,NA
+R6,-,not linked (score < 0.4),B7H15_11145,NA,transcriptional regulator,+,2124813,-0.08,-0.14,-0,0.12
+R6,-,not linked (score < 0.4),B7H15_11150,NA,ATP-dependent helicase,+,2125542,-0.38,-0.27,0.28,0.49

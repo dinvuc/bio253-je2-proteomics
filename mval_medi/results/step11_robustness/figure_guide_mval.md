@@ -295,6 +295,63 @@ Tables: `R6_R7_genes_mval.csv` (gene, strand, gap, TU, diffs, estimate type),
 `R6_R7_tu_effects_mval.csv` (TU means per contrast), `operon_coherence_mval.csv` (r per pair
 type, contrast, with/without R6–R7), `R6_R7_context_checks_mval.txt` (9 PASS).
 
+## 3d. STRING network of the R7 and R6 proteins (Step 11d, `fig_R6_R7_string_network_mval.png`)
+
+Script: `scripts/11d_R6_R7_string_mval.R`. **Compares:** nothing new is tested. The figure
+shows which of the block proteins STRING links to each other, and how they group.
+- **Nodes** = the Step 11 block proteins (R7: 25, R6: 49). Node colour = log2 diff in the
+  contrast that flagged the block, at TSB (A: `stk_vs_anc`, B: `stp_vs_anc`; > 0 = higher in
+  the mutant, i.e. lower in anc). Grey = not tested (not enough observed values). All tested
+  values are observed (no LOD imputation).
+- **Links** = STRING v12 links for the course genome STRG0B09NBK, combined score ≥ 0.4 (medium
+  confidence), from the STRING API (cached in `R6_R7_string_edges_mval.tsv`). Line width =
+  score. **Dashed** = the link rests only on gene neighbourhood, so it mostly restates that the
+  genes sit next to each other (56 of 123 links). We used the API because the course file
+  `string_physical_links.txt` has only 4 links inside R6.
+- **Shaded areas** = Louvain clusters (seed fixed). Each label gives (1) the shared STRING term
+  with the lowest Fisher p vs the genome (≥ 2 members; terms with > 300 genome proteins and
+  "Coiled coil" excluded) and (2) the members' GenBank product names. The p is
+  **descriptive only**: the region was already selected.
+- Check: kdpABC and sigB–rsbW–rsbV–rsbU each fall into one cluster (known operons).
+
+| cluster | function (STRING term / products) | n (tested) | mean log2 diff, flagging contrast | other mutant |
+|---|---|---|---|---|
+| R7-1 | Transcription regulator activity: sigB operon, mazEF, acpS, cshA | 11 (11) | +0.91 (stk) | −0.05 (stp) |
+| R7-2 | Potassium transport: kdpABC, kdpDE | 5 (5) | +1.89 (stk) | −0.26 |
+| R7-3 | KEGG "Vancomycin resistance": alr1, murF, ddl, rodA | 4 (4) | +0.73 (stk) | +0.27 |
+| R7-4 | no specific term: CsoR regulator + 2 hypotheticals | 3 (3) | +1.13 (stk) | −0.39 |
+| R6-1 | no specific term: head-tail adapter, major capsid, portal | 6 (2) | −2.48 (stp) | −0.05 (stk) |
+| R6-2 | Pyrimidine metabolism: terminase, HNH endonuclease, dUTPase, peptidase | 4 (1) | −0.12 (stp) | +0.73 |
+| R6-3 | no specific term: tail, tail tape measure | 2 (1) | +1.27 (stp) | +1.24 |
+| R6-4 | no specific term: DnaD-like replication protein, ATPase | 2 (1) | −2.36 (stp) | −0.30 |
+
+**How to read it.**
+- **R7:** every cluster is higher in `stk` (+0.7 to +1.9), in `stp` they stay near 0. So
+  four functionally unrelated groups (sigma B regulation, K⁺ uptake, D-Ala-D-Ala /
+  peptidoglycan precursors, a CsoR regulator) move together. That fits the Step 11c
+  reading (a regional, DNA-level effect) better than one pathway being switched on.
+  "Vancomycin resistance" is only the name of the KEGG map that contains alanine racemase
+  and D-Ala-D-Ala ligase (KEGG map01502). It does not mean these strains are resistant.
+- **R6:** STRING knows little about phage proteins. 35 of 49 proteins have no link ≥ 0.4,
+  and most links are neighbourhood-only. The clusters are phage modules
+  (head/capsid/portal, tail, replication). The R6-1 and R6-4 means rest on only 2 and 1
+  tested proteins, and each R6 cluster has at most 2 tested proteins. So use the per-gene
+  dot track in Step 11c (panel B), not these cluster means.
+- Only 1 STRING link joins R6 and R7. They are two separate blocks, functionally as well.
+- n = 3 per group. Reminder: `stp` also lacks most Stk1 (polar effect), yet R7 is flat in
+  `stp`.
+
+Tables: `R6_R7_string_clusters_mval.csv` (protein → cluster, function, diffs),
+`R6_R7_string_cluster_terms_mval.csv` (top 3 terms per cluster with k, term size, Fisher p),
+`R6_R7_string_checks_mval.txt`.
+
+**STRING's own images** (`string_original_{both,R7,R6}_mval.png`, string-db.org API
+`highres_image`, same proteins, score ≥ 0.4): MCL clustering (inflation 3) with
+`show_cluster_names=1`, so each colour is an MCL cluster named after its most typical STRING
+terms (cut short by STRING; "Mixed, incl." = no single function). Edge colours = evidence
+type. No fold changes are shown. The clusters agree with ours, except that MCL merges R7-1
+and R7-3 (sigB/mazEF + murF/ddl) into one cluster.
+
 ## Not done (and why)
 - **SNpulse** stays optional (workflow): the primary story is TSB vs SN. The two reinjected
   `stk_pulseSN` phospho samples were checked in Step 8: removing them gives *more* site
