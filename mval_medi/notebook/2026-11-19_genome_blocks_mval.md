@@ -90,3 +90,14 @@ Tamber et al. 2010 on PubMed. To check by the group: the TU rule, the choice of 
 - WGS / genomic qPCR across B7H15_11460–11600 in NE217 vs JE2 (copy number), and the R6
   prophage in all three strains.
 - Optional: AureoWiki / published transcriptome operon maps instead of the 150 bp rule.
+
+## Addendum: are the blocks "an effect of stk"? (discussion with AI)
+- Our professor's hypothesis was that the R blocks come from `stk`. Our data: the blocks belong to
+  one strain only (R7 +1.12 in `stk`, −0.08 in `stp`; R6 −1.09 in `stp`, −0.12 in `stk`),
+  although both strains lack most Stk1. So the data support an effect of the `stk` **strain**,
+  but not of Stk1 loss. Genome-wide, `stk` effects still follow TUs.
+- Definition of "strain background" (any genetic difference besides the insertion),
+  together with a table of direct / polar / trans / background explanations, added to the figure
+  guide (section 3, under the conclusion).
+- To check: the NTML reference (Fey et al. 2013, doi:10.1128/mBio.00537-12).
+- Next: propose complementation + WGS / genomic qPCR to the professor.
