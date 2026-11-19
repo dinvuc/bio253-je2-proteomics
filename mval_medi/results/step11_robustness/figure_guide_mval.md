@@ -205,6 +205,40 @@ from the transposon. The largest (R7, `stk`) spans many operons on both strands 
 activating SigB. Part of the `stk`-only pathway signal (SigB/*mazEF*, ATP synthase) is therefore
 likely positional or due to strain background, whereas the shared pathway shifts are not."
 
+**Are the blocks "an effect of stk"?** Our professor's hypothesis was that the blocks are
+caused by `stk`. The data support an effect of the **`stk` strain**, but not an effect of
+losing **Stk1 kinase activity**:
+- The blocks belong to one strain only. `stp` also lacks most Stk1, yet R7 is +1.12 (higher)
+  in `stk` and −0.08 (unchanged) in `stp`. The reverse holds for R6: −1.09 (lower) in `stp` and
+  −0.12 in `stk`.
+- R7 spans many putative TUs on both strands, does not activate SigB, and is the same in every
+  medium. A signalling response would usually depend on the condition.
+- Genome-wide, `stk` effects do follow TUs (point 7). So Stk1 may well regulate genes; the
+  blocks just are not the evidence for it.
+- Limits: `stp` has *reduced*, not zero, Stk1 and also lacks the phosphatase, so the comparison
+  between the two strains is strong but not airtight. n = 3, protein data only.
+- What would decide it: complementation of *stk1* (if R7 stays high, it is not Stk1), WGS or
+  genomic qPCR of B7H15_11460–11700, and a second, independent *stk1* mutant.
+
+**What we mean by "strain background".** Any genetic difference between a mutant strain and
+our `anc` *other than* the transposon insertion we are studying. Each NTML mutant comes from
+a single cell and has its own history of growth and freezing, so it can carry unrelated changes:
+SNPs or small indels, **copy-number changes** (a duplicated stretch gives about +1 log2; our
+hypothesis for R7), deletions, a lost, rearranged or more active **prophage** (a possibility
+for R6), plasmid differences, or mutations in often-mutated regulators (e.g. *agr*, *rsbU*).
+NTML library: Fey et al. 2013, *mBio*, doi:10.1128/mBio.00537-12 (still to be checked by the group).
+
+| explanation | cause | expected pattern |
+|---|---|---|
+| direct effect | Stk1 kinase missing | changes in Stk1 substrates or the pathways downstream of them |
+| polar effect | the transposon weakens genes downstream in the same operon | only *stp1-stk1* and the genes right after it (1.23 Mb) |
+| indirect (trans) effect | Stk1 loss alters regulators, which change genes far away | also seen in `stp` (which lacks most Stk1); depends on the condition |
+| strain background | an unrelated difference in that clone's genome | **one** strain only, often a **block** of neighbours, the same in **every medium** |
+
+R7 fits the last row on all three points. "Strain background" names where the cause
+probably lies, not the cause itself. It is not proven, only better supported than an Stk1
+effect for R7.
+
 ## 3c. Genome context of R7 and R6 at baseline TSB (Step 11c)
 
 Made by [`scripts/11c_R6_R7_context_mval.R`](../../../scripts/11c_R6_R7_context_mval.R) (~20 s;
