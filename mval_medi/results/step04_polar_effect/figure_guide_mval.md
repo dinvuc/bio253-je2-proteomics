@@ -30,6 +30,23 @@ polar effect is consistent with it, not proof of it.
   *stp1* can stop transcription or translation of *stk1*. This is a mechanism to test,
   not a measurement.
 
+### `fig_gene_context_premium_mval.png` / `.pdf` — the same map, presentation version
+- **Made by** [`scripts/04d_gene_context_premium_mval.R`](../../../scripts/04d_gene_context_premium_mval.R)
+  from `gene_context_mval.csv` and `TRANSPOSON_INSERTIONS` only (no `data/` needed; ~5 s).
+- **Shows (no measurements):** the same content as `fig_gene_context_mval.png`, in two tracks.
+  Top: the ~11 kb window with gene arrows, the transcription unit as a bent arrow (promoter
+  position schematic) and a light "lens" to the zoom. Bottom: *stp1*–*stk1* enlarged, with
+  both insertions (codon, % into the gene by nucleotide), protein lengths and the 4 bp overlap.
+- **How to read:** insertion colours = genotype colours of every other figure (`stp` green,
+  `stk` orange); *stp1*/*stk1* arrows use the same colours. Blue-grey = same transcription
+  unit (NCTC 8325, mapped to JE2 by gene order), light grey = flanking gene, dashed outline =
+  protein never detected in our 27 total-proteome samples (B7H15_06325).
+- **Conclusion:** unchanged: the `stp` insertion (codon 189 of 247) lies upstream of the
+  whole *stk1* gene, so a polar effect is plausible, not shown.
+- **Wide variant** `fig_gene_context_premium_wide_mval.{png,pdf}` (14 × 3.4 in, same script):
+  one row at true genome scale, no zoom; insertions drawn below the genes, legend on the right.
+  Same content and sources; for slides or a wide poster slot.
+
 ### `fig_neighbours_mval.png` — are nearby proteins changed?
 - **Compares:** per-sample log2 abundance of the 9 measured proteins around
   *stp1*/*stk1* (`B7H15_06320`–`06375`), each mutant against `anc` in the same
