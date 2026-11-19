@@ -1,0 +1,19 @@
+Step 11c checks, 2026-11-19
+[PASS] R6 / R7 ranges as in Step 11b
+[PASS] one fit row per locus tag and contrast
+[NOTE] 2938 CDS in 1432 putative TUs (589 with > 1 gene); rule: same strand, gap < 150 bp
+[PASS] R7 mean in stk_vs_anc_at_TSB reproduces Step 11b (1.12)
+[PASS] R6 mean in stp_vs_anc_at_TSB reproduces Step 11b (-1.09)
+[PASS] R6 prophage sits inside hlb (hlb fragment on both sides)
+[PASS] immune-evasion genes scn, chp present at the R6 prophage edge
+[NOTE] R6 = beta-haemolysin-converting prophage (phiSa3-like): integrase + scn/chp/staphylokinase, inserted in hlb
+[NOTE] estimate_type in R6/R7 (TSB + SN, tested proteins): observed = 232
+[NOTE] R7: 8 putative TUs with tested proteins, 2 on '+' and 6 on '-' strand; TU means in stk TSB 0.14 to 2.34
+[NOTE] R7 spans 23.3 kb
+[NOTE] R6 starts 860 kb from the stk1 transposon, 860 kb from the stp1 transposon
+[NOTE] R7 starts 953 kb from the stk1 transposon, 953 kb from the stp1 transposon
+[NOTE] between stk1 and R6 lie 870 CDS in 401 putative TUs: a polar effect only reaches the downstream genes of the SAME transcript
+[PASS] per-sample score built from >= 10 proteins in every sample
+[PASS] stk TSB: same-TU pairs more alike than divergent pairs (95% CIs do not overlap), without R6/R7
+[PASS] sigB-operon and 3 SigB reporters found
+[NOTE] stk TSB: sigB operon mean +0.68, SigB reporters (asp23, crtM, crtN) mean +0.12
