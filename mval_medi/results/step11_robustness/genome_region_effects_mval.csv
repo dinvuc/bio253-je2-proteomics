@@ -1,0 +1,49 @@
+region,contrast,mutant,layer,n_tested,mean_diff,flagged,in_words
+R1,stk_vs_anc_at_TSB,stk,baseline TSB,14,-0.5,FALSE,lower in stk than anc
+R1,stk_vs_anc_at_SN,stk,baseline SN,8,-0.16,FALSE,lower in stk than anc
+R1,interaction_stk_vs_anc_at_TSB_vs_SN,stk,SN response (interaction),8,-0.22,FALSE,SN response higher in stk than anc
+R1,stp_vs_anc_at_TSB,stp,baseline TSB,14,0.03,FALSE,higher in stp than anc
+R1,stp_vs_anc_at_SN,stp,baseline SN,11,-0.74,FALSE,lower in stp than anc
+R1,interaction_stp_vs_anc_at_TSB_vs_SN,stp,SN response (interaction),11,0.87,TRUE,SN response lower in stp than anc
+R2,stk_vs_anc_at_TSB,stk,baseline TSB,14,0.38,FALSE,higher in stk than anc
+R2,stk_vs_anc_at_SN,stk,baseline SN,12,0.96,TRUE,higher in stk than anc
+R2,interaction_stk_vs_anc_at_TSB_vs_SN,stk,SN response (interaction),12,-0.63,FALSE,SN response higher in stk than anc
+R2,stp_vs_anc_at_TSB,stp,baseline TSB,15,-0.15,FALSE,lower in stp than anc
+R2,stp_vs_anc_at_SN,stp,baseline SN,12,0.12,FALSE,higher in stp than anc
+R2,interaction_stp_vs_anc_at_TSB_vs_SN,stp,SN response (interaction),12,-0.23,FALSE,SN response higher in stp than anc
+R3,stk_vs_anc_at_TSB,stk,baseline TSB,11,-0.11,FALSE,lower in stk than anc
+R3,stk_vs_anc_at_SN,stk,baseline SN,10,-0.52,FALSE,lower in stk than anc
+R3,interaction_stk_vs_anc_at_TSB_vs_SN,stk,SN response (interaction),9,0.42,FALSE,SN response lower in stk than anc
+R3,stp_vs_anc_at_TSB,stp,baseline TSB,12,-0.52,FALSE,lower in stp than anc
+R3,stp_vs_anc_at_SN,stp,baseline SN,10,-0.99,TRUE,lower in stp than anc
+R3,interaction_stp_vs_anc_at_TSB_vs_SN,stp,SN response (interaction),10,0.39,FALSE,SN response lower in stp than anc
+R4,stk_vs_anc_at_TSB,stk,baseline TSB,11,0.15,FALSE,higher in stk than anc
+R4,stk_vs_anc_at_SN,stk,baseline SN,7,-0.23,FALSE,lower in stk than anc
+R4,interaction_stk_vs_anc_at_TSB_vs_SN,stk,SN response (interaction),7,0.19,FALSE,SN response lower in stk than anc
+R4,stp_vs_anc_at_TSB,stp,baseline TSB,12,-0.02,FALSE,lower in stp than anc
+R4,stp_vs_anc_at_SN,stp,baseline SN,13,-0.82,TRUE,lower in stp than anc
+R4,interaction_stp_vs_anc_at_TSB_vs_SN,stp,SN response (interaction),11,0.63,FALSE,SN response lower in stp than anc
+R5,stk_vs_anc_at_TSB,stk,baseline TSB,6,0.02,FALSE,higher in stk than anc
+R5,stk_vs_anc_at_SN,stk,baseline SN,5,-0.84,FALSE,lower in stk than anc
+R5,interaction_stk_vs_anc_at_TSB_vs_SN,stk,SN response (interaction),4,0.4,FALSE,SN response lower in stk than anc
+R5,stp_vs_anc_at_TSB,stp,baseline TSB,10,-1.08,TRUE,lower in stp than anc
+R5,stp_vs_anc_at_SN,stp,baseline SN,5,-1.04,FALSE,lower in stp than anc
+R5,interaction_stp_vs_anc_at_TSB_vs_SN,stp,SN response (interaction),5,0.22,FALSE,SN response lower in stp than anc
+R6,stk_vs_anc_at_TSB,stk,baseline TSB,22,-0.12,FALSE,lower in stk than anc
+R6,stk_vs_anc_at_SN,stk,baseline SN,25,0.49,FALSE,higher in stk than anc
+R6,interaction_stk_vs_anc_at_TSB_vs_SN,stk,SN response (interaction),22,-0.58,TRUE,SN response higher in stk than anc
+R6,stp_vs_anc_at_TSB,stp,baseline TSB,17,-1.09,TRUE,lower in stp than anc
+R6,stp_vs_anc_at_SN,stp,baseline SN,23,-0.55,FALSE,lower in stp than anc
+R6,interaction_stp_vs_anc_at_TSB_vs_SN,stp,SN response (interaction),16,-0.76,TRUE,SN response higher in stp than anc
+R7,stk_vs_anc_at_TSB,stk,baseline TSB,23,1.12,TRUE,higher in stk than anc
+R7,stk_vs_anc_at_SN,stk,baseline SN,19,0.7,FALSE,higher in stk than anc
+R7,interaction_stk_vs_anc_at_TSB_vs_SN,stk,SN response (interaction),19,0.23,FALSE,SN response lower in stk than anc
+R7,stp_vs_anc_at_TSB,stp,baseline TSB,22,-0.08,FALSE,lower in stp than anc
+R7,stp_vs_anc_at_SN,stp,baseline SN,18,-0.04,FALSE,lower in stp than anc
+R7,interaction_stp_vs_anc_at_TSB_vs_SN,stp,SN response (interaction),17,-0.12,FALSE,SN response higher in stp than anc
+R8,stk_vs_anc_at_TSB,stk,baseline TSB,11,0.61,FALSE,higher in stk than anc
+R8,stk_vs_anc_at_SN,stk,baseline SN,10,1.08,TRUE,higher in stk than anc
+R8,interaction_stk_vs_anc_at_TSB_vs_SN,stk,SN response (interaction),10,-0.16,FALSE,SN response higher in stk than anc
+R8,stp_vs_anc_at_TSB,stp,baseline TSB,11,-0.19,FALSE,lower in stp than anc
+R8,stp_vs_anc_at_SN,stp,baseline SN,10,0.2,FALSE,higher in stp than anc
+R8,interaction_stp_vs_anc_at_TSB_vs_SN,stp,SN response (interaction),10,-0.13,FALSE,SN response higher in stp than anc

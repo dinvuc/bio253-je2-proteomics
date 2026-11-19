@@ -1,0 +1,9 @@
+Step 11b checks, 2026-11-19
+[PASS] Step 11 blocks cover the 6 contrasts
+[PASS] one hand-written label per region (regions unchanged since labelling)
+[PASS] every gene named in a region label lies in that region
+[PASS] both prophage regions carry phage structural genes
+[PASS] every Step 11 block lies inside exactly one region
+[PASS] recomputed windows reproduce the Step 11 flagged-window count
+[PASS] every flagged window falls in a region
+[PASS] Fig 4b rebuilt with the same 16 terms
