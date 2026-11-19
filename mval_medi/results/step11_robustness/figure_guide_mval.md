@@ -98,6 +98,75 @@ response of similar size in all three strains.
   blocks, so they may reflect strain differences in genome content rather than kinase or
   phosphatase function. DNA-level checks are needed before these hits are interpreted biologically.
 
+## 3b. What is inside the flagged blocks (Step 11b, added 19 Nov)
+Made by [`scripts/11b_genome_blocks_mval.R`](../../../scripts/11b_genome_blocks_mval.R).
+No new test: it re-reads the Step 11 blocks and the Step 5 fit. Flagged blocks that
+overlap in any contrast are merged into **8 regions, R1–R8** (genome order). Region labels
+were written by hand from the annotation; the script checks that every gene named in a
+label lies in that region (`genome_blocks_checks_mval.txt`, 8/8 PASS).
+
+### `genome_regions_mval.csv`: the 8 regions
+| region | locus tags | Mb | content (annotation) | flagged in |
+|---|---|---|---|---|
+| R1 | 01055–01135 | 0.22 | *ptsG*, *murQ*, *azoR* (sugar uptake) | `stp` response |
+| R2 | 01445–01545 | 0.31 | *rbs* operon, *lytM*, *esxA*/*esaA* (type VII secretion) | `stk` SN |
+| R3 | 04460–04540 | 0.88 | cold-shock protein, *gcvH* | `stp` SN |
+| R4 | 07835–08180 | 1.56 | prophage (10 phage products) incl. *lukD*, *hlgC* annotations | `stp` SN |
+| R5 | 09880–09970 | 1.94 | *splA–F* proteases, lantibiotic genes, *lukD* | `stp` TSB |
+| R6 | 10910–11150 | 2.09 | prophage (8 phage products) | `stp` TSB, both responses |
+| R7 | 11470–11590 | 2.19 | *sigB*/*rsbVW*, *mazEF*, *alr1*, *kdp*, *murF*, *ddl* | `stk` TSB |
+| R8 | 11640–11700 | 2.22 | *sceD*, *fabZ*, *murA*, ATP synthase (*atpA/C/D/G/H*) | `stk` SN |
+
+### `fig_genome_blocks_mval.png` + `genome_region_effects_mval.csv`: blocks in the Fig 4b layout
+- **Compares:** each region (row) in the same 6 contrasts and columns as the pathway figure
+  (Fig 4b): `stk` / `stp` vs `anc` × baseline TSB, baseline SN, SN response (interaction).
+- **How to read:** colour and number = **mean log2 diff of the tested proteins in the
+  region** (> 0 = higher in the mutant than in `anc`; in the response column > 0 = SN
+  response lower in the mutant). This is not the window mean of the scan, so the numbers
+  differ a little. Circle = a flagged window of that contrast lies in the region;
+  triangle = not flagged (a tendency only).
+- **Key points:**
+  - `stk` regions: R7 +1.1 in TSB (flagged), +0.7 in SN; R8 +1.1 in SN (flagged), +0.6 in
+    TSB; R2 +1.0 in SN. **The same regions are about 0 in `stp`** (−0.2 to +0.2).
+  - `stp` regions: R5 −1.1 and R6 −1.1 in TSB (lower in `stp` than `anc`); R3 −1.0 and R4 −0.8
+    in SN. In `stk` the baseline values of these regions are close to 0 (R5 −0.8 in SN, not flagged).
+  - **R6 is the only region flagged in both mutants**, and only in the response column
+    (−0.6 `stk`, −0.8 `stp`: SN response higher in the mutant than in `anc`). Something both
+    mutants share relative to `anc` may lie in `anc` (shared reference; interpretation).
+- **Conclusion:** every flagged region belongs to one mutant only, apart from the R6 response.
+  The `stk` blocks sit together at 2.19–2.22 Mb and are all **higher** in `stk`. The `stp`
+  blocks are spread out and **lower** in `stp`.
+
+### `fig_pathway_terms_in_blocks_mval.png` + `block_term_overlap_mval.csv`: direct link to Fig 4b
+- **Compares:** for the 16 terms of the pathway figure (rebuilt with the 10b rule; check
+  PASS), the share of each term's tested proteins that lie inside a flagged region of
+  `stk` (left) or `stp` (right). Same row order as Fig 4b.
+- **Result (`stk`):**
+  - ATP synthase (GO:0033178): **5/5** members in R8.
+  - CL:1356 (SigB/*mazEF* cluster): **9/10** in R7.
+  - vancomycin resistance (map01502) 4/12, peptidoglycan CL:932 4/13 and KW-0573 3/15:
+    *alr1*, *murF*, *ddl* (R7), *murA* (R8).
+  - the `stk` PASN-response terms (de novo IMP, branched-chain amino acids, diaminopimelate),
+    the transport terms and the cell-killing / haemolysis terms: **0** members in a block.
+- **Result (`stp`):** cell killing (GO:0001906) 3/12 and CL:4241 3/30 (*lukD*, *hlgC* in R4/R5);
+  all other terms 0 (pyrimidine 1/16 in R6 for both mutants).
+- **How to read it:** a term with all its members in one block cannot be told apart from a
+  regional change. The block and the term shift are the **same signal** seen twice. The
+  figure cannot say which is the cause (copy number vs. regional regulation; see section 3).
+- **Conclusion:** two of the strongest `stk`-only pathway shifts in Fig 4b, ATP synthase and
+  the SigB/*mazEF* cluster, are entirely one genomic region each. The vancomycin and
+  peptidoglycan shifts are about one third inside these regions. The `stk` PASN-response shifts
+  and the cell-killing shifts are not in a block. For H3 this means: part of the "not shared
+  by `stp`" pathway signal may be `stk` strain background. The **shared** shifts (cell wall
+  up; cell killing down) do not rest on a block in `stk`, and only 3 of 12 cell-killing
+  proteins lie in `stp` blocks.
+
+### `fig_genome_scan_labelled_mval.png`
+The Step 11 scan with each flagged window labelled R1–R8 and the region contents in the
+caption. Window means are recomputed (deterministic); the thresholds are the Step 11 ones
+(check: same number of flagged windows). Use this version in the report instead of
+`fig_genome_scan_mval.png`.
+
 ## Not done (and why)
 - **SNpulse** stays optional (workflow): the primary story is TSB vs SN. The two reinjected
   `stk_pulseSN` phospho samples were checked in Step 8: removing them gives *more* site

@@ -1,0 +1,9 @@
+region,first_tag,last_tag,start_mb,label,n_cds,n_phage_products,gene_symbols,flagged_in
+R1,B7H15_01055,B7H15_01135,0.22,"ptsG, murQ, azoR (sugar uptake)",17,0,"ptsG, murQ, PTXBC, Y172, azoR",interaction_stp_vs_anc_at_TSB_vs_SN
+R2,B7H15_01445,B7H15_01545,0.31,"rbs operon, lytM, esxA/esaA (type VII secretion)",21,0,"rbsK, rbsD, lytM, esxA, esaA",stk_vs_anc_at_SN
+R3,B7H15_04460,B7H15_04540,0.88,"cold-shock protein, gcvH",17,0,"OHRL, aroD, gcvH",stp_vs_anc_at_SN
+R4,B7H15_07835,B7H15_08180,1.56,prophage at 1.56 Mb (with leukocidin genes),70,10,"lukDv, hlgC, PH",stp_vs_anc_at_SN
+R5,B7H15_09880,B7H15_09970,1.94,"splA-F proteases, lantibiotic genes, lukD",19,0,"splF, splE, splD, splC, splB, splA, lukDv",stp_vs_anc_at_TSB
+R6,B7H15_10910,B7H15_11150,2.09,prophage at 2.09 Mb,49,8,,interaction_stk_vs_anc_at_TSB_vs_SN; stp_vs_anc_at_TSB; interaction_stp_vs_anc_at_TSB_vs_SN
+R7,B7H15_11470,B7H15_11590,2.19,"sigB, mazEF, alr1, kdp, murF, ddl",25,0,"rsbW, rsbV, mazF, mazE, alr1, acpS, kdpC, kdpB, kdpA, kdpD, kdpE, cshA, murF, ddl",stk_vs_anc_at_TSB
+R8,B7H15_11640,B7H15_11700,2.22,"sceD, fabZ, murA, ATP synthase (atpA/C/D/G/H)",13,0,"tenA, sceD, fabZ, murA, atpC, atpD, atpG, atpA, atpH",stk_vs_anc_at_SN

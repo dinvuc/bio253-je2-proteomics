@@ -1,0 +1,33 @@
+category,term,term_description,mutant,n_tested_members,n_in_flagged_region,regions,members_in_region,share_in_region
+Cellular Component (Gene Ontology),GO:0033178,"Proton-transporting two-sector ATPase complex, catalytic domain",stk,5,5,R8,"atpC, atpD, atpG, atpA, atpH",1
+Cellular Component (Gene Ontology),GO:0033178,"Proton-transporting two-sector ATPase complex, catalytic domain",stp,5,0,,,0
+Local Network Cluster (STRING),CL:699,De novo IMP biosynthetic process,stk,11,0,,,0
+Local Network Cluster (STRING),CL:699,De novo IMP biosynthetic process,stp,11,0,,,0
+Local Network Cluster (STRING),CL:1356,"Mostly uncharacterized, incl. Protein serine/threonine phosphatase activity, and Sigma factor activity",stk,10,9,R7,"B7H15_11470, rsbW, rsbV, B7H15_11485, mazF, mazE, B7H15_11515, B7H15_11520, B7H15_11525",0.9
+Local Network Cluster (STRING),CL:1356,"Mostly uncharacterized, incl. Protein serine/threonine phosphatase activity, and Sigma factor activity",stp,10,0,,,0
+Local Network Cluster (STRING),CL:932,"Peptidoglycan synthesis, and D-amino acid metabolic process",stk,13,4,"R7, R8","alr1, murF, ddl, murA",0.31
+Local Network Cluster (STRING),CL:932,"Peptidoglycan synthesis, and D-amino acid metabolic process",stp,13,0,,,0
+KEGG (Kyoto Encyclopedia of Genes and Genomes),map01502,Vancomycin resistance,stk,12,4,"R2, R7","B7H15_01535, alr1, murF, ddl",0.33
+KEGG (Kyoto Encyclopedia of Genes and Genomes),map01502,Vancomycin resistance,stp,12,0,,,0
+Annotated Keywords (UniProt),KW-0573,Peptidoglycan synthesis,stk,15,3,"R7, R8","murF, ddl, murA",0.2
+Annotated Keywords (UniProt),KW-0573,Peptidoglycan synthesis,stp,15,0,,,0
+Molecular Function (Gene Ontology),GO:0046915,Transition metal ion transmembrane transporter activity,stk,9,0,,,0
+Molecular Function (Gene Ontology),GO:0046915,Transition metal ion transmembrane transporter activity,stp,9,0,,,0
+Biological Process (Gene Ontology),GO:0001906,Cell killing,stk,12,0,,,0
+Biological Process (Gene Ontology),GO:0001906,Cell killing,stp,12,3,"R4, R5","lukDv, hlgC, lukDv",0.25
+Local Network Cluster (STRING),CL:962,Penicillin binding,stk,5,0,,,0
+Local Network Cluster (STRING),CL:962,Penicillin binding,stp,5,0,,,0
+Local Network Cluster (STRING),CL:4241,"Mixed, incl. Hemolysis in another organism, and Inositol phosphate metabolism",stk,30,0,,,0
+Local Network Cluster (STRING),CL:4241,"Mixed, incl. Hemolysis in another organism, and Inositol phosphate metabolism",stp,30,3,"R4, R5","lukDv, hlgC, lukDv",0.1
+Local Network Cluster (STRING),CL:5533,"Mostly uncharacterized, incl. Cell killing, and Protein alkylation",stk,9,0,,,0
+Local Network Cluster (STRING),CL:5533,"Mostly uncharacterized, incl. Cell killing, and Protein alkylation",stp,9,0,,,0
+Local Network Cluster (STRING),CL:3551,"Peptide transport, and Nickel cation transmembrane transporter activity",stk,5,0,,,0
+Local Network Cluster (STRING),CL:3551,"Peptide transport, and Nickel cation transmembrane transporter activity",stp,5,0,,,0
+Annotated Keywords (UniProt),KW-0100,Branched-chain amino acid biosynthesis,stk,10,0,,,0
+Annotated Keywords (UniProt),KW-0100,Branched-chain amino acid biosynthesis,stp,10,0,,,0
+Biological Process (Gene Ontology),GO:0019877,Diaminopimelate biosynthetic process,stk,9,0,,,0
+Biological Process (Gene Ontology),GO:0019877,Diaminopimelate biosynthetic process,stp,9,0,,,0
+Biological Process (Gene Ontology),GO:0006071,Glycerol metabolic process,stk,9,0,,,0
+Biological Process (Gene Ontology),GO:0006071,Glycerol metabolic process,stp,9,0,,,0
+Biological Process (Gene Ontology),GO:0006221,Pyrimidine nucleotide biosynthetic process,stk,16,1,R6,B7H15_11025,0.06
+Biological Process (Gene Ontology),GO:0006221,Pyrimidine nucleotide biosynthetic process,stp,16,1,R6,B7H15_11025,0.06

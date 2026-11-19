@@ -1,6 +1,7 @@
 CHECK proteins in Fig 2 (formal + exploratory): 7
-CHECK STRING: 28 partner rows, 64 edges (score >= 0.7) among hits + partners; STRING 12.5 species 93061 queried 2026-11-18
-CHECK nodes: 30 STRING nodes; unmapped to JE2: 0; mapped to >1 JE2 locus: 3 (SAOUHSC_01128 -> kept B7H15_00335 (27/27), not B7H15_06085 (27/27); SAOUHSC_01129 -> kept B7H15_06090 (27/27), not B7H15_00330 (27/27); SAOUHSC_02969 -> kept B7H15_14675 (25/27), not B7H15_00350 (27/27))
+CHECK STRING: 33 partner rows, 70 edges (score >= 0.7) among hits + partners; STRING 12.5 species STRG0B09NBK queried 2026-11-18
+CHECK nodes: 37 STRING nodes; not in our metadata: 0; entry classes: cds 37
+CHECK layout: 6 modules; 6 of 70 edges link two modules
 CHECK kdp proteins in the annotation: kdpC B7H15_11530, kdpB B7H15_11535, kdpA B7H15_11540, B7H15_11545 B7H15_11545, kdpD B7H15_11550, kdpE B7H15_11555
 CHECK kdpD: peptide observations SN/TSB = 0.054 (rank 9 of 1121 well-covered proteins; median protein 1)
 CHECK kdpE: peptide observations SN/TSB = 0.076 (rank 12 of 1121 well-covered proteins; median protein 1)

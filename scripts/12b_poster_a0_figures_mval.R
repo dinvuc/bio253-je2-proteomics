@@ -191,28 +191,98 @@ pairs <- pairs |>
          layer = factor(layer, levels = sim$layer))
 n3 <- pairs |> summarise(n_direct = sum(pt == "direct"), n_both = sum(pt == "both"), .by = layer)
 check("Fig 3: 20 + 4 direct stp-vs-stk hits (Step 7)", identical(n3$n_direct, c(20L, 4L)))
-# only the noise-corrected r goes on the panel; 'noise alone gives 0.50' is said in the poster text
-lab3 <- sim |> transmute(layer = factor(layer, levels = sim$layer), txt = sprintf("r = %.2f", r_true_corrected)) |>
-  left_join(n3, by = "layer") |>
-  mutate(key = sprintf("%d differ directly", n_direct))
+# The r on the panel is the NOISE-CORRECTED r of the true effects (Step 7), so it must be compared with 0,
+# not with the noise-only r (0.50). Printing 'r = 0.37' alone invited exactly that misreading, so the panel
+# now says what the r is and gives its bootstrap 95% CI (clearly above 0, clearly below 1).
+check("Fig 3: noise-corrected r 0.37 / 0.38 (Step 7)",
+      isTRUE(all.equal(round(sim$r_true_corrected, 2), c(0.37, 0.38))))
+lab3 <- sim |>
+  transmute(layer = factor(layer, levels = sim$layer),
+            r_txt  = sprintf("r = %.2f", r_true_corrected),
+            ci_txt = sprintf("95%% CI %.2f–%.2f\ncorrected for the\nshared anc noise", r_true_low, r_true_high)) |>
+  left_join(n3, by = "layer")
+# Label names instead of locus tags where possible: gene symbol, else the product (from the FASTA
+# annotation, not typed in); 'hypothetical protein' keeps its locus tag
+short_name <- function(gene, product, locus_tag)
+  coalesce(gene, if_else(str_detect(product, "hypothetical"), locus_tag, str_remove(product, " protein$")))
 # label the 'same direction in both' proteins and the few direct hits of the response layer; the 20 baseline
 # direct hits stay unlabelled (count only), so the panel stays readable from 1.5 m
-lab_pts <- pairs |> filter(pt == "both" | (pt == "direct" & layer == sim$layer[2]))
-p3 <- ggplot(pairs, aes(stk_diff, stp_diff)) +
-  geom_hline(yintercept = 0, colour = "grey80", linewidth = 0.6) + geom_vline(xintercept = 0, colour = "grey80", linewidth = 0.6) +
-  geom_abline(colour = "grey30", linewidth = 0.9) +
-  geom_point(data = \(d) filter(d, pt == "other"), colour = "grey65", size = 1.4, alpha = 0.55) +
-  geom_point(data = \(d) filter(d, pt != "other"), aes(fill = pt), shape = 21, size = 5, stroke = 0.8) +
-  ggrepel::geom_text_repel(data = lab_pts, aes(label = coalesce(gene, locus_tag)), family = FONT, size = txt(22),
-                           seed = 1, min.segment.length = 0, box.padding = 0.7, force = 3) +
-  geom_text(data = lab3, aes(x = -5, y = 5, label = txt), hjust = 0, vjust = 1, family = FONT,
-            size = txt(26), fontface = "bold") +
-  geom_text(data = lab3, aes(x = 5, y = -5, label = key), hjust = 1, vjust = 0, family = FONT,
-            size = txt(22), colour = "#D55E00", fontface = "bold") +
-  facet_wrap(~layer, ncol = 1, labeller = labeller(layer = lay_lab)) + coord_equal(xlim = c(-5, 5), ylim = c(-5, 5)) +
-  scale_x_continuous(breaks = c(-4, 0, 4)) + scale_y_continuous(breaks = c(-4, 0, 4)) +
-  scale_fill_manual(values = c(direct = "#D55E00", both = "black")) +
-  labs(x = "stk vs anc (log2)", y = "stp vs anc (log2)")
+lab_pts <- pairs |> filter(pt == "both" | (pt == "direct" & layer == sim$layer[2])) |>
+  mutate(label = short_name(gene, product, locus_tag))
+LIM3 <- c(-5.6, 5.6)            # every eligible protein lies inside (stk min -5.36); +-5 clipped one point
+check("Fig 3: no eligible protein outside the axis limits",
+      all(abs(c(pairs$stk_diff, pairs$stp_diff)) < LIM3[2], na.rm = TRUE))
+C_DIRECT <- "#D55E00"           # = 'red' in poster_a0_mval.typ
+sub3 <- c("> 0 = higher in the mutant than in anc",
+          "> 0 = lower in PASN in the mutant than in anc") |> setNames(sim$layer)
+# key (replaces the dot key that used to sit in the poster text): counts are read from the data
+key3 <- n3 |>
+  tidyr::pivot_longer(c(n_direct, n_both), names_to = "pt", values_to = "n") |>
+  filter(n > 0) |>
+  mutate(pt = c(n_direct = "direct", n_both = "both")[pt],
+         label = if_else(pt == "direct", sprintf("%d differ directly\n(stp vs stk)", n),
+                         sprintf("%d altered in both,\nsame direction", n)),
+         y = 0.46 - 0.19 * (row_number() - 1), .by = layer)
+# numbers for the 'altered in both' proteins, top to bottom in the panel; names go into the key column
+both_nums <- lab_pts |> filter(pt == "both") |> arrange(layer, desc(stp_diff)) |>
+  mutate(num = as.character(row_number()), .by = layer)
+# Layout per layer: the scatter (square, so the diagonal is at 45 degrees) and, to its right, a text column
+# with r, its CI and the key. Inside the panel they covered data points and labels.
+scatter3 <- function(ly, letter, show_x) {
+  d <- filter(pairs, layer == ly)
+  # The 'both' proteins (panel a) sit next to the dense centre and to each other: their names (22 pt) did not
+  # fit next to them without overlaps or ambiguous leader lines. So they get numbers here, and the names are
+  # listed in the key column (side3).
+  stack <- both_nums |> filter(layer == ly)
+  # every other highlighted point goes to ggrepel (unlabelled ones with ""), so labels avoid all of them
+  lab <- d |> filter(pt != "other") |>
+    left_join(select(filter(lab_pts, pt != "both"), layer, protein_key, label), by = c("layer", "protein_key")) |>
+    mutate(label = coalesce(label, ""))
+  ggplot(d, aes(stk_diff, stp_diff)) +
+    geom_text(data = stack, aes(x = stk_diff + 0.42, y = stp_diff, label = num), hjust = 0, family = FONT,
+              size = txt(24), fontface = "bold") +
+    geom_hline(yintercept = 0, colour = "grey85", linewidth = 0.5) +
+    geom_vline(xintercept = 0, colour = "grey85", linewidth = 0.5) +
+    geom_abline(colour = "grey35", linewidth = 0.8, linetype = "22") +
+    annotate("text", x = 2.8, y = 2.8 + 0.5, label = "same in both", angle = 45, family = FONT,
+             size = txt(22), colour = "grey35") +
+    geom_point(data = \(x) filter(x, pt == "other"), colour = "grey70", size = 1.5, alpha = 0.5) +
+    geom_point(data = \(x) filter(x, pt != "other"), aes(fill = pt), shape = 21, colour = "white",
+               size = 6.5, stroke = 1.1) +
+    ggrepel::geom_text_repel(data = lab, aes(label = label), family = FONT, size = txt(22), seed = 2,
+                             min.segment.length = 0, box.padding = 0.9, point.padding = 0.4, point.size = 6.5,
+                             force = 6, max.overlaps = Inf, segment.colour = "grey40", segment.size = 0.6,
+                             xlim = LIM3, ylim = LIM3) +
+    coord_equal(xlim = LIM3, ylim = LIM3, expand = FALSE) +
+    scale_x_continuous(breaks = c(-4, 0, 4)) + scale_y_continuous(breaks = c(-4, 0, 4)) +
+    scale_fill_manual(values = c(direct = C_DIRECT, both = "black")) +
+    labs(title = paste0(letter, "  ", lay_lab[[ly]]), subtitle = sub3[[ly]],
+         x = if (show_x) "stk vs anc (log2)" else NULL, y = "stp vs anc (log2)") +
+    theme(plot.subtitle = element_text(size = 22, colour = "grey30", margin = margin(b = 4, unit = "mm")))
+}
+side3 <- function(ly) {
+  l <- filter(lab3, layer == ly); k <- filter(key3, layer == ly)
+  b <- filter(both_nums, layer == ly)
+  names_txt <- if (nrow(b) > 0) paste(b$num, b$label, collapse = "\n") else ""
+  y_names <- min(k$y) - 0.10
+  ggplot() +
+    annotate("text", x = 0.11, y = y_names, label = names_txt, hjust = 0, vjust = 1, family = FONT,
+             size = txt(22), lineheight = 0.95) +
+    annotate("text", x = 0, y = 1, label = l$r_txt, hjust = 0, vjust = 1, family = FONT, size = txt(34),
+             fontface = "bold") +
+    annotate("text", x = 0, y = 0.84, label = l$ci_txt, hjust = 0, vjust = 1, family = FONT, size = txt(22),
+             colour = "grey30", lineheight = 0.95) +
+    geom_point(data = k, aes(x = 0.04, y = y, fill = pt), shape = 21, colour = "white", size = 7, stroke = 1.1) +
+    geom_text(data = k, aes(x = 0.11, y = y, label = label, colour = pt), hjust = 0, family = FONT,
+              size = txt(22), fontface = "bold", lineheight = 0.9) +
+    scale_fill_manual(values = c(direct = C_DIRECT, both = "black")) +
+    scale_colour_manual(values = c(direct = C_DIRECT, both = "black")) +
+    coord_cartesian(xlim = c(0, 1), ylim = c(0, 1), expand = FALSE, clip = "off") +
+    theme_void(base_family = FONT) + theme(legend.position = "none")
+}
+row3 <- function(i, letter, show_x) scatter3(sim$layer[i], letter, show_x) + side3(sim$layer[i]) +
+  plot_layout(widths = c(1.45, 1))
+p3 <- row3(1, "a", FALSE) / row3(2, "b", TRUE)
 save_fig(p3, "p3_h3_shared_distinct_mval", 295)
 
 # ---- p4: pathway counts + genome scan --------------------------------------------------------
