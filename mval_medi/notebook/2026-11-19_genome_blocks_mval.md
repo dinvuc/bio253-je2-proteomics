@@ -101,3 +101,19 @@ Tamber et al. 2010 on PubMed. To check by the group: the TU rule, the choice of 
   guide (section 3, under the conclusion).
 - To check: the NTML reference (Fey et al. 2013, doi:10.1128/mBio.00537-12).
 - Next: propose complementation + WGS / genomic qPCR to the professor.
+
+## Addendum: STRING network of R6 / R7 (Step 11d)
+- **Question:** which functional groups do the R7 and R6 block proteins form, and does each
+  group move with the block?
+- **Run:** `Rscript scripts/11d_R6_R7_string_mval.R` (STRING API, course genome STRG0B09NBK,
+  score ≥ 0.4; Louvain clusters; label = most specific shared STRING term + member products).
+  Figure `fig_R6_R7_string_network_mval.png`, guide section 3d.
+- **Results:** 123 links (R7 95, R6 27, R6–R7 1; 56 neighbourhood-only). R7: 4 clusters, all
+  higher in `stk` at TSB (sigB/mazEF +0.91, kdp +1.89, alr1/murF/ddl +0.73, CsoR +1.13), flat
+  in `stp`. R6: 35/49 proteins unlinked. The phage clusters (capsid/portal −2.48 in `stp`) rest
+  on ≤ 2 tested proteins each.
+- **Problems:** the course file `string_physical_links.txt` has only 4 links in R6, so we used
+  the API. Weak-ortholog gene symbols put bacterial names on phage proteins, so we dropped them
+  as labels. The KEGG term "Vancomycin resistance" is a map name (map01502), not a phenotype.
+- **AI use:** Claude Code wrote and ran the script and drafted this entry and guide section 3d.
+  A group member still has to check the numbers.

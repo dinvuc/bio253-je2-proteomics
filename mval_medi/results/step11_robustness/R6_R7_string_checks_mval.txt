@@ -1,0 +1,15 @@
+Step 11d checks, 2026-11-19
+[PASS] 74 block proteins (49 R6 + 25 R7), as Step 11c
+[PASS] every STRING link joins two block proteins (names = locus tags)
+[NOTE] 123 STRING links (score >= 0.4): R7-R7 95, R6-R6 27, R6-R7 1; 56 rest only on gene neighbourhood
+[PASS] every block protein has exactly one STRING id in the course alias table
+[PASS] R7: kdpC/kdpB/kdpA (B7H15_11530-11540) in one cluster
+[PASS] R7: sigB/rsbW/rsbV/rsbU (B7H15_11470-11485) in one cluster
+[NOTE] R6-1  no specific STRING term | head-tail adapter, major capsid, portal  n=6 (tested 2): mean log2 diff stp_vs_anc_at_TSB -2.48, other mutant -0.05
+[NOTE] R6-2  Pyrimidine metabolism (2/4) | peptidase, terminase, HNH endonuclease, dUTP pyrophosphatase  n=4 (tested 1): mean log2 diff stp_vs_anc_at_TSB -0.12, other mutant +0.73
+[NOTE] R6-3  no specific STRING term | tail, tail tape measure  n=2 (tested 1): mean log2 diff stp_vs_anc_at_TSB +1.27, other mutant +1.24
+[NOTE] R6-4  no specific STRING term | DNA replication DnaD, ATPase  n=2 (tested 1): mean log2 diff stp_vs_anc_at_TSB -2.36, other mutant -0.30
+[NOTE] R7-1  Transcription regulator activity (3/11) | RNA polymerase sigma factor SigB, anti-sigma B factor Rsb...  n=11 (tested 11): mean log2 diff stk_vs_anc_at_TSB +0.91, other mutant -0.05
+[NOTE] R7-2  Potassium transport (3/5) | potassium-transporting ATPase C, potassium-transporting A...  n=5 (tested 5): mean log2 diff stk_vs_anc_at_TSB +1.89, other mutant -0.26
+[NOTE] R7-3  Vancomycin resistance (3/4) | alanine racemase, UDP-N-acetylmuramoylalanyl-D-glutamyl-2...  n=4 (tested 4): mean log2 diff stk_vs_anc_at_TSB +0.73, other mutant +0.27
+[NOTE] R7-4  no specific STRING term | CsoR transcriptional regulator  n=3 (tested 3): mean log2 diff stk_vs_anc_at_TSB +1.13, other mutant -0.39

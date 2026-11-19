@@ -1,0 +1,13 @@
+region,cluster,category,term,description,k,n_cluster,n_term,p_fisher
+R7,R7-1,Molecular Function (Gene Ontology),GO:0140110,Transcription regulator activity,3,11,73,0.0031
+R7,R7-1,Biological Process (Gene Ontology),GO:0006355,"Regulation of transcription, DNA-templated",4,11,159,0.0034
+R7,R7-1,Biological Process (Gene Ontology),GO:1903506,Regulation of nucleic acid-templated transcription,4,11,161,0.0035
+R7,R7-2,Annotated Keywords (UniProt),KW-0633,Potassium transport,3,5,3,3.6e-9
+R7,R7-2,Biological Process (Gene Ontology),GO:0071805,Potassium ion transmembrane transport,3,5,4,1.4e-8
+R7,R7-2,Molecular Function (Gene Ontology),GO:0008556,P-type potassium transmembrane transporter activity,3,5,4,1.4e-8
+R7,R7-3,KEGG (Kyoto Encyclopedia of Genes and Genomes),map01502,Vancomycin resistance,3,4,13,4.1e-7
+R7,R7-3,Biological Process (Gene Ontology),GO:0008360,Regulation of cell shape,3,4,34,8.5e-6
+R7,R7-3,Biological Process (Gene Ontology),GO:0022603,Regulation of anatomical structure morphogenesis,3,4,34,8.5e-6
+R6,R6-2,KEGG (Kyoto Encyclopedia of Genes and Genomes),map00240,Pyrimidine metabolism,2,4,55,0.0027
+R6,R6-2,Biological Process (Gene Ontology),GO:1901565,Organonitrogen compound catabolic process,2,4,61,0.0033
+R6,R6-2,Annotated Keywords (UniProt),KW-0378,Hydrolase,3,4,279,0.0047
