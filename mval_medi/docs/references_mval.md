@@ -1,7 +1,5 @@
 # Poster references (Bio253, group mval)
 
-> **Draft:** the group still has to check these sources against the statements they are cited for.
-
 The numbers match the numbers in the poster text.
 
 ## Literature
