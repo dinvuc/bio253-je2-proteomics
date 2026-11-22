@@ -1,7 +1,7 @@
 # Step 12b (PROJECT_WORKFLOW_mval.md): poster versions of the Step 12 figures for the A0 poster.
 #
 # Run from the repository root:   Rscript scripts/12b_poster_a0_figures_mval.R   (~25 s)
-# Then build the poster:          quarto typst compile mval_medi/results/step12_poster/poster_a0_mval.typ
+# It makes the figures only (no poster layout or text).
 # Needs the same inputs as Step 12 (Steps 3, 4b, 5, 6, 7, 10b, 11). Nothing is refitted.
 #
 # ---- Plan (coding rules, section 4) -----------------------------------------
@@ -34,7 +34,7 @@ check <- function(label, ok) { message(sprintf("[%s] %s", if (isTRUE(ok)) "PASS"
 
 # ---- Poster geometry and style --------------------------------------------------------
 # One poster column is 243 mm wide (A0 = 841 mm; margins 2 x 35 mm, gutters 2 x 20 mm;
-# see poster_a0_mval.typ). Change both files together.
+# the size the figures are meant to be placed at).
 COL_W_MM <- 243
 FONT     <- "Arial"
 PT       <- 24                       # smallest text on the poster (lecture: >= 24 pt body text)
@@ -212,7 +212,7 @@ lab_pts <- pairs |> filter(pt == "both" | (pt == "direct" & layer == sim$layer[2
 LIM3 <- c(-5.6, 5.6)            # every eligible protein lies inside (stk min -5.36); +-5 clipped one point
 check("Fig 3: no eligible protein outside the axis limits",
       all(abs(c(pairs$stk_diff, pairs$stp_diff)) < LIM3[2], na.rm = TRUE))
-C_DIRECT <- "#D55E00"           # = 'red' in poster_a0_mval.typ
+C_DIRECT <- "#D55E00"           # accent colour
 sub3 <- c("> 0 = higher in the mutant than in anc",
           "> 0 = lower in PASN in the mutant than in anc") |> setNames(sim$layer)
 # key (replaces the dot key that used to sit in the poster text): counts are read from the data

@@ -2,8 +2,7 @@
 
 Made by [`scripts/12_poster_figures_mval.R`](../../../scripts/12_poster_figures_mval.R) from saved
 results of Steps 3–11 (no new statistics), 300 dpi. All per-sample panels show the 18
-primary samples (TSB, SN), n = 3 per group. Text for the poster: [`poster_text_mval.md`](poster_text_mval.md);
-abstract: [`abstract_mval.md`](abstract_mval.md). Full write-up: [`reports/project_c_report_mval.html`](../../../reports/project_c_report_mval.html).
+primary samples (TSB, SN), n = 3 per group. Full write-up: [`reports/project_c_report_mval.html`](../../../reports/project_c_report_mval.html).
 
 ### `fig1_h1_enzymes_mval.png`: H1, what the mutants lack
 - **a** Stk1 and Stp1 normalised abundance (log2) per sample. **×** at the bottom = not
@@ -72,9 +71,8 @@ poster by the two-gene sketch `poster/p0_operon_mval`) and the phospho panels (S
 
 ## `poster/`: the A0 poster versions (Step 12b, 18 Nov)
 
-Made by [`scripts/12b_poster_a0_figures_mval.R`](../../../scripts/12b_poster_a0_figures_mval.R) and placed by
-[`poster_a0_mval.typ`](poster_a0_mval.typ) → [`poster_a0_mval.pdf`](poster_a0_mval.pdf). Same data and
-numbers as `fig1`–`fig4` above, redrawn for the poster (see [`poster_guide_mval.md`](poster_guide_mval.md)):
+Made by [`scripts/12b_poster_a0_figures_mval.R`](../../../scripts/12b_poster_a0_figures_mval.R) . Same data and
+numbers as `fig1`–`fig4` above, redrawn for an A0 poster:
 drawn at the printed column width (243 mm), Arial ≥ 22–24 pt, no gridlines, direct labels instead
 of legends, no figure titles (the poster heading carries the message), vector PDF + 300 dpi PNG.
 
