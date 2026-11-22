@@ -38,8 +38,8 @@ shifts (Fig 4b) is one genomic region? Asked while choosing the H3 figures.
 ## AI use
 Claude Code (Opus 5.5) wrote the 11b script, the figures and figure-guide section 3b after we
 asked what changes inside the blocks. Region labels were read off the member table, and the
-script checks them. The labels R1–R8, including
-"prophage" for R4/R6 (based on product names only), were marked as checked by the group on 19 Nov 2026.
+script checks them. To check by the group: the labels R1–R8, especially
+"prophage" for R4/R6 (based on product names only).
 
 ## Next steps
 - Decide whether the H3 report shows `fig_genome_blocks_mval.png` next to Fig 4b.
@@ -83,8 +83,8 @@ the transposon explain R6/R7?
 
 ## AI use
 Claude Code (Opus 5.5) wrote the 11c script, the figure and guide section 3c; it looked up
-Tamber et al. 2010 on PubMed. The TU rule, the choice of SigB reporters (Asp23, CrtM/N)
-and the "phiSa3-like" label (based on gene content only) were marked as checked by the group on 19 Nov 2026.
+Tamber et al. 2010 on PubMed. To check by the group: the TU rule, the choice of SigB reporters
+(Asp23, CrtM/N), and the "phiSa3-like" label (based on gene content only).
 
 ## Next steps
 - WGS / genomic qPCR across B7H15_11460–11600 in NE217 vs JE2 (copy number), and the R6
@@ -99,7 +99,7 @@ and the "phiSa3-like" label (based on gene content only) were marked as checked 
 - Definition of "strain background" (any genetic difference besides the insertion),
   together with a table of direct / polar / trans / background explanations, added to the figure
   guide (section 3, under the conclusion).
-- NTML reference (Fey et al. 2013, doi:10.1128/mBio.00537-12): marked as checked by the group on 19 Nov 2026.
+- To check: the NTML reference (Fey et al. 2013, doi:10.1128/mBio.00537-12).
 - Next: propose complementation + WGS / genomic qPCR to the professor.
 
 ## Addendum: STRING network of R6 / R7 (Step 11d)
@@ -116,4 +116,4 @@ and the "phiSa3-like" label (based on gene content only) were marked as checked 
   the API. Weak-ortholog gene symbols put bacterial names on phage proteins, so we dropped them
   as labels. The KEGG term "Vancomycin resistance" is a map name (map01502), not a phenotype.
 - **AI use:** Claude Code wrote and ran the script and drafted this entry and guide section 3d.
-  The numbers were marked as checked by the group on 19 Nov 2026.
+  A group member still has to check the numbers.

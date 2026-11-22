@@ -23,7 +23,7 @@ Make the figures used on the poster readable at poster size, with transparent ba
 
 ## AI use
 Claude Code wrote and ran the scripts and checked each figure by eye and the numbers against Step 6.
-The figures were marked as checked by the group on 22 Nov 2026.
+A group member should check the figures before printing.
 
 ## Next steps
 - Use the transparent PNGs on the poster background; captions in the poster text.

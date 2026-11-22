@@ -22,7 +22,7 @@ categories** shift in `stk` vs `anc`, and do the same categories shift in `stp`
   [doi:10.1093/nar/gks461](https://doi.org/10.1093/nar/gks461)). We therefore also run
   **limma `cameraPR`** (inter-gene correlation 0.01) on the same statistic.
   **Robust shift = FDR < 0.05 in both, same direction.** Rules set 17 Nov before this
-  summary was run; marked as checked by the group on 17 Nov 2026.
+  summary was run; the group still has to confirm them.
 - **Direction:** `auc` > 0.5 = term members rank towards the top = **higher in the
   mutant** (baseline contrasts) or **SN response lower in the mutant than in `anc`**
   (interaction contrasts). Every row of `robust_terms_mval.csv` says this in words.
@@ -127,7 +127,7 @@ the website's default (whole genome) inflates easy-to-measure categories.
   `stk` signals are not shared, and the SigB/*mazEF* one coincides with a genomic block of
   the `stk` strain (Step 11).
 
-## Interpretation (marked as interpretation; marked as checked by the group on 17 Nov 2026)
+## Interpretation (marked as interpretation; group to check)
 - Pathway level supports Step 7: `stp` shares **part** of the `stk` pattern (cell wall
   synthesis, cytolysis-related terms) and has its own, broader changes.
 - The cytolysis / cell-killing terms shift down in both mutants at pathway level (rank
@@ -145,6 +145,6 @@ the website's default (whole genome) inflates easy-to-measure categories.
   in post-exponential phase. Our `stk` goes the opposite way; our `stp` goes the same way as
   the paper. Possible reasons for the mismatch: strain (Newman vs JE2), clean deletions vs
   transposon insertions (our `stp` also lacks most Stk1), secreted toxin and transcript vs
-  whole-sample protein abundance, and growth phase. Direction marked as checked by the group on 22 Nov 2026.
+  whole-sample protein abundance, and growth phase. The AI read the paper; the group still has to check the direction.
 - Nothing here shows direct Stk1 substrates or rescue. Pathway shifts are measured
   protein-abundance changes.

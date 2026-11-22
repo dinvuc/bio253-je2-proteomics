@@ -40,8 +40,8 @@ change, and is the kdpD result the same in both mutants? Make a STRING network o
 
 ## AI use
 Claude Code: wrote and ran the script, searched PubMed, wrote `hits_biology_mval.md` and
-the figure guide. The biology is interpretation (rules section 10). The numbers and the
-cited papers were marked as checked by the group on 18 Nov 2026 (the AI itself read only abstracts).
+the figure guide. The biology is interpretation (rules section 10). A group member must
+check the numbers and read the cited papers (only abstracts were checked).
 
 ## Part 2: STRING network from the course's own JE2 organism
 - question: can the network come from the course JE2 organism on STRING instead of the
@@ -63,4 +63,4 @@ cited papers were marked as checked by the group on 18 Nov 2026 (the AI itself r
 - decide if the poster says "kdp switched off by PASN in all strains" instead of
   "kdpD stk-specific"
 - check further Agr targets in the data (PSMs, other RNAIII-dependent proteins)
-- Xue 2011 (KdpDE–Agr), Novick 1993 (hld in RNAIII), Makhlin 2007 (ArcR): marked as checked by the group on 18 Nov 2026
+- read full text: Xue 2011 (KdpDE–Agr), Novick 1993 (hld in RNAIII), Makhlin 2007 (ArcR)

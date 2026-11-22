@@ -30,7 +30,7 @@ when it is drawn in the same N-to-C style as the refined-hit proteins of Step 9c
 
 ## AI use
 Claude Code: edited the script, re-ran it, checked the kdpD site/protein numbers and wrote
-the figure-guide section. The numbers and the figure were marked as checked by the group on 18 Nov 2026.
+the figure-guide section. A group member still has to check the numbers and the figure.
 
 ## Part 2: deoB, pyk, Y1819 (non-refined site hits) added to the same folder
 - question: what do the site hits that failed the refinement look like, and why did they fail?

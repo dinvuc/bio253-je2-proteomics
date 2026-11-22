@@ -81,9 +81,9 @@ be provided, so peptide evidence comes from `nr_children_protein_Id`
 
 ## AI use
 An AI coding assistant wrote and ran the two scripts and looked up the AureoWiki/UniProt pages.
-The numbers above were marked as checked by the group on 12 Nov 2026.
+We still need to check the numbers above against the CSVs and figures.
 
 ## Next steps
-- This entry, the figures and the evidence table: marked as checked by the group on 12 Nov 2026.
+- Group: check this entry, the figures and the evidence table.
 - NE217/NE1919 on ntml.unmc.edu: checked by hand by the group on 13 Nov.
 - Steps 6–7: interactions relative to anc; stp vs stk scatter. Remember that stp lacks most Stk1.

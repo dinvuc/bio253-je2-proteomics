@@ -18,8 +18,7 @@
 #           TESTED proteins = the Step 5 eligible background)
 #           read_protein_terms(), read_protein_metadata()
 #           data/derived/limma_treat_phospho_STY_mval.tsv.gz (Step 8)
-# Analysis: Rules fixed before this summary was run (17 Nov 2026;
-# marked as checked by the group on 17 Nov 2026):
+# Analysis: Rules fixed before this summary was run (17 Nov 2026, group to confirm):
 #   * The rank test of 10_enrichment (Wilcoxon) treats proteins as independent.
 #     Proteins of one pathway are correlated, which makes it anti-conservative
 #     (Wu & Smyth 2012, Nucleic Acids Res 40:e133, doi:10.1093/nar/gks461).

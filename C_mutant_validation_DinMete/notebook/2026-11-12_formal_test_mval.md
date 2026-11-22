@@ -47,7 +47,7 @@ explicit model formula, guardrail checks, script + Quarto report).
 ## AI use
 Claude Code: wrote helpers, script, tests and report, checked the treat
 reference in PubMed (PMID 19176553). The group chose the thresholds.
-The numbers above were marked as checked by the group on 12 Nov 2026.
+A group member still has to check every number above.
 
 ## Next steps
 - group review of the PR; decide if steps 6/7 report the presence/absence list

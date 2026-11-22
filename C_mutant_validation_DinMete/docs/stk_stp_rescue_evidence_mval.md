@@ -24,7 +24,7 @@ Source: https://doi.org/10.1073/pnas.1205952109 ; https://pmc.ncbi.nlm.nih.gov/a
 
 Burnside et al. (2010), PLOS ONE 5, e11071, Fig. 3 and the complementation results: expression of the respective missing gene restored alpha-toxin expression and hemolytic activity towards wild-type levels in Newman stp1 and stk1 deletion strains. This is add-back rescue, not evidence that one deletion rescues the other.
 
-Direction of the effect (full text read 22 Nov 2026, Table 5 and Figs 2-3): in Newman, the stk1 deletion INCREASED haemolysis, hla transcription (6.4x, post-exponential phase only) and secreted alpha-toxin, while the stp1 deletion decreased them. Our stk proteome shows the opposite for alpha-haemolysin, so this paper must not be cited as support for our lower cytolysis terms in stk. See the Step 10 figure guide.
+Direction of the effect (full text read by the AI on 22 Nov 2026, Table 5 and Figs 2-3; group to check): in Newman, the stk1 deletion INCREASED haemolysis, hla transcription (6.4x, post-exponential phase only) and secreted alpha-toxin, while the stp1 deletion decreased them. Our stk proteome shows the opposite for alpha-haemolysin, so this paper must not be cited as support for our lower cytolysis terms in stk. See the Step 10 figure guide.
 
 Source: https://doi.org/10.1371/journal.pone.0011071 ; https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0011071 .
 

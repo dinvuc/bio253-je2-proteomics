@@ -17,11 +17,11 @@ workflow, and can we get peptide-level evidence without the msstats peptide tabl
   = peptides quantified per protein per sample (out of `nrPeptides`). First look:
   the 20-peptide protein has 9–15 peptides in anc/stk and 0–2 in stp; the
   37-peptide protein has 27–32 in anc, 0–1 in stk and 1–2 in stp. Which is Stp1
-  and which is Stk1 was to be confirmed by protein_id in the Step 3 script: marked as checked by the group on 12 Nov 2026.
+  and which is Stk1 must be confirmed by protein_id in the Step 3 script.
 - Stk1 phosphopeptides (STYH/STY site tables): sites at positions 159–315, all
   downstream of the stk insertion (codon 46). Most are absent from stk, but
   `HIQDSVPNVTtDVR…` (~231–242) is detected 3/3 per medium in stk. Not yet
-  interpreted: uniqueness, localisation and intensity marked as checked by the group on 12 Nov 2026.
+  interpreted: uniqueness, localisation and intensity to be checked.
 - Stp1 has no phosphosites in our tables.
 - `JE2_proteins.fasta` (4,155 entries): no ErmB, no GFP, only the genome's own IS
   transposases, so transposon products cannot be pulled from our data.
@@ -34,8 +34,8 @@ workflow, and can we get peptide-level evidence without the msstats peptide tabl
 
 ## AI use
 Claude Code: read the notes, searched the files, wrote the workflow changes.
-The first-look numbers above come from a quick console check; Step 3 redid them
-in a script (and corrected the HIQ peptide count): marked as checked by the group on 12 Nov 2026.
+The first-look numbers above come from a quick console check; Step 3 must
+reproduce them in a script before they count.
 
 ## Next steps
 See "Next actions" in `PROJECT_WORKFLOW_mval.md`: Step 3 script first

@@ -80,7 +80,7 @@ response of similar size in all three strains.
      `cshA`, `murF`, `ddl` is +0.7 to +2.6 higher in `stk` in TSB, similarly in SN
      (window +1.0, p = 0.10; a neighbouring block B7H15_11640–11700 with `sceD` is
      flagged in SN). Not seen in `stp` (best window −0.15).
-     **Interpretation (marked as checked by the group on 19 Nov 2026):** functionally unrelated neighbours rising together
+     **Interpretation (group to check):** functionally unrelated neighbours rising together
      by ~2× fit a **regional copy-number change** (e.g. a duplication) in the `stk`
      strain. Regional regulation (SigB regulon, `kdp`) is the alternative. Protein data
      cannot decide; DNA data (genome sequencing or qPCR of this region in NE217 vs JE2)
@@ -233,7 +233,7 @@ a single cell and has its own history of growth and freezing, so it can carry un
 SNPs or small indels, **copy-number changes** (a duplicated stretch gives about +1 log2; our
 hypothesis for R7), deletions, a lost, rearranged or more active **prophage** (a possibility
 for R6), plasmid differences, or mutations in often-mutated regulators (e.g. *agr*, *rsbU*).
-NTML library: Fey et al. 2013, *mBio*, doi:10.1128/mBio.00537-12 (marked as checked by the group on 19 Nov 2026).
+NTML library: Fey et al. 2013, *mBio*, doi:10.1128/mBio.00537-12 (still to be checked by the group).
 
 | explanation | cause | expected pattern |
 |---|---|---|
