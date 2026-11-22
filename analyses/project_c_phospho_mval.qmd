@@ -3,7 +3,7 @@ title: "Project C · 3 – phosphosite follow-up"
 subtitle: "Bio253 HS2026 · group mval · Steps 8–9, recomputed live"
 ---
 
-Short, re-runnable version of Steps 8–9. Full scripts: `scripts/08_phospho_coverage_mval.R`,
+Short, re-runnable version of Steps 8–9. Full scripts: `C_mutant_validation_DinMete/08_phospho_coverage_mval.R`,
 `09_site_vs_protein_mval.R`. STY and STYH are two searches of the same runs, not
 replicates; STY is primary (near tie with STYH, same results, Step 8).
 
@@ -29,7 +29,7 @@ loc |> group_by(residue) |>
 Usable sites per contrast (≥ 2 of 3 per group + localised + S/T/Y):
 
 ```{r coverage}
-read_csv("../mval_medi/results/step08_phospho_coverage/coverage_per_contrast_mval.csv", show_col_types = FALSE) |>
+read_csv("../C_mutant_validation_DinMete/results/step08_phospho_coverage/coverage_per_contrast_mval.csv", show_col_types = FALSE) |>
   filter(search == "STY") |> select(contrast, je2_sites, eligible_2of3, supported_STY)
 ```
 
@@ -45,7 +45,7 @@ Adjusted effect = site − protein (log2, same contrast, observed estimates only
 independent layers (descriptive, no p-value).
 
 ```{r categories}
-read_csv("../mval_medi/results/step09_site_vs_protein/category_counts_mval.csv", show_col_types = FALSE) |>
+read_csv("../C_mutant_validation_DinMete/results/step09_site_vs_protein/category_counts_mval.csv", show_col_types = FALSE) |>
   filter(search == "STY")
 ```
 

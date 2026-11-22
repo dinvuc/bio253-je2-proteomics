@@ -4,7 +4,7 @@ Instructions for AI coding agents (Codex, Cursor, Copilot, …) are in
 [CLAUDE.md](CLAUDE.md). They apply to every agent.
 
 > **Before every task, read our group rules in
-> [mval_medi/codingrules_mval.md](mval_medi/codingrules_mval.md) and follow
+> [C_mutant_validation_DinMete/codingrules_mval.md](C_mutant_validation_DinMete/codingrules_mval.md) and follow
 > them** (e.g. every new file name ends in `_mval`). They also link to our
 > project plan and workflow.
 
@@ -15,4 +15,4 @@ The most important points:
 - Use **R** / tidyverse and the helpers in `R/` (`source("R/setup.R")`).
 - `A_vs_B` means `diff = log2(A) - log2(B)`. Always say which group is higher.
 - Plot raw per-sample values before trusting a fold change; flag `lod_imputed` estimates.
-- Cite checkable sources; keep a lab notebook in `mval_medi/notebook/`.
+- Cite checkable sources; keep a lab notebook in `C_mutant_validation_DinMete/notebook/`.

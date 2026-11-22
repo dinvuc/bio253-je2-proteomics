@@ -14,9 +14,9 @@ execute:
 #| include: false
 source("../R/setup.R")
 formal_file <- file.path(REPO_ROOT, "data/derived/limma_treat_total_mval.tsv.gz")
-if (!file.exists(formal_file)) stop("Run `Rscript scripts/05_formal_test_mval.R` first.")
+if (!file.exists(formal_file)) stop("Run `Rscript C_mutant_validation_DinMete/05_formal_test_mval.R` first.")
 res  <- read_tsv(formal_file, show_col_types = FALSE)
-outd <- file.path(REPO_ROOT, "mval_medi/results/step05_formal_test")
+outd <- file.path(REPO_ROOT, "C_mutant_validation_DinMete/results/step05_formal_test")
 ```
 
 ## What was decided, and why
@@ -67,11 +67,11 @@ read_csv(file.path(outd, "hit_counts_mval.csv"), show_col_types = FALSE) |>
 
 Dashed lines are at the thresholds of the test (FDR 0.05, |log2FC| 1).
 
-![](../mval_medi/results/step05_formal_test/fig_volcano_primary_mval.png)
+![](../C_mutant_validation_DinMete/results/step05_formal_test/fig_volcano_primary_mval.png)
 
 ## Raw values behind the top hits (CLAUDE.md rule 4)
 
-![](../mval_medi/results/step05_formal_test/fig_raw_top_hits_mval.png)
+![](../C_mutant_validation_DinMete/results/step05_formal_test/fig_raw_top_hits_mval.png)
 
 ## Known-answer check: Stp1 and Stk1
 

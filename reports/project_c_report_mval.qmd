@@ -10,18 +10,18 @@ date: today
 ```{r setup}
 #| include: false
 # Paths are relative to reports/. The live numbers below need the local course data
-# (data/derived/, git-ignored); everything else is read from mval_medi/results/.
+# (data/derived/, git-ignored); everything else is read from C_mutant_validation_DinMete/results/.
 source("../R/setup.R")
 library(knitr)
-res_dir <- "../mval_medi/results"
+res_dir <- "../C_mutant_validation_DinMete/results"
 rd <- \(...) readr::read_csv(file.path(res_dir, ...), show_col_types = FALSE)
 total <- readr::read_tsv("../data/derived/limma_treat_total_mval.tsv.gz", show_col_types = FALSE)
 ```
 
 ::: {.callout-note}
 ## How to read this report
-Every number comes from a script in `scripts/` (Steps 1–12 of
-[our workflow](../mval_medi/project_outlines/PROJECT_WORKFLOW_mval.md)); each results folder
+Every number comes from a script in `C_mutant_validation_DinMete/` (Steps 1–12 of
+[our workflow](../C_mutant_validation_DinMete/project_outlines/PROJECT_WORKFLOW_mval.md)); each results folder
 has a `figure_guide_mval.md` that says what each figure compares. Fold changes are
 **log2, A − B**: `stp_vs_anc_at_TSB = −5.4` means **higher in anc**, lower in stp.
 :::
@@ -216,7 +216,7 @@ a verified double deletion with complemented strains under PASN.
 - McCarthy DJ, Smyth GK (2009) *Bioinformatics* 25:765–71. [doi:10.1093/bioinformatics/btp053](https://doi.org/10.1093/bioinformatics/btp053)
 - Wu D, Smyth GK (2012) *Nucleic Acids Res* 40:e133. [doi:10.1093/nar/gks461](https://doi.org/10.1093/nar/gks461)
 - Ritchie ME et al. (2015) *Nucleic Acids Res* 43:e47. [doi:10.1093/nar/gkv007](https://doi.org/10.1093/nar/gkv007)
-- Stk1/Stp1 background (checked 5 Nov, see [evidence review](../mval_medi/docs/stk_stp_rescue_evidence_mval.md)):
+- Stk1/Stp1 background (checked 5 Nov, see [evidence review](../C_mutant_validation_DinMete/docs/stk_stp_rescue_evidence_mval.md)):
   Sun et al. 2012 *PNAS* [doi:10.1073/pnas.1205952109](https://doi.org/10.1073/pnas.1205952109);
   Burnside et al. 2010 *PLOS ONE* [doi:10.1371/journal.pone.0011071](https://doi.org/10.1371/journal.pone.0011071);
   Beltramini et al. 2009 *Infect Immun* [doi:10.1128/IAI.01499-08](https://doi.org/10.1128/IAI.01499-08);

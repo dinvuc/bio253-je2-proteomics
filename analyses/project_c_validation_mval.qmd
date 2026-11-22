@@ -3,7 +3,7 @@ title: "Project C · 1 – sample QC and mutant validation (H1)"
 subtitle: "Bio253 HS2026 · group mval · Steps 2–4b, recomputed live"
 ---
 
-Short, re-runnable version of Steps 2–4b. Full scripts: `scripts/02_sample_qc_mval.R`,
+Short, re-runnable version of Steps 2–4b. Full scripts: `C_mutant_validation_DinMete/02_sample_qc_mval.R`,
 `03_mutant_validation_mval.R`, `04_polar_effect_mval.R`, `04b_transposon_products_mval.R`.
 
 ```{r setup}
@@ -62,7 +62,7 @@ contrast (presence/absence, no fold change). Stk1 in `stk` is such a case: it is
 ## Transposon marker (positive control)
 
 ```{r ermb, fig.height=3}
-read_csv("../mval_medi/results/step04b_transposon/ermb_per_sample_mval.csv", show_col_types = FALSE) |>
+read_csv("../C_mutant_validation_DinMete/results/step04b_transposon/ermb_per_sample_mval.csv", show_col_types = FALSE) |>
   ggplot(aes(group, spectral_count, colour = genotype)) + geom_point(size = 2) +
   scale_colour_manual(values = GENOTYPE_COLOURS) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + labs(x = NULL, y = "ErmB spectra")

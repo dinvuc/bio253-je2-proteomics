@@ -3,7 +3,7 @@ title: "Project C · 2 – PASN responses relative to anc (H2, H3)"
 subtitle: "Bio253 HS2026 · group mval · Steps 5–7 and 11, recomputed live"
 ---
 
-Short, re-runnable version of Steps 5–7. Full scripts: `scripts/05_formal_test_mval.R`,
+Short, re-runnable version of Steps 5–7. Full scripts: `C_mutant_validation_DinMete/05_formal_test_mval.R`,
 `06_altered_responses_mval.R`, `07_shared_distinct_mval.R`, `11_robustness_mval.R`.
 
 ```{r setup}
@@ -47,7 +47,7 @@ plot_protein("B7H15_11550|B7H15_14670|B7H15_14675|B7H15_14515|B7H15_01460")
 ## H3: stp effects vs stk effects
 
 ```{r h3}
-read_csv("../mval_medi/results/step07_shared_distinct/similarity_stats_mval.csv", show_col_types = FALSE) |>
+read_csv("../C_mutant_validation_DinMete/results/step07_shared_distinct/similarity_stats_mval.csv", show_col_types = FALSE) |>
   transmute(layer, n, observed_r = round(r, 2), noise_only_r = round(r_noise_only, 2),
             noise_corrected_r = round(r_true_corrected, 2), ci = sprintf("%.2f-%.2f", r_true_low, r_true_high))
 ```
@@ -58,7 +58,7 @@ Both mutants are compared with the **same** `anc` means, so noise alone correlat
 ## Robustness (Step 11)
 
 ```{r robust}
-read_csv("../mval_medi/results/step11_robustness/loso_hit_stability_mval.csv", show_col_types = FALSE) |>
+read_csv("../C_mutant_validation_DinMete/results/step11_robustness/loso_hit_stability_mval.csv", show_col_types = FALSE) |>
   filter(str_starts(contrast, "interaction")) |>
   transmute(contrast, protein = coalesce(gene, locus_tag), diff = round(diff, 2),
             leave_one_out = paste0(refits_still_hit, "/18"), in_shifted_block = !is.na(in_own_block))

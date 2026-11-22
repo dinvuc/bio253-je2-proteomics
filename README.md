@@ -2,9 +2,9 @@
 
 **Group mval: Din Vuckic & Mete Kabranlar.**
 
-**Start here: [our revised Topic C question, hypotheses and project plan](mval_medi/project_outlines/PROJECT_PLAN_mval.md).**
+**Start here: [our revised Topic C question, hypotheses and project plan](C_mutant_validation_DinMete/project_outlines/PROJECT_PLAN_mval.md).**
 
-For the practical sequence, required inputs and purpose of each analysis, follow the [step-by-step project workflow](mval_medi/project_outlines/PROJECT_WORKFLOW_mval.md).
+For the practical sequence, required inputs and purpose of each analysis, follow the [step-by-step project workflow](C_mutant_validation_DinMete/project_outlines/PROJECT_WORKFLOW_mval.md).
 
 Starter code for the Bio253 block course (UZH/ETHZ, HS2026). You work in small groups
 (2–3 people) on a **fresh, unpublished** proteomics data set of *Staphylococcus aureus*
@@ -19,7 +19,7 @@ Lecturer: Jonas Grossmann and José Luis Ruiz Rodriguez (Functional Genomics Cen
 
 ## Selected group project: Topic C
 
-Our focused subsection is **Revised topic C: Does the `stp` mutant behave like a kinase mutant during supernatant exposure?** We validate the mutant protein profiles, investigate possible polar effects, and compare genotype-dependent responses to supernatant: does the `stp` mutant also have reduced Stk1, and does its response resemble the `stk` mutant? See the [Project C plan, questions and hypotheses](mval_medi/project_outlines/PROJECT_PLAN_mval.md) and [rescue/suppression literature review](mval_medi/docs/stk_stp_rescue_evidence_mval.md). These documents state hypotheses and interpretation limits, not analysis results.
+Our focused subsection is **Revised topic C: Does the `stp` mutant behave like a kinase mutant during supernatant exposure?** We validate the mutant protein profiles, investigate possible polar effects, and compare genotype-dependent responses to supernatant: does the `stp` mutant also have reduced Stk1, and does its response resemble the `stk` mutant? See the [Project C plan, questions and hypotheses](C_mutant_validation_DinMete/project_outlines/PROJECT_PLAN_mval.md) and [rescue/suppression literature review](C_mutant_validation_DinMete/docs/stk_stp_rescue_evidence_mval.md). These documents state hypotheses and interpretation limits, not analysis results.
 
 **Revised main question:** Does disruption of `stp1` also reduce Stk1 protein abundance through a possible polar effect, and do the `stp` and `stk` mutants show similar protein-abundance responses to *Pseudomonas aeruginosa* supernatant?
 
@@ -31,9 +31,9 @@ Our focused subsection is **Revised topic C: Does the `stp` mutant behave like a
 - **H2 - interaction response:** some TSB-to-SN responses differ between a mutant and the parental strain.
 - **H3 - shared mutant response:** some altered exposure responses are shared by `stp` and `stk`, consistent with a contribution from reduced kinase function.
 
-Interaction contrasts distinguish baseline mutant differences from differences in the response to exposure. Published rescue/suppression experiments guide interpretation, but our dataset cannot prove a polar mechanism or causal rescue. Full methods and limitations are in [PROJECT_PLAN_mval.md](mval_medi/project_outlines/PROJECT_PLAN_mval.md).
+Interaction contrasts distinguish baseline mutant differences from differences in the response to exposure. Published rescue/suppression experiments guide interpretation, but our dataset cannot prove a polar mechanism or causal rescue. Full methods and limitations are in [PROJECT_PLAN_mval.md](C_mutant_validation_DinMete/project_outlines/PROJECT_PLAN_mval.md).
 
-For continuing the same conversation and project on another computer, see [working on two PCs](mval_medi/docs/WORKING_ON_TWO_PCS_mval.md). Chat access and Git file updates are separate.
+For continuing the same conversation and project on another computer, see [working on two PCs](C_mutant_validation_DinMete/docs/WORKING_ON_TWO_PCS_mval.md). Chat access and Git file updates are separate.
 
 ## Biology in 10 lines or even more
 
@@ -109,7 +109,7 @@ sites <- read_sites("STYH")                 # FragPipe phospho-sites, long forma
 | `analyses/` | exercise notebooks (Quarto, R) |
 | `reference/` | **protein metadata for all 4,155 database entries** (UniProt accession + e-value, gene symbol, EC, GO/KEGG/STRING) + the ErmB proposal |
 | `notebook/` | lecturer's lab-notebook instructions and template |
-| `mval_medi/` | **our group's files**: rules (`codingrules_mval.md`), project plan/workflow, docs, and our lab notebook (`mval_medi/notebook/`, one dated entry per session) |
+| `C_mutant_validation_DinMete/` | **our group's files**: our analysis scripts (`01_setup_check_mval.R` ... `12d_qr_references_mval.R`, run from the repository root), rules (`codingrules_mval.md`), project plan/workflow, docs, results, and our lab notebook (`C_mutant_validation_DinMete/notebook/`, one dated entry per session) |
 | `tests/` | `testthat` checks of the helpers and of the sign convention |
 | `data/` | local data only (git-ignored), see `data/README.md` |
 | `CLAUDE.md` / `AGENTS.md` | instructions for your AI coding agent |
@@ -150,8 +150,8 @@ git remote set-url origin https://github.com/<you>/bio253-<group>.git   # your o
 git push -u origin main
 ```
 
-What goes in: all code (`R/`, `scripts/`, `analyses/*.qmd`, your own `reports/`), the rendered
-HTML reports (`analyses/_output/`, `reports/*.html`), and `mval_medi/notebook/`.
+What goes in: all code (`R/`, `scripts/`, `C_mutant_validation_DinMete/*.R`, `analyses/*.qmd`, your own `reports/`), the rendered
+HTML reports (`analyses/_output/`, `reports/*.html`), and `C_mutant_validation_DinMete/notebook/`.
 What stays out: everything in `data/` (raw Excel/TSV/parquet/FASTA — `.gitignore` takes care of it).
 Before the final push run `git status` and check that no data file is staged.
 
@@ -169,7 +169,7 @@ You're encouraged to use an agent (Claude Code, Copilot, Cursor …). Some rules
 4. **Ask for the sign.** Agents (and people) often get `A_vs_B` backwards.
 5. **Verify claims about biology.** Agents make up references and protein
    functions. Check them in UniProt, PubMed or the papers, and cite what you used.
-6. **Keep a lab notebook** in `mval_medi/notebook/`: what you asked, what you ran, what you
+6. **Keep a lab notebook** in `C_mutant_validation_DinMete/notebook/`: what you asked, what you ran, what you
    found, and what was wrong.
 7. **Small steps.** Ask for one plot or one table at a time, not "analyse everything".
 
