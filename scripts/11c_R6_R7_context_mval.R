@@ -28,6 +28,7 @@
 #           (d) SigB-operon proteins (inside R7) vs SigB-regulon reporters (outside R7).
 # Output:   mval_medi/results/step11_robustness/
 #             fig_R6_R7_genome_context_mval.png   the figure
+#             fig_R6_R7_genome_context_compact_mval.png   panels A + B only, narrow (poster)
 #             R6_R7_genes_mval.csv                gene table: TU, strand, diffs, estimate type
 #             R6_R7_tu_effects_mval.csv           TU means per contrast
 #             operon_coherence_mval.csv           r per pair type and contrast
@@ -192,7 +193,7 @@ arrow_poly <- function(start, end, strand, y = 0, h = 0.22, head_bp) {   # as in
 }
 LIM <- 3
 
-region_panel <- function(rg, focus, title, label_tags) {
+region_panel <- function(rg, focus, title, label_tags, block_label = paste0(" ", rg, " (Step 11 block)")) {
   d <- genes |> filter(view == rg) |> mutate(mid = (start + end) / 2 / 1e6,
     fdiff = .data[[paste0("diff_", focus, "_vs_anc_at_TSB")]])
   span <- range(c(d$start, d$end)) / 1e6
@@ -212,7 +213,7 @@ region_panel <- function(rg, focus, title, label_tags) {
            ylab = c(0.5, 0.72, 0.94)[(row_number() - 1) %% 3 + 1])
   p_map <- ggplot() +
     annotate("rect", xmin = reg$x0, xmax = reg$x1, ymin = -0.62, ymax = 1.05, fill = "#FBE3D6", alpha = 0.7) +
-    annotate("text", x = reg$x0, y = -0.6, label = paste0(" ", rg, " (Step 11 block)"), hjust = 0, vjust = 0,
+    annotate("text", x = reg$x0, y = -0.6, label = block_label, hjust = 0, vjust = 0,
              size = 3, colour = "#A0400B", fontface = "bold") +
     geom_segment(data = tus, aes(x = x0, xend = x1, y = -0.48, yend = -0.48), colour = "#2B6A99", linewidth = 0.8) +
     geom_polygon(data = polys, aes(x, y, group = locus_tag, fill = pmax(pmin(fdiff, LIM), -LIM)),
@@ -319,6 +320,33 @@ fig <- wrap_elements(full = pA) / wrap_elements(full = pB) / wrap_elements(full 
     theme = theme(plot.title = element_text(size = 14, face = "bold"), plot.subtitle = element_text(size = 9.5),
                   plot.caption = element_text(hjust = 0, size = 8)))
 ggsave(file.path(out, "fig_R6_R7_genome_context_mval.png"), fig, width = 16, height = 15, dpi = 200)
+
+# ---- 7. compact A + B for the poster -----------------------------------------------------------
+# Same data and genome windows, drawn narrow: fewer gene labels (they would collide), shorter
+# titles and one shared legend below, so no width is lost on the right.
+compact <- function(rg, focus, title, label_tags) {
+  p <- region_panel(rg, focus, title, label_tags, block_label = "")
+  list(p[[1]] + labs(y = sprintf("colour:\n%s vs anc", focus)) +
+         guides(fill = guide_colourbar(title = "log2 diff (grey = not tested)", order = 1,
+                                       theme = theme(legend.key.width = unit(2.6, "cm"),
+                                                     legend.key.height = unit(0.3, "cm")))),
+       p[[2]] + labs(x = if (rg == "R6") "JE2 genome position (Mb)",
+                     y = "log2 diff\n(> 0: higher\nin mutant)"))
+}
+cA <- compact("R7", "stk",
+  sprintf("A  R7 (2.19 Mb): higher in stk, flat in stp\n     %d of %d putative operons up by > 0.5 log2, on both strands",
+          sum(r7_tus$diff_stk_vs_anc_at_TSB_mean > 0.5), nrow(r7_tus)),
+  c("B7H15_11470", "B7H15_11500", "B7H15_11540", "B7H15_11565"))
+cB <- compact("R6", "stp",
+  "B  R6 (2.09 Mb): prophage in hlb, mostly lower in stp, not in stk\n     a few phage proteins are higher",
+  c("B7H15_10870", "B7H15_10965", "B7H15_10975", "B7H15_11170"))
+fig_compact <- wrap_plots(c(cA, cB), ncol = 1, heights = c(1, 1, 1, 1), guides = "collect") +
+  plot_annotation(caption = "TSB, n = 3. Shaded = block. Blue bar = putative operon. Faint bar = operon mean.",
+                  theme = theme(plot.caption = element_text(hjust = 0, size = 8.5))) &
+  theme(legend.position = "bottom", legend.box = "horizontal", legend.margin = margin(0, 4, 0, 4),
+        legend.title = element_text(size = 9), axis.title.y = element_text(size = 8.5),
+        plot.margin = margin(2, 6, 2, 2))
+ggsave(file.path(out, "fig_R6_R7_genome_context_compact_mval.png"), fig_compact, width = 7, height = 6.4, dpi = 400)
 
 writeLines(c(sprintf("Step 11c checks, %s", Sys.Date()), checks), file.path(out, "R6_R7_context_checks_mval.txt"))
 message("done: ", out)
