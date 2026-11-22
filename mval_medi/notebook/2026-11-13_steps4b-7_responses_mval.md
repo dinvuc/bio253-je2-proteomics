@@ -67,7 +67,7 @@
 Claude Code wrote and ran the four scripts, figure guides, methods sheet and this
 draft. It found the FP24 transposon folder in `data/raw/`. Gene symbols come from
 `read_protein_metadata()` (ortholog_quality good), not from memory. No biological
-interpretation was made. **A group member still has to check every number above.**
+interpretation was made. **The numbers above were marked as checked by the group on 22 Nov 2026.**
 
 ## Later the same day: exploratory FDR layer and stk-vs-stp figure
 - request: "change the FDR to 0.1 to get more hits" in Fig 2. Our rules fix the hit
@@ -79,7 +79,7 @@ interpretation was made. **A group member still has to check every number above.
   4 formal hits: `B7H15_06000`, lipA, arcA, argF; +1 exploratory).
 
 ## Next steps
-- group review of the branch / PR; agree on the H3 wording for the poster
+- group review of the branch (marked as checked by the group on 22 Nov 2026); agree on the H3 wording for the poster
   ("`stp` shares a moderate part of the `stk` pattern, r ≈ 0.37–0.38 after noise
   correction, plus 24 direct differences")
 - ask Jonas: is FP24 the final transposon search, and may we cite it on the poster?

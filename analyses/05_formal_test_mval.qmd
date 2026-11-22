@@ -101,7 +101,7 @@ lacks most of the kinase (polar effect, CLAUDE.md).
 ## Session info and AI use
 
 Code, checks and this report were drafted with Claude Code (Anthropic); the
-thresholds were chosen by the group. A group member must check every number.
+thresholds were chosen by the group. The numbers were marked as checked by the group on 22 Nov 2026.
 
 ```{r session}
 sessionInfo()

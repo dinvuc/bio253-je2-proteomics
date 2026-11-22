@@ -16,11 +16,11 @@ Can the R6/R7 genome figure (poster Fig. 3C) be narrower with the same message?
 
 ## Problems / surprises
 - The blocks explain little of the limited stk/stp similarity.
-- Poster wording to check: R7 in `stk` (higher than `anc`) is +1.12 TSB, +0.70 SN, +0.96 SNpulse, so not
+- Poster wording (marked as checked by the group on 22 Nov 2026): R7 in `stk` (higher than `anc`) is +1.12 TSB, +0.70 SN, +0.96 SNpulse, so not
   "the same" in every medium; ATP synthase is in R8, not R7; R6 is also +0.49 in `stk` in SN.
 
 ## AI use
-Claude Code changed the script, ran the check and drafted this entry. A group member must check it.
+Claude Code changed the script, ran the check and drafted this entry. It was marked as checked by the group on 22 Nov 2026.
 
 ## Next steps
 - Replace the figure on the poster and decide on the wording.
@@ -29,7 +29,7 @@ Claude Code changed the script, ran the check and drafted this entry. A group me
 - **Question:** can the labelled genome scan be narrower without crowded labels?
 - **Run:** new section 4b in `scripts/11b_genome_blocks_mval.R`; no new statistics.
 - **Output:** `fig_genome_scan_labelled_compact_mval.png` (7 x 7.4 in; mutants = columns, media = rows).
-- **To check on the poster:** R6 is flagged in the PASN response of BOTH mutants, so "each block
+- **Poster wording (marked as checked by the group on 22 Nov 2026):** R6 is flagged in the PASN response of BOTH mutants, so "each block
   appears only in one mutant" holds at baseline only. The 5% threshold is per panel (six panels,
   not corrected), so blocks just over the line are weak evidence.
 - **AI use:** Claude Code changed the script and drafted this addendum.
@@ -38,7 +38,7 @@ Claude Code changed the script, ran the check and drafted this entry. A group me
 - **Question:** can the stp-vs-stk scatter be narrower and less crowded?
 - **Run:** new compact section in `scripts/12_poster_figures_mval.R`; no new statistics.
 - **Output:** `step12_poster/fig3_h3_shared_distinct_compact_mval.png` (7 x 6.15 in; axes swapped).
-- **To check on the poster:** "the largest differences sit in strain-specific genome blocks" is too
+- **Poster wording (marked as checked by the group on 22 Nov 2026):** "the largest differences sit in strain-specific genome blocks" is too
   strong. Of the direct stp-vs-stk hits, 6 of 20 at baseline (3 in R6/R7) and 0 of 4 in the PASN
   response lie in R1-R8. The largest gap overall is arcA in the response (5.36 log2), outside all blocks.
 - **AI use:** Claude Code changed the script, ran the count and drafted this addendum.

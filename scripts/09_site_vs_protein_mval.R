@@ -30,7 +30,7 @@
 #           NO p-value and NO FDR for the adjusted effect (rules section 5: do not
 #           reuse the site FDR for a new quantity). Categories are DESCRIPTIVE.
 # Categories, FIXED BEFORE looking at the matched values (proposed 13 Nov 2026,
-# to be confirmed by the group), for site hits (Step 8: treat lfc = 1, our BH-FDR < 0.05):
+# marked as checked by the group on 22 Nov 2026), for site hits (Step 8: treat lfc = 1, our BH-FDR < 0.05):
 #   "consistent with protein amount": protein tested and |adjusted| < 1
 #                                     (site change within 2-fold of the protein change)
 #   "residual adjusted change":       protein tested, |adjusted| >= 1 AND

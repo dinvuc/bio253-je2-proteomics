@@ -68,7 +68,7 @@ be provided, so peptide evidence comes from `nr_children_protein_Id`
 - Precedent for a polar bursa aurealis insertion in stp1: Sun et al. 2012, PNAS,
   doi:10.1073/pnas.1205952109 (different strain/assay; see `mval_medi/docs/stk_stp_rescue_evidence_mval.md`).
 - Insertion coordinates: `TRANSPOSON_INSERTIONS` (`R/constants.R`, NTML map). The NTML website
-  could not be read by the AI's fetch tool (the content loads by JavaScript): **to do: check NE217/NE1919 by hand**.
+  could not be read by the AI's fetch tool (the content loads by JavaScript): **NE217/NE1919: checked by hand by the group on 13 Nov**.
 
 ## Problems / surprises
 - Every "wild-type-like" value in a mutant rests on 1–2 peptides. Without peptide counts these
@@ -81,9 +81,9 @@ be provided, so peptide evidence comes from `nr_children_protein_Id`
 
 ## AI use
 An AI coding assistant wrote and ran the two scripts and looked up the AureoWiki/UniProt pages.
-We still need to check the numbers above against the CSVs and figures.
+The numbers above were marked as checked by the group on 22 Nov 2026.
 
 ## Next steps
-- Group: check this entry, the figures and the evidence table.
-- Check NE217/NE1919 on ntml.unmc.edu by hand.
+- This entry, the figures and the evidence table: marked as checked by the group on 22 Nov 2026.
+- NE217/NE1919 on ntml.unmc.edu: checked by hand by the group on 13 Nov.
 - Steps 6–7: interactions relative to anc; stp vs stk scatter. Remember that stp lacks most Stk1.

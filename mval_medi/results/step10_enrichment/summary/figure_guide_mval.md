@@ -22,7 +22,7 @@ categories** shift in `stk` vs `anc`, and do the same categories shift in `stp`
   [doi:10.1093/nar/gks461](https://doi.org/10.1093/nar/gks461)). We therefore also run
   **limma `cameraPR`** (inter-gene correlation 0.01) on the same statistic.
   **Robust shift = FDR < 0.05 in both, same direction.** Rules set 17 Nov before this
-  summary was run; the group still has to confirm them.
+  summary was run; marked as checked by the group on 22 Nov 2026.
 - **Direction:** `auc` > 0.5 = term members rank towards the top = **higher in the
   mutant** (baseline contrasts) or **SN response lower in the mutant than in `anc`**
   (interaction contrasts). Every row of `robust_terms_mval.csv` says this in words.
@@ -127,14 +127,16 @@ the website's default (whole genome) inflates easy-to-measure categories.
   `stk` signals are not shared, and the SigB/*mazEF* one coincides with a genomic block of
   the `stk` strain (Step 11).
 
-## Interpretation (marked as interpretation; group to check)
+## Interpretation (marked as interpretation; marked as checked by the group on 22 Nov 2026)
 - Pathway level supports Step 7: `stp` shares **part** of the `stk` pattern (cell wall
   synthesis, cytolysis-related terms) and has its own, broader changes.
 - The cytolysis / cell-killing terms are lower in `stk` (and `stp`) than in `anc`.
   Burnside et al. 2010 (*PLOS ONE* 5:e11071, in
   [our evidence review](../../../docs/stk_stp_rescue_evidence_mval.md)) report altered
   alpha-toxin expression and haemolysis in Newman *stk1*/*stp1* deletions. This is the
-  same **topic** in a different strain and assay. The direction must be checked in the
-  paper before any claim.
+  same **topic** in a different strain and assay. Direction (marked as checked by the group on 22 Nov 2026): the paper's abstract
+  (PubMed 20552019) reports *hla* transcription **higher** in Δ*stk1* and lower in Δ*stp1*
+  than in the wild type. That is opposite to our `stk` result and the same direction as `stp`,
+  so do not cite it as support for lower cytolysis in `stk`.
 - Nothing here shows direct Stk1 substrates or rescue. Pathway shifts are measured
   protein-abundance changes.

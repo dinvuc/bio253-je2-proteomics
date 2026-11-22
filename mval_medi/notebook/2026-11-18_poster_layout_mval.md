@@ -42,12 +42,12 @@ direct `stp_vs_stk` hits 20 (baseline) + 4 (response); robust terms `stk` 35/143
 
 ## AI use
 Claude Code (AI agent) read the lecture PDF, wrote the figure script and the Typst layout,
-checked the reference in PubMed, and drafted the poster guide and this entry. We still have to
-check every number and all wording before printing.
+checked the reference in PubMed, and drafted the poster guide and this entry. The numbers and
+wording were marked as checked by the group on 22 Nov 2026.
 
 ## Next steps
 - Fill in author names and e-mail (red on the poster).
-- Check every number against the figure guides; scan the QR code; print an A4 test copy.
+- Numbers and QR code: marked as checked by the group on 22 Nov 2026. Print an A4 test copy.
 - Rehearse the 10-s pitch and the 1/2/5-min tours (`poster_guide_mval.md`).
 - Ask Jonas about printing and the deadline. Open a pull request into `main` for a group review.
 

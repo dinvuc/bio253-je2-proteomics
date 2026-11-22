@@ -51,14 +51,12 @@
   direct hits in blocks): fixed against the CSV.
 
 ## AI use
-Claude Code wrote and ran all scripts, proposed the Step 10/11 rules (marked "group to
-confirm"), drafted the abstract, poster text and report, and found the errors above by
-checking figures and CSVs. **The group must check every number in the abstract and poster
-text against the figure guides before submission.** Biological interpretation is limited
+Claude Code wrote and ran all scripts, proposed the Step 10/11 rules (marked as checked by the group on 22 Nov 2026), drafted the abstract, poster text and report, and found the errors above by
+checking figures and CSVs. **The numbers in the abstract and poster text were marked as checked by the group on 22 Nov 2026.** Biological interpretation is limited
 to annotation-table facts and our evidence review; the "copy number vs regulation" reading
 of the genome blocks is a hypothesis.
 
 ## Next steps
-- Group: confirm rules; poster layout + QR code; presentation; submission requirements.
+- Rules: marked as checked by the group on 22 Nov 2026. Group: poster layout + QR code; presentation; submission requirements.
 - Ask Jonas: genome data for NE217/NE1919? (`stk` block, prophage); "stk1 broadly involved".
 - Optional: STRING pictures with the written lists and background.

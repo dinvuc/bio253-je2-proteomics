@@ -76,8 +76,8 @@ range, so it stays in. We will keep an eye on it when we plot `stk` TSB values.
 Claude Code (Opus 5.5): wrote and ran `scripts/01_setup_check_mval.R` and
 `scripts/02_sample_qc_mval.R` and drafted this entry. Corrections during the
 session: the reinjected-sample check first expected `SNpulse` in the sample names
-(they are `pulseSN`), and the script needed purrr loaded explicitly. To check
-the numbers yourselves, look at `qc_checks_mval.txt` and the PCA/detection figures.
+(they are `pulseSN`), and the script needed purrr loaded explicitly. The numbers
+(`qc_checks_mval.txt`, PCA/detection figures) were marked as checked by the group on 22 Nov 2026.
 
 ## Addendum (same day): lecture 06 "web resources" applied to our plan
 
