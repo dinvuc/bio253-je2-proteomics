@@ -1,6 +1,6 @@
-# Step 12c: QR code from the poster to our list of references.
+# Step 12d: QR code from the poster to our list of references.
 #
-# Run from the repository root:   Rscript scripts/12c_qr_references_mval.R   (a few seconds)
+# Run from the repository root:   Rscript scripts/12d_qr_references_mval.R   (a few seconds)
 # Needs once:                     install.packages("qrcode")
 #
 # ---- Plan (coding rules, section 4) -----------------------------------------
