@@ -46,9 +46,9 @@
 ## AI use
 An AI coding assistant (Claude Code) wrote and ran the two scripts and the figures, set up the peptide
 table, and wrote the comparison. It found and fixed two of its own bugs: n/3 labels under the wrong
-medium, and peptide forms vs. sequences. The numbers were marked as checked by the group on 22 Nov 2026.
+medium, and peptide forms vs. sequences. The numbers were marked as checked by the group on 12 Nov 2026.
 
 ## Next steps
 - Look up the run order around `JE2stp_SN_2` and the stk samples with Stk1 signals (carry-over?).
 - Ask the lecturer for the original `peptides_total.tsv.gz`.
-- `nb07_comparison_mval.md` and the two new figures: marked as checked by the group on 22 Nov 2026.
+- `nb07_comparison_mval.md` and the two new figures: marked as checked by the group on 12 Nov 2026.

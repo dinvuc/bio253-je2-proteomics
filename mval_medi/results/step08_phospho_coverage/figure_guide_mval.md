@@ -8,13 +8,13 @@ log2, **not** re-normalised) and the supplied DEAs (comparison only).
 Primary analysis = 18 samples (`anc`/`stk`/`stp` × TSB/SN) and the 9 primary
 contrasts of the [Step 5 contrast sheet](../step05_formal_test/contrast_sheet_mval.csv).
 
-## Rules (fixed before any site was selected; AI proposal, marked as checked by the group on 22 Nov 2026)
+## Rules (fixed before any site was selected; AI proposal, marked as checked by the group on 13 Nov 2026)
 
 | rule | what | why |
 |---|---|---|
 | JE2 only | `keep_je2()`: locus tag, no `rev_` decoy | same filter as the total proteome |
 | eligible | ≥ 2 of 3 observed values in **every** group of the contrast | Step 5 rule; NA stays NA |
-| localised | **median** per-sample `loc_prob` over the primary samples where the site was detected ≥ 0.75 | `best_loc_prob` is the best of 27 samples, so one lucky spectrum passes. 0.75 = conventional "class I" cutoff (Olsen et al. 2006, *Cell* 127:635–48, PMID 17081983, [doi:10.1016/j.cell.2006.09.026](https://doi.org/10.1016/j.cell.2006.09.026); reference checked in PubMed, the 0.75 definition is in the full text, not the abstract: marked as checked by the group on 22 Nov 2026). It is **not** a measured false-localisation rate |
+| localised | **median** per-sample `loc_prob` over the primary samples where the site was detected ≥ 0.75 | `best_loc_prob` is the best of 27 samples, so one lucky spectrum passes. 0.75 = conventional "class I" cutoff (Olsen et al. 2006, *Cell* 127:635–48, PMID 17081983, [doi:10.1016/j.cell.2006.09.026](https://doi.org/10.1016/j.cell.2006.09.026); reference checked in PubMed, the 0.75 definition is in the full text, not the abstract: marked as checked by the group on 13 Nov 2026). It is **not** a measured false-localisation rate |
 | histidine | pH sites counted and listed, never in the shortlist | no validated pH localisation cutoff; pH is acid-labile |
 | supported | eligible + localised + residue S/T/Y | |
 | primary search | more supported S/T/Y site × contrast pairs; tie → STYH | |

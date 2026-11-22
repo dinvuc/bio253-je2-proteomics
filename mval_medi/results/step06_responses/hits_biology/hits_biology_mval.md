@@ -2,7 +2,7 @@
 
 Made by [`scripts/06d_response_hits_string_mval.R`](../../../../scripts/06d_response_hits_string_mval.R),
 2026-11-18. Figures: see [`figure_guide_mval.md`](figure_guide_mval.md).
-**Status: drafted by AI (Claude Code); numbers and sources marked as checked by the group on 22 Nov 2026**
+**Status: drafted by AI (Claude Code); numbers and sources marked as checked by the group on 18 Nov 2026**
 (rules section 8). The group asked for the biology, so this file
 interprets it (rules section 10). Everything under *Hypothesis* is **interpretation**,
 not a result.
@@ -16,7 +16,7 @@ Robustness (LOSO, Step 11) is given in brackets.
 Names and functions come from `read_protein_metadata()` (UniProt entry of the NCTC 8325
 ortholog, `ortholog_quality == "good"` for all 7). Literature was found with PubMed. For
 every paper the AI checked only the abstract; the sources were
-marked as checked by the group on 22 Nov 2026.
+marked as checked by the group on 18 Nov 2026.
 
 ## Overview
 
@@ -88,7 +88,7 @@ about +1.5 log2 in `stk` (Step 11 genome scan, family-wise p < 0.001).
 - The `stp` value rests on a single peptide in one sample, and that peptide was never
   seen in `stp` TSB.
 
-### Interpretation (AI reading, marked as checked by the group on 22 Nov 2026)
+### Interpretation (AI reading, marked as checked by the group on 18 Nov 2026)
 1. **The dominant effect is shared:** in PASN, the KdpDE system (and KdpB) is largely
    switched off **in all three strains**. This is a strong part of the common PASN
    response. Our protein-level model misses it, because so few peptides remain that the
@@ -116,7 +116,7 @@ about +1.5 log2 in `stk` (Step 11 genome scan, family-wise p < 0.001).
   RNAIII: Novick et al. 1993, PMID 7691599,
   [doi:10.1002/j.1460-2075.1993.tb06074.x](https://doi.org/10.1002/j.1460-2075.1993.tb06074.x)
   (the abstract describes RNAIII as the agr effector; the *hld* location is in the full
-  text; marked as checked by the group on 22 Nov 2026). Reduced expression of global regulators and virulence factors
+  text; marked as checked by the group on 18 Nov 2026). Reduced expression of global regulators and virulence factors
   in *S. aureus* next to *P. aeruginosa* was also seen in a co-culture RNA-seq study
   (Tognon et al. 2019, PMID 30630428, [doi:10.1186/s12864-018-5398-y](https://doi.org/10.1186/s12864-018-5398-y)).
   That study is direct co-culture, not spent medium.

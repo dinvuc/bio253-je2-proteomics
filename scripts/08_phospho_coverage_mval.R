@@ -13,7 +13,7 @@
 #           read_dea("phospho_STYH" / "phospho_STY")   supplied models, comparison only
 #           read_samples(); step05 contrast_sheet_mval.csv (the 9 primary contrasts)
 # Rules, FIXED BEFORE any site was selected (proposed 13 Nov 2026,
-# marked as checked by the group on 22 Nov 2026, rules section 10):
+# marked as checked by the group on 13 Nov 2026, rules section 10):
 #   1. Real JE2 sites only: keep_je2() (locus tag, no rev_ decoy).
 #   2. Eligibility per contrast = the Step 5 rule: >= 2 of 3 observed normalised
 #      values in EVERY group the contrast uses. Missing stays NA.

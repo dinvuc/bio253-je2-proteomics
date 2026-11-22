@@ -25,7 +25,7 @@ the protein change in **exactly the same contrast**?
   "X_1" is the same culture aliquot in both layers. With a positive covariance `se_adj` is
   too large (conservative). **No p-value, no FDR** for the adjusted effect: the site
   FDR is not reused for this new quantity.
-- **Categories (fixed before the matched values were seen; AI proposal, marked as checked by the group on 22 Nov 2026),
+- **Categories (fixed before the matched values were seen; AI proposal, marked as checked by the group on 13 Nov 2026),
   for site hits only:**
 
   | category | rule | meaning |

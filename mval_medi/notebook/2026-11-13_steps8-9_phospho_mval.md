@@ -9,7 +9,7 @@
 ## What we did
 - branch `steps8-9-phospho-mval`; one commit per step
 - **Rules written into the script headers BEFORE any site was selected** (AI proposal,
-  marked as checked by the group on 22 Nov 2026, rules section 10):
+  marked as checked by the group on 13 Nov 2026, rules section 10):
   - eligible = 2 of 3 per group (Step 5 rule); localised = median per-sample
     `loc_prob` ≥ 0.75 (class I cutoff, Olsen et al. 2006 *Cell*, PMID 17081983,
     doi:10.1016/j.cell.2006.09.026);
@@ -79,7 +79,7 @@ three wrong statements, now fixed in the scripts and documents:
    strings. Correct count: 2,780 (STYH) / 2,445 (STY) sites share a peptide sequence
    with another site, i.e. about two thirds are not independent.
 Also: the Olsen et al. 2006 reference was checked in PubMed (doi:10.1016/j.cell.2006.09.026);
-the 0.75 "class I" definition itself is in the full text, not the abstract (marked as checked by the group on 22 Nov 2026).
+the 0.75 "class I" definition itself is in the full text, not the abstract (marked as checked by the group on 13 Nov 2026).
 The Step 9 figure's label placement is now seeded, so the figure is reproducible.
 - The project plan (5 Nov) had put phospho out of scope; the workflow keeps it as a
   supporting layer. Result: it supports H1 (Stk1 site), adds nothing to H2.
@@ -88,12 +88,12 @@ The Step 9 figure's label placement is now seeded, so the figure is reproducible
 Claude Code (Opus 5.5) proposed the Step 8/9 rules, wrote and ran both scripts, made the
 figures and guides, and found and fixed the two bugs above. The localisation rule,
 the primary-search rule, the Step 9 categories and the numbers above:
-**marked as checked by the group on 22 Nov 2026.** Gene symbols come from `read_protein_metadata()`
+**marked as checked by the group on 13 Nov 2026.** Gene symbols come from `read_protein_metadata()`
 (`ortholog_quality == "good"`), not from the AI. No biological interpretation of the
 site changes was made.
 
 ## Next steps
-- Step 8/9 rules, unchanged: marked as checked by the group on 22 Nov 2026.
+- Step 8/9 rules, unchanged: marked as checked by the group on 13 Nov 2026.
 - Step 10 enrichment for the `stk` contrasts; Step 11 robustness (deoB T85 rests on
   2/3 `stk_TSB` values; T269 flagged).
 - Poster: Fig 4 only as a small descriptive panel (e.g. Stk1 T164 + deoB T85 paired plots),

@@ -221,9 +221,9 @@ a verified double deletion with complemented strains under PASN.
 - Genome: *S. aureus* JE2, GenBank CP020619.1. Protein names: `read_protein_metadata()` (UniProt orthologs, `ortholog_quality == "good"`).
 
 **AI use.** Claude Code (Anthropic) wrote and ran the analysis scripts under the group's
-rules, proposed the Step 8–11 rules (marked as checked by the group on 22 Nov 2026), found
+rules, proposed the Step 8–11 rules (marked as checked by the group on 17 Nov 2026), found
 and fixed errors (documented in the lab notebook), and drafted this report. Its numbers and claims
-were marked as checked by the group on 22 Nov 2026.
+were marked as checked by the group on 17 Nov 2026.
 
 ```{r session}
 sessionInfo()

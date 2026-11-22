@@ -40,8 +40,8 @@
 ## AI use
 Claude Code wrote the scripts, guides and this entry; it rendered the book page and read the
 prophosqua source to match the figure. The conclusions in the guides, including those marked as
-interpretation, were marked as checked by the group on 22 Nov 2026.
+interpretation, were marked as checked by the group on 17 Nov 2026.
 
 ## Next steps
-- Guides (conclusions per figure) and refinement rule (proposed by the AI): marked as checked by the group on 22 Nov 2026.
+- Guides (conclusions per figure) and refinement rule (proposed by the AI): marked as checked by the group on 17 Nov 2026.
 - Optional: install Rtools to use `prophosqua` directly.
