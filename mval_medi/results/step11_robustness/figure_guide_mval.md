@@ -205,6 +205,40 @@ from the transposon. The largest (R7, `stk`) spans many operons on both strands 
 activating SigB. Part of the `stk`-only pathway signal (SigB/*mazEF*, ATP synthase) is therefore
 likely positional or due to strain background, whereas the shared pathway shifts are not."
 
+**Are the blocks "an effect of stk"?** Our professor's hypothesis was that the blocks are
+caused by `stk`. The data support an effect of the **`stk` strain**, but not an effect of
+losing **Stk1 kinase activity**:
+- The blocks belong to one strain only. `stp` also lacks most Stk1, yet R7 is +1.12 (higher)
+  in `stk` and −0.08 (unchanged) in `stp`. The reverse holds for R6: −1.09 (lower) in `stp` and
+  −0.12 in `stk`.
+- R7 spans many putative TUs on both strands, does not activate SigB, and is the same in every
+  medium. A signalling response would usually depend on the condition.
+- Genome-wide, `stk` effects do follow TUs (point 7). So Stk1 may well regulate genes; the
+  blocks just are not the evidence for it.
+- Limits: `stp` has *reduced*, not zero, Stk1 and also lacks the phosphatase, so the comparison
+  between the two strains is strong but not airtight. n = 3, protein data only.
+- What would decide it: complementation of *stk1* (if R7 stays high, it is not Stk1), WGS or
+  genomic qPCR of B7H15_11460–11700, and a second, independent *stk1* mutant.
+
+**What we mean by "strain background".** Any genetic difference between a mutant strain and
+our `anc` *other than* the transposon insertion we are studying. Each NTML mutant comes from
+a single cell and has its own history of growth and freezing, so it can carry unrelated changes:
+SNPs or small indels, **copy-number changes** (a duplicated stretch gives about +1 log2; our
+hypothesis for R7), deletions, a lost, rearranged or more active **prophage** (a possibility
+for R6), plasmid differences, or mutations in often-mutated regulators (e.g. *agr*, *rsbU*).
+NTML library: Fey et al. 2013, *mBio*, doi:10.1128/mBio.00537-12 (still to be checked by the group).
+
+| explanation | cause | expected pattern |
+|---|---|---|
+| direct effect | Stk1 kinase missing | changes in Stk1 substrates or the pathways downstream of them |
+| polar effect | the transposon weakens genes downstream in the same operon | only *stp1-stk1* and the genes right after it (1.23 Mb) |
+| indirect (trans) effect | Stk1 loss alters regulators, which change genes far away | also seen in `stp` (which lacks most Stk1); depends on the condition |
+| strain background | an unrelated difference in that clone's genome | **one** strain only, often a **block** of neighbours, the same in **every medium** |
+
+R7 fits the last row on all three points. "Strain background" names where the cause
+probably lies, not the cause itself. It is not proven, only better supported than an Stk1
+effect for R7.
+
 ## 3c. Genome context of R7 and R6 at baseline TSB (Step 11c)
 
 Made by [`scripts/11c_R6_R7_context_mval.R`](../../../scripts/11c_R6_R7_context_mval.R) (~20 s;
@@ -260,6 +294,63 @@ permutation scan.
 Tables: `R6_R7_genes_mval.csv` (gene, strand, gap, TU, diffs, estimate type),
 `R6_R7_tu_effects_mval.csv` (TU means per contrast), `operon_coherence_mval.csv` (r per pair
 type, contrast, with/without R6–R7), `R6_R7_context_checks_mval.txt` (9 PASS).
+
+## 3d. STRING network of the R7 and R6 proteins (Step 11d, `fig_R6_R7_string_network_mval.png`)
+
+Script: `scripts/11d_R6_R7_string_mval.R`. **Compares:** nothing new is tested. The figure
+shows which of the block proteins STRING links to each other, and how they group.
+- **Nodes** = the Step 11 block proteins (R7: 25, R6: 49). Node colour = log2 diff in the
+  contrast that flagged the block, at TSB (A: `stk_vs_anc`, B: `stp_vs_anc`; > 0 = higher in
+  the mutant, i.e. lower in anc). Grey = not tested (not enough observed values). All tested
+  values are observed (no LOD imputation).
+- **Links** = STRING v12 links for the course genome STRG0B09NBK, combined score ≥ 0.4 (medium
+  confidence), from the STRING API (cached in `R6_R7_string_edges_mval.tsv`). Line width =
+  score. **Dashed** = the link rests only on gene neighbourhood, so it mostly restates that the
+  genes sit next to each other (56 of 123 links). We used the API because the course file
+  `string_physical_links.txt` has only 4 links inside R6.
+- **Shaded areas** = Louvain clusters (seed fixed). Each label gives (1) the shared STRING term
+  with the lowest Fisher p vs the genome (≥ 2 members; terms with > 300 genome proteins and
+  "Coiled coil" excluded) and (2) the members' GenBank product names. The p is
+  **descriptive only**: the region was already selected.
+- Check: kdpABC and sigB–rsbW–rsbV–rsbU each fall into one cluster (known operons).
+
+| cluster | function (STRING term / products) | n (tested) | mean log2 diff, flagging contrast | other mutant |
+|---|---|---|---|---|
+| R7-1 | Transcription regulator activity: sigB operon, mazEF, acpS, cshA | 11 (11) | +0.91 (stk) | −0.05 (stp) |
+| R7-2 | Potassium transport: kdpABC, kdpDE | 5 (5) | +1.89 (stk) | −0.26 |
+| R7-3 | KEGG "Vancomycin resistance": alr1, murF, ddl, rodA | 4 (4) | +0.73 (stk) | +0.27 |
+| R7-4 | no specific term: CsoR regulator + 2 hypotheticals | 3 (3) | +1.13 (stk) | −0.39 |
+| R6-1 | no specific term: head-tail adapter, major capsid, portal | 6 (2) | −2.48 (stp) | −0.05 (stk) |
+| R6-2 | Pyrimidine metabolism: terminase, HNH endonuclease, dUTPase, peptidase | 4 (1) | −0.12 (stp) | +0.73 |
+| R6-3 | no specific term: tail, tail tape measure | 2 (1) | +1.27 (stp) | +1.24 |
+| R6-4 | no specific term: DnaD-like replication protein, ATPase | 2 (1) | −2.36 (stp) | −0.30 |
+
+**How to read it.**
+- **R7:** every cluster is higher in `stk` (+0.7 to +1.9), in `stp` they stay near 0. So
+  four functionally unrelated groups (sigma B regulation, K⁺ uptake, D-Ala-D-Ala /
+  peptidoglycan precursors, a CsoR regulator) move together. That fits the Step 11c
+  reading (a regional, DNA-level effect) better than one pathway being switched on.
+  "Vancomycin resistance" is only the name of the KEGG map that contains alanine racemase
+  and D-Ala-D-Ala ligase (KEGG map01502). It does not mean these strains are resistant.
+- **R6:** STRING knows little about phage proteins. 35 of 49 proteins have no link ≥ 0.4,
+  and most links are neighbourhood-only. The clusters are phage modules
+  (head/capsid/portal, tail, replication). The R6-1 and R6-4 means rest on only 2 and 1
+  tested proteins, and each R6 cluster has at most 2 tested proteins. So use the per-gene
+  dot track in Step 11c (panel B), not these cluster means.
+- Only 1 STRING link joins R6 and R7. They are two separate blocks, functionally as well.
+- n = 3 per group. Reminder: `stp` also lacks most Stk1 (polar effect), yet R7 is flat in
+  `stp`.
+
+Tables: `R6_R7_string_clusters_mval.csv` (protein → cluster, function, diffs),
+`R6_R7_string_cluster_terms_mval.csv` (top 3 terms per cluster with k, term size, Fisher p),
+`R6_R7_string_checks_mval.txt`.
+
+**STRING's own images** (`string_original_{both,R7,R6}_mval.png`, string-db.org API
+`highres_image`, same proteins, score ≥ 0.4): MCL clustering (inflation 3) with
+`show_cluster_names=1`, so each colour is an MCL cluster named after its most typical STRING
+terms (cut short by STRING; "Mixed, incl." = no single function). Edge colours = evidence
+type. No fold changes are shown. The clusters agree with ours, except that MCL merges R7-1
+and R7-3 (sigB/mazEF + murF/ddl) into one cluster.
 
 ## Not done (and why)
 - **SNpulse** stays optional (workflow): the primary story is TSB vs SN. The two reinjected
