@@ -168,6 +168,13 @@ caption. Window means are recomputed (deterministic); the thresholds are the Ste
 `fig_genome_scan_mval.png`. Dotted vertical lines mark every region R1–R8 in all six
 panels, so you can see whether a block flagged in one contrast also moves in the others.
 
+### `fig_genome_scan_labelled_compact_mval.png`
+The same scan redrawn narrow for the poster (7 x 7.4 in instead of 13 x 7 in). **Compares**
+`stk` vs `anc` (left) with `stp` vs `anc` (right) in TSB, PASN (= SN) and the PASN response
+(rows). > 0 = **higher in the mutant**; in the response row > 0 = **response lower in the mutant**.
+Windows, thresholds and flags are unchanged. R1-R8 are named once on top, with a short key below.
+The 5% threshold holds per panel and is not corrected for looking at six panels.
+
 **Conclusion (Steps 11, 11b and 11c together).**
 1. **A few short blocks carry part of the mutant signal.** Most of the genome sits near 0.
    Eight regions pass the genome-wide 5 % threshold: R7, R8 and R2 are **higher in `stk`
@@ -294,6 +301,13 @@ permutation scan.
 Tables: `R6_R7_genes_mval.csv` (gene, strand, gap, TU, diffs, estimate type),
 `R6_R7_tu_effects_mval.csv` (TU means per contrast), `operon_coherence_mval.csv` (r per pair
 type, contrast, with/without R6–R7), `R6_R7_context_checks_mval.txt` (9 PASS).
+
+### `fig_R6_R7_genome_context_compact_mval.png`
+Panels A + B of the figure above, redrawn narrow for the poster (7 x 6.4 in instead of a
+16 in wide figure). **Compares** the same: `stk` vs `anc` and `stp` vs `anc` in TSB, > 0 =
+**higher in the mutant**, with the same data and genome windows. Arrow colour is `stk` vs `anc`
+in A and `stp` vs `anc` in B. Only layout changed: shorter titles, shared legend below,
+fewer gene labels, "putative operon" instead of "putative TU". Panels C-E are not in it.
 
 ## 3d. STRING network of the R7 and R6 proteins (Step 11d, `fig_R6_R7_string_network_mval.png`)
 

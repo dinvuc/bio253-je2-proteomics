@@ -43,6 +43,14 @@ abstract: [`abstract_mval.md`](abstract_mval.md). Full write-up: [`reports/proje
   consistent with its reduced Stk1, but most of its pattern is its own. `stp` is not
   simply a kinase mutant.
 
+### `fig3_h3_shared_distinct_compact_mval.png`: Fig 3, narrow version for the poster
+- **Compares** the same as Fig 3 (`stp` vs `anc` against `stk` vs `anc`; a baseline in TSB, b PASN
+  response), with the same proteins, colours and r (7 x 6.15 in instead of 12 x 7.5 in).
+- **Axes are swapped:** `stp` is on x and `stk` on y, so above the diagonal = more positive in `stk`.
+  a: > 0 = higher in the mutant. b: > 0 = response lower in the mutant.
+- **Named:** coloured proteins with a gene symbol, the 3 shared ones and the 4 response hits. The
+  noise-only r (0.50) is left out, because next to 0.37 it was misread (notebook 18 Nov).
+
 ### `fig4_pathways_genome_mval.png`: pathway level and genome position
 - **a** Robust shifted functional terms (Wilcoxon rank test and cameraPR both FDR < 0.05, Step 10)
   per mutant and layer; above 0 = higher in the mutant / SN response lower in the mutant.
