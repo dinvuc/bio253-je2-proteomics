@@ -19,6 +19,7 @@
 #           is recomputed exactly as in Step 11; its thresholds are read from Step 11.
 #           18 primary samples (TSB, SN) in every per-sample panel.
 # Output:   mval_medi/results/step12_poster/fig1_h1_enzymes_mval.png ... fig4_pathways_genome_mval.png
+#           + fig3_h3_shared_distinct_compact_mval.png (Fig 3, narrow)
 # Check:    18 samples, 3 per group in the per-sample panels; scan curve reproduces the
 #           Step 11 top window of stk_vs_anc_at_TSB (+1.510).
 
@@ -129,6 +130,55 @@ p3 <- ggplot(pairs, aes(stk_diff, stp_diff)) +
        caption = "Steps 5, 7. Direct stp-vs-stk differences: limma treat |log2| > 1, BH-FDR < 0.05.") +
   theme(legend.position = "bottom")
 ggsave(file.path(out, "fig3_h3_shared_distinct_mval.png"), p3, width = 12, height = 7.5, dpi = 300)
+
+# ---- Fig 3, compact ---------------------------------------------------------------------
+# stk effects spread wider than stp effects, so stk goes on the y axis: the panels become narrow and
+# the scales stay equal (diagonal at 45 degrees). Named: proteins with a gene symbol, all 'both'
+# proteins and all hits of the response; the other locus tags made the centre unreadable.
+named <- pairs |> filter(pt != "other") |>
+  left_join(read_protein_metadata() |> distinct(locus_tag, annot_product = product), by = "locus_tag") |>
+  mutate(label = case_when(!is.na(gene) ~ gene,
+                           pt == "stp and stk differ directly" & layer == sim$layer[1] ~ "",
+                           str_detect(annot_product, "hypothetical") ~ locus_tag,
+                           TRUE ~ str_replace(str_remove(annot_product, " protein$"), "-binding", "-\nbinding")))
+XL <- range(pairs$stp_diff) + c(-0.4, 0.4)
+YL <- range(pairs$stk_diff) + c(-0.4, 0.4)
+compact3 <- function(i, title, meaning) {
+  s <- sim[i, ]
+  ggplot(filter(pairs, layer == s$layer), aes(stp_diff, stk_diff)) +
+    geom_hline(yintercept = 0, colour = "grey85") + geom_vline(xintercept = 0, colour = "grey85") +
+    geom_abline(colour = "grey40", linetype = 2, linewidth = 0.4) +
+    annotate("text", x = 2.75, y = 3.3, label = "same in both", angle = 45, size = 2.6, colour = "grey35") +
+    geom_point(data = \(d) filter(d, pt == "other"), colour = "grey70", size = 0.6, alpha = 0.5) +
+    geom_point(data = \(d) filter(d, pt != "other"), aes(fill = pt), shape = 21, size = 2.2) +
+    ggrepel::geom_text_repel(data = filter(named, layer == s$layer), aes(label = label), size = 2.9, seed = 1,
+                             lineheight = 0.85, box.padding = 0.5, point.padding = 0.15, force = 4, max.overlaps = Inf,
+                             min.segment.length = 0, segment.colour = "grey40", segment.size = 0.25,
+                             bg.color = "white", bg.r = 0.15) +
+    coord_equal(xlim = XL, ylim = YL, expand = FALSE) +
+    scale_x_continuous(breaks = c(-2, 0, 2, 4)) + scale_y_continuous(breaks = c(-4, -2, 0, 2, 4)) +
+    scale_fill_manual(values = c("stp and stk differ directly" = "#D55E00", "altered in both, same direction" = "#0072B2"),
+                      limits = c("altered in both, same direction", "stp and stk differ directly"), name = NULL) +
+    labs(title = title,
+         subtitle = paste(sprintf("r = %.2f (95%% CI %.2f-%.2f), n = %d", s$r_true_corrected, s$r_true_low, s$r_true_high, s$n),
+                          meaning, sep = "\n"),
+         x = "stp vs anc (log2)", y = if (i == 1) "stk vs anc (log2)") +
+    theme_bw(base_size = 10) +
+    theme(plot.title = element_text(face = "bold", size = 11), plot.subtitle = element_text(size = 8.2),
+          panel.grid = element_blank())
+}
+p3c <- compact3(1, "a  Baseline in TSB", "> 0 = higher in the mutant") +
+  (compact3(2, "b  PASN response", "> 0 = response lower in the mutant") + guides(fill = "none")) +
+  plot_layout(guides = "collect") +
+  plot_annotation(caption = paste("r is corrected for the shared anc noise (0 = unrelated, 1 = identical). n = 3 per group.",
+                                  "Coloured = limma treat |log2| > 1, BH-FDR < 0.05. Only some coloured proteins are named.",
+                                  sep = "\n"),
+                  theme = theme(plot.caption = element_text(hjust = 0, size = 8))) &
+  theme(legend.position = "bottom")
+check("Fig 3 compact: same 20 + 4 direct and 3 shared proteins",
+      identical(as.integer(table(named$layer[named$direct_hit])), c(20L, 4L)) &&
+        sum(named$pt == "altered in both, same direction") == 3)
+ggsave(file.path(out, "fig3_h3_shared_distinct_compact_mval.png"), p3c, width = 7, height = 6.15, dpi = 400)
 
 # ---- Fig 4: pathway level + genome scan ------------------------------------------------
 rob <- read_csv("mval_medi/results/step10_enrichment/summary/robust_terms_mval.csv", show_col_types = FALSE)
