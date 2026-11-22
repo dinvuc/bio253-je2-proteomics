@@ -1,6 +1,6 @@
 # Step 2 outputs: sample identity and measurement quality
 
-Made by [`C_mutant_validation_DinMete/02_sample_qc_mval.R`](../../02_sample_qc_mval.R) (11 Nov). Question:
+Made by [`C_mutant_validation_DinMete/scripts/02_sample_qc_mval.R`](../../scripts/02_sample_qc_mval.R) (11 Nov). Question:
 are the 27 samples what the sample sheet says, are they of similar quality, and does any
 sample or technical factor look like it could fake a genotype effect? Data: normalised
 log2 protein abundances (`read_abundances("total")`, 2,232 JE2 proteins), phospho tables

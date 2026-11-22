@@ -1,8 +1,8 @@
 # Step 10 outputs: what each figure and table compares
 
-Made by [`C_mutant_validation_DinMete/10_enrichment_mval.R`](../../../10_enrichment_mval.R) (one folder
+Made by [`C_mutant_validation_DinMete/scripts/10_enrichment_mval.R`](../../../scripts/10_enrichment_mval.R) (one folder
 per contrast, next to this one) and
-[`C_mutant_validation_DinMete/10b_step10_summary_mval.R`](../../../10b_step10_summary_mval.R) (this folder).
+[`C_mutant_validation_DinMete/scripts/10b_step10_summary_mval.R`](../../../scripts/10b_step10_summary_mval.R) (this folder).
 Question: is Stk1 "broadly involved" (presentation feedback): **how many functional
 categories** shift in `stk` vs `anc`, and do the same categories shift in `stp`
 (H3 at pathway level)?

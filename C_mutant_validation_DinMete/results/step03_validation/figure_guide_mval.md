@@ -1,6 +1,6 @@
 # Step 3 outputs: what each figure and table compares
 
-Made by [`C_mutant_validation_DinMete/03_mutant_validation_mval.R`](../../03_mutant_validation_mval.R).
+Made by [`C_mutant_validation_DinMete/scripts/03_mutant_validation_mval.R`](../../scripts/03_mutant_validation_mval.R).
 Question (H1): do the mutants lack the enzyme they should lack, and how much
 peptide evidence is behind each "detected" value? Results and numbers:
 [notebook 2026-11-12](../../notebook/2026-11-12_steps3-4_mutant_validation_mval.md).
@@ -100,7 +100,7 @@ evidence only, and the size of the fold change is not meaningful.
 ## Poster version (Step 12c)
 
 ### `fig_enzyme_peptides_poster_mval.png` — Fig 1b at poster size, transparent background
-- **Made by:** `C_mutant_validation_DinMete/12c_poster_enzyme_peptides_mval.R` (from `enzyme_per_sample_mval.csv`).
+- **Made by:** `C_mutant_validation_DinMete/scripts/12c_poster_enzyme_peptides_mval.R` (from `enzyme_per_sample_mval.csv`).
 - **Same data as Fig 1b**, redrawn for the poster: strain on the x axis, medium as symbol
   (● TSB, ▲ PASN pulse, ■ PASN), Stk1 left; not detected = open symbol at 0; text ≈ 1.7× larger;
   no title. Plot, panel and legend backgrounds are transparent (strip bars stay grey).

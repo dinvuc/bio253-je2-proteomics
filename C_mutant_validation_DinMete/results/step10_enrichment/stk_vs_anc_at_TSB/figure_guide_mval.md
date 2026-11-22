@@ -1,6 +1,6 @@
 # Step 10: enrichment of `stk_vs_anc_at_TSB` (baseline: `stk` vs `anc` in TSB)
 
-Made by [`C_mutant_validation_DinMete/10_enrichment_mval.R`](../../../10_enrichment_mval.R). Methods, robust-term rule
+Made by [`C_mutant_validation_DinMete/scripts/10_enrichment_mval.R`](../../../scripts/10_enrichment_mval.R). Methods, robust-term rule
 (Wilcoxon and cameraPR both FDR < 0.05) and the cross-contrast figures: [summary guide](../summary/figure_guide_mval.md).
 Direction: up / top = **higher in `stk`** than `anc`; down / bottom = **higher in `anc`**.
 

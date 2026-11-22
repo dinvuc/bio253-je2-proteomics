@@ -1,6 +1,6 @@
 # Step 11 outputs: robustness of the headline conclusions
 
-Made by [`C_mutant_validation_DinMete/11_robustness_mval.R`](../../11_robustness_mval.R) (~40 s).
+Made by [`C_mutant_validation_DinMete/scripts/11_robustness_mval.R`](../../scripts/11_robustness_mval.R) (~40 s).
 Question: do the headline conclusions of Steps 3–10 survive reasonable checks, or do
 they rest on one replicate, a marginal threshold, imputed values or one genomic region?
 Every analysis here is a **sensitivity analysis**. The main results and the hit rule
@@ -99,7 +99,7 @@ response of similar size in all three strains.
   phosphatase function. DNA-level checks are needed before these hits are interpreted biologically.
 
 ## 3b. What is inside the flagged blocks (Step 11b, added 19 Nov)
-Made by [`C_mutant_validation_DinMete/11b_genome_blocks_mval.R`](../../11b_genome_blocks_mval.R).
+Made by [`C_mutant_validation_DinMete/scripts/11b_genome_blocks_mval.R`](../../scripts/11b_genome_blocks_mval.R).
 No new test: it re-reads the Step 11 blocks and the Step 5 fit. Flagged blocks that
 overlap in any contrast are merged into **8 regions, R1–R8** (genome order). Region labels
 were written by hand from the annotation; the script checks that every gene named in a
@@ -248,7 +248,7 @@ effect for R7.
 
 ## 3c. Genome context of R7 and R6 at baseline TSB (Step 11c)
 
-Made by [`C_mutant_validation_DinMete/11c_R6_R7_context_mval.R`](../../11c_R6_R7_context_mval.R) (~20 s;
+Made by [`C_mutant_validation_DinMete/scripts/11c_R6_R7_context_mval.R`](../../scripts/11c_R6_R7_context_mval.R) (~20 s;
 no new test). Question: do the changed proteins in the two baseline-TSB blocks sit in one
 operon, many operons or a whole stretch of DNA, and could a polar effect of the transposon
 explain them? **Putative TU** (transcription unit) = neighbouring genes on the same strand
@@ -311,7 +311,7 @@ fewer gene labels, "putative operon" instead of "putative TU". Panels C-E are no
 
 ## 3d. STRING network of the R7 and R6 proteins (Step 11d, `fig_R6_R7_string_network_mval.png`)
 
-Script: `C_mutant_validation_DinMete/11d_R6_R7_string_mval.R`. **Compares:** nothing new is tested. The figure
+Script: `C_mutant_validation_DinMete/scripts/11d_R6_R7_string_mval.R`. **Compares:** nothing new is tested. The figure
 shows which of the block proteins STRING links to each other, and how they group.
 - **Nodes** = the Step 11 block proteins (R7: 25, R6: 49). Node colour = log2 diff in the
   contrast that flagged the block, at TSB (A: `stk_vs_anc`, B: `stp_vs_anc`; > 0 = higher in

@@ -1,6 +1,6 @@
 # The proteins of Fig 2: function, STRING neighbourhood and hypotheses (Step 6d)
 
-Made by [`C_mutant_validation_DinMete/06d_response_hits_string_mval.R`](../../../06d_response_hits_string_mval.R),
+Made by [`C_mutant_validation_DinMete/scripts/06d_response_hits_string_mval.R`](../../../scripts/06d_response_hits_string_mval.R),
 2026-11-18. Figures: see [`figure_guide_mval.md`](figure_guide_mval.md).
 **Status: drafted by AI (Claude Code); numbers and sources marked as checked by the group on 18 Nov 2026**
 (rules section 8). The group asked for the biology, so this file

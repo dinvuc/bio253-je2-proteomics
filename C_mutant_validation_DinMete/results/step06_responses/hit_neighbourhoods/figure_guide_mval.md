@@ -1,6 +1,6 @@
 # Step 6c: one neighbourhood figure per interaction hit
 
-Made by [`C_mutant_validation_DinMete/06c_hit_neighbourhoods_mval.R`](../../../06c_hit_neighbourhoods_mval.R).
+Made by [`C_mutant_validation_DinMete/scripts/06c_hit_neighbourhoods_mval.R`](../../../scripts/06c_hit_neighbourhoods_mval.R).
 Full method in the [Step 6 figure guide](../figure_guide_mval.md#hit_neighbourhoodsfig_neighbourhood_gene_locus_mvalpng-one-figure-per-hit-with-its-neighbours);
 numbers in `neighbourhood_genes_mval.csv` and `neighbourhood_summary_mval.csv`.
 
@@ -34,7 +34,7 @@ are not supported by the test (n = 3).
 ## Poster version (Step 12c)
 
 ### `fig_neighbourhood_arcA_poster_mval.png` — arcA at poster size, transparent background
-- **Made by:** `C_mutant_validation_DinMete/12c_poster_arcA_mval.R` (needs the Step 5 limma table in `data/derived/`).
+- **Made by:** `C_mutant_validation_DinMete/scripts/12c_poster_arcA_mval.R` (needs the Step 5 limma table in `data/derived/`).
 - **Same three panels and data as `fig_neighbourhood_arcA_14675_mval.png`**: 10 × 11 in, text ≈ 1.7×
   larger; title/subtitle replaced by a two-line caption; legends above/below the panels; gene names
   only; panel names TSB / PASN; red digit = samples detected of 3. Backgrounds transparent.

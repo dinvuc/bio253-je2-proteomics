@@ -1,6 +1,6 @@
 # Step 4b outputs: what each figure and table compares
 
-Made by [`C_mutant_validation_DinMete/04b_transposon_products_mval.R`](../../04b_transposon_products_mval.R).
+Made by [`C_mutant_validation_DinMete/scripts/04b_transposon_products_mval.R`](../../scripts/04b_transposon_products_mval.R).
 Question: is the transposon in the `stk` and `stp` strains present and expressed,
 and absent from `anc`? This is a positive control for the two insertions, not a
 test of Stp1/Stk1 themselves.

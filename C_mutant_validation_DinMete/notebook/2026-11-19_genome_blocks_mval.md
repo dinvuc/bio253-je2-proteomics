@@ -6,7 +6,7 @@ they are. Which genes lie in the flagged blocks, and how much of the Step 10 pat
 shifts (Fig 4b) is one genomic region? Asked while choosing the H3 figures.
 
 ## What we did
-- ran `Rscript C_mutant_validation_DinMete/11b_genome_blocks_mval.R` (~20 s; no new test). It merges the
+- ran `Rscript C_mutant_validation_DinMete/scripts/11b_genome_blocks_mval.R` (~20 s; no new test). It merges the
   Step 11 blocks into 8 regions R1–R8, gives each a label from the annotation, shows the
   region means in the Fig 4b layout and counts the Fig 4b term members inside the regions.
 - checks (`genome_blocks_checks_mval.txt`): 8/8 PASS, incl. "every gene named in a label lies
@@ -56,7 +56,7 @@ whole stretch of DNA? Do `stk` effects follow operons genome-wide? Could a polar
 the transposon explain R6/R7?
 
 ## What we did
-- ran `Rscript C_mutant_validation_DinMete/11c_R6_R7_context_mval.R` (~20 s; no new test). Putative TU = same
+- ran `Rscript C_mutant_validation_DinMete/scripts/11c_R6_R7_context_mval.R` (~20 s; no new test). Putative TU = same
   strand, gap < 150 bp (a hint from the sequence, not a measured operon).
 - checks (`R6_R7_context_checks_mval.txt`): 9/9 PASS, incl. "R7 mean reproduces Step 11b
   (1.12)", "R6 prophage sits inside hlb", "stk TSB: same-TU pairs more alike than divergent pairs".
@@ -105,7 +105,7 @@ and the "phiSa3-like" label (based on gene content only) were marked as checked 
 ## Addendum: STRING network of R6 / R7 (Step 11d)
 - **Question:** which functional groups do the R7 and R6 block proteins form, and does each
   group move with the block?
-- **Run:** `Rscript C_mutant_validation_DinMete/11d_R6_R7_string_mval.R` (STRING API, course genome STRG0B09NBK,
+- **Run:** `Rscript C_mutant_validation_DinMete/scripts/11d_R6_R7_string_mval.R` (STRING API, course genome STRG0B09NBK,
   score ≥ 0.4; Louvain clusters; label = most specific shared STRING term + member products).
   Figure `fig_R6_R7_string_network_mval.png`, guide section 3d.
 - **Results:** 123 links (R7 95, R6 27, R6–R7 1; 56 neighbourhood-only). R7: 4 clusters, all

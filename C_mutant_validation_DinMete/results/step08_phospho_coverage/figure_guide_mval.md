@@ -1,6 +1,6 @@
 # Step 8 outputs: what each figure and table compares
 
-Made by [`C_mutant_validation_DinMete/08_phospho_coverage_mval.R`](../../08_phospho_coverage_mval.R).
+Made by [`C_mutant_validation_DinMete/scripts/08_phospho_coverage_mval.R`](../../scripts/08_phospho_coverage_mval.R).
 Question: is the phosphosite layer measured often enough, and localised well enough,
 to support a follow-up (Step 9)? Data: FragPipe site tables (`read_sites()`), the
 normalised site abundances the supplied DEA used (`read_abundances("phospho_*")`,

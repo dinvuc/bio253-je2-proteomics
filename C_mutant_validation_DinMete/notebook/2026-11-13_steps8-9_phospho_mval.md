@@ -16,10 +16,10 @@
     pH exploratory only; primary search = more supported sites
   - Step 9 categories: consistent (|site − protein| < 1), residual (≥ 1 and ≥ 2 SE),
     unresolved; SE assumes independent layers; no p-value/FDR for the adjusted effect
-- `C_mutant_validation_DinMete/08_phospho_coverage_mval.R` → `results/step08_phospho_coverage/`
+- `C_mutant_validation_DinMete/scripts/08_phospho_coverage_mval.R` → `results/step08_phospho_coverage/`
   (audit, depth, localisation, coverage funnel, our site refit with treat lfc = 1,
   shortlist, STY vs STYH and reinjection sensitivity)
-- `C_mutant_validation_DinMete/09_site_vs_protein_mval.R` → `results/step09_site_vs_protein/`
+- `C_mutant_validation_DinMete/scripts/09_site_vs_protein_mval.R` → `results/step09_site_vs_protein/`
   (match by exact `protein_key`, adjusted effect, categories, offset sensitivity,
   paired per-sample plots)
 - new helper `add_x_primary()` / `primary_x_axis()` in `R/helpers_mval.R` + test;

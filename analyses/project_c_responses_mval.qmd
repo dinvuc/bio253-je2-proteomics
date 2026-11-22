@@ -3,7 +3,7 @@ title: "Project C · 2 – PASN responses relative to anc (H2, H3)"
 subtitle: "Bio253 HS2026 · group mval · Steps 5–7 and 11, recomputed live"
 ---
 
-Short, re-runnable version of Steps 5–7. Full scripts: `C_mutant_validation_DinMete/05_formal_test_mval.R`,
+Short, re-runnable version of Steps 5–7. Full scripts: `C_mutant_validation_DinMete/scripts/05_formal_test_mval.R`,
 `06_altered_responses_mval.R`, `07_shared_distinct_mval.R`, `11_robustness_mval.R`.
 
 ```{r setup}

@@ -1,6 +1,6 @@
 # Step 10: enrichment of `interaction_stk_vs_anc_at_TSB_vs_SN` (H2: altered PASN response in `stk`)
 
-Made by [`C_mutant_validation_DinMete/10_enrichment_mval.R`](../../../10_enrichment_mval.R); methods in the [summary guide](../summary/figure_guide_mval.md).
+Made by [`C_mutant_validation_DinMete/scripts/10_enrichment_mval.R`](../../../scripts/10_enrichment_mval.R); methods in the [summary guide](../summary/figure_guide_mval.md).
 Direction: up / top = **SN response lower in `stk`** than in `anc` (interaction > 0); down /
 bottom = **SN response higher in `stk`**. (The figure title was fixed on 17 Nov; it used to say
 "higher in interaction_stk".)

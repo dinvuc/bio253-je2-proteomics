@@ -1,6 +1,6 @@
 # Step 12 poster figures: what each figure compares
 
-Made by [`C_mutant_validation_DinMete/12_poster_figures_mval.R`](../../12_poster_figures_mval.R) from saved
+Made by [`C_mutant_validation_DinMete/scripts/12_poster_figures_mval.R`](../../scripts/12_poster_figures_mval.R) from saved
 results of Steps 3–11 (no new statistics), 300 dpi. All per-sample panels show the 18
 primary samples (TSB, SN), n = 3 per group. Full write-up: [`reports/project_c_report_mval.html`](../../../reports/project_c_report_mval.html).
 
@@ -74,7 +74,7 @@ poster by the two-gene sketch `poster/p0_operon_mval`) and the phospho panels (S
 
 ## `poster/`: the A0 poster versions (Step 12b, 18 Nov)
 
-Made by [`C_mutant_validation_DinMete/12b_poster_a0_figures_mval.R`](../../12b_poster_a0_figures_mval.R) . Same data and
+Made by [`C_mutant_validation_DinMete/scripts/12b_poster_a0_figures_mval.R`](../../scripts/12b_poster_a0_figures_mval.R) . Same data and
 numbers as `fig1`–`fig4` above, redrawn for an A0 poster:
 drawn at the printed column width (243 mm), Arial ≥ 22–24 pt, no gridlines, direct labels instead
 of legends, no figure titles (the poster heading carries the message), vector PDF + 300 dpi PNG.
@@ -87,4 +87,4 @@ of legends, no figure titles (the poster heading carries the message), vector PD
 | `p3_h3_shared_distinct_mval` | 4 | as `fig3`: `stp` vs `stk` effects, baseline and response | panels stacked, each with a text column on the right: noise-corrected r **with its bootstrap 95 % CI and the words "corrected for the shared anc noise"** (18 Nov: "r = 0.37" alone invited a comparison with the noise-only r = 0.50; the corrected r must be compared with 0), key with counts, and the 3 "altered in both" proteins numbered 1–3 in the panel and named in the key; direction of each axis written under the panel title; axes ±5.6 so no protein is clipped; 20 baseline direct hits counted, not named |
 | `p4_pathways_genome_mval` | 5 | a total robust terms per mutant and layer; b genome scan | a: totals only (no up/down split), horizontal bars; b: filled area instead of a thin line, labels on the panels |
 | `qr_repo_mval.svg` | fine print | link to the repository | new |
-| `qr_references_mval.{svg,png}` (Step 12d, `C_mutant_validation_DinMete/12d_qr_references_mval.R`) | fine print | link to [`references_mval.md`](../../docs/references_mval.md) on `main` (works once merged) | new |
+| `qr_references_mval.{svg,png}` (Step 12d, `C_mutant_validation_DinMete/scripts/12d_qr_references_mval.R`) | fine print | link to [`references_mval.md`](../../docs/references_mval.md) on `main` (works once merged) | new |

@@ -1,6 +1,6 @@
 # Step 7 outputs: what each figure and table compares
 
-Made by [`C_mutant_validation_DinMete/07_shared_distinct_mval.R`](../../07_shared_distinct_mval.R).
+Made by [`C_mutant_validation_DinMete/scripts/07_shared_distinct_mval.R`](../../scripts/07_shared_distinct_mval.R).
 Question (H3): does `stp` look like `stk`? The polar-effect idea (Steps 3–4: the
 `stp` strain also lacks most Stk1) predicts that the `stp`-vs-`anc` effects lie near
 the `stk`-vs-`anc` effects. Proteins far from that are candidate phosphatase-specific

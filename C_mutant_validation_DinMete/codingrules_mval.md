@@ -47,9 +47,9 @@ The project plan and workflow are in `C_mutant_validation_DinMete/project_outlin
 Our lab notebook (one dated entry per session) is in `C_mutant_validation_DinMete/notebook/`,
 named `YYYY-MM-DD_topic_mval.md` (template: `C_mutant_validation_DinMete/notebook/notebook_template_mval.md`).
 Our analysis scripts (`01_setup_check_mval.R` … `12d_qr_references_mval.R`) are in
-`C_mutant_validation_DinMete/` as well, and their outputs in
+`C_mutant_validation_DinMete/scripts/`, and their outputs in
 `C_mutant_validation_DinMete/results/step<NN>_<name>/`. Every script is run **from the
-repository root**, e.g. `Rscript C_mutant_validation_DinMete/05_formal_test_mval.R`, so all
+repository root**, e.g. `Rscript C_mutant_validation_DinMete/scripts/05_formal_test_mval.R`, so all
 paths inside a script start at the root. The lecturer's `scripts/00_fetch_data.R` stays in
 `scripts/`.
 
@@ -77,7 +77,7 @@ something the plan did not say, explain why.
   *tested*, not applied as a filter afterwards: never select "FDR < x, then
   |log2FC| > 1", and never say "find the top genes". Always report the
   estimate and its standard error. Check which column a filter actually uses.
-  Code: `C_mutant_validation_DinMete/05_formal_test_mval.R`, constants `MVAL_FDR` / `MVAL_LFC`.
+  Code: `C_mutant_validation_DinMete/scripts/05_formal_test_mval.R`, constants `MVAL_FDR` / `MVAL_LFC`.
 - **Supplied screen = comparison only.** The prolfquapp screen
   (FDR < 0.1 and |diff| > 1, `lm_impute`) is kept as a labelled comparison
   and as the only source of presence/absence (`lod_imputed`) evidence; it no

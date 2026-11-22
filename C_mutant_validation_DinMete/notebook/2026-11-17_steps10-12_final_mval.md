@@ -8,10 +8,10 @@
 
 ## What we did
 - branch `steps10-12-final-mval`; one commit per step
-- `C_mutant_validation_DinMete/10_enrichment_mval.R` on 6 contrasts (`stk`/`stp` vs `anc` in TSB, SN, response);
-  `C_mutant_validation_DinMete/10b_step10_summary_mval.R` (cameraPR check, counts, candidate table, phospho ORA)
-- `C_mutant_validation_DinMete/11_robustness_mval.R` (leave-one-sample-out ×18, thresholds, genome scan)
-- `C_mutant_validation_DinMete/12_poster_figures_mval.R` (4 figures, 300 dpi); abstract + poster text;
+- `C_mutant_validation_DinMete/scripts/10_enrichment_mval.R` on 6 contrasts (`stk`/`stp` vs `anc` in TSB, SN, response);
+  `C_mutant_validation_DinMete/scripts/10b_step10_summary_mval.R` (cameraPR check, counts, candidate table, phospho ORA)
+- `C_mutant_validation_DinMete/scripts/11_robustness_mval.R` (leave-one-sample-out ×18, thresholds, genome scan)
+- `C_mutant_validation_DinMete/scripts/12_poster_figures_mval.R` (4 figures, 300 dpi); abstract + poster text;
   `reports/project_c_report_mval.qmd` (rendered, 24 s); three project notebooks in
   `analyses/` (each < 15 s)
 - References checked in PubMed: Olsen 2006, Wu & Smyth 2012, Ritchie 2015, McCarthy & Smyth 2009

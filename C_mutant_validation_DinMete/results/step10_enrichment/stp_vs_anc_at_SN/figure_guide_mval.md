@@ -1,6 +1,6 @@
 # Step 10: enrichment of `stp_vs_anc_at_SN` (baseline: `stp` vs `anc` in PASN)
 
-Made by [`C_mutant_validation_DinMete/10_enrichment_mval.R`](../../../10_enrichment_mval.R); methods in the [summary guide](../summary/figure_guide_mval.md).
+Made by [`C_mutant_validation_DinMete/scripts/10_enrichment_mval.R`](../../../scripts/10_enrichment_mval.R); methods in the [summary guide](../summary/figure_guide_mval.md).
 Direction: up / top = **higher in `stp`** than `anc` (in SN); down / bottom = **higher in `anc`**.
 
 ### `fig_top_terms_mval.png`

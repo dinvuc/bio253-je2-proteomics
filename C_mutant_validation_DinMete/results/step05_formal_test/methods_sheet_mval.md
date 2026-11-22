@@ -1,8 +1,8 @@
 # Step 5 methods sheet: contrasts, direction, eligibility, model, thresholds
 
 Written 13 Nov 2026 from the outputs of
-[`C_mutant_validation_DinMete/05_formal_test_mval.R`](../../05_formal_test_mval.R) (the test) and
-[`C_mutant_validation_DinMete/05b_contrast_sheet_mval.R`](../../05b_contrast_sheet_mval.R)
+[`C_mutant_validation_DinMete/scripts/05_formal_test_mval.R`](../../scripts/05_formal_test_mval.R) (the test) and
+[`C_mutant_validation_DinMete/scripts/05b_contrast_sheet_mval.R`](../../scripts/05b_contrast_sheet_mval.R)
 (definitions and checks). Every number below is in `contrast_sheet_mval.csv`
 or `contrast_sheet_checks_mval.txt`. Thresholds were fixed by the group on
 12 Nov 2026, before results were seen.

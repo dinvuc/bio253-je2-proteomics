@@ -1,6 +1,6 @@
 # Step 10 plausibility check: enrichment of `stk_vs_anc` (averaged over all media)
 
-Made on 11 Nov by [`C_mutant_validation_DinMete/10_enrichment_mval.R`](../../../10_enrichment_mval.R) (default contrast)
+Made on 11 Nov by [`C_mutant_validation_DinMete/scripts/10_enrichment_mval.R`](../../../scripts/10_enrichment_mval.R) (default contrast)
 to check the method against the lecture's example (lecture 06, slides 36–38). This is
 **not** one of our primary contrasts: it averages TSB, SNpulse and SN. The primary analysis
 is in the per-medium folders and the [summary](../summary/figure_guide_mval.md).

@@ -1,7 +1,7 @@
 # Step 5 outputs: what each figure and table compares
 
-Made by [`C_mutant_validation_DinMete/05_formal_test_mval.R`](../../05_formal_test_mval.R) (part 1,
-the formal test, 12 Nov) and [`C_mutant_validation_DinMete/05b_contrast_sheet_mval.R`](../../05b_contrast_sheet_mval.R)
+Made by [`C_mutant_validation_DinMete/scripts/05_formal_test_mval.R`](../../scripts/05_formal_test_mval.R) (part 1,
+the formal test, 12 Nov) and [`C_mutant_validation_DinMete/scripts/05b_contrast_sheet_mval.R`](../../scripts/05b_contrast_sheet_mval.R)
 (part 2, definitions and checks, 13 Nov). The rules behind all of them are in
 [`methods_sheet_mval.md`](methods_sheet_mval.md).
 

@@ -3,7 +3,7 @@ title: "Project C · 1 – sample QC and mutant validation (H1)"
 subtitle: "Bio253 HS2026 · group mval · Steps 2–4b, recomputed live"
 ---
 
-Short, re-runnable version of Steps 2–4b. Full scripts: `C_mutant_validation_DinMete/02_sample_qc_mval.R`,
+Short, re-runnable version of Steps 2–4b. Full scripts: `C_mutant_validation_DinMete/scripts/02_sample_qc_mval.R`,
 `03_mutant_validation_mval.R`, `04_polar_effect_mval.R`, `04b_transposon_products_mval.R`.
 
 ```{r setup}

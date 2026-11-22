@@ -6,11 +6,11 @@ correctly labelled and of usable quality before we interpret any biology (Step 2
 
 ## What we did
 - Created branch `steps1-2-setup-qc-mval` from `main` at revision `93f72a0`.
-- Ran `Rscript C_mutant_validation_DinMete/01_setup_check_mval.R`. It records git provenance, checksums,
+- Ran `Rscript C_mutant_validation_DinMete/scripts/01_setup_check_mval.R`. It records git provenance, checksums,
   software versions and git exclusions, runs `tests/run_tests.R` and renders
   `analyses/01_explore_data.qmd`.
   Record: `C_mutant_validation_DinMete/results/step01_setup/setup_record_mval.txt`.
-- Ran `Rscript C_mutant_validation_DinMete/02_sample_qc_mval.R`. It checks the design, sample-name repair,
+- Ran `Rscript C_mutant_validation_DinMete/scripts/02_sample_qc_mval.R`. It checks the design, sample-name repair,
   sample mapping across all 5 data layers, identifier uniqueness and contaminants,
   detection per sample, distributions, correlation, PCA, the reinjected phospho
   samples and DEA table metadata.
@@ -73,8 +73,8 @@ range, so it stays in. We will keep an eye on it when we plot `stk` TSB values.
   `reference/` are **not** git-ignored → do not `git add .` until they are removed.
 
 ## AI use
-Claude Code (Opus 5.5): wrote and ran `C_mutant_validation_DinMete/01_setup_check_mval.R` and
-`C_mutant_validation_DinMete/02_sample_qc_mval.R` and drafted this entry. Corrections during the
+Claude Code (Opus 5.5): wrote and ran `C_mutant_validation_DinMete/scripts/01_setup_check_mval.R` and
+`C_mutant_validation_DinMete/scripts/02_sample_qc_mval.R` and drafted this entry. Corrections during the
 session: the reinjected-sample check first expected `SNpulse` in the sample names
 (they are `pulseSN`), and the script needed purrr loaded explicitly. The numbers
 (`qc_checks_mval.txt`, PCA/detection figures) were marked as checked by the group on 11 Nov 2026.
@@ -94,9 +94,9 @@ detection problem. It does help with Step 4 (sources) and Step 10 (enrichment).
   - `write_string_upload()`: locus-tag lists for STRING.
 - Added `tests/testthat/test-helpers_mval.R` (toy data). `Rscript tests/run_tests.R`: all pass
   (data, helpers_mval 11 checks, parsing; 1 skip = peptide table).
-- Added `C_mutant_validation_DinMete/10_enrichment_mval.R` and ran it on `stk_vs_anc` as a method check
+- Added `C_mutant_validation_DinMete/scripts/10_enrichment_mval.R` and ran it on `stk_vs_anc` as a method check
   (outputs in `C_mutant_validation_DinMete/results/step10_enrichment/stk_vs_anc/`). Runtime ≈ 7 s.
-- `C_mutant_validation_DinMete/02_sample_qc_mval.R` now uses `keep_je2()`. The rerun gives identical numbers.
+- `C_mutant_validation_DinMete/scripts/02_sample_qc_mval.R` now uses `keep_je2()`. The rerun gives identical numbers.
 - Updated `PROJECT_WORKFLOW_mval.md`:
   - JE2-filter rule (no `grep 'ARG'`);
   - STRING organism `STRG0B09NBK` and AureoWiki/NTML sources;

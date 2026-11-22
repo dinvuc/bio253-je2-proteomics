@@ -8,7 +8,7 @@ Step 4 (polar effect) results?
 adds one new layer (*where* in the protein the peptides sit), and that layer **strengthens**
 two of our cautious statements without overturning any of them.
 
-Reproduce: `Rscript C_mutant_validation_DinMete/04c_peptide_crosscheck_mval.R` → `peptide_crosscheck_mval.csv`
+Reproduce: `Rscript C_mutant_validation_DinMete/scripts/04c_peptide_crosscheck_mval.R` → `peptide_crosscheck_mval.csv`
 (Stp1/Stk1, all 27 samples: our Step 3 peptide count next to the peptide-layer count, plus
 which residues each detected peptide covers) and `peptide_crosscheck_checks_mval.txt`.
 **Check:** peptide-layer counts equal Step 3 `n_peptides` in all 54 protein × sample rows (PASS).

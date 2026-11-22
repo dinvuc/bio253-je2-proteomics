@@ -13,9 +13,9 @@ be provided, so peptide evidence comes from `nr_children_protein_Id`
 
 ## What we did
 - branch `steps3-4-mutant-validation-mval`
-- `Rscript C_mutant_validation_DinMete/03_mutant_validation_mval.R` → `C_mutant_validation_DinMete/results/step03_validation/`
+- `Rscript C_mutant_validation_DinMete/scripts/03_mutant_validation_mval.R` → `C_mutant_validation_DinMete/results/step03_validation/`
   (8 checks PASS, 1 INFO line). It joins by sample name, and the Excel abundances equal the derived ones.
-- `Rscript C_mutant_validation_DinMete/04_polar_effect_mval.R` → `C_mutant_validation_DinMete/results/step04_polar_effect/`
+- `Rscript C_mutant_validation_DinMete/scripts/04_polar_effect_mval.R` → `C_mutant_validation_DinMete/results/step04_polar_effect/`
   (all checks PASS)
 - checked the transcription unit on AureoWiki and UniProt (sources below)
 

@@ -1,6 +1,6 @@
 # Step 10: enrichment of `stp_vs_anc_at_TSB` (baseline: `stp` vs `anc` in TSB)
 
-Made by [`C_mutant_validation_DinMete/10_enrichment_mval.R`](../../../10_enrichment_mval.R); methods in the [summary guide](../summary/figure_guide_mval.md).
+Made by [`C_mutant_validation_DinMete/scripts/10_enrichment_mval.R`](../../../scripts/10_enrichment_mval.R); methods in the [summary guide](../summary/figure_guide_mval.md).
 Direction: up / top = **higher in `stp`** than `anc`; down / bottom = **higher in `anc`**.
 Remember: `stp` also lacks most Stk1 (Steps 3–4).
 

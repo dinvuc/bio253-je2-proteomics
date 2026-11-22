@@ -6,7 +6,7 @@
    contradict our Step 3 (mutant validation) and Step 4 (polar effect) results?
 
 ## What we did
-- `Rscript C_mutant_validation_DinMete/04b_neighbours_by_genotype_mval.R` → `fig_neighbours_by_genotype_mval.png`
+- `Rscript C_mutant_validation_DinMete/scripts/04b_neighbours_by_genotype_mval.R` → `fig_neighbours_by_genotype_mval.png`
   (3 panels: anc / stk / stp, genes in genome order incl. stp1/stk1) and
   `fig_neighbours_by_genotype_medium_mval.png` (6 panels: TSB and SN × 3 strains; SNpulse left out).
   Merged to `main` (c061bb0).
@@ -15,7 +15,7 @@
   peptide table from `DEA_20261029_WUtotal_JE2_Oct26_vsn/.../msstats.csv` with `parse_msstats_peptides()`.
   The full `00_fetch_data.R` was **not** run (it also needs `phospho_combined_sites/` and
   `more_resources/`, which are not in that zip). Tests pass; notebook 07 renders.
-- `Rscript C_mutant_validation_DinMete/04c_peptide_crosscheck_mval.R` → `peptide_crosscheck_mval.csv`,
+- `Rscript C_mutant_validation_DinMete/scripts/04c_peptide_crosscheck_mval.R` → `peptide_crosscheck_mval.csv`,
   `peptide_crosscheck_checks_mval.txt`; written comparison in
   `C_mutant_validation_DinMete/results/step04_polar_effect/nb07_comparison_mval.md`.
 

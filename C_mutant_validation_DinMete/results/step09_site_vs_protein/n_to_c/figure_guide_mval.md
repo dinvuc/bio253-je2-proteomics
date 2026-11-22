@@ -1,6 +1,6 @@
 # Step 9b: N-to-C expression plots of all 25 proteins with a phosphosite hit
 
-Made by [`C_mutant_validation_DinMete/09b_n_to_c_plots_mval.R`](../../../09b_n_to_c_plots_mval.R) in the style
+Made by [`C_mutant_validation_DinMete/scripts/09b_n_to_c_plots_mval.R`](../../../scripts/09b_n_to_c_plots_mval.R) in the style
 of Fig. 1 of Wolski, Dittmann, Panse, Kunz & Grossmann, Chapter 8 (ISBN 978-1-0716-5519-1).
 Method details are in the [Step 9 figure guide](../figure_guide_mval.md#n-to-c-expression-plots-n_to_c-added-17-nov).
 The refined, paper-style subset is in [`../n_to_c_refined/`](../n_to_c_refined/).

@@ -11,7 +11,7 @@ Step 12 figures and text blocks into a readable A0 portrait poster.
   analysis = no new statistics; output = `step12_poster/poster/*` + `poster_a0_mval.pdf`;
   check = 9 PASS lines (sample counts, Stk1 fold change = Step 5, hit counts = Step 12,
   term counts = Step 10, genome-scan top window = Step 11).
-- `C_mutant_validation_DinMete/12b_poster_a0_figures_mval.R`: figures redrawn at their printed size (one column =
+- `C_mutant_validation_DinMete/scripts/12b_poster_a0_figures_mval.R`: figures redrawn at their printed size (one column =
   243 mm), Arial ≥ 22–24 pt, no gridlines, direct labels, vector PDF + 300 dpi PNG, QR code
   (installed the R package `qrcode` from CRAN). The Step 12 report figures are unchanged.
 - `C_mutant_validation_DinMete/results/step12_poster/poster_a0_mval.typ` (Typst, bundled with Quarto 1.4+):
@@ -56,7 +56,7 @@ wording were marked as checked by the group on 18 Nov 2026.
 - **Problem:** yes. The poster text gave the noise-only r (0.50) next to it, which invites
   "0.37 < 0.50, so no similarity". But 0.37 is the *noise-corrected* r of the true effects and
   must be compared with 0, not with 0.50.
-- **What was run:** `Rscript C_mutant_validation_DinMete/12b_poster_a0_figures_mval.R`, then
+- **What was run:** `Rscript C_mutant_validation_DinMete/scripts/12b_poster_a0_figures_mval.R`, then
   `quarto typst compile C_mutant_validation_DinMete/results/step12_poster/poster_a0_mval.typ`.
 - **Changes to `p3_h3_shared_distinct_mval`:** r now shown with its bootstrap 95 % CI
   (baseline 0.37, 0.29–0.45; response 0.38, 0.24–0.52; read from

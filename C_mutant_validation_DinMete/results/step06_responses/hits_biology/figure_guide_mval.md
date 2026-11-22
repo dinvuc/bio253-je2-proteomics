@@ -1,6 +1,6 @@
 # Step 6d outputs: what each figure and table compares
 
-Made by [`C_mutant_validation_DinMete/06d_response_hits_string_mval.R`](../../../06d_response_hits_string_mval.R)
+Made by [`C_mutant_validation_DinMete/scripts/06d_response_hits_string_mval.R`](../../../scripts/06d_response_hits_string_mval.R)
 (~1 min; queries STRING once, then uses the cached `string_*_mval.tsv`).
 Proteins: the 7 coloured points of
 [`../fig_response_vs_anc_mval.png`](../fig_response_vs_anc_mval.png) (6 formal interaction

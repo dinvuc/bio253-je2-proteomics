@@ -1,6 +1,6 @@
 # Step 4 outputs: what each figure and table compares
 
-Made by [`C_mutant_validation_DinMete/04_polar_effect_mval.R`](../../04_polar_effect_mval.R)
+Made by [`C_mutant_validation_DinMete/scripts/04_polar_effect_mval.R`](../../scripts/04_polar_effect_mval.R)
 (needs the Step 3 output). Question: is the loss of Stk1 in `stp` consistent
 with a polar transposon insertion, and are other nearby proteins changed?
 Results and numbers: [notebook 2026-11-12](../../notebook/2026-11-12_steps3-4_mutant_validation_mval.md).
@@ -31,7 +31,7 @@ polar effect is consistent with it, not proof of it.
   not a measurement.
 
 ### `fig_gene_context_premium_mval.png` / `.pdf` — the same map, presentation version
-- **Made by** [`C_mutant_validation_DinMete/04d_gene_context_premium_mval.R`](../../04d_gene_context_premium_mval.R)
+- **Made by** [`C_mutant_validation_DinMete/scripts/04d_gene_context_premium_mval.R`](../../scripts/04d_gene_context_premium_mval.R)
   from `gene_context_mval.csv` and `TRANSPOSON_INSERTIONS` only (no `data/` needed; ~5 s).
 - **Shows (no measurements):** the same content as `fig_gene_context_mval.png`, in two tracks.
   Top: the ~11 kb window with gene arrows, the transcription unit as a bent arrow (promoter
@@ -62,7 +62,7 @@ polar effect is consistent with it, not proof of it.
   gene downstream of the insertion, as a polar effect predicts.
 
 ### `fig_neighbours_by_genotype_mval.png` — the same neighbourhood, one strain per panel
-- **Made by:** `C_mutant_validation_DinMete/04b_neighbours_by_genotype_mval.R`.
+- **Made by:** `C_mutant_validation_DinMete/scripts/04b_neighbours_by_genotype_mval.R`.
 - **Compares:** the 11 measured proteins from `B7H15_06320` to `06375`, **including
   *stp1* and *stk1***, in genome order along the x axis. There is one panel per strain
   (`anc`, `stk`, `stp`), and all panels share the same y axis, so you can compare
@@ -83,7 +83,7 @@ polar effect is consistent with it, not proof of it.
   in place. The defect is confined to the two genes, and `stp` loses both.
 
 ### `fig_neighbours_by_genotype_medium_mval.png` — 6 panels: strain × medium
-- **Made by:** `C_mutant_validation_DinMete/04b_neighbours_by_genotype_mval.R` (figure 2).
+- **Made by:** `C_mutant_validation_DinMete/scripts/04b_neighbours_by_genotype_mval.R` (figure 2).
 - **Compares:** the same 11 proteins, split into rows by medium (TSB on top, SN below)
   and into columns by strain (`anc`, `stk`, `stp`). Reading along a row compares
   strains within one medium. Reading down a column compares TSB with SN for one strain.
@@ -127,7 +127,7 @@ polar effect is consistent with it, not proof of it.
 ## Poster version (Step 12c)
 
 ### `fig_neighbours_by_genotype_poster_mval.png` — poster size, transparent background
-- **Made by:** `C_mutant_validation_DinMete/12c_poster_neighbours_mval.R`.
+- **Made by:** `C_mutant_validation_DinMete/scripts/12c_poster_neighbours_mval.R`.
 - **Same data and layout as `fig_neighbours_by_genotype_mval.png`**: 8.5 × 7 in, text ≈ 1.7× larger,
   no title; gene axis shows the gene name (or locus number); red digit = samples detected of 3
   (shown when < 3); legend says PASN / PASN pulse. Backgrounds transparent (grey band stays).

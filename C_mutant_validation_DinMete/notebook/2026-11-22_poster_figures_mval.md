@@ -5,11 +5,11 @@ Make the figures used on the poster readable at poster size, with transparent ba
 
 ## What we did
 - Redrew six figures with the same data and thresholds, larger text (base 17 pt) and no titles
-  (`C_mutant_validation_DinMete/12c_poster_*_mval.R`, shared helper `C_mutant_validation_DinMete/12c_poster_transparent_helper_mval.R`):
+  (`C_mutant_validation_DinMete/scripts/12c_poster_*_mval.R`, shared helper `C_mutant_validation_DinMete/scripts/12c_poster_transparent_helper_mval.R`):
   Step 3 enzyme peptides, Step 4b neighbourhood by strain, Step 6 arcA neighbourhood, the two Step 6
   response scatter plots and one combined 3-panel response figure.
 - The Step 5 table `data/derived/limma_treat_total_mval.tsv.gz` was missing locally; it was recreated
-  with the fit part of `C_mutant_validation_DinMete/05_formal_test_mval.R` (git-ignored, not committed). Check: the
+  with the fit part of `C_mutant_validation_DinMete/scripts/05_formal_test_mval.R` (git-ignored, not committed). Check: the
   interaction estimates equal the stored Step 6 values (58 genes, max difference 0).
 
 ## Results (key numbers)

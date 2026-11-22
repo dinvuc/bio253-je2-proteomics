@@ -5,7 +5,7 @@ What are the proteins in `step06_responses/fig_response_vs_anc_mval.png`, why mi
 change, and is the kdpD result the same in both mutants? Make a STRING network of them.
 
 ## What we did
-- new branch `response-hits-biology-mval`; new script `C_mutant_validation_DinMete/06d_response_hits_string_mval.R`
+- new branch `response-hits-biology-mval`; new script `C_mutant_validation_DinMete/scripts/06d_response_hits_string_mval.R`
   (plan in its header), output in `C_mutant_validation_DinMete/results/step06_responses/hits_biology/`
 - annotation from `read_protein_metadata()` (all 7 orthologs "good")
 - STRING v12.5 API, *S. aureus* NCTC 8325 (taxon 93061): partners (score ≥ 0.7, 6 each)
@@ -49,7 +49,7 @@ cited papers were marked as checked by the group on 18 Nov 2026 (the AI itself r
 - found: the course organism `STRG0B09NBK` ("JE2_Bio253_HS26") answers the STRING API and
   uses our `protein_key` as its protein id; the older `STRG0A35SHG` (source of the local
   files in `data/raw/resources/`) does not answer the API
-- changed `C_mutant_validation_DinMete/06d_response_hits_string_mval.R` (branch `string-je2-organism-mval`):
+- changed `C_mutant_validation_DinMete/scripts/06d_response_hits_string_mval.R` (branch `string-je2-organism-mval`):
   query by protein_key, join nodes directly (ortholog mapping and the arc-copy rule
   removed); layout now one circle per hit module, dashed lines between modules
 - result: 37 proteins, 70 links (score ≥ 0.7), all 37 found in our metadata as CDS;

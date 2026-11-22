@@ -1,6 +1,6 @@
 # Refined phosphosite hits and N-to-C plots in the style of the chapter's Fig. 1
 
-Made by [`C_mutant_validation_DinMete/09c_refined_hits_n_to_c_mval.R`](../../../09c_refined_hits_n_to_c_mval.R) (~1 min).
+Made by [`C_mutant_validation_DinMete/scripts/09c_refined_hits_n_to_c_mval.R`](../../../scripts/09c_refined_hits_n_to_c_mval.R) (~1 min).
 Reference: Wolski, Dittmann, Panse, Kunz & Grossmann, "Integrated Analysis of
 Posttranslational Modifications and Total Proteome: Methods for Distinguishing Abundance
 from Usage Changes", Chapter 8 (ISBN 978-1-0716-5519-1), Fig. 1, made there with

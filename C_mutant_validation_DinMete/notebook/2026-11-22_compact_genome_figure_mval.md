@@ -6,7 +6,7 @@ Can the R6/R7 genome figure (poster Fig. 3C) be narrower with the same message?
 ## What we did
 - Plan: aim = narrow version of panels A + B; input = the Step 11c objects; analysis = none new;
   output = `fig_R6_R7_genome_context_compact_mval.png`; check = Step 11c checks still pass, labels readable.
-- Added section 7 to `C_mutant_validation_DinMete/11c_R6_R7_context_mval.R` and ran it.
+- Added section 7 to `C_mutant_validation_DinMete/scripts/11c_R6_R7_context_mval.R` and ran it.
 - One-off check, not saved as a result: Step 7 noise-corrected r without the block proteins.
 
 ## Results (key numbers)
@@ -27,7 +27,7 @@ Claude Code changed the script, ran the check and drafted this entry. It was mar
 
 ## Addendum: compact genome scan
 - **Question:** can the labelled genome scan be narrower without crowded labels?
-- **Run:** new section 4b in `C_mutant_validation_DinMete/11b_genome_blocks_mval.R`; no new statistics.
+- **Run:** new section 4b in `C_mutant_validation_DinMete/scripts/11b_genome_blocks_mval.R`; no new statistics.
 - **Output:** `fig_genome_scan_labelled_compact_mval.png` (7 x 7.4 in; mutants = columns, media = rows).
 - **Poster wording (marked as checked by the group on 22 Nov 2026):** R6 is flagged in the PASN response of BOTH mutants, so "each block
   appears only in one mutant" holds at baseline only. The 5% threshold is per panel (six panels,
@@ -36,7 +36,7 @@ Claude Code changed the script, ran the check and drafted this entry. It was mar
 
 ## Addendum: compact Fig 3 (H3)
 - **Question:** can the stp-vs-stk scatter be narrower and less crowded?
-- **Run:** new compact section in `C_mutant_validation_DinMete/12_poster_figures_mval.R`; no new statistics.
+- **Run:** new compact section in `C_mutant_validation_DinMete/scripts/12_poster_figures_mval.R`; no new statistics.
 - **Output:** `step12_poster/fig3_h3_shared_distinct_compact_mval.png` (7 x 6.15 in; axes swapped).
 - **Poster wording (marked as checked by the group on 22 Nov 2026):** "the largest differences sit in strain-specific genome blocks" is too
   strong. Of the direct stp-vs-stk hits, 6 of 20 at baseline (3 in R6/R7) and 0 of 4 in the PASN

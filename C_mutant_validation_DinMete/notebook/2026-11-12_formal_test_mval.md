@@ -20,7 +20,7 @@ explicit model formula, guardrail checks, script + Quarto report).
   if every group of it has ≥ 2 observed values; no imputation
 - no batch term: all 27 total-proteome runs on 20260612, `reinjected` all FALSE;
   run order is blocked by group, so drift is confounded (limitation)
-- ran `Rscript C_mutant_validation_DinMete/05_formal_test_mval.R` -> all 7 checks PASS;
+- ran `Rscript C_mutant_validation_DinMete/scripts/05_formal_test_mval.R` -> all 7 checks PASS;
   `quarto render analyses/05_formal_test_mval.qmd` (16 s)
 - step 10 enrichment now uses the formal hits; re-ran it for `stk_vs_anc`
 - 2 new unit tests (toy data: sign, treat threshold, min_obs); all tests pass

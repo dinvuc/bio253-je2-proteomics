@@ -20,7 +20,7 @@ total <- readr::read_tsv("../data/derived/limma_treat_total_mval.tsv.gz", show_c
 
 ::: {.callout-note}
 ## How to read this report
-Every number comes from a script in `C_mutant_validation_DinMete/` (Steps 1–12 of
+Every number comes from a script in `C_mutant_validation_DinMete/scripts/` (Steps 1–12 of
 [our workflow](../C_mutant_validation_DinMete/project_outlines/PROJECT_WORKFLOW_mval.md)); each results folder
 has a `figure_guide_mval.md` that says what each figure compares. Fold changes are
 **log2, A − B**: `stp_vs_anc_at_TSB = −5.4` means **higher in anc**, lower in stp.

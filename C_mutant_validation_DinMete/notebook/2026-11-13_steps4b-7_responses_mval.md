@@ -9,11 +9,11 @@
 
 ## What we did
 - branch `steps6-7-responses-mval`; one commit per step
-- `C_mutant_validation_DinMete/04b_transposon_products_mval.R`: Jonas's new FragPipe 24 search incl. the
+- `C_mutant_validation_DinMete/scripts/04b_transposon_products_mval.R`: Jonas's new FragPipe 24 search incl. the
   pBursa/pFA545 proteins (`data/raw/FP24_transposonDB/`, local, not in the checksummed bundle)
-- `C_mutant_validation_DinMete/05b_contrast_sheet_mval.R` → `results/step05_formal_test/methods_sheet_mval.md`
-- `C_mutant_validation_DinMete/06_altered_responses_mval.R` → `results/step06_responses/`
-- `C_mutant_validation_DinMete/07_shared_distinct_mval.R` → `results/step07_shared_distinct/`
+- `C_mutant_validation_DinMete/scripts/05b_contrast_sheet_mval.R` → `results/step05_formal_test/methods_sheet_mval.md`
+- `C_mutant_validation_DinMete/scripts/06_altered_responses_mval.R` → `results/step06_responses/`
+- `C_mutant_validation_DinMete/scripts/07_shared_distinct_mval.R` → `results/step07_shared_distinct/`
 - every results folder has a `figure_guide_mval.md`; all checks PASS
 
 ## Results (key numbers)

@@ -3,7 +3,7 @@ title: "Project C · 3 – phosphosite follow-up"
 subtitle: "Bio253 HS2026 · group mval · Steps 8–9, recomputed live"
 ---
 
-Short, re-runnable version of Steps 8–9. Full scripts: `C_mutant_validation_DinMete/08_phospho_coverage_mval.R`,
+Short, re-runnable version of Steps 8–9. Full scripts: `C_mutant_validation_DinMete/scripts/08_phospho_coverage_mval.R`,
 `09_site_vs_protein_mval.R`. STY and STYH are two searches of the same runs, not
 replicates; STY is primary (near tie with STYH, same results, Step 8).
 

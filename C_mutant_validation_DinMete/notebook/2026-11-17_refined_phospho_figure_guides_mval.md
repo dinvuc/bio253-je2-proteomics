@@ -6,8 +6,8 @@
 - Every figure of every step needs a guide entry with description, key points and conclusion.
 
 ## What we did
-- `C_mutant_validation_DinMete/09b_n_to_c_plots_mval.R`: N-to-C plots for all 25 proteins with a site hit (`n_to_c/`)
-- `C_mutant_validation_DinMete/09c_refined_hits_n_to_c_mval.R`: refined hits plus N-to-C plots in the chapter's
+- `C_mutant_validation_DinMete/scripts/09b_n_to_c_plots_mval.R`: N-to-C plots for all 25 proteins with a site hit (`n_to_c/`)
+- `C_mutant_validation_DinMete/scripts/09c_refined_hits_n_to_c_mval.R`: refined hits plus N-to-C plots in the chapter's
   style (`n_to_c_refined/`), restricted on request to proteins that are important (in
   `fig_paired_layers_mval.png`) **and** significant (refined hit). The paired-layer figure is
   copied into the folder.

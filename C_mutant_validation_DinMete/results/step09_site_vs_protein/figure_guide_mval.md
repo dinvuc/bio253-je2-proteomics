@@ -1,6 +1,6 @@
 # Step 9 outputs: what each figure and table compares
 
-Made by [`C_mutant_validation_DinMete/09_site_vs_protein_mval.R`](../../09_site_vs_protein_mval.R).
+Made by [`C_mutant_validation_DinMete/scripts/09_site_vs_protein_mval.R`](../../scripts/09_site_vs_protein_mval.R).
 Question: a phosphosite signal goes up when the site is phosphorylated more **or**
 when there is more of the protein. For each supported site hit from
 [Step 8](../step08_phospho_coverage/figure_guide_mval.md), does the site change follow
@@ -161,7 +161,7 @@ protein was not tested in that contrast (not a hit-level problem: none of the 62
 
 ## N-to-C expression plots (`n_to_c/`, added 17 Nov)
 
-Made by [`C_mutant_validation_DinMete/09b_n_to_c_plots_mval.R`](../../09b_n_to_c_plots_mval.R), in the
+Made by [`C_mutant_validation_DinMete/scripts/09b_n_to_c_plots_mval.R`](../../scripts/09b_n_to_c_plots_mval.R), in the
 style of Fig. 1 of Wolski, Dittmann, Panse, Kunz & Grossmann, "Integrated Analysis of
 Posttranslational Modifications and Total Proteome: Methods for Distinguishing Abundance
 from Usage Changes" (Chapter 8, ISBN 978-1-0716-5519-1; there made with

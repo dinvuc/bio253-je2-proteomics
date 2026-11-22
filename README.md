@@ -109,7 +109,7 @@ sites <- read_sites("STYH")                 # FragPipe phospho-sites, long forma
 | `analyses/` | exercise notebooks (Quarto, R) |
 | `reference/` | **protein metadata for all 4,155 database entries** (UniProt accession + e-value, gene symbol, EC, GO/KEGG/STRING) + the ErmB proposal |
 | `notebook/` | lecturer's lab-notebook instructions and template |
-| `C_mutant_validation_DinMete/` | **our group's files**: our analysis scripts (`01_setup_check_mval.R` ... `12d_qr_references_mval.R`, run from the repository root), rules (`codingrules_mval.md`), project plan/workflow, docs, results, and our lab notebook (`C_mutant_validation_DinMete/notebook/`, one dated entry per session) |
+| `C_mutant_validation_DinMete/` | **our group's files**: our analysis scripts in `scripts/` (`01_setup_check_mval.R` ... `12d_qr_references_mval.R`, run from the repository root), rules (`codingrules_mval.md`), project plan/workflow, docs, results, and our lab notebook (`C_mutant_validation_DinMete/notebook/`, one dated entry per session) |
 | `tests/` | `testthat` checks of the helpers and of the sign convention |
 | `data/` | local data only (git-ignored), see `data/README.md` |
 | `CLAUDE.md` / `AGENTS.md` | instructions for your AI coding agent |
@@ -150,7 +150,7 @@ git remote set-url origin https://github.com/<you>/bio253-<group>.git   # your o
 git push -u origin main
 ```
 
-What goes in: all code (`R/`, `scripts/`, `C_mutant_validation_DinMete/*.R`, `analyses/*.qmd`, your own `reports/`), the rendered
+What goes in: all code (`R/`, `scripts/`, `C_mutant_validation_DinMete/scripts/`, `analyses/*.qmd`, your own `reports/`), the rendered
 HTML reports (`analyses/_output/`, `reports/*.html`), and `C_mutant_validation_DinMete/notebook/`.
 What stays out: everything in `data/` (raw Excel/TSV/parquet/FASTA — `.gitignore` takes care of it).
 Before the final push run `git status` and check that no data file is staged.

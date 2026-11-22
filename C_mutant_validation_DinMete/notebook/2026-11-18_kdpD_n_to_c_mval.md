@@ -6,7 +6,7 @@ interaction hit (`interaction_stk_vs_anc_at_TSB_vs_SN`, `fig_response_vs_anc_mva
 when it is drawn in the same N-to-C style as the refined-hit proteins of Step 9c?
 
 ## What we did
-- added kdpD as an extra protein (`EXTRA`) to `C_mutant_validation_DinMete/09c_refined_hits_n_to_c_mval.R`
+- added kdpD as an extra protein (`EXTRA`) to `C_mutant_validation_DinMete/scripts/09c_refined_hits_n_to_c_mval.R`
   and re-ran it (~1 min); product now taken from the STY table, so proteins without a
   site hit also get one
 - new figure `C_mutant_validation_DinMete/results/step09_site_vs_protein/n_to_c_refined/fig_n_to_c_refined_B7H15_11550_kdpD_mval.png`
