@@ -1,4 +1,4 @@
-# 2026-11-18 – A0 poster layout after the poster lecture (group mval: [names])
+# 2026-11-18 – A0 poster layout after the poster lecture (group mval: Din Vuckic & Mete Kabranlar)
 
 ## Question for today
 Apply the lecture "Academic posters" (BIO253, J. L. Ruiz, Nov 2026) to our poster: turn the

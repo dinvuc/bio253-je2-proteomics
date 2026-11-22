@@ -1,5 +1,7 @@
 # Revised topic C: Does the stp mutant behave like a kinase mutant during supernatant exposure?
 
+**Group mval: Din Vuckic & Mete Kabranlar.**
+
 **Current research goal, updated 5 November 2026; scope amended 13 November 2026.** This focused subsection of course topic C uses total-proteome protein abundance in TSB and SN for its primary comparisons. Phosphorylation responses, phosphosite analysis and protein adjustment of phospho signals were excluded on 5 November; on 13 November the group kept them as a **supporting layer** (Steps 8–9), because the coverage carries no quantitative claim: 236 usable sites, and none of them responds differently to PASN in a mutant. The hypotheses below are predictions to test, not results from our dataset.
 
 ## Research question

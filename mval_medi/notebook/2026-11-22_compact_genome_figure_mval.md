@@ -1,4 +1,4 @@
-# 2026-11-22 – compact R6/R7 figure for the poster (group mval: [names])
+# 2026-11-22 – compact R6/R7 figure for the poster (group mval: Din Vuckic & Mete Kabranlar)
 
 ## Question for today
 Can the R6/R7 genome figure (poster Fig. 3C) be narrower with the same message?

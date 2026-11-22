@@ -1,5 +1,7 @@
 # Bio253 – *S. aureus* JE2 proteome & phosphoproteome: DIN Vuckics Repo Fork
 
+**Group mval: Din Vuckic & Mete Kabranlar.**
+
 **Start here: [our revised Topic C question, hypotheses and project plan](mval_medi/project_outlines/PROJECT_PLAN_mval.md).**
 
 For the practical sequence, required inputs and purpose of each analysis, follow the [step-by-step project workflow](mval_medi/project_outlines/PROJECT_WORKFLOW_mval.md).

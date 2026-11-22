@@ -1,6 +1,9 @@
 ---
 title: "Does the stp1 mutant behave like a kinase mutant?"
 subtitle: "Bio253 HS2026 · Topic C · group mval · final report behind the A0 poster"
+author:
+  - "Din Vuckic"
+  - "Mete Kabranlar"
 date: today
 ---
 
