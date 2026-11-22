@@ -29,6 +29,7 @@
 #             block_term_overlap_mval.csv      Fig 4b term x mutant: members inside flagged regions
 #             fig_genome_blocks_mval.png       Fig 4b-style dot plot of the regions
 #             fig_genome_scan_labelled_mval.png the Step 11 scan with region labels
+#             fig_genome_scan_labelled_compact_mval.png the same scan, narrow (poster)
 #             fig_pathway_terms_in_blocks_mval.png  share of each Fig 4b term inside the blocks
 #             genome_blocks_checks_mval.txt
 # Check:    recomputed windows reproduce the Step 11 flags exactly; Fig 4b rebuilt with 16
@@ -192,6 +193,59 @@ p2 <- ggplot(scan, aes(start / 1e6, window_mean)) +
        caption = paste(sprintf("%s %s", regions$region, regions$label), collapse = " | ") |> str_wrap(170)) +
   theme(strip.text = element_text(size = 8), plot.caption = element_text(hjust = 0, size = 8))
 ggsave(file.path(out, "fig_genome_scan_labelled_mval.png"), p2, width = 13, height = 7, dpi = 200)
+
+# ---- 4b. the same scan, narrow for the poster -----------------------------------------
+# Mutants side by side (is a block in one mutant or in both?), media as rows. R1-R8 are named
+# once, in a track on top with spread-out labels, because R6/R7/R8 lie < 0.15 Mb apart.
+ROWS <- setNames(c("TSB", "PASN", "PASN response"), levels(CT$layer))
+MUT <- as_labeller(c(stk = "stk vs anc", stp = "stp vs anc"))
+XLIM <- range(scan$start) / 1e6
+to_panel <- \(d) d |> left_join(CT, by = "contrast")
+track <- reg_lines |> mutate(x_lab = c(0.10, 0.40, 0.82, 1.60, 1.83, 2.06, 2.29, 2.52)) |>
+  tidyr::expand_grid(mutant = c("stk", "stp"))
+p_track <- ggplot(track) +
+  geom_segment(aes(x = x_lab, xend = mid, y = 0.55, yend = 0), colour = "#56B4E9", linewidth = 0.3) +
+  geom_text(aes(x_lab, 0.82, label = region), size = 2.9, colour = "#1F6E9C") +
+  annotate("segment", x = tn$start / 1e6, xend = tn$start / 1e6, y = 0, yend = 0.55, colour = "#CC79A7") +
+  annotate("text", x = tn$start / 1e6, y = 0.82, label = "stp1/stk1", size = 2.5, fontface = "italic", colour = "#A8437F") +
+  facet_wrap(~mutant, labeller = MUT) +
+  scale_x_continuous(limits = XLIM) +
+  scale_y_continuous(limits = c(0, 1), expand = c(0, 0)) +
+  theme_void() +
+  theme(strip.text = element_text(size = 11, face = "bold", margin = margin(b = 3)), panel.spacing.x = unit(8, "pt"))
+p_scan <- ggplot(to_panel(scan), aes(start / 1e6, window_mean)) +
+  geom_vline(data = reg_lines, aes(xintercept = mid), linetype = 3, colour = "#56B4E9", linewidth = 0.3) +
+  geom_vline(xintercept = tn$start / 1e6, colour = "#CC79A7", linewidth = 0.4) +
+  geom_hline(data = to_panel(thr), aes(yintercept = threshold), linetype = 2, colour = "grey50", linewidth = 0.3) +
+  geom_hline(data = to_panel(thr), aes(yintercept = -threshold), linetype = 2, colour = "grey50", linewidth = 0.3) +
+  geom_line(colour = "grey35", linewidth = 0.25) +
+  geom_point(data = to_panel(filter(scan, flagged)), colour = "#D55E00", size = 0.7) +
+  geom_label(data = to_panel(lab), aes(label = region, vjust = if_else(window_mean > 0, -0.3, 1.3)),
+             size = 2.9, label.size = 0.2, label.padding = unit(0.12, "lines"), fill = "white") +
+  facet_grid(layer ~ mutant, labeller = labeller(layer = ROWS)) +
+  scale_x_continuous(limits = XLIM) +
+  scale_y_continuous(limits = c(-2.9, 2.3), breaks = -2:2) +
+  labs(x = "genome position (Mb)", y = "mean log2 diff of 10 neighbouring proteins") +
+  theme(strip.text.x = element_blank(), strip.text.y = element_text(size = 9),
+        axis.title = element_text(size = 9.5), axis.text = element_text(size = 8.5),
+        panel.grid = element_blank(), panel.spacing.x = unit(8, "pt"), panel.spacing.y = unit(5, "pt"))
+# short forms of LABELS, in two columns, so the key needs no long run-on caption
+key <- tibble(region = regions$region,
+              short = c("sugar uptake, azoR", "rbs, lytM, type VII secretion", "cold-shock protein, gcvH",
+                        "prophage, leukocidin genes", "spl proteases, lantibiotic genes", "prophage in hlb",
+                        "sigB, mazEF, kdp, murF, ddl", "sceD, murA, ATP synthase"),
+              x = rep(c(0, 0.5), each = 4), y = rep(4:1, 2))
+p_key <- ggplot(key, aes(x, y)) +
+  geom_text(aes(label = region), hjust = 0, size = 2.9, fontface = "bold", colour = "#1F6E9C") +
+  geom_text(aes(x = x + 0.05, label = short), hjust = 0, size = 2.9) +
+  scale_x_continuous(limits = c(0, 1), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0.5, 4.5), expand = c(0, 0)) +
+  labs(caption = paste("> 0 = higher in the mutant. In PASN response: > 0 = response lower in the mutant.",
+                       "Orange = flagged window. Dashed = genome-wide 5% threshold, per panel. n = 3.", sep = "\n")) +
+  theme_void() +
+  theme(plot.caption = element_text(hjust = 0, size = 8, margin = margin(t = 5)))
+p_compact <- patchwork::wrap_plots(p_track, p_scan, p_key, ncol = 1, heights = c(0.09, 1, 0.16))
+ggsave(file.path(out, "fig_genome_scan_labelled_compact_mval.png"), p_compact, width = 7, height = 7.4, dpi = 400)
 
 # ---- 5. how much of each Fig 4b pathway term lies in a flagged region? -----------------
 # Rebuild the 16 terms exactly as scripts/10b does (robust stk terms, size <= 200, by
