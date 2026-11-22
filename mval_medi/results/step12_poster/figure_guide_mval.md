@@ -25,6 +25,9 @@ primary samples (TSB, SN), n = 3 per group. Full write-up: [`reports/project_c_r
 - **Read:** points on the diagonal = same response as `anc` (r = 0.85 / 0.86).
 - **Key points:** 5 altered responses in `stk` (argF and B7H15_14515 stable; arcA fragile;
   kdpD and rbsD in shifted blocks) and 1 in `stp` (ilvA, fragile).
+- **Caption caveat:** kdpD also fails the peptide check of Step 6d (*kdp* is switched off by
+  PASN in all three strains, 0–3 peptides left per SN sample), so do not caption it as an
+  `stk`-specific response.
 - **Conclusion (H2 supported, but small):** both mutants keep the PASN response of the
   parent almost completely. Only a handful of proteins respond differently, and only two
   of them are fully robust.

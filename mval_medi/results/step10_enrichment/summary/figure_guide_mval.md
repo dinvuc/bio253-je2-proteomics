@@ -130,13 +130,21 @@ the website's default (whole genome) inflates easy-to-measure categories.
 ## Interpretation (marked as interpretation; marked as checked by the group on 22 Nov 2026)
 - Pathway level supports Step 7: `stp` shares **part** of the `stk` pattern (cell wall
   synthesis, cytolysis-related terms) and has its own, broader changes.
-- The cytolysis / cell-killing terms are lower in `stk` (and `stp`) than in `anc`.
-  Burnside et al. 2010 (*PLOS ONE* 5:e11071, in
-  [our evidence review](../../../docs/stk_stp_rescue_evidence_mval.md)) report altered
-  alpha-toxin expression and haemolysis in Newman *stk1*/*stp1* deletions. This is the
-  same **topic** in a different strain and assay. Direction (marked as checked by the group on 22 Nov 2026): the paper's abstract
-  (PubMed 20552019) reports *hla* transcription **higher** in Δ*stk1* and lower in Δ*stp1*
-  than in the wild type. That is opposite to our `stk` result and the same direction as `stp`,
-  so do not cite it as support for lower cytolysis in `stk`.
+- The cytolysis / cell-killing terms shift down in both mutants at pathway level (rank
+  test). At protein level only `stk` passes our 2-fold test: alpha-haemolysin
+  `B7H15_06050` −1.84 log2 vs `anc` in TSB (SE 0.15, FDR 0.002), gamma-haemolysin
+  `B7H15_13435` −1.79 and `B7H15_11180` −1.58. In `stp` the same three proteins are also
+  lower, but none of them passes our test (−0.77, −1.34, −0.56; FDR 1.0 each).
+- **Burnside et al. 2010 points the OTHER WAY for `stk`, so it is not support.**
+  (*PLOS ONE* 5:e11071, PMID 20552019, also in
+  [our evidence review](../../../docs/stk_stp_rescue_evidence_mval.md);
+  [doi:10.1371/journal.pone.0011071](https://doi.org/10.1371/journal.pone.0011071); full
+  text read 22 Nov 2026, Table 5 and Figs 2–3.) In *S. aureus* Newman, Δ*stk1* showed
+  **more** haemolysis, 6.4× higher *hla* transcription and more secreted alpha-toxin than
+  the wild type, while Δ*stp1* showed less (0.31×); the transcript difference appeared only
+  in post-exponential phase. Our `stk` goes the opposite way; our `stp` goes the same way as
+  the paper. Possible reasons for the mismatch: strain (Newman vs JE2), clean deletions vs
+  transposon insertions (our `stp` also lacks most Stk1), secreted toxin and transcript vs
+  whole-sample protein abundance, and growth phase. Direction marked as checked by the group on 22 Nov 2026.
 - Nothing here shows direct Stk1 substrates or rescue. Pathway shifts are measured
   protein-abundance changes.

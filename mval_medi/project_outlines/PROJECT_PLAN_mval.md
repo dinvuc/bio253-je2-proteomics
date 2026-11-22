@@ -1,6 +1,6 @@
 # Revised topic C: Does the stp mutant behave like a kinase mutant during supernatant exposure?
 
-**Current research goal, updated 5 November 2026.** This focused subsection of course topic C uses total-proteome protein abundance in TSB and SN. Phosphorylation responses, phosphosite analysis and protein adjustment of phospho signals are outside the agreed scope. The hypotheses below are predictions to test, not results from our dataset.
+**Current research goal, updated 5 November 2026; scope amended 13 November 2026.** This focused subsection of course topic C uses total-proteome protein abundance in TSB and SN for its primary comparisons. Phosphorylation responses, phosphosite analysis and protein adjustment of phospho signals were excluded on 5 November; on 13 November the group kept them as a **supporting layer** (Steps 8–9), because the coverage carries no quantitative claim: 236 usable sites, and none of them responds differently to PASN in a mutant. The hypotheses below are predictions to test, not results from our dataset.
 
 ## Research question
 
@@ -54,7 +54,7 @@ A positive value means the TSB-minus-SN difference is more positive in `stp`. Eq
 - Conditions: TSB versus SN, three replicates in each of six genotype-condition groups (18 samples).
 - SN: approximately 15 h growth in 70% TSB plus 30% cell-free, sterile-filtered *P. aeruginosa* PAO1 spent medium. Secreted products and nutrient depletion are not separated by this design.
 - Dataset: total-proteome abundance and its differential-analysis tables, accessed with the repository's R helpers.
-- SNpulse and the phosphoproteome remain available in the course dataset but are outside this focused project.
+- SNpulse and the phosphoproteome are not part of the primary comparisons. The phosphoproteome is reported as a supporting layer (amendment of 13 November 2026, Steps 8–9); SNpulse samples are inspected for mutant validation and QC and contribute to the variance estimate of the model (all 27 samples).
 
 ## Anticipated figures
 

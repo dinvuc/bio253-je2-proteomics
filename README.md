@@ -21,7 +21,7 @@ Our focused subsection is **Revised topic C: Does the `stp` mutant behave like a
 
 **Revised main question:** Does disruption of `stp1` also reduce Stk1 protein abundance through a possible polar effect, and do the `stp` and `stk` mutants show similar protein-abundance responses to *Pseudomonas aeruginosa* supernatant?
 
-**Scope:** total-proteome protein abundance in TSB and SN only. Phosphorylation responses, phosphosite analysis, protein adjustment of phospho signals and SNpulse are outside this focused project.
+**Scope:** the primary comparisons are total-proteome protein abundance in TSB and SN. Phosphosites were out of scope in the first plan (5 Nov 2026); since 13 Nov 2026 they are reported as a **supporting layer** only (Steps 8–9 and section 7 of the report): coverage is too thin for a quantitative phosphorylation claim, and no phosphosite responds differently to PASN in a mutant. SNpulse samples are not part of the primary comparisons; they are inspected for mutant validation and QC and contribute to the variance estimate of the model (all 27 samples).
 
 **Hypotheses to test:**
 
@@ -39,7 +39,7 @@ For continuing the same conversation and project on another computer, see [worki
 2. In this experiment, *S. aureus* **never meets living *P. aeruginosa***. It is grown in medium containing **30 % cell-free, sterile-filtered spent medium of *P. aeruginosa* PAO1** ("PA supernatant", **PASN**). It sees only the secreted molecules, in a medium that is partly depleted of nutrients.
 3. Niggli *et al.* 2023 (*mBio*): *S. aureus* quickly evolves resistance to PASN. Schwyter *et al.* 2025 (*mSystems*): the resistance comes mostly from a large **plastic** proteome response. One evolved line also had a ***tcyA*** mutation, which destroyed the cystine transporter TcyABC.
 4. Bacteria sense their environment through phosphorylation. *S. aureus* has one main Ser/Thr kinase, **Stk1 (PknB)**, and its partner phosphatase **Stp1**. The genes sit next to each other: *stp1* first, then *stk1*.
-5. Huemer *et al.* 2021 (*Sci Signal*): PknB/Stp control quiescence and antibiotic tolerance. Prust *et al.* 2021 (*MCP*): a deep *S. aureus* phosphoproteome, which also reports **phospho-histidine**.
+5. Huemer *et al.* 2023 (*Sci Signal*): PknB/Stp control quiescence and antibiotic tolerance. Prust *et al.* 2021 (*MCP*): a deep *S. aureus* phosphoproteome, which also reports **phospho-histidine**.
 6. Here: the JE2 wild type (**anc**) and two transposon mutants, **stk** (*stk1::Tn*) and **stp** (*stp1::Tn*), each grown in three media.
 7. **TSB** = control. **SN** = ~15 h in 70 % TSB + 30 % PASN (long-term response). **SNpulse** = grown in TSB, then 15 min in PASN (immediate response).
 8. Every sample was measured twice: **total proteome** (protein amounts) and **phospho-enriched** (Fe-IMAC; phospho-sites).
@@ -176,7 +176,7 @@ You're encouraged to use an agent (Claude Code, Copilot, Cursor …). Some rules
 * Schwyter L. *et al.* (2025) *mSystems*, doi:10.1128/msystems.00262-25 – TcyABC, plastic vs genetic response to PASN.
 * Niggli S. *et al.* (2023) *mBio* – rapid, strain-specific resistance evolution of *S. aureus* against PASN.
 * Prust N. *et al.* (2021) *Mol Cell Proteomics* 20:100034 – *S. aureus* phosphoproteome, Stk1 targets, pHis.
-* Huemer M. *et al.* (2021) *Science Signaling*, doi:10.1126/scisignal.abj8194 – PknB/Stp, quiescence and antibiotic tolerance.
+* Huemer M. *et al.* (2023) *Science Signaling*, doi:10.1126/scisignal.abj8194 – PknB/Stp, quiescence and antibiotic tolerance.
 
 ## License
 
