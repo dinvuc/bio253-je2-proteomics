@@ -96,3 +96,11 @@ that every fold change for Stp1/Stk1 rests on (CLAUDE.md rule 4).
 Diff convention: `A_vs_B` = log2(A) − log2(B); negative = higher in B.
 `lod_imputed` = at least one group was never measured: presence/absence
 evidence only, and the size of the fold change is not meaningful.
+
+## Poster version (Step 12c)
+
+### `fig_enzyme_peptides_poster_mval.png` — Fig 1b at poster size, transparent background
+- **Made by:** `scripts/12c_poster_enzyme_peptides_mval.R` (from `enzyme_per_sample_mval.csv`).
+- **Same data as Fig 1b**, redrawn for the poster: strain on the x axis, medium as symbol
+  (● TSB, ▲ PASN pulse, ■ PASN), Stk1 left; not detected = open symbol at 0; text ≈ 1.7× larger;
+  no title. Plot, panel and legend backgrounds are transparent (strip bars stay grey).

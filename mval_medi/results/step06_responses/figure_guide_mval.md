@@ -221,3 +221,19 @@ peptide level. Details and hypotheses with sources:
 
 The on/off list is presence/absence evidence only. It gets no fold change and no FDR,
 and it is not ranked.
+
+## Poster versions (Step 12c)
+
+Made by `scripts/12c_poster_responses_mval.R` from the Step 5 limma table; same data, hit rule and
+exploratory layer as `fig_response_vs_anc_mval.png` / `fig_response_stk_vs_stp_mval.png`.
+Text ≈ 1.7× larger, no titles, short panel names, number box = r and hits of n eligible.
+Plot, panel and legend backgrounds are transparent.
+
+| file | shows |
+|---|---|
+| `fig_response_vs_anc_poster_mval.png` | stk vs anc, stp vs anc (r = 0.85 / 0.86; 5 / 1 hits of 1,882 / 1,931) |
+| `fig_response_stk_vs_stp_poster_mval.png` | stp vs stk (r = 0.84; 4 hits of 1,876) |
+| `fig_responses_combined_poster_mval.png` | all three side by side; every panel exactly 3.6 × 3.6 in with a square value range (diagonal at 45°), so the panel boxes align; third panel's y axis on the right. The third panel spans a wider range (to −8). |
+
+Caveat for captions: kdpD is a formal hit here, but Step 6d found kdp off in all strains and the
+stk-specific effect not supported at peptide level.
