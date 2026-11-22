@@ -30,3 +30,11 @@ are not supported by the test (n = 3).
 | `fig_neighbourhood_ilvA_11425_mval.png` | ilvA (stp vs anc) | last gene of a 9-gene run (ilvD … leuA–D, ilvA); leuA stk vs anc +2.53 (FDR 0.73, wide SE); leuC/leuD not testable | a shared SN drop of the branched-chain amino acid operon is possible but not supported. ilvA is fragile (9/18 refits) |
 | `fig_neighbourhood_06000_mval.png` | `B7H15_06000` (stp vs stk) | neighbours no effect above 1 (except `B7H15_06020` stp vs stk −1.04, FDR 1) | gene-specific; 67 kb from the insertions, so not a local transposon effect |
 | `fig_neighbourhood_lipA_14865_mval.png` | lipA (stp vs stk) | most neighbours (ica genes) never detected | the neighbourhood is mostly unmeasured, so little can be said about co-regulation |
+
+## Poster version (Step 12c)
+
+### `fig_neighbourhood_arcA_poster_mval.png` — arcA at poster size, transparent background
+- **Made by:** `scripts/12c_poster_arcA_mval.R` (needs the Step 5 limma table in `data/derived/`).
+- **Same three panels and data as `fig_neighbourhood_arcA_14675_mval.png`**: 10 × 11 in, text ≈ 1.7×
+  larger; title/subtitle replaced by a two-line caption; legends above/below the panels; gene names
+  only; panel names TSB / PASN; red digit = samples detected of 3. Backgrounds transparent.

@@ -123,3 +123,11 @@ polar effect is consistent with it, not proof of it.
 | `stk1_peptides_by_strain_mval.csv` | genotype × medium (9) | Stk1 detections, peptides per replicate, median peptides (NA counted as 0) |
 | `stk1_site_drop_stp_mval.csv` | Stk1 site × medium seen in both anc and stp | n and mean log2 intensity in anc and stp (observed only, STYH), `diff_stp_minus_anc` (negative = lower in stp) |
 | `polar_checks_mval.txt` | check | PASS/FLAG lines printed by the script |
+
+## Poster version (Step 12c)
+
+### `fig_neighbours_by_genotype_poster_mval.png` — poster size, transparent background
+- **Made by:** `scripts/12c_poster_neighbours_mval.R`.
+- **Same data and layout as `fig_neighbours_by_genotype_mval.png`**: 8.5 × 7 in, text ≈ 1.7× larger,
+  no title; gene axis shows the gene name (or locus number); red digit = samples detected of 3
+  (shown when < 3); legend says PASN / PASN pulse. Backgrounds transparent (grey band stays).
