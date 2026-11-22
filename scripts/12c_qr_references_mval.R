@@ -9,7 +9,7 @@
 # Analysis: none. The link uses main, because feature branches get deleted and the printed
 #           code would then break. The list can be edited later without a new code.
 #           DO NOT rename or move the references file after printing.
-# Output:   mval_medi/results/step12_poster/poster/qr_references_mval.svg
+# Output:   mval_medi/results/step12_poster/poster/qr_references_mval.{svg,png}
 # Check:    the linked file exists; the white margin is 4 modules on every side
 #           (QR standard; needed on the grey poster background). Scan a printout before printing A0.
 
@@ -40,6 +40,14 @@ stopifnot(
 )
 
 qrcode::generate_svg(padded, filename = out, show = FALSE)
+
+# PNG copy for programs that do not take SVG: 25 whole pixels per module, so the edges stay sharp
+out_png <- sub("[.]svg$", ".png", out)
+px <- 25 * nrow(padded)
+png(out_png, width = px, height = px, res = px / (5 / 2.54), type = "cairo", antialias = "none") # opens 5 cm wide
+par(mar = rep(0, 4), xaxs = "i", yaxs = "i")
+image(t(unclass(padded)[nrow(padded):1, ]) * 1, col = c("white", "black"), axes = FALSE, useRaster = TRUE)
+invisible(dev.off())
 cat("CHECK symbol:", n, "modules, margin:", margin, "modules\n")
 cat("CHECK link:  ", url, "\n")
 cat("Written:     ", out, "\n")
