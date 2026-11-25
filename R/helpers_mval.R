@@ -6,6 +6,7 @@
 #                           the MEASURED background, not the whole genome
 # 4. run_rank_enrichment()  GSEA-like test on the full ranked list (Wilcoxon)
 # 5. write_string_upload()  locus-tag list to paste into STRING (STRG0B09NBK)
+# 6. save_transparent()     PNG without background, for the poster
 #
 # Why our own filter? The default `drop_contaminants = TRUE` misses 68
 # contaminants (and in abundance tables 24 reversed decoys `rev_...`), see
@@ -209,4 +210,17 @@ add_x_primary <- function(x) {
 }
 primary_x_axis <- function() {
   scale_x_continuous(breaks = 1:2, labels = c("TSB", "SN"), limits = c(0.6, 2.4))
+}
+
+#' Save a plot (also a patchwork) as a PNG without background, for the poster.
+#' Only backgrounds become see-through. White that carries meaning stays opaque
+#' (gene arrows near 0, label boxes), which is why we do not erase white pixels.
+save_transparent <- function(plot, file, width, height, dpi = 400) {
+  clear <- element_rect(fill = NA, colour = NA)
+  see_through <- theme(plot.background = clear, panel.background = clear, legend.background = clear,
+                       legend.box.background = clear, legend.key = clear)
+  plot <- plot & see_through
+  # patchwork draws one more background behind all panels
+  plot <- plot + patchwork::plot_annotation(theme = see_through)
+  ggsave(file, plot, width = width, height = height, dpi = dpi, bg = "transparent")
 }

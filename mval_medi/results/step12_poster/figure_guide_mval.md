@@ -50,6 +50,8 @@ abstract: [`abstract_mval.md`](abstract_mval.md). Full write-up: [`reports/proje
   a: > 0 = higher in the mutant. b: > 0 = response lower in the mutant.
 - **Named:** coloured proteins with a gene symbol, the 3 shared ones and the 4 response hits. The
   noise-only r (0.50) is left out, because next to 0.37 it was misread (notebook 18 Nov).
+- `fig3_h3_shared_distinct_compact_transparent_mval.png` **compares** exactly the same, without
+  background (for the poster). Gene names keep a thin white outline so they stay readable.
 
 ### `fig4_pathways_genome_mval.png`: pathway level and genome position
 - **a** Robust shifted functional terms (Wilcoxon rank test and cameraPR both FDR < 0.05, Step 10)

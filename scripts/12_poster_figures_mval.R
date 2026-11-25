@@ -20,6 +20,7 @@
 #           18 primary samples (TSB, SN) in every per-sample panel.
 # Output:   mval_medi/results/step12_poster/fig1_h1_enzymes_mval.png ... fig4_pathways_genome_mval.png
 #           + fig3_h3_shared_distinct_compact_mval.png (Fig 3, narrow)
+#           + fig3_h3_shared_distinct_compact_transparent_mval.png (same, no background)
 # Check:    18 samples, 3 per group in the per-sample panels; scan curve reproduces the
 #           Step 11 top window of stk_vs_anc_at_TSB (+1.510).
 
@@ -179,6 +180,7 @@ check("Fig 3 compact: same 20 + 4 direct and 3 shared proteins",
       identical(as.integer(table(named$layer[named$direct_hit])), c(20L, 4L)) &&
         sum(named$pt == "altered in both, same direction") == 3)
 ggsave(file.path(out, "fig3_h3_shared_distinct_compact_mval.png"), p3c, width = 7, height = 6.15, dpi = 400)
+save_transparent(p3c, file.path(out, "fig3_h3_shared_distinct_compact_transparent_mval.png"), width = 7, height = 6.15)
 
 # ---- Fig 4: pathway level + genome scan ------------------------------------------------
 rob <- read_csv("mval_medi/results/step10_enrichment/summary/robust_terms_mval.csv", show_col_types = FALSE)

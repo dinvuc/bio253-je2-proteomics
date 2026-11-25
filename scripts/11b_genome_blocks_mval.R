@@ -30,6 +30,7 @@
 #             fig_genome_blocks_mval.png       Fig 4b-style dot plot of the regions
 #             fig_genome_scan_labelled_mval.png the Step 11 scan with region labels
 #             fig_genome_scan_labelled_compact_mval.png the same scan, narrow (poster)
+#             fig_genome_scan_labelled_compact_transparent_mval.png the same, no background
 #             fig_pathway_terms_in_blocks_mval.png  share of each Fig 4b term inside the blocks
 #             genome_blocks_checks_mval.txt
 # Check:    recomputed windows reproduce the Step 11 flags exactly; Fig 4b rebuilt with 16
@@ -246,6 +247,7 @@ p_key <- ggplot(key, aes(x, y)) +
   theme(plot.caption = element_text(hjust = 0, size = 8, margin = margin(t = 5)))
 p_compact <- patchwork::wrap_plots(p_track, p_scan, p_key, ncol = 1, heights = c(0.09, 1, 0.16))
 ggsave(file.path(out, "fig_genome_scan_labelled_compact_mval.png"), p_compact, width = 7, height = 7.4, dpi = 400)
+save_transparent(p_compact, file.path(out, "fig_genome_scan_labelled_compact_transparent_mval.png"), width = 7, height = 7.4)
 
 # ---- 5. how much of each Fig 4b pathway term lies in a flagged region? -----------------
 # Rebuild the 16 terms exactly as scripts/10b does (robust stk terms, size <= 200, by

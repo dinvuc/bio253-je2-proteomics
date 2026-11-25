@@ -174,6 +174,8 @@ The same scan redrawn narrow for the poster (7 x 7.4 in instead of 13 x 7 in). *
 (rows). > 0 = **higher in the mutant**; in the response row > 0 = **response lower in the mutant**.
 Windows, thresholds and flags are unchanged. R1-R8 are named once on top, with a short key below.
 The 5% threshold holds per panel and is not corrected for looking at six panels.
+`fig_genome_scan_labelled_compact_transparent_mval.png` **compares** exactly the same, without
+background (for the poster). The R labels and the grey row titles stay filled.
 
 **Conclusion (Steps 11, 11b and 11c together).**
 1. **A few short blocks carry part of the mutant signal.** Most of the genome sits near 0.
@@ -308,6 +310,8 @@ Panels A + B of the figure above, redrawn narrow for the poster (7 x 6.4 in inst
 **higher in the mutant**, with the same data and genome windows. Arrow colour is `stk` vs `anc`
 in A and `stp` vs `anc` in B. Only layout changed: shorter titles, shared legend below,
 fewer gene labels, "putative operon" instead of "putative TU". Panels C-E are not in it.
+`fig_R6_R7_genome_context_compact_transparent_mval.png` **compares** exactly the same, without
+background (for the poster). White arrows are not see-through: white = difference near 0.
 
 ## 3d. STRING network of the R7 and R6 proteins (Step 11d, `fig_R6_R7_string_network_mval.png`)
 
