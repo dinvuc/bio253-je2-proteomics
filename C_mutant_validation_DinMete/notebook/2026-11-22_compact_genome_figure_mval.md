@@ -42,3 +42,14 @@ Claude Code changed the script, ran the check and drafted this entry. A group me
   strong. Of the direct stp-vs-stk hits, 6 of 20 at baseline (3 in R6/R7) and 0 of 4 in the PASN
   response lie in R1-R8. The largest gap overall is arcA in the response (5.36 log2), outside all blocks.
 - **AI use:** Claude Code changed the script, ran the count and drafted this addendum.
+
+## Addendum: transparent H3 figures
+- **Question:** can the three H3 poster figures have no background?
+- **Plan:** aim = see-through copies; input = the three compact plot objects; analysis = none new;
+  output = `*_compact_transparent_mval.png`; check = same pixels as the white versions when put on white.
+- **Run:** `save_transparent()` in `R/helpers_mval.R`, called by scripts 11b, 11c and 12.
+- **Results:** same pixel size; corners fully transparent; no pixel differs by > 10% from the white
+  version on white; script checks and tests pass.
+- **Problems:** none in the data. White that has a meaning (arrows near 0) or helps reading (labels) stays.
+- **Next steps:** swap the images on the poster.
+- **AI use:** Claude Code changed the scripts and drafted this addendum.

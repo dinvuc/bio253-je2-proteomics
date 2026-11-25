@@ -29,6 +29,7 @@
 # Output:   C_mutant_validation_DinMete/results/step11_robustness/
 #             fig_R6_R7_genome_context_mval.png   the figure
 #             fig_R6_R7_genome_context_compact_mval.png   panels A + B only, narrow (poster)
+#             fig_R6_R7_genome_context_compact_transparent_mval.png   the same, no background
 #             R6_R7_genes_mval.csv                gene table: TU, strand, diffs, estimate type
 #             R6_R7_tu_effects_mval.csv           TU means per contrast
 #             operon_coherence_mval.csv           r per pair type and contrast
@@ -347,6 +348,7 @@ fig_compact <- wrap_plots(c(cA, cB), ncol = 1, heights = c(1, 1, 1, 1), guides =
         legend.title = element_text(size = 9), axis.title.y = element_text(size = 8.5),
         plot.margin = margin(2, 6, 2, 2))
 ggsave(file.path(out, "fig_R6_R7_genome_context_compact_mval.png"), fig_compact, width = 7, height = 6.4, dpi = 400)
+save_transparent(fig_compact, file.path(out, "fig_R6_R7_genome_context_compact_transparent_mval.png"), width = 7, height = 6.4)
 
 writeLines(c(sprintf("Step 11c checks, %s", Sys.Date()), checks), file.path(out, "R6_R7_context_checks_mval.txt"))
 message("done: ", out)
